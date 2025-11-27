@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@import "./scrollbar.css";
+@import "./themes.css";
+@import "./fonts.css";
+@import "./bento.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-default: var(--default);
+  --color-outline: var(--outline);
+  --color-shadow: var(--shadow);
+
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-link: var(--link);
+
+  --container-8xl: 114rem;
+}
+
+@layer base {
+  :root {
+    *:focus-visible {
+      outline: 2px solid var(--color-foreground);
+      outline-offset: 2px;
+    }
+
+    ::selection {
+      background: var(--color-foreground);
+      color: var(--color-background);
+      text-shadow: none;
+    }
+
+    ::-moz-selection {
+      background: var(--color-foreground);
+      color: var(--color-background);
+      text-shadow: none;
+    }
+  }
+
+  button:not([disabled]) {
+    @apply cursor-pointer;
+  }
+}

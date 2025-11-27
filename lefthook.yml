@@ -10,4 +10,4 @@ pre-commit:
         - "*.jsonc"
         - "*.css"
       stage_fixed: true
-    - run: lingui extract $(git diff --name-only --staged)
+    - run: bun x lingui extract $(git diff --name-only --staged)

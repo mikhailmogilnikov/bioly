@@ -1,65 +1,97 @@
 @layer base {
-  .light {
-    --color-background: hsl(0, 0%, 95%);
-    --color-foreground: hsl(0, 0%, 0%);
-    --color-default: hsl(0, 0%, 100%);
-    --color-outline: hsl(0, 0%, 85%);
-    --color-shadow: hsla(0, 0%, 0%, 0.058);
+  .theme-light {
+    --background: hsl(0, 0%, 95%);
+    --foreground: hsl(0, 0%, 0%);
+    --default: hsl(0, 0%, 100%);
+    --outline: hsl(0, 0%, 85%);
+    --shadow: hsla(0, 0%, 0%, 0.058);
+    --success: hsl(141, 71%, 48%);
+    --danger: hsl(348, 83%, 57%);
+    --warning: hsl(36, 100%, 50%);
+    --link: hsl(207, 90%, 61%);
   }
 
-  .blue {
-    --color-background: hsl(205.43, 100%, 93.85%);
-    --color-foreground: hsl(203, 56%, 20%);
-    --color-default: hsl(206, 50%, 77%);
-    --color-outline: hsl(205, 61%, 81%);
-    --color-shadow: hsla(0, 0%, 57%, 0.1);
+  .theme-blue {
+    --background: hsl(205.43, 100%, 93.85%);
+    --foreground: hsl(203, 56%, 20%);
+    --default: hsl(206, 50%, 77%);
+    --outline: hsl(205, 61%, 81%);
+    --shadow: hsla(0, 0%, 57%, 0.1);
+    --success: hsl(141, 71%, 48%);
+    --danger: hsl(348, 83%, 57%);
+    --warning: hsl(36, 100%, 50%);
+    --link: hsl(207, 90%, 61%);
   }
 
-  .green {
-    --color-background: hsl(123, 77%, 95%);
-    --color-foreground: hsl(124, 57%, 20%);
-    --color-default: hsl(127, 50%, 77%);
-    --color-outline: hsl(126, 61%, 81%);
-    --color-shadow: hsla(0, 0%, 70%, 0.2);
+  .theme-green {
+    --background: hsl(123, 77%, 95%);
+    --foreground: hsl(124, 57%, 20%);
+    --default: hsl(127, 50%, 77%);
+    --outline: hsl(126, 61%, 81%);
+    --shadow: hsla(0, 0%, 70%, 0.2);
+    --success: hsl(141, 71%, 48%);
+    --danger: hsl(348, 83%, 57%);
+    --warning: hsl(36, 100%, 50%);
+    --link: hsl(207, 90%, 61%);
   }
 
-  .purple {
-    --color-background: hsl(270, 100%, 93.85%);
-    --color-foreground: hsl(270, 56%, 20%);
-    --color-default: hsl(268, 57%, 81%);
-    --color-outline: hsl(270, 61%, 81%);
-    --color-shadow: hsla(0, 0%, 50%, 0.1);
+  .theme-purple {
+    --background: hsl(270, 100%, 93.85%);
+    --foreground: hsl(270, 56%, 20%);
+    --default: hsl(268, 57%, 81%);
+    --outline: hsl(270, 61%, 81%);
+    --shadow: hsla(0, 0%, 50%, 0.1);
+    --success: hsl(141, 71%, 48%);
+    --danger: hsl(348, 83%, 57%);
+    --warning: hsl(36, 100%, 50%);
+    --link: hsl(207, 90%, 61%);
   }
 
-  .pink {
-    --color-background: hsl(318, 80%, 94%);
-    --color-foreground: hsl(320, 56%, 20%);
-    --color-default: hsl(320, 57%, 81%);
-    --color-outline: hsl(320, 61%, 81%);
-    --color-shadow: hsla(0, 0%, 52%, 0.1);
+  .theme-pink {
+    --background: hsl(318, 80%, 94%);
+    --foreground: hsl(320, 56%, 20%);
+    --default: hsl(320, 57%, 81%);
+    --outline: hsl(320, 61%, 81%);
+    --shadow: hsla(0, 0%, 52%, 0.1);
+    --success: hsl(141, 71%, 48%);
+    --danger: hsl(348, 83%, 57%);
+    --warning: hsl(36, 100%, 50%);
+    --link: hsl(207, 90%, 61%);
   }
 
-  .golden {
-    --color-background: hsl(30, 100%, 93.85%);
-    --color-foreground: hsl(30, 56%, 20%);
-    --color-default: hsl(30, 57%, 81%);
-    --color-outline: hsl(30, 61%, 81%);
-    --color-shadow: hsla(0, 0%, 49%, 0.1);
+  .theme-golden {
+    --background: hsl(30, 100%, 93.85%);
+    --foreground: hsl(30, 56%, 20%);
+    --default: hsl(30, 57%, 81%);
+    --outline: hsl(30, 61%, 81%);
+    --shadow: hsla(0, 0%, 49%, 0.1);
+    --success: hsl(141, 71%, 48%);
+    --danger: hsl(348, 83%, 57%);
+    --warning: hsl(36, 100%, 50%);
+    --link: hsl(207, 90%, 61%);
   }
 
-  .dark {
-    --color-background: hsl(0, 0%, 0%);
-    --color-foreground: hsl(0, 0%, 100%);
-    --color-default: hsl(0, 0%, 10%);
-    --color-outline: hsl(0, 0%, 15%);
-    --color-shadow: hsla(0, 0%, 0%, 0.1);
+  .theme-dark {
+    --background: hsl(0, 0%, 0%);
+    --foreground: hsl(0, 0%, 100%);
+    --default: hsl(0, 0%, 10%);
+    --outline: hsl(0, 0%, 15%);
+    --shadow: hsla(0, 0%, 0%, 0.1);
+    --success: hsl(141, 71%, 48%);
+    --danger: hsl(348, 83%, 57%);
+    --warning: hsl(36, 100%, 50%);
+    --link: hsl(207, 90%, 61%);
   }
 
-  .dark-blue {
-    --color-background: hsl(205, 66%, 6%);
-    --color-foreground: hsl(205, 53%, 83%);
-    --color-default: hsl(204, 79%, 13%);
-    --color-outline: hsl(206, 63%, 23%);
-    --color-shadow: hsla(0, 0%, 0%, 0.1);
+  .theme-dark-blue {
+    --background: hsl(205, 66%, 6%);
+    --foreground: hsl(205, 53%, 83%);
+    --default: hsl(204, 79%, 13%);
+    --outline: hsl(206, 63%, 23%);
+    --shadow: hsla(0, 0%, 0%, 0.1);
+    --success: hsl(141, 71%, 48%);
+    --danger: hsl(348, 83%, 57%);
+    --warning: hsl(36, 100%, 50%);
+    --link: hsl(207, 90%, 61%);
   }
 }

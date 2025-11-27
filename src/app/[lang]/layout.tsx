@@ -1,8 +1,9 @@
-import "@/app/globals.css";
+import "@/app/css/global.css";
+
 import type { Metadata } from "next";
 import { LinguiClientProvider } from "@/shared/i18n/client-provider";
 import { allMessages, getI18nInstance } from "@/shared/i18n/i18n";
-import { initLingui } from "@/shared/i18n/initLingui";
+import { initLingui } from "@/shared/i18n/init-lingui";
 import { CONFIG } from "@/shared/model/config";
 
 export const dynamicParams = false;

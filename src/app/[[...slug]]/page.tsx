@@ -1,3 +1,5 @@
+import "@/app/css/global.user.css";
+
 import { validateUserPageParams } from "./utils";
 
 export const dynamic = "force-dynamic";
@@ -9,7 +11,7 @@ export default async function UserPage({
 
   return (
     <html lang="en">
-      <body className={"antialiased"}>
+      <body className="theme-purple bg-background text-foreground antialiased">
         <h1>username: {username}</h1>
       </body>
     </html>
