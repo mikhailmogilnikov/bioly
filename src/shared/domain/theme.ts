@@ -22,7 +22,7 @@ export const THEMES = {
   DARK_BLUE: "dark-blue",
 } as const;
 
-export const ThemesNames = {
+export const ThemesNames: Record<Theme, string> = {
   [THEMES.LIGHT]: "Light",
   [THEMES.DARK]: "Dark",
   [THEMES.GREEN]: "Green",
