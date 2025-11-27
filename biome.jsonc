@@ -7,5 +7,8 @@
         "useBlockStatements": "off"
       }
     }
+  },
+  "files": {
+    "includes": ["**/*", "!src/shared/ui/animated-icons/**/*"]
   }
 }

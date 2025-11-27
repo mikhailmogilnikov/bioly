@@ -35,7 +35,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body className={"antialiased"}>
+      <body className="min-h-screen overflow-y-scroll bg-background text-foreground antialiased">
         <LinguiClientProvider
           initialLocale={lang}
           initialMessages={allMessages[lang]}
