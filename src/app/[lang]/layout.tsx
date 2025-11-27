@@ -1,9 +1,11 @@
 import "@/app/css/global.css";
 
 import type { Metadata } from "next";
+import { openRundeFont } from "@/shared/assets/fonts/next-fonts";
 import { LinguiClientProvider } from "@/shared/i18n/client-provider";
 import { allMessages, getI18nInstance } from "@/shared/i18n/i18n";
 import { initLingui } from "@/shared/i18n/init-lingui";
+import { cn } from "@/shared/lib/utils";
 import { CONFIG } from "@/shared/model/config";
 
 export const dynamicParams = false;
@@ -35,7 +37,12 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body className="min-h-screen overflow-y-scroll bg-background text-foreground antialiased">
+      <body
+        className={cn(
+          "theme-dark min-h-screen overflow-y-scroll bg-background text-foreground antialiased",
+          openRundeFont.className
+        )}
+      >
         <LinguiClientProvider
           initialLocale={lang}
           initialMessages={allMessages[lang]}

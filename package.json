@@ -12,6 +12,7 @@
     "compile": "lingui compile --typescript"
   },
   "dependencies": {
+    "@blur-ui/scroll-area": "^1.0.1",
     "@fancyapps/ui": "^6.1.6",
     "@lingui/core": "^5.6.0",
     "@lingui/macro": "^5.6.0",
@@ -25,6 +26,7 @@
     "next": "16.0.5",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "snap-qr": "^1.0.1",
     "tailwind-merge": "^3.4.0",
     "typed-local-store": "^2.0.2"
   },
