@@ -9,7 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "extract": "lingui extract --clean",
-    "compile": "lingui compile --typescript"
+    "compile": "lingui compile"
   },
   "dependencies": {
     "@blur-ui/scroll-area": "^1.0.1",

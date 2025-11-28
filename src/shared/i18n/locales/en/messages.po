@@ -20,3 +20,11 @@ msgstr "Home page"
 #: src/shared/model/config.ts:5
 msgid "Поделитесь всем важным на одной странице."
 msgstr "Share"
+
+#: src/shared/ui/kit/primitives/password-input.tsx:32
+msgid "Показать пароль"
+msgstr ""
+
+#: src/shared/ui/kit/primitives/password-input.tsx:32
+msgid "Скрыть пароль"
+msgstr ""
