@@ -5,6 +5,8 @@
 @import "./fonts.css";
 @import "./bento.css";
 
+@plugin "tailwindcss-motion";
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

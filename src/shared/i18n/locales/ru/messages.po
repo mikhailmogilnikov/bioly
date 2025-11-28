@@ -13,6 +13,230 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/features/editor/menu/status-bar/index.tsx:24
+msgid "Active"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:65
+msgid "Back to passwords"
+msgstr ""
+
+#: src/features/editor/menu/menu/project-settings/border-slider.tsx:18
+msgid "Border width"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-slug.tsx:33
+msgid "Can be changed only once in 7 days."
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/modal.tsx:61
+msgid "Change Email"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/change-password.tsx:18
+msgid "Change password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/modal.tsx:71
+msgid "Change Password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:30
+msgid "Confirm new password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:130
+msgid "Confirm New Password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:110
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:165
+msgid "Continue"
+msgstr ""
+
+#: src/features/editor/menu/share/copy-button.tsx:38
+msgid "Copied!"
+msgstr ""
+
+#: src/features/editor/menu/share/copy-button.tsx:42
+msgid "Copy"
+msgstr ""
+
+#: src/features/editor/menu/share/modal.tsx:58
+msgid "Copy profile URL"
+msgstr ""
+
+#: src/features/editor/menu/menu/project-settings/round-slider.tsx:19
+msgid "Corner radius"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:80
+msgid "Current Password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/change-email.tsx:15
+msgid "Email"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:67
+msgid "Email:"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:88
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:14
+msgid "Enter current password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:37
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:82
+msgid "Enter new email"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:113
+msgid "Enter new password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:133
+msgid "Enter the 6-digit code we sent to the new email address."
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:130
+msgid "Enter the 6-digit code we sent to your email address."
+msgstr ""
+
+#: src/features/editor/menu/menu/project-settings/font-selector.tsx:40
+#: src/features/editor/menu/menu/project-settings/index.tsx:36
+msgid "Font"
+msgstr ""
+
+#: src/features/editor/menu/menu/index.tsx:162
+msgid "Go to live"
+msgstr ""
+
+#: src/features/editor/menu/menu/index.tsx:155
+msgid "Go to live page"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:38
+msgid "Invalid email address"
+msgstr ""
+
+#: src/features/editor/menu/status-bar/index.tsx:28
+msgid "Last update:"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/logout.tsx:19
+msgid "Log out"
+msgstr ""
+
+#: src/features/editor/menu/menu/index.tsx:104
+#: src/features/editor/menu/menu/index.tsx:112
+msgid "Menu"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:74
+msgid "New Email"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:105
+msgid "New Password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:37
+msgid "New password must be different from old password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:17
+msgid "New password must contain at least 8 characters"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:45
+msgid "Only digits are allowed"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:24
+msgid "Password must contain at least one lowercase letter"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:28
+msgid "Password must contain at least one number"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:20
+msgid "Password must contain at least one uppercase letter"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:33
+msgid "Passwords do not match"
+msgstr ""
+
+#: src/features/editor/menu/menu/index.tsx:121
+#: src/features/editor/menu/menu/profile/index.tsx:22
+msgid "Profile"
+msgstr ""
+
+#: src/features/editor/menu/menu/index.tsx:118
+#: src/features/editor/menu/menu/project-settings/index.tsx:24
+msgid "Project settings"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:138
+msgid "Re-enter new password"
+msgstr ""
+
+#: src/features/editor/menu/share/modal.tsx:51
+msgid "Save QR image"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:108
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:163
+msgid "Sending code..."
+msgstr ""
+
+#: src/features/editor/menu/share/index.tsx:29
+msgid "Share"
+msgstr ""
+
+#: src/features/editor/menu/status-bar/index.tsx:18
+msgid "Synchronization status"
+msgstr ""
+
+#: src/features/editor/menu/menu/project-settings/index.tsx:30
+#: src/features/editor/menu/menu/project-settings/theme-selector.tsx:40
+msgid "Theme"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:85
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:82
+msgid "Verification code"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:44
+msgid "Verification code must be 6 digits"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:147
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:142
+msgid "Verify code"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:145
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:140
+msgid "Verifying..."
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:95
+msgid "We'll send a verification code to the new email address to change your email."
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:150
+msgid "We'll send a verification code to your email address to change your password."
+msgstr ""
+
+#: src/features/editor/menu/menu/profile/change-slug.tsx:13
+msgid "Your link"
+msgstr ""
+
 #: src/app/[lang]/page.tsx:8
 msgid "Домашняя страница"
 msgstr "Домашняя страница"

@@ -1,0 +1,61 @@
+import { Trans } from "@lingui/react/macro";
+import { ChevronDownIcon } from "lucide-react";
+import { FONTS, type Font } from "@/shared/domain/theme";
+import { cn } from "@/shared/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "@/shared/ui/kit/overlays/dropdown-menu";
+import { useProfile } from "../../../profile/use-profile";
+
+export function FontSelector() {
+  const updateThemeField = useProfile((state) => state.updateThemeField);
+
+  const currentFont = useProfile((state) => state.profile.theme.font);
+
+  const handleFontChange = (font: Font) => {
+    window.document.body.classList.remove(currentFont);
+    window.document.body.classList.add(font);
+    updateThemeField("font", font);
+  };
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger className="flex items-center gap-2 rounded-full bg-default px-4 py-2">
+        <ChevronDownIcon className="size-4 opacity-50" />
+        <p
+          className={cn(
+            currentFont,
+            "font-medium text-base first-letter:capitalize"
+          )}
+        >
+          {currentFont}
+        </p>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent isInsideDialog>
+        <DropdownMenuLabel>
+          <Trans>Font</Trans>
+        </DropdownMenuLabel>
+        {Object.values(FONTS).map((font) => (
+          <DropdownMenuItem
+            className={cn(font === currentFont && "bg-foreground/10")}
+            key={font}
+            onSelect={() => handleFontChange(font)}
+          >
+            <p
+              className={cn(
+                font,
+                "font-medium text-base first-letter:capitalize"
+              )}
+            >
+              {font}
+            </p>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}

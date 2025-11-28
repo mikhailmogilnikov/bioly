@@ -4,6 +4,10 @@ import linguiConfig from "../lingui.config";
 
 const { locales } = linguiConfig;
 
+// Регулярное выражение для статических файлов
+const STATIC_FILE_REGEX =
+  /\.(svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot|css|js|map)$/;
+
 // Пути, которые требуют локали (находятся внутри [lang])
 const localizedPaths = [
   "editor",
@@ -15,6 +19,16 @@ const localizedPaths = [
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Пропускаем статические файлы и чанки Next.js
+  if (
+    pathname.startsWith("/_next/") ||
+    pathname.startsWith("/_vercel/") ||
+    pathname.startsWith("/api/") ||
+    STATIC_FILE_REGEX.test(pathname)
+  ) {
+    return;
+  }
 
   // Если путь уже содержит локаль, пропускаем
   const pathnameHasLocale = locales.some(
@@ -65,12 +79,13 @@ function getRequestLocale(requestHeaders: Headers): string {
 
 export const config = {
   matcher: [
-    "/",
-    "/login",
-    "/signup",
-    "/reset-password",
-    "/editor",
-    "/explore",
-    // "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    /*
+     * Исключаем:
+     * - _next/* - все внутренние маршруты Next.js (chunks, static и т.д.)
+     * - _vercel/* - маршруты Vercel
+     * - api/* - API маршруты
+     * - Статические файлы (изображения, шрифты, CSS, JS и т.д.)
+     */
+    "/((?!_next|_vercel|api|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot|css|js|map)$).*)",
   ],
 };

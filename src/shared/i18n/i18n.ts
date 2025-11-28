@@ -4,6 +4,7 @@
 import "server-only";
 
 import { type I18n, type Messages, setupI18n } from "@lingui/core";
+import { CONFIG } from "@/shared/model/config";
 import linguiConfig from "../../../lingui.config";
 
 const { locales } = linguiConfig;
@@ -41,6 +42,16 @@ export const allI18nInstances: AllI18nInstances = locales.reduce(
 );
 
 export const getI18nInstance = (locale: SupportedLocales): I18n => {
+  // Игнорируем внутренние маршруты Next.js
+  const isNextInternalRoute =
+    locale.startsWith("_next") ||
+    locale.startsWith("_vercel") ||
+    locale.startsWith("api");
+
+  if (isNextInternalRoute) {
+    return allI18nInstances[CONFIG.defaultLocale]!;
+  }
+
   if (!allI18nInstances[locale]) {
     console.warn(`No i18n instance found for locale "${locale}"`);
   }
