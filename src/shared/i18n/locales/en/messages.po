@@ -17,6 +17,10 @@ msgstr ""
 msgid "Active"
 msgstr "Active"
 
+#: src/features/editor/menu/new-item/index.tsx:102
+msgid "Add a new block"
+msgstr "Add a new block"
+
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:65
 msgid "Back to passwords"
 msgstr "Back to passwords"
@@ -125,14 +129,26 @@ msgstr "Invalid email address"
 msgid "Last update:"
 msgstr "Last update:"
 
+#: src/features/editor/menu/new-item/index.tsx:146
+msgid "Link"
+msgstr "Link"
+
 #: src/features/editor/menu/menu/profile/logout.tsx:19
 msgid "Log out"
 msgstr "Log out"
+
+#: src/features/editor/menu/new-item/index.tsx:126
+msgid "Media gallery"
+msgstr "Media gallery"
 
 #: src/features/editor/menu/menu/index.tsx:104
 #: src/features/editor/menu/menu/index.tsx:112
 msgid "Menu"
 msgstr "Menu"
+
+#: src/features/editor/menu/new-item/index.tsx:109
+msgid "New block"
+msgstr "New block"
 
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:74
 msgid "New Email"

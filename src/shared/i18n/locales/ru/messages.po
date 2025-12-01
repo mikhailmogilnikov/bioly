@@ -17,6 +17,10 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
+#: src/features/editor/menu/new-item/index.tsx:102
+msgid "Add a new block"
+msgstr ""
+
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:65
 msgid "Back to passwords"
 msgstr ""
@@ -125,13 +129,25 @@ msgstr ""
 msgid "Last update:"
 msgstr ""
 
+#: src/features/editor/menu/new-item/index.tsx:146
+msgid "Link"
+msgstr ""
+
 #: src/features/editor/menu/menu/profile/logout.tsx:19
 msgid "Log out"
+msgstr ""
+
+#: src/features/editor/menu/new-item/index.tsx:126
+msgid "Media gallery"
 msgstr ""
 
 #: src/features/editor/menu/menu/index.tsx:104
 #: src/features/editor/menu/menu/index.tsx:112
 msgid "Menu"
+msgstr ""
+
+#: src/features/editor/menu/new-item/index.tsx:109
+msgid "New block"
 msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:74
