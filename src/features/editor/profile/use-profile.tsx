@@ -1,6 +1,7 @@
 import { createGStore } from "create-gstore";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { LocalStorageService } from "@/shared/lib/services/storage/local-storage";
+import { sortBy } from "@/shared/lib/utils/sort-by";
 import type {
   BentoBlock,
   BentoBlockTypeKey,
@@ -18,6 +19,11 @@ export const useProfile = createGStore(() => {
 
     return localProfile ?? DEFAULT_MOCK_PROFILE;
   });
+
+  const sortedBentoBlocks = useMemo(
+    () => sortBy(profile.bento, "order"),
+    [profile.bento]
+  );
 
   /**
    * Updates the entire profile
@@ -75,6 +81,10 @@ export const useProfile = createGStore(() => {
 
   // const reorderBentoBlocks = () => {};
 
+  /**
+   * Adds a new block to the bento
+   * @param block - Block to add
+   */
   const addBentoBlock = useCallback((block: BentoBlock<BentoBlockTypeKey>) => {
     setProfile((prev) => {
       const newProfile: Profile = { ...prev, bento: [...prev.bento, block] };
@@ -83,6 +93,10 @@ export const useProfile = createGStore(() => {
     });
   }, []);
 
+  /**
+   * Removes a block from the bento
+   * @param blockId - ID of the block to remove
+   */
   const removeBentoBlock = useCallback((blockId: string) => {
     setProfile((prev) => {
       const newProfile: Profile = {
@@ -96,6 +110,7 @@ export const useProfile = createGStore(() => {
 
   return {
     profile,
+    sortedBentoBlocks,
     updateProfile,
     updateMainField,
     updateThemeField,

@@ -17,8 +17,21 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
-#: src/features/editor/menu/new-item/index.tsx:102
+#: src/features/editor/menu/new-item/index.tsx:98
 msgid "Add a new block"
+msgstr ""
+
+#: src/features/editor/header/avatar.tsx:110
+msgid "Add avatar"
+msgstr ""
+
+#: src/features/editor/header/description.tsx:25
+msgid "Add bio"
+msgstr ""
+
+#: src/features/editor/header/social-media/social-media.tsx:36
+#: src/features/editor/header/social-media/social-media.tsx:75
+msgid "Add social media"
 msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:65
@@ -78,6 +91,18 @@ msgstr ""
 msgid "Current Password"
 msgstr ""
 
+#: src/features/editor/bento/blocks/shared-settings/delete.tsx:39
+msgid "Delete"
+msgstr ""
+
+#: src/features/editor/header/avatar.tsx:160
+msgid "Delete avatar"
+msgstr ""
+
+#: src/features/editor/header/social-media/modal.tsx:39
+msgid "Edit social media"
+msgstr ""
+
 #: src/features/editor/menu/menu/profile/change-email/change-email.tsx:15
 msgid "Email"
 msgstr ""
@@ -129,15 +154,19 @@ msgstr ""
 msgid "Last update:"
 msgstr ""
 
-#: src/features/editor/menu/new-item/index.tsx:146
+#: src/features/editor/menu/new-item/index.tsx:141
 msgid "Link"
+msgstr ""
+
+#: src/features/editor/header/social-media/linked-social-media.tsx:158
+msgid "Linked"
 msgstr ""
 
 #: src/features/editor/menu/menu/profile/logout.tsx:19
 msgid "Log out"
 msgstr ""
 
-#: src/features/editor/menu/new-item/index.tsx:126
+#: src/features/editor/menu/new-item/index.tsx:122
 msgid "Media gallery"
 msgstr ""
 
@@ -146,7 +175,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: src/features/editor/menu/new-item/index.tsx:109
+#: src/features/editor/menu/new-item/index.tsx:105
 msgid "New block"
 msgstr ""
 
@@ -164,6 +193,10 @@ msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:17
 msgid "New password must contain at least 8 characters"
+msgstr ""
+
+#: src/features/editor/bento/grid/ui/root.tsx:40
+msgid "No blocks added yet."
 msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:45
@@ -226,6 +259,18 @@ msgstr ""
 msgid "Theme"
 msgstr ""
 
+#: src/features/editor/header/avatar.tsx:190
+msgid "Toggle avatar blur"
+msgstr ""
+
+#: src/features/editor/bento/blocks/variants/text/fullscreen-title.tsx:60
+msgid "Type your text here"
+msgstr ""
+
+#: src/features/editor/header/social-media/modal.tsx:45
+msgid "Unlinked"
+msgstr ""
+
 #: src/features/editor/menu/menu/profile/change-email/step-2.tsx:85
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:82
 msgid "Verification code"
@@ -255,6 +300,10 @@ msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-slug.tsx:13
 msgid "Your link"
+msgstr ""
+
+#: src/features/editor/header/name.tsx:24
+msgid "Your name"
 msgstr ""
 
 #: src/app/[lang]/page.tsx:8
