@@ -37,11 +37,23 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
+      <head>
+        {/** biome-ignore lint/nursery/noSyncScripts: sync script is required for worklet */}
+        <script src="/scripts/init-worklet.min.js" />
+      </head>
       <body
         className={cn(
           "theme-dark min-h-screen overflow-y-scroll bg-background text-foreground antialiased",
           openRundeFont.className
         )}
+        // TODO: temporal styles for worklet
+        style={
+          {
+            "--smooth": "0.85",
+            "--radius": "24px",
+            "--border-width": "1px",
+          } as React.CSSProperties
+        }
       >
         <LinguiClientProvider
           initialLocale={lang}

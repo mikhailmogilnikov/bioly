@@ -9,6 +9,6 @@
     }
   },
   "files": {
-    "includes": ["**/*", "!src/shared/ui/animated-icons/**/*"]
+    "includes": ["**/*", "!src/shared/ui/animated-icons/**/*", "!public/**/*"]
   }
 }
