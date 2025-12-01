@@ -33,10 +33,9 @@ import { generateNewBentoItemDefaults } from "../../bento/blocks/model/gen-new-b
 import { useProfile } from "../../profile/use-profile";
 
 export const EditBarNewItem = () => {
-  const { bento, updateProfile } = useProfile(
+  const { addBentoBlock } = useProfile(
     (state) => ({
-      bento: state.profile.bento,
-      updateProfile: state.updateProfile,
+      addBentoBlock: state.addBentoBlock,
     }),
     "shallow"
   );
@@ -51,16 +50,13 @@ export const EditBarNewItem = () => {
   const bookTextIconRef = useRef<BookTextIconHandle>(null);
 
   const handleAddItem = (type: BentoBlockTypeKey) => {
+    // TODO: TEMPORAL
     const newItem: BentoBlock<BentoBlockTypeKey> = generateNewBentoItemDefaults(
-      bento.length + 1,
+      useProfile.getState().profile.bento.length + 1,
       type
     );
 
-    const newBento = [...bento, newItem];
-
-    updateProfile({
-      bento: newBento,
-    });
+    addBentoBlock(newItem);
 
     window.scrollTo({
       top: document.body.scrollHeight,
@@ -126,7 +122,6 @@ export const EditBarNewItem = () => {
           <Trans>Media gallery</Trans>
         </DropdownMenuItem>
         <DropdownMenuItem
-          disabled
           onPointerEnter={() => scanTextIconRef.current?.startAnimation()}
           onPointerLeave={() => scanTextIconRef.current?.stopAnimation()}
         >

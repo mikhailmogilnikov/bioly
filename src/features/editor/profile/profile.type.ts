@@ -1,3 +1,8 @@
+import type {
+  BentoBlock,
+  BentoBlockTypeKey,
+} from "../bento/blocks/model/types";
+import type { SocialMediaItem } from "../header/social-media/types";
 import type { ProfileTheme } from "./theme.type";
 
 export type Profile = {
@@ -5,21 +10,17 @@ export type Profile = {
   name: string;
   slug: string;
   email: string;
-  avatar_url: string;
+  avatar_url: string | null;
   short_description: string;
   description: string;
-
   theme: ProfileTheme;
-  // TODO: replace with the actual types
-  social_media: unknown[];
-  bento: unknown[];
+  social_media: SocialMediaItem[];
+  bento: BentoBlock<BentoBlockTypeKey>[];
 };
 
-export type ProfileMainEditableFields = Pick<
-  Profile,
-  "name" | "short_description" | "description"
->;
+export type ProfileMainEditableFields = Omit<Profile, "id">;
 
+// TODO: TEMPORAL
 export const DEFAULT_MOCK_PROFILE: Profile = {
   id: "1",
   name: "",
