@@ -5,10 +5,5 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
   const lang = (await props.params).lang;
   const i18n = getI18nInstance(lang);
 
-  return (
-    <div className="p-4">
-      {i18n._(msg`Домашняя страница`)}
-      <div className="squircle size-48" />
-    </div>
-  );
+  return <div className="p-4">{i18n._(msg`Домашняя страница`)}</div>;
 }

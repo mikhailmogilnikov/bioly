@@ -197,6 +197,10 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
+#: src/shared/model/config.ts:5
+msgid "Share everything important on one beautiful page."
+msgstr ""
+
 #: src/features/editor/menu/status-bar/index.tsx:18
 msgid "Synchronization status"
 msgstr ""

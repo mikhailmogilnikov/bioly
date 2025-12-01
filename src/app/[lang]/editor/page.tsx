@@ -1,12 +1,9 @@
-"use client";
+import { getI18nInstance } from "@/shared/i18n/i18n";
+import { DynamicEditor } from "./dynamic-editor";
 
-import dynamic from "next/dynamic";
+export default async function EditorPage(props: PageProps<"/[lang]/editor">) {
+  const lang = (await props.params).lang;
+  getI18nInstance(lang);
 
-const DynamicEditor = dynamic(
-  () => import("@/features/editor").then((mod) => mod.Editor),
-  { ssr: false }
-);
-
-export default function EditorPage() {
   return <DynamicEditor />;
 }

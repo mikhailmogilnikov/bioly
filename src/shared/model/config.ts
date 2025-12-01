@@ -2,9 +2,9 @@ import { msg } from "@lingui/core/macro";
 
 export const CONFIG = {
   title: "Bioly",
-  description: msg`Поделитесь всем важным на одной странице.`,
+  description: msg`Share everything important on one beautiful page.`,
 
-  domain: "test.com",
+  domain: "bioly.me",
 
   locales: ["en", "ru"],
   defaultLocale: "en",
