@@ -46,6 +46,7 @@ export const BentoBlockGalleryPreview = ({
         <Image
           alt="Sample image #1"
           className="size-full object-cover"
+          fill
           src="https://i.scdn.co/image/ab67616d0000b27398d711627751989d1ae8b0fb"
         />
       </div>
@@ -53,6 +54,7 @@ export const BentoBlockGalleryPreview = ({
         <Image
           alt="Sample image #1"
           className="size-full object-cover"
+          fill
           src="https://cdn-images.dzcdn.net/images/cover/5f6b11f19edd3114d611cd0556d8eb83/1900x1900-000000-81-0-0.jpg"
         />
       </div>
@@ -60,6 +62,7 @@ export const BentoBlockGalleryPreview = ({
         <Image
           alt="Sample image #1"
           className="size-full object-cover"
+          fill
           src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/4f/47/4f4f4733-7c38-a86c-d543-a74bc406ea09/198704489945_Cover.jpg/1200x630bb.jpg"
         />
       </div>

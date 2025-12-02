@@ -1,19 +1,22 @@
 import { RectangleHorizontal, RectangleVertical, Square } from "lucide-react";
-
+import { useProfile } from "@/features/editor/profile/use-profile";
 import { cn } from "@/shared/lib/utils";
+import { useBlockContext } from "../../grid/ui/block-context";
 import { BentoBlockSize } from "../model/types";
 
 type BentoBlockSizeProps = {
   sizes: BentoBlockSize[];
-  activeSize: BentoBlockSize | undefined;
-  onSelect: (size: BentoBlockSize) => void;
 };
 
-export const BentoBlockSizeSetting = ({
-  sizes,
-  activeSize,
-  onSelect,
-}: BentoBlockSizeProps) => {
+export const BentoBlockSizeSetting = ({ sizes }: BentoBlockSizeProps) => {
+  const updateBentoBlockField = useProfile(
+    (state) => state.updateBentoBlockField
+  );
+
+  const { block } = useBlockContext();
+
+  if (!block) return null;
+
   const getIcon = (size: BentoBlockSize) => {
     switch (size) {
       case BentoBlockSize.FOUR_BY_ONE:
@@ -33,16 +36,22 @@ export const BentoBlockSizeSetting = ({
     }
   };
 
+  const handleSelectSize = (size: BentoBlockSize) => {
+    if (!block.id) return;
+
+    updateBentoBlockField(block.id, "size", size);
+  };
+
   return (
     <div className="flex gap-2">
       {sizes.map((size) => (
         <button
           className={cn(
             "pressable flex h-10 w-full items-center justify-center rounded-full transition-colors hover:bg-foreground/5",
-            activeSize === size && "bg-foreground/10 hover:bg-foreground/10"
+            block.size === size && "bg-foreground/10 hover:bg-foreground/10"
           )}
           key={size}
-          onClick={() => onSelect(size)}
+          onClick={() => handleSelectSize(size)}
           type="button"
         >
           {getIcon(size)}

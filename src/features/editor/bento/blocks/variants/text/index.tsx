@@ -2,15 +2,15 @@ import { useProfile } from "@/features/editor/profile/use-profile";
 import type { BentoBlock, BentoBlockType } from "../../model/types";
 import { FullscreenTitle } from "./fullscreen-title";
 
-type BentoBlockTitleProps = {
+type BentoBlockTextProps = {
   itemId: string;
   isFullscreen: boolean;
 };
 
-export const BentoBlockTitle = ({
+export const BentoBlockText = ({
   itemId,
   isFullscreen,
-}: BentoBlockTitleProps) => (
+}: BentoBlockTextProps) => (
   <div className="relative flex size-full items-end justify-start px-1">
     {isFullscreen ? (
       <FullscreenTitle itemId={itemId} />

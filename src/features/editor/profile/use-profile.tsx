@@ -117,6 +117,41 @@ export const useProfile = createGStore(() => {
     });
   }, []);
 
+  /**
+   * Updates a field of a specific bento block
+   * @param blockId - ID of the block to update
+   * @param field - Field of the block to update (size, style, order, or properties)
+   * @param value - New value of the field
+   */
+  const updateBentoBlockField = useCallback(
+    <K extends keyof Omit<BentoBlock<BentoBlockTypeKey>, "id" | "type">>(
+      blockId: string,
+      field: K,
+      value: BentoBlock<BentoBlockTypeKey>[K]
+    ) => {
+      setProfile((prev) => {
+        const blockIndex = prev.bento.findIndex((b) => b.id === blockId);
+        if (blockIndex === -1) return prev;
+
+        const updatedBlock = {
+          ...prev.bento[blockIndex],
+          [field]: value,
+        } as BentoBlock<BentoBlockTypeKey>;
+
+        const newBento = [...prev.bento];
+        newBento[blockIndex] = updatedBlock;
+
+        const newProfile: Profile = {
+          ...prev,
+          bento: newBento,
+        };
+        LocalStorageService.setItem("localProfile", newProfile);
+        return newProfile;
+      });
+    },
+    []
+  );
+
   return {
     profile,
     sortedBentoBlocks,
@@ -126,5 +161,6 @@ export const useProfile = createGStore(() => {
     updateThemeField,
     addBentoBlock,
     removeBentoBlock,
+    updateBentoBlockField,
   };
 });

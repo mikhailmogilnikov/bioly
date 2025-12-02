@@ -122,6 +122,7 @@ export const EditBarNewItem = () => {
           <Trans>Media gallery</Trans>
         </DropdownMenuItem>
         <DropdownMenuItem
+          onClick={() => handleAddItem(BentoBlockType.TEXT)}
           onPointerEnter={() => scanTextIconRef.current?.startAnimation()}
           onPointerLeave={() => scanTextIconRef.current?.stopAnimation()}
         >

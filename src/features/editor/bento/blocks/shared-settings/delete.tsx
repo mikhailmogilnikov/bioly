@@ -5,22 +5,22 @@ import {
   DeleteIcon,
   type DeleteIconHandle,
 } from "@/shared/ui/animated-icons/delete";
+import { useBlockContext } from "../../grid/ui/block-context";
 
-type BentoBlockDeleteProps = {
-  id: string;
-  onDelete: () => void;
-};
+export const BentoBlockDeleteSetting = () => {
+  const { id, closeBlockOverlay, closeBlockPanel, closeBlockWrapper } =
+    useBlockContext();
 
-export const BentoBlockDeleteSetting = ({
-  id,
-  onDelete,
-}: BentoBlockDeleteProps) => {
   const removeBentoBlock = useProfile((state) => state.removeBentoBlock);
 
   const deleteIconRef = useRef<DeleteIconHandle>(null);
 
+  if (!id) return null;
+
   const handleDelete = () => {
-    onDelete();
+    closeBlockOverlay();
+    closeBlockPanel();
+    closeBlockWrapper();
 
     setTimeout(() => {
       removeBentoBlock(id);

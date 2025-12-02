@@ -154,7 +154,7 @@ msgstr ""
 msgid "Last update:"
 msgstr ""
 
-#: src/features/editor/menu/new-item/index.tsx:141
+#: src/features/editor/menu/new-item/index.tsx:142
 msgid "Link"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "New password must contain at least 8 characters"
 msgstr ""
 
-#: src/features/editor/bento/grid/ui/root.tsx:40
+#: src/features/editor/bento/grid/ui/root.tsx:41
 msgid "No blocks added yet."
 msgstr ""
 
