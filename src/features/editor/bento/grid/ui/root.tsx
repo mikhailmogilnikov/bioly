@@ -38,10 +38,11 @@ export const BentoGridRoot = ({ children }: { children: React.ReactNode }) => {
           <div className="squircle-outline flex gap-3 p-4">
             <CircleQuestionMark className="shrink-0 opacity-50" />
             <p className="font-medium">
-              <Trans>No blocks added yet.</Trans>
-              {/* No blocks added yet. Press
-              <span className="font-bold text-link">+</span> Add a block in the
-              bottom menu. */}
+              <Trans>
+                No blocks added yet. Press{" "}
+                <span className="font-bold text-link">+</span> in the bottom
+                menu to add a first one.
+              </Trans>
             </p>
           </div>
         </div>
