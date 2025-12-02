@@ -1,26 +1,20 @@
 import { AutoScroller, MuuriComponent } from "muuri-react";
+import { findBentoItem } from "@/features/editor/profile/find-bento-item";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import type { BentoBlock, BentoBlockTypeKey } from "../../blocks/model/types";
 import { useBentoStore } from "../model/use-bento-store";
+import { BentoGridItem, type BentoGridItemProps } from "./item";
 
-export const BentoGridController = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
-  const { gridSize } = useBentoStore(
-    (state) => ({
-      gridSize: state.gridSize,
-    }),
-    "shallow"
-  );
-
-  const { updateMainField } = useProfile(
+export const BentoGridController = () => {
+  const { updateMainField, sortedBentoBlocksOrders } = useProfile(
     (state) => ({
       updateMainField: state.updateMainField,
+      sortedBentoBlocksOrders: state.sortedBentoBlocksOrders,
     }),
     "shallow"
   );
+
+  const gridSize = useBentoStore((state) => state.gridSize);
 
   return (
     <MuuriComponent
@@ -75,13 +69,14 @@ export const BentoGridController = ({
         const grid = item.getGrid();
 
         const bentoItems = grid.getItems().map((bentoItem, index) => {
-          const props = bentoItem._component
-            .props as BentoBlock<BentoBlockTypeKey>;
+          const props = bentoItem._component.props as BentoGridItemProps;
+
+          const bentoItemProps = findBentoItem(props.id, useProfile.getState());
 
           return {
-            ...props,
+            ...bentoItemProps,
             order: index + 1,
-          };
+          } as BentoBlock<BentoBlockTypeKey>;
         });
 
         updateMainField("bento", bentoItems);
@@ -90,7 +85,9 @@ export const BentoGridController = ({
         grid.refreshItems();
       }}
     >
-      {children as React.ReactElement[]}
+      {sortedBentoBlocksOrders.map((block) => (
+        <BentoGridItem id={block.id} key={block.id} />
+      ))}
     </MuuriComponent>
   );
 };

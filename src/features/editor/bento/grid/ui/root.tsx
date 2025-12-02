@@ -25,8 +25,9 @@ export const BentoGridRoot = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="relative w-full">
       <div
+        aria-hidden="true"
         className="invisible absolute top-0 aspect-square w-full"
-        id="grid-sizer"
+        id="bento-grid-sizer"
         ref={sizerRef}
       />
 

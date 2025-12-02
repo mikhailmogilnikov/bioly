@@ -25,6 +25,15 @@ export const useProfile = createGStore(() => {
     [profile.bento]
   );
 
+  const sortedBentoBlocksOrders = useMemo(
+    () =>
+      sortedBentoBlocks.map((block) => ({
+        id: block.id,
+        order: block.order,
+      })),
+    [sortedBentoBlocks]
+  );
+
   /**
    * Updates the entire profile
    * @param newProfileOptions - New profile options to update
@@ -111,6 +120,7 @@ export const useProfile = createGStore(() => {
   return {
     profile,
     sortedBentoBlocks,
+    sortedBentoBlocksOrders,
     updateProfile,
     updateMainField,
     updateThemeField,
