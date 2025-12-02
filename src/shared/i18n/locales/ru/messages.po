@@ -263,7 +263,7 @@ msgstr ""
 msgid "Toggle avatar blur"
 msgstr ""
 
-#: src/features/editor/bento/blocks/variants/text/fullscreen-title.tsx:60
+#: src/features/editor/bento/blocks/variants/text/fullscreen-title.tsx:54
 msgid "Type your text here"
 msgstr ""
 

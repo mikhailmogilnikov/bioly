@@ -14,17 +14,13 @@ export const useRenderBlock = () => {
 
       switch (block.type) {
         case BentoBlockType.GALLERY:
-          return (
-            <BentoBlockGallery isFullscreen={isFullscreen} itemId={blockId} />
-          );
+          return <BentoBlockGallery isFullscreen={isFullscreen} />;
         // case BentoBlockType.LINK:
         //   return (
         //     <BentoBlockLink isFullscreen={isFullscreen} itemId={blockId} />
         //   );
         case BentoBlockType.TEXT:
-          return (
-            <BentoBlockText isFullscreen={isFullscreen} itemId={blockId} />
-          );
+          return <BentoBlockText isFullscreen={isFullscreen} />;
         default:
           return null;
       }

@@ -2,15 +2,12 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import useCarousel from "@/shared/lib/hooks/use-carousel";
 import useFancybox from "@/shared/lib/hooks/use-fancybox";
+import { useBlockContext } from "../../../grid/ui/block-context";
 import { GalleryBadge } from "./gallery-badge";
 
-type BentoBlockGalleryFullProps = {
-  itemId: string;
-};
+export const BentoBlockGalleryFull = () => {
+  const { id } = useBlockContext();
 
-export const BentoBlockGalleryFull = ({
-  itemId,
-}: BentoBlockGalleryFullProps) => {
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const pointerDownRef = useRef(false);
@@ -48,7 +45,7 @@ export const BentoBlockGalleryFull = ({
   return (
     <div
       className="relative size-full"
-      id={`bento-item-${itemId}-gallery-full`}
+      id={`bento-item-${id}-gallery-full`}
       onPointerDown={() => {
         pointerDownRef.current = true;
       }}

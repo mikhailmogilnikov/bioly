@@ -5,24 +5,24 @@ import type { ChangeEvent } from "react";
 import { useEffect, useRef } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import { useProfile } from "@/features/editor/profile/use-profile";
+import { useBlockContext } from "../../../grid/ui/block-context";
 import type { BentoBlock, BentoBlockType } from "../../model/types";
 
-export function FullscreenTitle({ itemId }: { itemId: string }) {
+export function FullscreenTitle() {
+  const { block } = useBlockContext();
+
   const { t } = useLingui();
 
-  const { bento, updateProfile } = useProfile(
+  const { updateBentoBlockField } = useProfile(
     (state) => ({
-      bento: state.profile.bento,
-      updateProfile: state.updateProfile,
+      updateBentoBlockField: state.updateBentoBlockField,
     }),
     "shallow"
   );
 
-  const textRef = useRef<HTMLTextAreaElement>(null);
+  const textBlock = block as BentoBlock<typeof BentoBlockType.TEXT>;
 
-  const bentoItem = bento.find((item) => item.id === itemId) as BentoBlock<
-    typeof BentoBlockType.TEXT
-  >;
+  const textRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (textRef.current) {
@@ -33,23 +33,17 @@ export function FullscreenTitle({ itemId }: { itemId: string }) {
     }
   }, []);
 
-  useRefresh([bentoItem.properties.content]);
+  useRefresh([textBlock.properties.content]);
 
-  if (!bentoItem) return null;
+  if (!textBlock) return null;
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value.length > 100) return;
 
-    const newBentoItem = {
-      ...bentoItem,
-      properties: { ...bentoItem.properties, content: e.target.value },
-    };
-
-    const newBento = bento.map((item) =>
-      item.id === itemId ? newBentoItem : item
-    );
-
-    updateProfile({ bento: newBento });
+    updateBentoBlockField(textBlock.id, "properties", {
+      ...textBlock.properties,
+      content: e.target.value,
+    });
   };
 
   return (
@@ -59,7 +53,7 @@ export function FullscreenTitle({ itemId }: { itemId: string }) {
         onChange={handleChange}
         placeholder={t`Type your text here`}
         ref={textRef}
-        value={bentoItem.properties.content}
+        value={textBlock.properties.content}
       />
     </motion.div>
   );

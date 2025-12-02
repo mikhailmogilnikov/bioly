@@ -1,15 +1,11 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import useCarousel from "@/shared/lib/hooks/use-carousel";
+import { useBlockContext } from "../../../grid/ui/block-context";
 import { GalleryBadge } from "./gallery-badge";
 
-type BentoBlockGalleryPreviewProps = {
-  itemId: string;
-};
-
-export const BentoBlockGalleryPreview = ({
-  itemId,
-}: BentoBlockGalleryPreviewProps) => {
+export const BentoBlockGalleryPreview = () => {
+  const { id } = useBlockContext();
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const [carouselRef, carouselInstance] = useCarousel({});
@@ -33,7 +29,7 @@ export const BentoBlockGalleryPreview = ({
   return (
     <div
       className="relative size-full"
-      id={`bento-item-${itemId}-gallery-preview`}
+      id={`bento-item-${id}-gallery-preview`}
       ref={(ref) => {
         carouselRef(ref);
       }}
