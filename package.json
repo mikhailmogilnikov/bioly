@@ -18,6 +18,7 @@
   "dependencies": {
     "@blur-ui/scroll-area": "^1.0.1",
     "@fancyapps/ui": "^6.1.6",
+    "@floating-ui/dom": "^1.7.4",
     "@hookform/resolvers": "^5.2.2",
     "@lingui/core": "^5.6.1",
     "@lingui/macro": "^5.6.1",
