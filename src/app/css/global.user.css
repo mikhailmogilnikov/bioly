@@ -3,7 +3,6 @@
 @import "./scrollbar.css";
 @import "./themes.css";
 @import "./fonts.css";
-@import "./bento.css";
 
 @theme inline {
   --color-background: var(--background);

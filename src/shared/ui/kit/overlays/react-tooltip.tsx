@@ -45,7 +45,7 @@ function TooltipContent({
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Content
         className={cn(
-          "motion-scale-in-95 motion-opacity-in-0 motion-ease-in-out-cubic motion-duration-120 data-[side=bottom]:-motion-translate-y-in-25 data-[side=left]:motion-translate-x-in-25 data-[side=right]:motion-translate-x-in-25 data-[side=top]:motion-translate-y-in-25 data-[state=closed]:motion-scale-out-95 data-[state=closed]:motion-opacity-out-0 z-50 w-fit origin-(--radix-tooltip-content-transform-origin) text-balance rounded-xl bg-default px-3 py-1.5 text-foreground text-xs",
+          "motion-scale-in-95 motion-opacity-in-0 motion-ease-in-out-cubic motion-duration-120 data-[side=bottom]:-motion-translate-y-in-25 data-[side=left]:motion-translate-x-in-25 data-[side=right]:motion-translate-x-in-25 data-[side=top]:motion-translate-y-in-25 data-[state=closed]:motion-scale-out-95 data-[state=closed]:motion-opacity-out-0 z-50 w-fit origin-(--radix-tooltip-content-transform-origin) text-balance rounded-xl bg-default px-3 py-1.5 font-medium text-foreground text-xs",
           className
         )}
         data-slot="tooltip-content"

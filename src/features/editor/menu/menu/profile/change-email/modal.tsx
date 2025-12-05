@@ -1,7 +1,7 @@
 "use client";
 
 import { Trans } from "@lingui/react/macro";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   AdaptiveModal,
@@ -9,10 +9,12 @@ import {
   AdaptiveModalHeader,
 } from "@/shared/ui/kit/overlays/adaptive-modal";
 
+import { ChangeEmailProgress } from "./progress";
+import { ChangeEmailStep0 } from "./step-0";
 import { ChangeEmailStep1 } from "./step-1";
 import { ChangeEmailStep2 } from "./step-2";
 
-export type ChangeEmailStep = "1-email" | "2-otp";
+export type ChangeEmailStep = "0-current-otp" | "1-email" | "2-otp";
 
 export function ChangeEmailModal({
   open,
@@ -21,24 +23,24 @@ export function ChangeEmailModal({
   open: boolean;
   onOpenChange: () => void;
 }) {
-  const [step, setStep] = useState<ChangeEmailStep>("1-email");
+  const [step, setStep] = useState<ChangeEmailStep>("0-current-otp");
   const [newEmail, setNewEmail] = useState<string>("");
 
+  useEffect(() => {
+    if (!open) {
+      setStep("0-current-otp");
+      setNewEmail("");
+    }
+  }, [open]);
+
   const handleSuccess = () => {
-    setStep("1-email");
+    setStep("0-current-otp");
     setNewEmail("");
     onOpenChange();
   };
 
-  const handleOpenChange = () => {
-    if (!open) {
-      setStep("1-email");
-      setNewEmail("");
-    }
-    onOpenChange();
-  };
-
   const steps = {
+    "0-current-otp": <ChangeEmailStep0 setStep={setStep} />,
     "1-email": (
       <ChangeEmailStep1
         newEmail={newEmail}
@@ -56,12 +58,17 @@ export function ChangeEmailModal({
   };
 
   return (
-    <AdaptiveModal onOpenChange={handleOpenChange} open={open}>
+    <AdaptiveModal onOpenChange={onOpenChange} open={open}>
       <AdaptiveModalHeader>
         <Trans>Change Email</Trans>
       </AdaptiveModalHeader>
       <AdaptiveModalContent>
-        <div className="px-1 pb-4">{steps[step]}</div>
+        <div className="px-1 pb-4">
+          <div className="mb-6">
+            <ChangeEmailProgress step={step} />
+          </div>
+          {steps[step]}
+        </div>
       </AdaptiveModalContent>
     </AdaptiveModal>
   );

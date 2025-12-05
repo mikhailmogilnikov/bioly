@@ -29,6 +29,10 @@ msgstr "Add avatar"
 msgid "Add bio"
 msgstr "Add bio"
 
+#: src/features/editor/text-editor/index.tsx:14
+msgid "Add bio... \"/\" for commands."
+msgstr "Add bio... \"/\" for commands."
+
 #: src/features/editor/header/social-media/social-media.tsx:36
 #: src/features/editor/header/social-media/social-media.tsx:75
 msgid "Add social media"
@@ -38,15 +42,19 @@ msgstr "Add social media"
 msgid "Back to passwords"
 msgstr "Back to passwords"
 
+#: src/features/editor/text-editor/formatting-menu.tsx:41
+msgid "Bold"
+msgstr "Bold"
+
 #: src/features/editor/menu/menu/project-settings/border-slider.tsx:18
 msgid "Border width"
 msgstr "Border width"
 
-#: src/features/editor/menu/menu/profile/change-slug.tsx:33
+#: src/features/editor/menu/menu/profile/change-slug.tsx:48
 msgid "Can be changed only once in 7 days."
 msgstr "Can be changed only once in 7 days."
 
-#: src/features/editor/menu/menu/profile/change-email/modal.tsx:61
+#: src/features/editor/menu/menu/profile/change-email/modal.tsx:63
 msgid "Change Email"
 msgstr "Change Email"
 
@@ -58,6 +66,10 @@ msgstr "Change password"
 msgid "Change Password"
 msgstr "Change Password"
 
+#: src/features/editor/text-editor/formatting-menu.tsx:65
+msgid "Code"
+msgstr "Code"
+
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:30
 msgid "Confirm new password"
 msgstr "Confirm new password"
@@ -66,8 +78,7 @@ msgstr "Confirm new password"
 msgid "Confirm New Password"
 msgstr "Confirm New Password"
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:110
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:165
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:134
 msgid "Continue"
 msgstr "Continue"
 
@@ -103,7 +114,7 @@ msgstr "Delete avatar"
 msgid "Edit social media"
 msgstr "Edit social media"
 
-#: src/features/editor/menu/menu/profile/change-email/change-email.tsx:15
+#: src/features/editor/menu/menu/profile/change-email/change-email.tsx:21
 msgid "Email"
 msgstr "Email"
 
@@ -116,8 +127,7 @@ msgstr "Email:"
 msgid "Enter current password"
 msgstr "Enter current password"
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:37
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:82
+#: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
 msgid "Enter new email"
 msgstr "Enter new email"
 
@@ -125,13 +135,29 @@ msgstr "Enter new email"
 msgid "Enter new password"
 msgstr "Enter new password"
 
+#: src/features/editor/menu/menu/profile/change-password/progress.tsx:12
+msgid "Enter passwords"
+msgstr "Enter passwords"
+
 #: src/features/editor/menu/menu/profile/change-email/step-2.tsx:133
 msgid "Enter the 6-digit code we sent to the new email address."
 msgstr "Enter the 6-digit code we sent to the new email address."
 
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:119
+msgid "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
+msgstr "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
+
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:130
 msgid "Enter the 6-digit code we sent to your email address."
 msgstr "Enter the 6-digit code we sent to your email address."
+
+#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:33
+msgid "Enter Title"
+msgstr "Enter Title"
+
+#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:54
+msgid "Enter URL"
+msgstr "Enter URL"
 
 #: src/features/editor/menu/menu/project-settings/font-selector.tsx:40
 #: src/features/editor/menu/menu/project-settings/index.tsx:36
@@ -149,6 +175,10 @@ msgstr "Go to live page"
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:38
 msgid "Invalid email address"
 msgstr "Invalid email address"
+
+#: src/features/editor/text-editor/formatting-menu.tsx:47
+msgid "Italic"
+msgstr "Italic"
 
 #: src/features/editor/menu/status-bar/index.tsx:28
 msgid "Last update:"
@@ -196,8 +226,8 @@ msgid "New password must contain at least 8 characters"
 msgstr "New password must contain at least 8 characters"
 
 #: src/features/editor/bento/grid/ui/root.tsx:41
-msgid "No blocks added yet."
-msgstr "No blocks added yet."
+msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
+msgstr "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:45
 msgid "Only digits are allowed"
@@ -250,6 +280,10 @@ msgstr "Share"
 msgid "Share everything important on one beautiful page."
 msgstr "Share everything important on one beautiful page."
 
+#: src/features/editor/text-editor/formatting-menu.tsx:53
+msgid "Strikethrough"
+msgstr "Strikethrough"
+
 #: src/features/editor/menu/status-bar/index.tsx:18
 msgid "Synchronization status"
 msgstr "Synchronization status"
@@ -259,6 +293,10 @@ msgstr "Synchronization status"
 msgid "Theme"
 msgstr "Theme"
 
+#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:29
+msgid "Title"
+msgstr "Title"
+
 #: src/features/editor/header/avatar.tsx:190
 msgid "Toggle avatar blur"
 msgstr "Toggle avatar blur"
@@ -267,12 +305,15 @@ msgstr "Toggle avatar blur"
 msgid "Type your text here"
 msgstr "Type your text here"
 
+#: src/features/editor/text-editor/formatting-menu.tsx:59
+msgid "Underline"
+msgstr "Underline"
+
 #: src/features/editor/header/social-media/modal.tsx:45
 msgid "Unlinked"
 msgstr "Unlinked"
 
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:85
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:82
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:89
 msgid "Verification code"
 msgstr "Verification code"
 
@@ -280,13 +321,19 @@ msgstr "Verification code"
 msgid "Verification code must be 6 digits"
 msgstr "Verification code must be 6 digits"
 
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:147
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:142
+#: src/features/editor/menu/menu/profile/change-password/progress.tsx:16
 msgid "Verify code"
 msgstr "Verify code"
 
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:145
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:140
+#: src/features/editor/menu/menu/profile/change-email/progress.tsx:12
+msgid "Verify current email"
+msgstr "Verify current email"
+
+#: src/features/editor/menu/menu/profile/change-email/progress.tsx:20
+msgid "Verify new email"
+msgstr "Verify new email"
+
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:132
 msgid "Verifying..."
 msgstr "Verifying..."
 
@@ -298,7 +345,7 @@ msgstr "We'll send a verification code to the new email address to change your e
 msgid "We'll send a verification code to your email address to change your password."
 msgstr "We'll send a verification code to your email address to change your password."
 
-#: src/features/editor/menu/menu/profile/change-slug.tsx:13
+#: src/features/editor/menu/menu/profile/change-slug.tsx:26
 msgid "Your link"
 msgstr "Your link"
 
@@ -309,10 +356,6 @@ msgstr "Your name"
 #: src/app/[lang]/page.tsx:8
 msgid "Домашняя страница"
 msgstr "Home page"
-
-#: src/shared/model/config.ts:5
-msgid "Поделитесь всем важным на одной странице."
-msgstr "Share"
 
 #: src/shared/ui/kit/primitives/password-input.tsx:32
 msgid "Показать пароль"

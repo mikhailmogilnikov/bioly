@@ -1,0 +1,103 @@
+import { useLingui } from "@lingui/react/macro";
+import { type Editor, useEditorState } from "@tiptap/react";
+import { BubbleMenu } from "@tiptap/react/menus";
+import {
+  BoldIcon,
+  CodeIcon,
+  ItalicIcon,
+  StrikethroughIcon,
+  UnderlineIcon,
+} from "lucide-react";
+import { cn } from "@/shared/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/shared/ui/kit/overlays/react-tooltip";
+
+type FormattingMenuProps = {
+  editor: Editor;
+};
+
+export function FormattingMenu({ editor }: FormattingMenuProps) {
+  const { t } = useLingui();
+
+  const { isBold, isItalic, isStrikethrough, isUnderline, isCode } =
+    useEditorState({
+      editor,
+      selector: (ctx) => ({
+        isBold: ctx.editor.isActive("bold"),
+        isItalic: ctx.editor.isActive("italic"),
+        isStrikethrough: ctx.editor.isActive("strike"),
+        isUnderline: ctx.editor.isActive("underline"),
+        isCode: ctx.editor.isActive("code"),
+      }),
+    });
+
+  const iconClass = "size-4 shrink-0";
+
+  const menuItems = [
+    {
+      label: t`Bold`,
+      icon: <BoldIcon className={iconClass} />,
+      isActive: isBold,
+      onClick: () => editor.chain().focus().toggleBold().run(),
+    },
+    {
+      label: t`Italic`,
+      icon: <ItalicIcon className={iconClass} />,
+      isActive: isItalic,
+      onClick: () => editor.chain().focus().toggleItalic().run(),
+    },
+    {
+      label: t`Strikethrough`,
+      icon: <StrikethroughIcon className={iconClass} />,
+      isActive: isStrikethrough,
+      onClick: () => editor.chain().focus().toggleStrike().run(),
+    },
+    {
+      label: t`Underline`,
+      icon: <UnderlineIcon className={iconClass} />,
+      isActive: isUnderline,
+      onClick: () => editor.chain().focus().toggleUnderline().run(),
+    },
+    {
+      label: t`Code`,
+      icon: <CodeIcon className={iconClass} />,
+      isActive: isCode,
+      onClick: () => editor.chain().focus().toggleCode().run(),
+    },
+  ];
+
+  return (
+    <BubbleMenu
+      className="grid grid-cols-3 gap-1 rounded-lg border border-outline bg-background p-1"
+      editor={editor}
+      options={{ placement: "top" }}
+    >
+      {menuItems.map(({ label, icon, isActive, onClick }) => (
+        <Tooltip key={label}>
+          <TooltipTrigger asChild>
+            <button
+              aria-label={label}
+              className={cn(
+                "flex size-7 shrink-0 items-center justify-center gap-2 rounded-lg hover:bg-foreground/10",
+                {
+                  "bg-foreground/20": isActive,
+                }
+              )}
+              key={label}
+              onClick={onClick}
+              type="button"
+            >
+              {icon}
+            </button>
+          </TooltipTrigger>
+          <TooltipContent className="pointer-events-none">
+            {label}
+          </TooltipContent>
+        </Tooltip>
+      ))}
+    </BubbleMenu>
+  );
+}

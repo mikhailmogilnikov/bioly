@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { findBentoItem } from "@/features/editor/profile/find-bento-item";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { BentoBlockGallery } from "../variants/gallery";
+import { BentoBlockLink } from "../variants/link";
 import { BentoBlockText } from "../variants/text";
 import { BentoBlockType } from "./types";
 
@@ -15,10 +16,8 @@ export const useRenderBlock = () => {
       switch (block.type) {
         case BentoBlockType.GALLERY:
           return <BentoBlockGallery isFullscreen={isFullscreen} />;
-        // case BentoBlockType.LINK:
-        //   return (
-        //     <BentoBlockLink isFullscreen={isFullscreen} itemId={blockId} />
-        //   );
+        case BentoBlockType.LINK:
+          return <BentoBlockLink />;
         case BentoBlockType.TEXT:
           return <BentoBlockText isFullscreen={isFullscreen} />;
         default:

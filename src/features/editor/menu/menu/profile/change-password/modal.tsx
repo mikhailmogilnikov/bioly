@@ -1,5 +1,5 @@
 import { Trans } from "@lingui/react/macro";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   AdaptiveModal,
@@ -7,6 +7,7 @@ import {
   AdaptiveModalHeader,
 } from "@/shared/ui/kit/overlays/adaptive-modal";
 
+import { ChangePasswordProgress } from "./progress";
 import { ChangePasswordStep1 } from "./step-1";
 import { ChangePasswordStep2 } from "./step-2";
 
@@ -30,17 +31,7 @@ export function ChangePasswordModal({
     confirmPassword: "",
   });
 
-  const handleSuccess = () => {
-    setStep("1-password");
-    setPasswordData({
-      oldPassword: "",
-      newPassword: "",
-      confirmPassword: "",
-    });
-    onOpenChange();
-  };
-
-  const handleOpenChange = () => {
+  useEffect(() => {
     if (!open) {
       setStep("1-password");
       setPasswordData({
@@ -49,6 +40,15 @@ export function ChangePasswordModal({
         confirmPassword: "",
       });
     }
+  }, [open]);
+
+  const handleSuccess = () => {
+    setStep("1-password");
+    setPasswordData({
+      oldPassword: "",
+      newPassword: "",
+      confirmPassword: "",
+    });
     onOpenChange();
   };
 
@@ -66,12 +66,17 @@ export function ChangePasswordModal({
   };
 
   return (
-    <AdaptiveModal onOpenChange={handleOpenChange} open={open}>
+    <AdaptiveModal onOpenChange={onOpenChange} open={open}>
       <AdaptiveModalHeader>
         <Trans>Change Password</Trans>
       </AdaptiveModalHeader>
       <AdaptiveModalContent>
-        <div className="px-1 pb-4">{steps[step]}</div>
+        <div className="px-1 pb-4">
+          <div className="mb-6">
+            <ChangePasswordProgress step={step} />
+          </div>
+          {steps[step]}
+        </div>
       </AdaptiveModalContent>
     </AdaptiveModal>
   );
