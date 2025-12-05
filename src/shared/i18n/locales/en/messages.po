@@ -33,6 +33,10 @@ msgstr "Add bio"
 msgid "Add bio... \"/\" for commands."
 msgstr "Add bio... \"/\" for commands."
 
+#: src/features/editor/text-editor/index.tsx:22
+msgid "Add bio... Type \"/\" for commands."
+msgstr "Add bio... Type \"/\" for commands."
+
 #: src/features/editor/header/social-media/social-media.tsx:36
 #: src/features/editor/header/social-media/social-media.tsx:75
 msgid "Add social media"
@@ -42,13 +46,21 @@ msgstr "Add social media"
 msgid "Back to passwords"
 msgstr "Back to passwords"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:41
+#: src/features/editor/text-editor/extensions/suggestion.tsx:17
+msgid "Blockquote"
+msgstr "Blockquote"
+
+#: src/features/editor/text-editor/formatting-menu.tsx:43
 msgid "Bold"
 msgstr "Bold"
 
 #: src/features/editor/menu/menu/project-settings/border-slider.tsx:18
 msgid "Border width"
 msgstr "Border width"
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:15
+msgid "Bullet List"
+msgstr "Bullet List"
 
 #: src/features/editor/menu/menu/profile/change-slug.tsx:48
 msgid "Can be changed only once in 7 days."
@@ -66,9 +78,13 @@ msgstr "Change password"
 msgid "Change Password"
 msgstr "Change Password"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:65
+#: src/features/editor/text-editor/formatting-menu.tsx:67
 msgid "Code"
 msgstr "Code"
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:18
+msgid "Code Block"
+msgstr "Code Block"
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:30
 msgid "Confirm new password"
@@ -172,11 +188,15 @@ msgstr "Go to live"
 msgid "Go to live page"
 msgstr "Go to live page"
 
+#: src/features/editor/text-editor/extensions/suggestion.tsx:14
+msgid "Heading"
+msgstr "Heading"
+
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:38
 msgid "Invalid email address"
 msgstr "Invalid email address"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:47
+#: src/features/editor/text-editor/formatting-menu.tsx:49
 msgid "Italic"
 msgstr "Italic"
 
@@ -205,6 +225,10 @@ msgstr "Media gallery"
 msgid "Menu"
 msgstr "Menu"
 
+#: src/features/editor/text-editor/formatting-menu.tsx:73
+msgid "Muted"
+msgstr "Muted"
+
 #: src/features/editor/menu/new-item/index.tsx:105
 msgid "New block"
 msgstr "New block"
@@ -228,6 +252,14 @@ msgstr "New password must contain at least 8 characters"
 #: src/features/editor/bento/grid/ui/root.tsx:41
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
+
+#: src/features/editor/text-editor/commands-list.tsx:109
+msgid "No result"
+msgstr "No result"
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:16
+msgid "Numbered List"
+msgstr "Numbered List"
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:45
 msgid "Only digits are allowed"
@@ -280,7 +312,7 @@ msgstr "Share"
 msgid "Share everything important on one beautiful page."
 msgstr "Share everything important on one beautiful page."
 
-#: src/features/editor/text-editor/formatting-menu.tsx:53
+#: src/features/editor/text-editor/formatting-menu.tsx:55
 msgid "Strikethrough"
 msgstr "Strikethrough"
 
@@ -292,6 +324,10 @@ msgstr "Synchronization status"
 #: src/features/editor/menu/menu/project-settings/theme-selector.tsx:40
 msgid "Theme"
 msgstr "Theme"
+
+#: src/features/editor/text-editor/commands-list.tsx:147
+msgid "Tip: you can select fragment of text and apply additional styling to it."
+msgstr "Tip: you can select fragment of text and apply additional styling to it."
 
 #: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:29
 msgid "Title"
@@ -305,7 +341,7 @@ msgstr "Toggle avatar blur"
 msgid "Type your text here"
 msgstr "Type your text here"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:59
+#: src/features/editor/text-editor/formatting-menu.tsx:61
 msgid "Underline"
 msgstr "Underline"
 

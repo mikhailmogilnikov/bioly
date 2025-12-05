@@ -33,6 +33,10 @@ msgstr "Добавить биографию"
 msgid "Add bio... \"/\" for commands."
 msgstr ""
 
+#: src/features/editor/text-editor/index.tsx:22
+msgid "Add bio... Type \"/\" for commands."
+msgstr ""
+
 #: src/features/editor/header/social-media/social-media.tsx:36
 #: src/features/editor/header/social-media/social-media.tsx:75
 msgid "Add social media"
@@ -42,13 +46,21 @@ msgstr "Добавить социальную сеть"
 msgid "Back to passwords"
 msgstr "Назад к паролям"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:41
+#: src/features/editor/text-editor/extensions/suggestion.tsx:17
+msgid "Blockquote"
+msgstr ""
+
+#: src/features/editor/text-editor/formatting-menu.tsx:43
 msgid "Bold"
 msgstr ""
 
 #: src/features/editor/menu/menu/project-settings/border-slider.tsx:18
 msgid "Border width"
 msgstr "Ширина границы"
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:15
+msgid "Bullet List"
+msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-slug.tsx:48
 msgid "Can be changed only once in 7 days."
@@ -66,8 +78,12 @@ msgstr "Изменить пароль"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:65
+#: src/features/editor/text-editor/formatting-menu.tsx:67
 msgid "Code"
+msgstr ""
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:18
+msgid "Code Block"
 msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:30
@@ -172,11 +188,15 @@ msgstr "Перейти на страницу"
 msgid "Go to live page"
 msgstr "Перейти на живую страницу"
 
+#: src/features/editor/text-editor/extensions/suggestion.tsx:14
+msgid "Heading"
+msgstr ""
+
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:38
 msgid "Invalid email address"
 msgstr "Неверный email адрес"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:47
+#: src/features/editor/text-editor/formatting-menu.tsx:49
 msgid "Italic"
 msgstr ""
 
@@ -205,6 +225,10 @@ msgstr "Медиа галерея"
 msgid "Menu"
 msgstr "Меню"
 
+#: src/features/editor/text-editor/formatting-menu.tsx:73
+msgid "Muted"
+msgstr ""
+
 #: src/features/editor/menu/new-item/index.tsx:105
 msgid "New block"
 msgstr "Новый блок"
@@ -228,6 +252,14 @@ msgstr "Новый пароль должен содержать минимум 8
 #: src/features/editor/bento/grid/ui/root.tsx:41
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "Блоки еще не добавлены. Нажмите <0>+</0> в нижнем меню, чтобы добавить первый."
+
+#: src/features/editor/text-editor/commands-list.tsx:109
+msgid "No result"
+msgstr ""
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:16
+msgid "Numbered List"
+msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:45
 msgid "Only digits are allowed"
@@ -280,7 +312,7 @@ msgstr "Поделиться"
 msgid "Share everything important on one beautiful page."
 msgstr "Поделитесь всем важным на одной красивой странице."
 
-#: src/features/editor/text-editor/formatting-menu.tsx:53
+#: src/features/editor/text-editor/formatting-menu.tsx:55
 msgid "Strikethrough"
 msgstr ""
 
@@ -292,6 +324,10 @@ msgstr "Статус синхронизации"
 #: src/features/editor/menu/menu/project-settings/theme-selector.tsx:40
 msgid "Theme"
 msgstr "Тема"
+
+#: src/features/editor/text-editor/commands-list.tsx:147
+msgid "Tip: you can select fragment of text and apply additional styling to it."
+msgstr ""
 
 #: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:29
 msgid "Title"
@@ -305,7 +341,7 @@ msgstr "Переключить размытие аватара"
 msgid "Type your text here"
 msgstr "Введите ваш текст здесь"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:59
+#: src/features/editor/text-editor/formatting-menu.tsx:61
 msgid "Underline"
 msgstr ""
 
