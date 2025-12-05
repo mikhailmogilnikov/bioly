@@ -3,6 +3,7 @@ import Placeholder from "@tiptap/extension-placeholder";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { cn } from "@/shared/lib/utils";
+import { Muted } from "./extensions/muted";
 import { FormattingMenu } from "./formatting-menu";
 
 export function BasicTextEditor({ className }: { className?: string }) {
@@ -10,8 +11,9 @@ export function BasicTextEditor({ className }: { className?: string }) {
 
   const extensions = [
     StarterKit,
+    Muted,
     Placeholder.configure({
-      placeholder: t`Add bio... "/" for commands.`,
+      placeholder: t`Add bio... Type "/" for commands.`,
     }),
   ];
 

@@ -5,6 +5,9 @@
     "rules": {
       "style": {
         "useBlockStatements": "off"
+      },
+      "nursery": {
+        "noLeakedRender": "off"
       }
     }
   },

@@ -4,6 +4,7 @@ import { BubbleMenu } from "@tiptap/react/menus";
 import {
   BoldIcon,
   CodeIcon,
+  Contrast,
   ItalicIcon,
   StrikethroughIcon,
   UnderlineIcon,
@@ -22,7 +23,7 @@ type FormattingMenuProps = {
 export function FormattingMenu({ editor }: FormattingMenuProps) {
   const { t } = useLingui();
 
-  const { isBold, isItalic, isStrikethrough, isUnderline, isCode } =
+  const { isBold, isItalic, isStrikethrough, isUnderline, isCode, isMuted } =
     useEditorState({
       editor,
       selector: (ctx) => ({
@@ -31,6 +32,7 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
         isStrikethrough: ctx.editor.isActive("strike"),
         isUnderline: ctx.editor.isActive("underline"),
         isCode: ctx.editor.isActive("code"),
+        isMuted: ctx.editor.isActive("muted"),
       }),
     });
 
@@ -66,6 +68,12 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
       icon: <CodeIcon className={iconClass} />,
       isActive: isCode,
       onClick: () => editor.chain().focus().toggleCode().run(),
+    },
+    {
+      label: t`Muted`,
+      icon: <Contrast className={iconClass} />,
+      isActive: isMuted,
+      onClick: () => editor.chain().focus().toggleMark("muted").run(),
     },
   ];
 
