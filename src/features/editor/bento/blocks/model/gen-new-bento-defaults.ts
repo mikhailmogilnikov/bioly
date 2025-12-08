@@ -30,7 +30,7 @@ export const generateNewBentoItemDefaults = (
       style: "transparent",
       type: BentoBlockType.TEXT,
       properties: {
-        content: "",
+        content: null,
       },
     },
     [BentoBlockType.LINK]: {

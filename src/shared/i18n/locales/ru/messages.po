@@ -25,17 +25,9 @@ msgstr "Добавить новый блок"
 msgid "Add avatar"
 msgstr "Добавить аватар"
 
-#: src/features/editor/header/description.tsx:25
-msgid "Add bio"
-msgstr "Добавить биографию"
-
-#: src/features/editor/text-editor/index.tsx:14
-msgid "Add bio... \"/\" for commands."
-msgstr ""
-
-#: src/features/editor/text-editor/index.tsx:22
+#: src/features/editor/header/description.tsx:22
 msgid "Add bio... Type \"/\" for commands."
-msgstr ""
+msgstr "Добавьте биографию... Введите \"/\" для команд."
 
 #: src/features/editor/header/social-media/social-media.tsx:36
 #: src/features/editor/header/social-media/social-media.tsx:75
@@ -48,11 +40,11 @@ msgstr "Назад к паролям"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:17
 msgid "Blockquote"
-msgstr ""
+msgstr "Цитата"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:43
+#: src/features/editor/text-editor/formatting-menu.tsx:38
 msgid "Bold"
-msgstr ""
+msgstr "Жирный"
 
 #: src/features/editor/menu/menu/project-settings/border-slider.tsx:18
 msgid "Border width"
@@ -60,7 +52,7 @@ msgstr "Ширина границы"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:15
 msgid "Bullet List"
-msgstr ""
+msgstr "Маркированный список"
 
 #: src/features/editor/menu/menu/profile/change-slug.tsx:48
 msgid "Can be changed only once in 7 days."
@@ -78,13 +70,13 @@ msgstr "Изменить пароль"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:67
+#: src/features/editor/text-editor/formatting-menu.tsx:62
 msgid "Code"
-msgstr ""
+msgstr "Код"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:18
 msgid "Code Block"
-msgstr ""
+msgstr "Блок кода"
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:30
 msgid "Confirm new password"
@@ -95,6 +87,8 @@ msgid "Confirm New Password"
 msgstr "Подтвердите новый пароль"
 
 #: src/features/editor/menu/menu/profile/change-email/step-0.tsx:134
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:110
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:165
 msgid "Continue"
 msgstr "Продолжить"
 
@@ -144,6 +138,8 @@ msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
 #: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:37
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:82
 msgid "Enter new email"
 msgstr "Введите новый email"
 
@@ -190,15 +186,15 @@ msgstr "Перейти на живую страницу"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:14
 msgid "Heading"
-msgstr ""
+msgstr "Заголовок"
 
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:38
 msgid "Invalid email address"
 msgstr "Неверный email адрес"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:49
+#: src/features/editor/text-editor/formatting-menu.tsx:44
 msgid "Italic"
-msgstr ""
+msgstr "Курсив"
 
 #: src/features/editor/menu/status-bar/index.tsx:28
 msgid "Last update:"
@@ -225,9 +221,9 @@ msgstr "Медиа галерея"
 msgid "Menu"
 msgstr "Меню"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:73
+#: src/features/editor/text-editor/formatting-menu.tsx:68
 msgid "Muted"
-msgstr ""
+msgstr "Приглушенный"
 
 #: src/features/editor/menu/new-item/index.tsx:105
 msgid "New block"
@@ -255,11 +251,11 @@ msgstr "Блоки еще не добавлены. Нажмите <0>+</0> в н
 
 #: src/features/editor/text-editor/commands-list.tsx:109
 msgid "No result"
-msgstr ""
+msgstr "Нет результатов"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:16
 msgid "Numbered List"
-msgstr ""
+msgstr "Нумерованный список"
 
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:45
 msgid "Only digits are allowed"
@@ -312,9 +308,9 @@ msgstr "Поделиться"
 msgid "Share everything important on one beautiful page."
 msgstr "Поделитесь всем важным на одной красивой странице."
 
-#: src/features/editor/text-editor/formatting-menu.tsx:55
+#: src/features/editor/text-editor/formatting-menu.tsx:50
 msgid "Strikethrough"
-msgstr ""
+msgstr "Зачеркнутый"
 
 #: src/features/editor/menu/status-bar/index.tsx:18
 msgid "Synchronization status"
@@ -327,7 +323,7 @@ msgstr "Тема"
 
 #: src/features/editor/text-editor/commands-list.tsx:147
 msgid "Tip: you can select fragment of text and apply additional styling to it."
-msgstr ""
+msgstr "Совет: вы можете выделить фрагмент текста и применить к нему дополнительное форматирование."
 
 #: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:29
 msgid "Title"
@@ -337,19 +333,26 @@ msgstr "Заголовок"
 msgid "Toggle avatar blur"
 msgstr "Переключить размытие аватара"
 
-#: src/features/editor/bento/blocks/variants/text/fullscreen-title.tsx:54
+#: src/features/editor/bento/blocks/variants/text/fullscreen-title.tsx:62
+#: src/features/editor/bento/blocks/variants/text/index.tsx:66
+msgid "Type text here or \"/\" to open the commands"
+msgstr "Введите текст здесь или \"/\" для открытия команд"
+
+#: src/features/editor/bento/blocks/variants/text/index.tsx:29
 msgid "Type your text here"
 msgstr "Введите ваш текст здесь"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:61
+#: src/features/editor/text-editor/formatting-menu.tsx:56
 msgid "Underline"
-msgstr ""
+msgstr "Подчеркнутый"
 
 #: src/features/editor/header/social-media/modal.tsx:45
 msgid "Unlinked"
 msgstr "Отвязано"
 
 #: src/features/editor/menu/menu/profile/change-email/step-0.tsx:89
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:85
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:82
 msgid "Verification code"
 msgstr "Код подтверждения"
 
@@ -357,7 +360,9 @@ msgstr "Код подтверждения"
 msgid "Verification code must be 6 digits"
 msgstr "Код подтверждения должен состоять из 6 цифр"
 
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:147
 #: src/features/editor/menu/menu/profile/change-password/progress.tsx:16
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:142
 msgid "Verify code"
 msgstr "Подтвердить код"
 
@@ -370,6 +375,8 @@ msgid "Verify new email"
 msgstr "Подтвердить новый email"
 
 #: src/features/editor/menu/menu/profile/change-email/step-0.tsx:132
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:145
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:140
 msgid "Verifying..."
 msgstr "Проверка..."
 

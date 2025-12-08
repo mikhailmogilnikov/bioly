@@ -1,7 +1,8 @@
+import { useLingui } from "@lingui/react/macro";
 import { BasicTextEditor } from "../text-editor";
 
 export const EditDescription = () => {
-  // const { t } = useLingui();
+  const { t } = useLingui();
 
   // const { description, updateMainField } = useProfile(
   //   (state) => ({
@@ -15,5 +16,10 @@ export const EditDescription = () => {
   //   updateMainField("description", e.target.value);
   // };
 
-  return <BasicTextEditor className="z-2 px-1" />;
+  return (
+    <BasicTextEditor
+      className="z-2 px-1"
+      placeholder={t`Add bio... Type "/" for commands.`}
+    />
+  );
 };

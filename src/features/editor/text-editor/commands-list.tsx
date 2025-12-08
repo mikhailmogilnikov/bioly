@@ -113,7 +113,7 @@ export const CommandsList = ({ items, command, ref }: CommandsListProps) => {
   }
 
   return (
-    <div className="relative flex max-h-[300px] min-w-[200px] flex-col gap-1 overflow-auto rounded-2xl border border-outline bg-background p-2">
+    <div className="relative z-51 flex max-h-[300px] min-w-[200px] flex-col gap-1 overflow-auto rounded-2xl border border-outline bg-background p-2">
       {items.map((item, index) => {
         const isSelected = index === selectedIndex;
         const isDisabled = item.disabled;

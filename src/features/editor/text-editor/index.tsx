@@ -1,7 +1,6 @@
-import { useLingui } from "@lingui/react/macro";
 import Placeholder from "@tiptap/extension-placeholder";
 import Typography from "@tiptap/extension-typography";
-import { EditorContent, useEditor } from "@tiptap/react";
+import { EditorContent, type UseEditorOptions, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { cn } from "@/shared/lib/utils";
 import { Commands } from "./extensions/commands";
@@ -9,27 +8,43 @@ import { Muted } from "./extensions/muted";
 import { suggestion } from "./extensions/suggestion";
 import { FormattingMenu } from "./formatting-menu";
 
-export function BasicTextEditor({ className }: { className?: string }) {
-  const { t } = useLingui();
+export const getBasicTextEditorExtensions = (
+  options:
+    | {
+        placeholder?: string;
+      }
+    | undefined
+) => {
+  const { placeholder } = options ?? {};
 
-  const extensions = [
+  return [
     StarterKit.configure({
       trailingNode: false,
     }),
     Muted,
     Typography,
-    Placeholder.configure({
-      placeholder: t`Add bio... Type "/" for commands.`,
-    }),
+    ...(placeholder ? [Placeholder.configure({ placeholder })] : []),
     Commands.configure({
       suggestion,
     }),
   ];
+};
 
+export function BasicTextEditor({
+  className,
+  placeholder,
+  ref,
+  ...options
+}: {
+  className?: string;
+  placeholder: string;
+  ref?: React.RefObject<HTMLDivElement>;
+} & UseEditorOptions) {
   const editor = useEditor({
-    extensions,
+    extensions: getBasicTextEditorExtensions({ placeholder }),
     content: "",
     immediatelyRender: false,
+    ...options,
   });
 
   if (!editor) return null;
@@ -40,6 +55,7 @@ export function BasicTextEditor({ className }: { className?: string }) {
       <EditorContent
         className={cn("ProseMirror tiptap w-full", className)}
         editor={editor}
+        ref={ref}
       />
     </>
   );

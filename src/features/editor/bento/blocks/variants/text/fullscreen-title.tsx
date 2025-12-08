@@ -1,10 +1,10 @@
 import { useLingui } from "@lingui/react/macro";
+import type { JSONContent } from "@tiptap/react";
 import { motion } from "motion/react";
 import { useRefresh } from "muuri-react";
-import type { ChangeEvent } from "react";
 import { useEffect, useRef } from "react";
-import TextareaAutosize from "react-textarea-autosize";
 import { useProfile } from "@/features/editor/profile/use-profile";
+import { BasicTextEditor } from "@/features/editor/text-editor";
 import { useBlockContext } from "../../../grid/ui/block-context";
 import type { BentoBlock, BentoBlockType } from "../../model/types";
 
@@ -37,23 +37,29 @@ export function FullscreenTitle() {
 
   if (!textBlock) return null;
 
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    if (e.target.value.length > 100) return;
-
-    updateBentoBlockField(textBlock.id, "properties", {
-      ...textBlock.properties,
-      content: e.target.value,
-    });
-  };
-
   return (
     <motion.div className="w-full" layout transition={{ duration: 0 }}>
-      <TextareaAutosize
-        className="wrap-break-word w-full resize-none font-bold outline-none"
-        onChange={handleChange}
-        placeholder={t`Type your text here`}
-        ref={textRef}
-        value={textBlock.properties.content}
+      <BasicTextEditor
+        autofocus
+        content={textBlock.properties.content}
+        onUpdate={(props) => {
+          let payload: JSONContent | null = props.editor.getJSON();
+
+          const isEmptyParagraph =
+            payload?.content &&
+            payload.content.length === 1 &&
+            JSON.stringify(payload.content?.[0]) === '{"type":"paragraph"}';
+
+          if (isEmptyParagraph) {
+            payload = null;
+          }
+
+          updateBentoBlockField(textBlock.id, "properties", {
+            ...textBlock.properties,
+            content: payload,
+          });
+        }}
+        placeholder={t`Type text here or "/" to open the commands`}
       />
     </motion.div>
   );

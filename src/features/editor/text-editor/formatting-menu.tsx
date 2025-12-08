@@ -10,11 +10,6 @@ import {
   UnderlineIcon,
 } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/shared/ui/kit/overlays/react-tooltip";
 
 type FormattingMenuProps = {
   editor: Editor;
@@ -79,32 +74,25 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
 
   return (
     <BubbleMenu
-      className="grid grid-cols-3 gap-1 rounded-lg border border-outline bg-background p-1"
+      className="z-10 grid grid-cols-3 gap-1 rounded-lg border border-outline bg-background p-1"
       editor={editor}
       options={{ placement: "top" }}
     >
       {menuItems.map(({ label, icon, isActive, onClick }) => (
-        <Tooltip key={label}>
-          <TooltipTrigger asChild>
-            <button
-              aria-label={label}
-              className={cn(
-                "flex size-7 shrink-0 items-center justify-center gap-2 rounded-lg hover:bg-foreground/10",
-                {
-                  "bg-foreground/20": isActive,
-                }
-              )}
-              key={label}
-              onClick={onClick}
-              type="button"
-            >
-              {icon}
-            </button>
-          </TooltipTrigger>
-          <TooltipContent className="pointer-events-none">
-            {label}
-          </TooltipContent>
-        </Tooltip>
+        <button
+          aria-label={label}
+          className={cn(
+            "flex size-7 shrink-0 items-center justify-center gap-2 rounded-lg hover:bg-foreground/10",
+            {
+              "bg-foreground/20": isActive,
+            }
+          )}
+          key={label}
+          onClick={onClick}
+          type="button"
+        >
+          {icon}
+        </button>
       ))}
     </BubbleMenu>
   );

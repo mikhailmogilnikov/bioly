@@ -1,3 +1,5 @@
+import type { JSONContent } from "@tiptap/react";
+
 export type BentoBlockPropertiesText = {
-  content: string;
+  content: JSONContent | null;
 };
