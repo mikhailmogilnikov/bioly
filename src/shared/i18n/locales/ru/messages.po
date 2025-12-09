@@ -42,7 +42,7 @@ msgstr "Назад к паролям"
 msgid "Blockquote"
 msgstr "Цитата"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:62
+#: src/features/editor/text-editor/formatting-menu.tsx:65
 msgid "Bold"
 msgstr "Жирный"
 
@@ -70,7 +70,7 @@ msgstr "Изменить пароль"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:86
+#: src/features/editor/text-editor/formatting-menu.tsx:89
 msgid "Code"
 msgstr "Код"
 
@@ -192,7 +192,7 @@ msgstr "Заголовок"
 msgid "Invalid email address"
 msgstr "Неверный email адрес"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:68
+#: src/features/editor/text-editor/formatting-menu.tsx:71
 msgid "Italic"
 msgstr "Курсив"
 
@@ -200,8 +200,7 @@ msgstr "Курсив"
 msgid "Last update:"
 msgstr "Последнее обновление:"
 
-#: src/features/editor/menu/new-item/index.tsx:142
-#: src/features/editor/text-editor/formatting-menu.tsx:98
+#: src/features/editor/text-editor/formatting-menu.tsx:101
 msgid "Link"
 msgstr "Ссылка"
 
@@ -222,7 +221,7 @@ msgstr "Медиа галерея"
 msgid "Menu"
 msgstr "Меню"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:92
+#: src/features/editor/text-editor/formatting-menu.tsx:95
 msgid "Muted"
 msgstr "Приглушенный"
 
@@ -317,7 +316,11 @@ msgstr "Поделитесь всем важным на одной красив�
 msgid "Share my profile"
 msgstr "Поделиться моим профилем"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:74
+#: src/features/editor/text-editor/formatting-menu.tsx:107
+msgid "Spoiler"
+msgstr ""
+
+#: src/features/editor/text-editor/formatting-menu.tsx:77
 msgid "Strikethrough"
 msgstr "Зачеркнутый"
 
@@ -346,15 +349,15 @@ msgstr "Заголовок"
 msgid "Toggle avatar blur"
 msgstr "Переключить размытие аватара"
 
-#: src/features/editor/bento/blocks/variants/text/index.tsx:67
+#: src/features/editor/bento/blocks/variants/text/index.tsx:73
 msgid "Type text here or \"/\" to open the commands"
 msgstr "Введите текст здесь или \"/\" для открытия команд"
 
-#: src/features/editor/bento/blocks/variants/text/index.tsx:29
+#: src/features/editor/bento/blocks/variants/text/index.tsx:30
 msgid "Type your text here"
 msgstr "Введите ваш текст здесь"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:80
+#: src/features/editor/text-editor/formatting-menu.tsx:83
 msgid "Underline"
 msgstr "Подчеркнутый"
 

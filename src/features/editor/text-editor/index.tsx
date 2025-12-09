@@ -8,14 +8,16 @@ export function BasicTextEditor({
   className,
   placeholder,
   ref,
+  isStatic = false,
   ...options
 }: {
   className?: string;
   placeholder: string;
   ref?: React.RefObject<HTMLDivElement>;
+  isStatic?: boolean;
 } & UseEditorOptions) {
   const editor = useEditor({
-    extensions: getBasicTextEditorExtensions({ placeholder }),
+    extensions: getBasicTextEditorExtensions({ placeholder, isStatic }),
     content: "",
     immediatelyRender: false,
     ...options,

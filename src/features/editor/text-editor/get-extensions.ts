@@ -3,6 +3,7 @@ import Typography from "@tiptap/extension-typography";
 import StarterKit from "@tiptap/starter-kit";
 import { Commands } from "./extensions/commands";
 import { Muted } from "./extensions/muted";
+import { Spoiler } from "./extensions/spoiler";
 import { suggestion } from "./extensions/suggestion";
 
 export const getBasicTextEditorExtensions = (
@@ -17,6 +18,7 @@ export const getBasicTextEditorExtensions = (
 
   return [
     Muted,
+    Spoiler.configure({ isStatic }),
     Typography,
     Commands.configure({
       suggestion,

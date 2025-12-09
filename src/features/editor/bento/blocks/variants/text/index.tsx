@@ -2,6 +2,7 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import { renderToReactElement } from "@tiptap/static-renderer";
 import { useMemo } from "react";
 import { getBasicTextEditorExtensions } from "@/features/editor/text-editor/get-extensions";
+import { Spoiler } from "@/shared/ui/utils/spoiler";
 import { useBlockContext } from "../../../grid/ui/block-context";
 import type { BentoBlock, BentoBlockType } from "../../model/types";
 import { FullscreenTitle } from "./fullscreen-title";
@@ -56,6 +57,11 @@ const PreviewTitle = () => {
             // @ts-expect-error - Heading is a valid React component
             return <Heading>{children}</Heading>;
           },
+          spoiler: ({ children }) => (
+            <Spoiler defaultHidden revealOn="click">
+              {children}
+            </Spoiler>
+          ),
         },
       },
     });

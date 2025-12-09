@@ -8,12 +8,14 @@ export const Spoiler: React.FC<SpoilerProps> = ({ children, ...props }) => {
   const isClient = useIsClient();
 
   if (!isClient) {
-    return <span className="invisible flex">{children}</span>;
+    return (
+      <span className="invisible inline-flex align-baseline">{children}</span>
+    );
   }
 
   return (
-    <span className="flex">
-      <SpoilerComponent fps={16} {...props}>
+    <span className="inline-flex align-baseline">
+      <SpoilerComponent density={0.045} fps={14} mimicWords {...props}>
         {children}
       </SpoilerComponent>
     </span>

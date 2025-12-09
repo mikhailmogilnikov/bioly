@@ -5,6 +5,7 @@ import {
   BoldIcon,
   CodeIcon,
   Contrast,
+  EyeOff,
   ItalicIcon,
   Link2Icon,
   StrikethroughIcon,
@@ -27,6 +28,7 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
     isCode,
     isMuted,
     isLink,
+    isSpoiler,
   } = useEditorState({
     editor,
     selector: (ctx) => ({
@@ -37,6 +39,7 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
       isCode: ctx.editor.isActive("code"),
       isMuted: ctx.editor.isActive("muted"),
       isLink: ctx.editor.isActive("link"),
+      isSpoiler: ctx.editor.isActive("spoiler"),
     }),
   });
 
@@ -99,6 +102,13 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
       icon: <Link2Icon className={iconClass} />,
       isActive: isLink,
       onClick: handleLinkClick,
+    },
+    {
+      label: t`Spoiler`,
+      icon: <EyeOff className={iconClass} />,
+      isActive: isSpoiler,
+      // @ts-expect-error - toggleSpoiler is not typed correctly
+      onClick: () => editor.chain().focus().toggleSpoiler().run(),
     },
   ];
 

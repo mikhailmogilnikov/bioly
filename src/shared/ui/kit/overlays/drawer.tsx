@@ -32,7 +32,7 @@ export const Drawer = (props: DrawerProps) => {
       shouldScaleBackground={false}
       {...rest}
     >
-      <VaulDrawer.Portal>
+      <VaulDrawer.Portal container={document.getElementById("portal-root")}>
         <VaulDrawer.Overlay className="fixed inset-0 bg-black/60" />
 
         <VaulDrawer.Content className="fixed right-0 bottom-0 left-0 h-fit max-h-[95svh] rounded-t border-outline border-t bg-background outline-none focus:outline-none">

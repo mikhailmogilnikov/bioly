@@ -60,6 +60,7 @@ export default async function RootLayout({
           initialMessages={allMessages[lang]}
         >
           {children}
+          <div className="relative z-10" id="portal-root" />
         </LinguiClientProvider>
       </body>
     </html>

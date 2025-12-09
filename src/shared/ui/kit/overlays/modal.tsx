@@ -77,7 +77,7 @@ export function Modal(props: ModalProps) {
 
   return (
     <Dialog.Root {...rest}>
-      <Dialog.Portal>
+      <Dialog.Portal container={document.getElementById("portal-root")}>
         <Dialog.Overlay
           className={overlay({ className: classNames?.overlay })}
         />

@@ -42,7 +42,7 @@ msgstr "Back to passwords"
 msgid "Blockquote"
 msgstr "Blockquote"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:62
+#: src/features/editor/text-editor/formatting-menu.tsx:65
 msgid "Bold"
 msgstr "Bold"
 
@@ -70,7 +70,7 @@ msgstr "Change password"
 msgid "Change Password"
 msgstr "Change Password"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:86
+#: src/features/editor/text-editor/formatting-menu.tsx:89
 msgid "Code"
 msgstr "Code"
 
@@ -192,7 +192,7 @@ msgstr "Heading"
 msgid "Invalid email address"
 msgstr "Invalid email address"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:68
+#: src/features/editor/text-editor/formatting-menu.tsx:71
 msgid "Italic"
 msgstr "Italic"
 
@@ -200,8 +200,7 @@ msgstr "Italic"
 msgid "Last update:"
 msgstr "Last update:"
 
-#: src/features/editor/menu/new-item/index.tsx:142
-#: src/features/editor/text-editor/formatting-menu.tsx:98
+#: src/features/editor/text-editor/formatting-menu.tsx:101
 msgid "Link"
 msgstr "Link"
 
@@ -222,7 +221,7 @@ msgstr "Media gallery"
 msgid "Menu"
 msgstr "Menu"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:92
+#: src/features/editor/text-editor/formatting-menu.tsx:95
 msgid "Muted"
 msgstr "Muted"
 
@@ -317,7 +316,11 @@ msgstr "Share everything important on one beautiful page."
 msgid "Share my profile"
 msgstr "Share my profile"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:74
+#: src/features/editor/text-editor/formatting-menu.tsx:107
+msgid "Spoiler"
+msgstr "Spoiler"
+
+#: src/features/editor/text-editor/formatting-menu.tsx:77
 msgid "Strikethrough"
 msgstr "Strikethrough"
 
@@ -346,15 +349,15 @@ msgstr "Title"
 msgid "Toggle avatar blur"
 msgstr "Toggle avatar blur"
 
-#: src/features/editor/bento/blocks/variants/text/index.tsx:67
+#: src/features/editor/bento/blocks/variants/text/index.tsx:73
 msgid "Type text here or \"/\" to open the commands"
 msgstr "Type text here or \"/\" to open the commands"
 
-#: src/features/editor/bento/blocks/variants/text/index.tsx:29
+#: src/features/editor/bento/blocks/variants/text/index.tsx:30
 msgid "Type your text here"
 msgstr "Type your text here"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:80
+#: src/features/editor/text-editor/formatting-menu.tsx:83
 msgid "Underline"
 msgstr "Underline"
 

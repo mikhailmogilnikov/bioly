@@ -1,51 +1,60 @@
-import type { NodeViewProps } from "@tiptap/react";
-import { NodeViewContent, NodeViewWrapper } from "@tiptap/react";
-import { useState } from "react";
+import {
+  NodeViewContent,
+  type NodeViewProps,
+  NodeViewWrapper,
+} from "@tiptap/react";
+import { useEffect, useState } from "react";
 import { Spoiler } from "./spoiler";
 
-export const SpoilerNodeView: React.FC<NodeViewProps> = ({ editor }) => {
-  const [hidden, setHidden] = useState(true);
+export const SpoilerNodeView: React.FC<NodeViewProps> = (props) => {
+  const { editor } = props;
+  const isStatic =
+    Boolean(props.node?.attrs?.isStatic) ||
+    Boolean(props.extension?.options?.isStatic) ||
+    Boolean((props as { isStatic?: boolean }).isStatic);
+  const [isFocused, setIsFocused] = useState(editor.isFocused);
 
-  const handleSpoilerClick = (e: React.MouseEvent) => {
-    // Проверяем, есть ли выделение текста в DOM (для мобильных устройств)
-    // Это нужно проверять первым, так как на мобильных устройствах выделение может быть в DOM, но не в состоянии редактора
-    const domSelection = window.getSelection();
-    if (domSelection && domSelection.toString().length > 0) {
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
+  useEffect(() => {
+    const handleFocus = () => setIsFocused(true);
+    const handleBlur = () => setIsFocused(false);
 
-    // Проверяем, есть ли выделение текста в редакторе
-    const { selection: editorSelection } = editor.state;
-    const { empty } = editorSelection;
+    editor.on("focus", handleFocus);
+    editor.on("blur", handleBlur);
 
-    // Если текст выделен, предотвращаем клик на спойлер
-    if (!empty) {
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
+    return () => {
+      editor.off("focus", handleFocus);
+      editor.off("blur", handleBlur);
+    };
+  }, [editor]);
 
-    // Если текст не выделен, переключаем состояние спойлера
-    setHidden((s) => !s);
-  };
+  const shouldMask = isStatic || !isFocused;
 
   return (
     <NodeViewWrapper
       as="span"
-      className="spoiler-node-view"
-      contentEditable={false}
-      style={{ display: "inline", whiteSpace: "normal" }}
+      className="spoiler-node-view inline"
+      data-spoiler-node="true"
+      style={{ whiteSpace: "normal" }}
     >
-      <Spoiler hidden={hidden} onClick={handleSpoilerClick} revealOn={false}>
-        <NodeViewContent
-          // @ts-expect-error - NodeViewContent is not typed correctly
-          as="span"
-          className="content"
-          style={{ display: "inline" }}
-        />
-      </Spoiler>
+      {shouldMask ? (
+        <Spoiler revealOn="click">
+          <NodeViewContent
+            // @ts-expect-error - NodeViewContent is not typed correctly
+            as="span"
+            className="inline"
+            style={{ display: "inline" }}
+          />
+        </Spoiler>
+      ) : (
+        <span className="rounded-sm bg-foreground/15">
+          <NodeViewContent
+            // @ts-expect-error - NodeViewContent is not typed correctly
+            as="span"
+            className="inline"
+            style={{ display: "inline" }}
+          />
+        </span>
+      )}
     </NodeViewWrapper>
   );
 };
