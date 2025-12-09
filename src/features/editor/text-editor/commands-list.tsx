@@ -7,6 +7,7 @@ import {
   List,
   ListOrdered,
   Quote,
+  SeparatorHorizontal,
 } from "lucide-react";
 import { useEffect, useImperativeHandle, useState } from "react";
 import { COMMAND_TITLES } from "./extensions/suggestion";
@@ -98,6 +99,7 @@ export const CommandsList = ({ items, command, ref }: CommandsListProps) => {
       blockquote: <Quote size={16} />,
       "code-block": <Code2 size={16} />,
       details: <ChevronDown size={16} />,
+      separator: <SeparatorHorizontal size={16} />,
     };
     return iconMap[id] || null;
   };

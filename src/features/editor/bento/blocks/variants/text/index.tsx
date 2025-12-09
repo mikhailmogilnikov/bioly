@@ -1,7 +1,7 @@
 import { Trans, useLingui } from "@lingui/react/macro";
 import { renderToReactElement } from "@tiptap/static-renderer";
 import { useMemo } from "react";
-import { getBasicTextEditorExtensions } from "@/features/editor/text-editor";
+import { getBasicTextEditorExtensions } from "@/features/editor/text-editor/get-extensions";
 import { useBlockContext } from "../../../grid/ui/block-context";
 import type { BentoBlock, BentoBlockType } from "../../model/types";
 import { FullscreenTitle } from "./fullscreen-title";
@@ -27,6 +27,7 @@ const PreviewTitle = () => {
       content: textBlock.properties.content,
       extensions: getBasicTextEditorExtensions({
         placeholder: t`Type your text here`,
+        isStatic: true,
       }),
       options: {
         nodeMapping: {

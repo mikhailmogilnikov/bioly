@@ -16,6 +16,7 @@ export const COMMAND_TITLES: Record<string, MessageDescriptor> = {
   "numbered-list": msg`Numbered List`,
   blockquote: msg`Blockquote`,
   "code-block": msg`Code Block`,
+  separator: msg`Separator`,
 };
 
 const updatePosition = (editor: Editor, element: HTMLElement) => {
@@ -41,7 +42,7 @@ const updatePosition = (editor: Editor, element: HTMLElement) => {
 };
 
 export const suggestion = {
-  items: ({ query }: { query: string }) => {
+  items: () => {
     // const checkDetailsDepth = () => {
     //   const $from = editor.state.selection.$from;
     //   let depth = 0;
@@ -109,6 +110,18 @@ export const suggestion = {
             .run();
         },
       },
+      {
+        title: "Separator",
+        id: "separator",
+        command: ({ editor: currentEditor, range }: SuggestionProps) => {
+          currentEditor
+            .chain()
+            .focus()
+            .deleteRange(range)
+            .setHorizontalRule()
+            .run();
+        },
+      },
       // {
       //   title: "Code Block",
       //   id: "code-block",
@@ -145,15 +158,15 @@ export const suggestion = {
       //   },
       //   disabled: checkDetailsDepth() >= 2,
       // },
-    ]
-      .filter((item) => {
-        // Фильтруем по запросу
-        if (!item.title.toLowerCase().startsWith(query.toLowerCase())) {
-          return false;
-        }
-        return true;
-      })
-      .slice(0, 10);
+    ];
+    // .filter((item) => {
+    //   // Фильтруем по запросу
+    //   if (!item.title.toLowerCase().startsWith(query.toLowerCase())) {
+    //     return false;
+    //   }
+    //   return true;
+    // })
+    // .slice(0, 10);
   },
 
   render: () => {

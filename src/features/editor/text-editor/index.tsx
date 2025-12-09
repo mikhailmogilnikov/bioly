@@ -1,34 +1,8 @@
-import Placeholder from "@tiptap/extension-placeholder";
-import Typography from "@tiptap/extension-typography";
 import { EditorContent, type UseEditorOptions, useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
 import { cn } from "@/shared/lib/utils";
-import { Commands } from "./extensions/commands";
-import { Muted } from "./extensions/muted";
-import { suggestion } from "./extensions/suggestion";
 import { FormattingMenu } from "./formatting-menu";
 
-export const getBasicTextEditorExtensions = (
-  options:
-    | {
-        placeholder?: string;
-      }
-    | undefined
-) => {
-  const { placeholder } = options ?? {};
-
-  return [
-    StarterKit.configure({
-      trailingNode: false,
-    }),
-    Muted,
-    Typography,
-    ...(placeholder ? [Placeholder.configure({ placeholder })] : []),
-    Commands.configure({
-      suggestion,
-    }),
-  ];
-};
+import { getBasicTextEditorExtensions } from "./get-extensions";
 
 export function BasicTextEditor({
   className,

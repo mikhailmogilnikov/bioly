@@ -131,7 +131,7 @@ export const EditBarNewItem = () => {
             ref={scanTextIconRef}
             size={20}
           />
-          Text
+          <Trans>Text</Trans>
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => handleAddItem(BentoBlockType.LINK)}

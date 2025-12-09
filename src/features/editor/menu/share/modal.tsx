@@ -37,7 +37,9 @@ export function ShareModal({
 
   return (
     <AdaptiveModal onOpenChange={onOpenChange} open={open}>
-      <AdaptiveModalHeader>Share my profile</AdaptiveModalHeader>
+      <AdaptiveModalHeader>
+        <Trans>Share my profile</Trans>
+      </AdaptiveModalHeader>
       <AdaptiveModalContent>
         <div className="mt-1 box-border flex flex-col items-center gap-4">
           <QrCard />

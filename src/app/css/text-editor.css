@@ -10,8 +10,37 @@
   margin-bottom: 0;
 }
 
+.ProseMirror .editor-link {
+  @apply text-link no-underline cursor-pointer;
+}
+
+/* .ProseMirror .editor-link::after {
+  content: "";
+  display: inline-block;
+  width: 0.9rem;
+  aspect-ratio: 1 / 1;
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LXVwLXJpZ2h0LWljb24gbHVjaWRlLWFycm93LXVwLXJpZ2h0Ij48cGF0aCBkPSJNNyA3aDEwdjEwIi8+PHBhdGggZD0iTTcgMTcgMTcgNyIvPjwvc3ZnPg==");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.ProseMirror .editor-link:hover::after {
+  transform: translate(0.1rem, -0.1rem);
+  opacity: 0.8;
+}
+
+.ProseMirror h1 .editor-link::after {
+  width: 1.1rem;
+  position: relative;
+  top: -0.15rem;
+} */
+
 .ProseMirror p.is-editor-empty:first-child::before {
   @apply text-foreground/40 pointer-events-none h-0 float-left;
+  position: relative;
   content: attr(data-placeholder);
 }
 
@@ -33,7 +62,7 @@
 
 .ProseMirror ul,
 .ProseMirror ol {
-  @apply my-2 pl-6;
+  @apply my-2 pl-5;
 }
 
 .ProseMirror ul {

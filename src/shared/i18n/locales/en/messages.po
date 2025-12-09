@@ -25,7 +25,7 @@ msgstr "Add a new block"
 msgid "Add avatar"
 msgstr "Add avatar"
 
-#: src/features/editor/header/description.tsx:22
+#: src/features/editor/header/description.tsx:35
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Add bio... Type \"/\" for commands."
 
@@ -42,7 +42,7 @@ msgstr "Back to passwords"
 msgid "Blockquote"
 msgstr "Blockquote"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:38
+#: src/features/editor/text-editor/formatting-menu.tsx:62
 msgid "Bold"
 msgstr "Bold"
 
@@ -70,7 +70,7 @@ msgstr "Change password"
 msgid "Change Password"
 msgstr "Change Password"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:62
+#: src/features/editor/text-editor/formatting-menu.tsx:86
 msgid "Code"
 msgstr "Code"
 
@@ -100,7 +100,7 @@ msgstr "Copied!"
 msgid "Copy"
 msgstr "Copy"
 
-#: src/features/editor/menu/share/modal.tsx:58
+#: src/features/editor/menu/share/modal.tsx:60
 msgid "Copy profile URL"
 msgstr "Copy profile URL"
 
@@ -192,7 +192,7 @@ msgstr "Heading"
 msgid "Invalid email address"
 msgstr "Invalid email address"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:44
+#: src/features/editor/text-editor/formatting-menu.tsx:68
 msgid "Italic"
 msgstr "Italic"
 
@@ -201,6 +201,7 @@ msgid "Last update:"
 msgstr "Last update:"
 
 #: src/features/editor/menu/new-item/index.tsx:142
+#: src/features/editor/text-editor/formatting-menu.tsx:98
 msgid "Link"
 msgstr "Link"
 
@@ -221,7 +222,7 @@ msgstr "Media gallery"
 msgid "Menu"
 msgstr "Menu"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:68
+#: src/features/editor/text-editor/formatting-menu.tsx:92
 msgid "Muted"
 msgstr "Muted"
 
@@ -249,7 +250,7 @@ msgstr "New password must contain at least 8 characters"
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 
-#: src/features/editor/text-editor/commands-list.tsx:109
+#: src/features/editor/text-editor/commands-list.tsx:111
 msgid "No result"
 msgstr "No result"
 
@@ -291,7 +292,7 @@ msgstr "Project settings"
 msgid "Re-enter new password"
 msgstr "Re-enter new password"
 
-#: src/features/editor/menu/share/modal.tsx:51
+#: src/features/editor/menu/share/modal.tsx:53
 msgid "Save QR image"
 msgstr "Save QR image"
 
@@ -299,6 +300,10 @@ msgstr "Save QR image"
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:163
 msgid "Sending code..."
 msgstr "Sending code..."
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:19
+msgid "Separator"
+msgstr "Separator"
 
 #: src/features/editor/menu/share/index.tsx:29
 msgid "Share"
@@ -308,7 +313,11 @@ msgstr "Share"
 msgid "Share everything important on one beautiful page."
 msgstr "Share everything important on one beautiful page."
 
-#: src/features/editor/text-editor/formatting-menu.tsx:50
+#: src/features/editor/menu/share/modal.tsx:41
+msgid "Share my profile"
+msgstr "Share my profile"
+
+#: src/features/editor/text-editor/formatting-menu.tsx:74
 msgid "Strikethrough"
 msgstr "Strikethrough"
 
@@ -316,12 +325,16 @@ msgstr "Strikethrough"
 msgid "Synchronization status"
 msgstr "Synchronization status"
 
+#: src/features/editor/menu/new-item/index.tsx:134
+msgid "Text"
+msgstr "Text"
+
 #: src/features/editor/menu/menu/project-settings/index.tsx:30
 #: src/features/editor/menu/menu/project-settings/theme-selector.tsx:40
 msgid "Theme"
 msgstr "Theme"
 
-#: src/features/editor/text-editor/commands-list.tsx:147
+#: src/features/editor/text-editor/commands-list.tsx:149
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Tip: you can select fragment of text and apply additional styling to it."
 
@@ -333,8 +346,7 @@ msgstr "Title"
 msgid "Toggle avatar blur"
 msgstr "Toggle avatar blur"
 
-#: src/features/editor/bento/blocks/variants/text/fullscreen-title.tsx:62
-#: src/features/editor/bento/blocks/variants/text/index.tsx:66
+#: src/features/editor/bento/blocks/variants/text/index.tsx:67
 msgid "Type text here or \"/\" to open the commands"
 msgstr "Type text here or \"/\" to open the commands"
 
@@ -342,7 +354,7 @@ msgstr "Type text here or \"/\" to open the commands"
 msgid "Type your text here"
 msgstr "Type your text here"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:56
+#: src/features/editor/text-editor/formatting-menu.tsx:80
 msgid "Underline"
 msgstr "Underline"
 

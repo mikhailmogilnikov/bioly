@@ -19,7 +19,7 @@ export function QrCard() {
       id="qr-root"
     >
       <div
-        className="flex w-full max-w-70 flex-col items-center justify-center gap-4 rounded p-4"
+        className="flex w-full max-w-70 flex-col items-center justify-center gap-4 rounded p-3"
         style={{ backgroundColor: "var(--color-white)" }}
       >
         {avatar_url && (
@@ -37,11 +37,13 @@ export function QrCard() {
         <div className="w-full">
           <QrCode url={buildUrl(slug)} />
         </div>
-        <div className="flex items-center gap-2">
-          <p className="font-semibold text-base text-black">
-            {buildUrl(slug, { withoutHttps: true })}
-          </p>
-        </div>
+        {slug && (
+          <div className="flex items-center gap-2">
+            <p className="break-all text-center font-semibold text-base text-black">
+              {buildUrl(slug, { withoutHttps: true })}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

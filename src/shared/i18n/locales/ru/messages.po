@@ -25,7 +25,7 @@ msgstr "Добавить новый блок"
 msgid "Add avatar"
 msgstr "Добавить аватар"
 
-#: src/features/editor/header/description.tsx:22
+#: src/features/editor/header/description.tsx:35
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Добавьте биографию... Введите \"/\" для команд."
 
@@ -42,7 +42,7 @@ msgstr "Назад к паролям"
 msgid "Blockquote"
 msgstr "Цитата"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:38
+#: src/features/editor/text-editor/formatting-menu.tsx:62
 msgid "Bold"
 msgstr "Жирный"
 
@@ -70,7 +70,7 @@ msgstr "Изменить пароль"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:62
+#: src/features/editor/text-editor/formatting-menu.tsx:86
 msgid "Code"
 msgstr "Код"
 
@@ -100,7 +100,7 @@ msgstr "Скопировано!"
 msgid "Copy"
 msgstr "Копировать"
 
-#: src/features/editor/menu/share/modal.tsx:58
+#: src/features/editor/menu/share/modal.tsx:60
 msgid "Copy profile URL"
 msgstr "Копировать URL профиля"
 
@@ -192,7 +192,7 @@ msgstr "Заголовок"
 msgid "Invalid email address"
 msgstr "Неверный email адрес"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:44
+#: src/features/editor/text-editor/formatting-menu.tsx:68
 msgid "Italic"
 msgstr "Курсив"
 
@@ -201,6 +201,7 @@ msgid "Last update:"
 msgstr "Последнее обновление:"
 
 #: src/features/editor/menu/new-item/index.tsx:142
+#: src/features/editor/text-editor/formatting-menu.tsx:98
 msgid "Link"
 msgstr "Ссылка"
 
@@ -221,7 +222,7 @@ msgstr "Медиа галерея"
 msgid "Menu"
 msgstr "Меню"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:68
+#: src/features/editor/text-editor/formatting-menu.tsx:92
 msgid "Muted"
 msgstr "Приглушенный"
 
@@ -249,7 +250,7 @@ msgstr "Новый пароль должен содержать минимум 8
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "Блоки еще не добавлены. Нажмите <0>+</0> в нижнем меню, чтобы добавить первый."
 
-#: src/features/editor/text-editor/commands-list.tsx:109
+#: src/features/editor/text-editor/commands-list.tsx:111
 msgid "No result"
 msgstr "Нет результатов"
 
@@ -291,7 +292,7 @@ msgstr "Настройки проекта"
 msgid "Re-enter new password"
 msgstr "Повторите новый пароль"
 
-#: src/features/editor/menu/share/modal.tsx:51
+#: src/features/editor/menu/share/modal.tsx:53
 msgid "Save QR image"
 msgstr "Сохранить QR изображение"
 
@@ -299,6 +300,10 @@ msgstr "Сохранить QR изображение"
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:163
 msgid "Sending code..."
 msgstr "Отправка кода..."
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:19
+msgid "Separator"
+msgstr "Разделитель"
 
 #: src/features/editor/menu/share/index.tsx:29
 msgid "Share"
@@ -308,7 +313,11 @@ msgstr "Поделиться"
 msgid "Share everything important on one beautiful page."
 msgstr "Поделитесь всем важным на одной красивой странице."
 
-#: src/features/editor/text-editor/formatting-menu.tsx:50
+#: src/features/editor/menu/share/modal.tsx:41
+msgid "Share my profile"
+msgstr "Поделиться моим профилем"
+
+#: src/features/editor/text-editor/formatting-menu.tsx:74
 msgid "Strikethrough"
 msgstr "Зачеркнутый"
 
@@ -316,12 +325,16 @@ msgstr "Зачеркнутый"
 msgid "Synchronization status"
 msgstr "Статус синхронизации"
 
+#: src/features/editor/menu/new-item/index.tsx:134
+msgid "Text"
+msgstr "Текст"
+
 #: src/features/editor/menu/menu/project-settings/index.tsx:30
 #: src/features/editor/menu/menu/project-settings/theme-selector.tsx:40
 msgid "Theme"
 msgstr "Тема"
 
-#: src/features/editor/text-editor/commands-list.tsx:147
+#: src/features/editor/text-editor/commands-list.tsx:149
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Совет: вы можете выделить фрагмент текста и применить к нему дополнительное форматирование."
 
@@ -333,8 +346,7 @@ msgstr "Заголовок"
 msgid "Toggle avatar blur"
 msgstr "Переключить размытие аватара"
 
-#: src/features/editor/bento/blocks/variants/text/fullscreen-title.tsx:62
-#: src/features/editor/bento/blocks/variants/text/index.tsx:66
+#: src/features/editor/bento/blocks/variants/text/index.tsx:67
 msgid "Type text here or \"/\" to open the commands"
 msgstr "Введите текст здесь или \"/\" для открытия команд"
 
@@ -342,7 +354,7 @@ msgstr "Введите текст здесь или \"/\" для открыти�
 msgid "Type your text here"
 msgstr "Введите ваш текст здесь"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:56
+#: src/features/editor/text-editor/formatting-menu.tsx:80
 msgid "Underline"
 msgstr "Подчеркнутый"
 

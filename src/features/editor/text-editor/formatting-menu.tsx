@@ -6,6 +6,7 @@ import {
   CodeIcon,
   Contrast,
   ItalicIcon,
+  Link2Icon,
   StrikethroughIcon,
   UnderlineIcon,
 } from "lucide-react";
@@ -18,18 +19,41 @@ type FormattingMenuProps = {
 export function FormattingMenu({ editor }: FormattingMenuProps) {
   const { t } = useLingui();
 
-  const { isBold, isItalic, isStrikethrough, isUnderline, isCode, isMuted } =
-    useEditorState({
-      editor,
-      selector: (ctx) => ({
-        isBold: ctx.editor.isActive("bold"),
-        isItalic: ctx.editor.isActive("italic"),
-        isStrikethrough: ctx.editor.isActive("strike"),
-        isUnderline: ctx.editor.isActive("underline"),
-        isCode: ctx.editor.isActive("code"),
-        isMuted: ctx.editor.isActive("muted"),
-      }),
-    });
+  const {
+    isBold,
+    isItalic,
+    isStrikethrough,
+    isUnderline,
+    isCode,
+    isMuted,
+    isLink,
+  } = useEditorState({
+    editor,
+    selector: (ctx) => ({
+      isBold: ctx.editor.isActive("bold"),
+      isItalic: ctx.editor.isActive("italic"),
+      isStrikethrough: ctx.editor.isActive("strike"),
+      isUnderline: ctx.editor.isActive("underline"),
+      isCode: ctx.editor.isActive("code"),
+      isMuted: ctx.editor.isActive("muted"),
+      isLink: ctx.editor.isActive("link"),
+    }),
+  });
+
+  const handleLinkClick = () => {
+    const prevLink = editor.getAttributes("link")?.href;
+
+    if (prevLink) {
+      editor.chain().focus().unsetLink().run();
+    } else {
+      // biome-ignore lint/suspicious/noAlert: TODO: Add a link input component
+      const url = prompt("Enter the URL for the link");
+
+      if (url) {
+        editor.chain().focus().toggleLink({ href: url }).run();
+      }
+    }
+  };
 
   const iconClass = "size-4 shrink-0";
 
@@ -70,11 +94,17 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
       isActive: isMuted,
       onClick: () => editor.chain().focus().toggleMark("muted").run(),
     },
+    {
+      label: t`Link`,
+      icon: <Link2Icon className={iconClass} />,
+      isActive: isLink,
+      onClick: handleLinkClick,
+    },
   ];
 
   return (
     <BubbleMenu
-      className="z-10 grid grid-cols-3 gap-1 rounded-lg border border-outline bg-background p-1"
+      className="z-10 grid grid-cols-4 gap-1 rounded-lg border border-outline bg-background p-1"
       editor={editor}
       options={{ placement: "top" }}
     >
