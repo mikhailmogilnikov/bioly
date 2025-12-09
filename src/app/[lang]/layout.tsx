@@ -39,7 +39,7 @@ export default async function RootLayout({
     <html lang={lang} suppressHydrationWarning>
       <head>
         {/** biome-ignore lint/nursery/noSyncScripts: sync script is required for worklet */}
-        <script src="/scripts/init-worklet.min.js" />
+        <script src="/scripts/init-worklet.js" />
       </head>
       <body
         className={cn(

@@ -12,6 +12,11 @@
     }
   },
   "files": {
-    "includes": ["**/*", "!src/shared/ui/animated-icons/**/*", "!public/**/*"]
+    "includes": [
+      "**/*",
+      "!src/shared/ui/animated-icons/**/*",
+      "!public/**/*",
+      "!src/shared/ui/utils/spoiler/spoiler-init.js"
+    ]
   }
 }
