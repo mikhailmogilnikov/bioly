@@ -1,5 +1,6 @@
 import { useLingui } from "@lingui/react/macro";
 import type { JSONContent } from "@tiptap/react";
+import clsx from "clsx";
 import { useProfile } from "../profile/use-profile";
 import { BasicTextEditor } from "../text-editor";
 
@@ -16,7 +17,9 @@ export const EditDescription = () => {
 
   return (
     <BasicTextEditor
-      className="z-2 px-1 max-sm:min-h-14"
+      className={clsx("z-2 px-1", {
+        "max-sm:min-h-14": !description,
+      })}
       content={description}
       onUpdate={(props) => {
         let payload: JSONContent | null = props.editor.getJSON();

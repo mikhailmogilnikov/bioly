@@ -58,7 +58,7 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
     }
   };
 
-  const iconClass = "size-4 shrink-0";
+  const iconClass = "size-5 shrink-0";
 
   const menuItems = [
     {
@@ -122,7 +122,7 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
         <button
           aria-label={label}
           className={cn(
-            "flex size-7 shrink-0 items-center justify-center gap-2 rounded-lg hover:bg-foreground/10",
+            "flex size-9 shrink-0 items-center justify-center gap-2 rounded-lg hover:bg-foreground/10",
             {
               "bg-foreground/20": isActive,
             }

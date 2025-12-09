@@ -23,7 +23,7 @@ export const PortalOverlay = ({
 }: PortalOverlayProps) =>
   isOpen &&
   createPortal(
-    <RemoveScroll forwardProps>
+    <RemoveScroll forwardProps noIsolation>
       <FocusLock>
         <div
           aria-modal="true"
