@@ -17,10 +17,10 @@
     --default: hsl(206, 50%, 77%);
     --outline: hsl(205, 61%, 81%);
     --shadow: hsla(0, 0%, 57%, 0.1);
-    --success: hsl(141, 71%, 48%);
-    --danger: hsl(348, 83%, 57%);
-    --warning: hsl(36, 100%, 50%);
-    --link: hsl(207, 90%, 61%);
+    --success: hsl(148, 58%, 32%);
+    --danger: hsl(350, 68%, 44%);
+    --warning: hsl(32, 85%, 46%);
+    --link: hsl(210, 80%, 42%);
   }
 
   .theme-green {
@@ -29,10 +29,10 @@
     --default: hsl(127, 50%, 77%);
     --outline: hsl(126, 61%, 81%);
     --shadow: hsla(0, 0%, 70%, 0.2);
-    --success: hsl(141, 71%, 48%);
-    --danger: hsl(348, 83%, 57%);
-    --warning: hsl(36, 100%, 50%);
-    --link: hsl(207, 90%, 61%);
+    --success: hsl(132, 63%, 30%);
+    --danger: hsl(350, 70%, 44%);
+    --warning: hsl(28, 84%, 44%);
+    --link: hsl(210, 82%, 40%);
   }
 
   .theme-purple {
@@ -41,10 +41,10 @@
     --default: hsl(268, 57%, 81%);
     --outline: hsl(270, 61%, 81%);
     --shadow: hsla(0, 0%, 50%, 0.1);
-    --success: hsl(141, 71%, 48%);
-    --danger: hsl(348, 83%, 57%);
-    --warning: hsl(36, 100%, 50%);
-    --link: hsl(207, 90%, 61%);
+    --success: hsl(152, 58%, 32%);
+    --danger: hsl(340, 70%, 43%);
+    --warning: hsl(32, 85%, 46%);
+    --link: hsl(222, 85%, 46%);
   }
 
   .theme-pink {
@@ -53,10 +53,10 @@
     --default: hsl(320, 57%, 81%);
     --outline: hsl(320, 61%, 81%);
     --shadow: hsla(0, 0%, 52%, 0.1);
-    --success: hsl(141, 71%, 48%);
-    --danger: hsl(348, 83%, 57%);
-    --warning: hsl(36, 100%, 50%);
-    --link: hsl(207, 90%, 61%);
+    --success: hsl(148, 58%, 32%);
+    --danger: hsl(345, 70%, 44%);
+    --warning: hsl(32, 84%, 46%);
+    --link: hsl(208, 80%, 44%);
   }
 
   .theme-golden {
@@ -65,10 +65,10 @@
     --default: hsl(30, 57%, 81%);
     --outline: hsl(30, 61%, 81%);
     --shadow: hsla(0, 0%, 49%, 0.1);
-    --success: hsl(141, 71%, 48%);
-    --danger: hsl(348, 83%, 57%);
-    --warning: hsl(36, 100%, 50%);
-    --link: hsl(207, 90%, 61%);
+    --success: hsl(150, 55%, 32%);
+    --danger: hsl(4, 70%, 42%);
+    --warning: hsl(36, 92%, 38%);
+    --link: hsl(204, 90%, 40%);
   }
 
   .theme-dark {
@@ -89,9 +89,201 @@
     --default: hsl(204, 79%, 13%);
     --outline: hsl(206, 63%, 23%);
     --shadow: hsla(0, 0%, 0%, 0.1);
-    --success: hsl(141, 71%, 48%);
-    --danger: hsl(348, 83%, 57%);
-    --warning: hsl(36, 100%, 50%);
-    --link: hsl(207, 90%, 61%);
+    --success: hsl(151, 52%, 55%);
+    --danger: hsl(350, 65%, 60%);
+    --warning: hsl(38, 90%, 60%);
+    --link: hsl(200, 82%, 70%);
+  }
+
+  .theme-dark-slate {
+    --background: hsl(215, 15%, 10%);
+    --foreground: hsl(210, 25%, 88%);
+    --default: hsl(215, 18%, 16%);
+    --outline: hsl(215, 16%, 22%);
+    --shadow: hsla(0, 0%, 0%, 0.14);
+    --success: hsl(148, 52%, 55%);
+    --danger: hsl(2, 70%, 62%);
+    --warning: hsl(38, 88%, 62%);
+    --link: hsl(205, 85%, 68%);
+  }
+
+  .theme-dark-forest {
+    --background: hsl(155, 22%, 9%);
+    --foreground: hsl(150, 28%, 82%);
+    --default: hsl(155, 24%, 14%);
+    --outline: hsl(155, 22%, 20%);
+    --shadow: hsla(0, 0%, 0%, 0.14);
+    --success: hsl(146, 56%, 52%);
+    --danger: hsl(356, 65%, 60%);
+    --warning: hsl(40, 85%, 60%);
+    --link: hsl(180, 70%, 68%);
+  }
+
+  .theme-dark-plum {
+    --background: hsl(280, 20%, 10%);
+    --foreground: hsl(280, 32%, 88%);
+    --default: hsl(280, 22%, 16%);
+    --outline: hsl(280, 22%, 22%);
+    --shadow: hsla(0, 0%, 0%, 0.14);
+    --success: hsl(148, 52%, 55%);
+    --danger: hsl(350, 65%, 60%);
+    --warning: hsl(38, 88%, 62%);
+    --link: hsl(210, 85%, 70%);
+  }
+
+  .theme-dark-amber {
+    --background: hsl(35, 18%, 9%);
+    --foreground: hsl(35, 30%, 86%);
+    --default: hsl(35, 22%, 14%);
+    --outline: hsl(35, 20%, 20%);
+    --shadow: hsla(0, 0%, 0%, 0.14);
+    --success: hsl(146, 56%, 52%);
+    --danger: hsl(2, 70%, 62%);
+    --warning: hsl(38, 88%, 62%);
+    --link: hsl(205, 85%, 68%);
+  }
+
+  .theme-teal {
+    --background: hsl(174, 60%, 93%);
+    --foreground: hsl(175, 35%, 20%);
+    --default: hsl(174, 45%, 78%);
+    --outline: hsl(174, 42%, 82%);
+    --shadow: hsla(0, 0%, 45%, 0.12);
+    --success: hsl(152, 58%, 32%);
+    --danger: hsl(350, 68%, 44%);
+    --warning: hsl(32, 85%, 46%);
+    --link: hsl(188, 82%, 42%);
+  }
+
+  .theme-coral {
+    --background: hsl(12, 70%, 94%);
+    --foreground: hsl(10, 45%, 22%);
+    --default: hsl(12, 50%, 82%);
+    --outline: hsl(12, 55%, 84%);
+    --shadow: hsla(0, 0%, 48%, 0.12);
+    --success: hsl(142, 56%, 34%);
+    --danger: hsl(355, 72%, 46%);
+    --warning: hsl(34, 88%, 46%);
+    --link: hsl(205, 80%, 44%);
+  }
+
+  .theme-lavender {
+    --background: hsl(255, 65%, 95%);
+    --foreground: hsl(258, 32%, 20%);
+    --default: hsl(258, 42%, 82%);
+    --outline: hsl(258, 44%, 85%);
+    --shadow: hsla(0, 0%, 48%, 0.12);
+    --success: hsl(152, 58%, 32%);
+    --danger: hsl(350, 68%, 44%);
+    --warning: hsl(32, 84%, 46%);
+    --link: hsl(220, 82%, 44%);
+  }
+
+  .theme-sand {
+    --background: hsl(40, 55%, 94%);
+    --foreground: hsl(38, 38%, 22%);
+    --default: hsl(40, 46%, 80%);
+    --outline: hsl(40, 48%, 84%);
+    --shadow: hsla(0, 0%, 48%, 0.12);
+    --success: hsl(152, 58%, 32%);
+    --danger: hsl(350, 68%, 44%);
+    --warning: hsl(32, 84%, 46%);
+    --link: hsl(205, 80%, 44%);
+  }
+
+  .theme-dark-ink {
+    --background: hsl(215, 15%, 7%);
+    --foreground: hsl(215, 25%, 86%);
+    --default: hsl(215, 18%, 12%);
+    --outline: hsl(215, 16%, 20%);
+    --shadow: hsla(0, 0%, 0%, 0.14);
+    --success: hsl(148, 52%, 55%);
+    --danger: hsl(2, 68%, 60%);
+    --warning: hsl(38, 88%, 62%);
+    --link: hsl(205, 85%, 70%);
+  }
+
+  .theme-dark-copper {
+    --background: hsl(20, 28%, 10%);
+    --foreground: hsl(20, 35%, 88%);
+    --default: hsl(20, 30%, 16%);
+    --outline: hsl(20, 26%, 22%);
+    --shadow: hsla(0, 0%, 0%, 0.14);
+    --success: hsl(148, 52%, 55%);
+    --danger: hsl(350, 68%, 60%);
+    --warning: hsl(38, 88%, 62%);
+    --link: hsl(205, 85%, 68%);
+  }
+
+  .theme-mint {
+    --background: hsl(150, 55%, 95%);
+    --foreground: hsl(152, 32%, 20%);
+    --default: hsl(150, 45%, 82%);
+    --outline: hsl(150, 46%, 85%);
+    --shadow: hsla(0, 0%, 48%, 0.12);
+    --success: hsl(148, 58%, 32%);
+    --danger: hsl(350, 68%, 44%);
+    --warning: hsl(32, 84%, 46%);
+    --link: hsl(188, 82%, 42%);
+  }
+
+  .theme-sky {
+    --background: hsl(205, 85%, 95%);
+    --foreground: hsl(207, 45%, 20%);
+    --default: hsl(205, 70%, 82%);
+    --outline: hsl(205, 72%, 85%);
+    --shadow: hsla(0, 0%, 48%, 0.12);
+    --success: hsl(152, 58%, 32%);
+    --danger: hsl(350, 68%, 44%);
+    --warning: hsl(32, 84%, 46%);
+    --link: hsl(208, 82%, 44%);
+  }
+
+  .theme-dark-olive {
+    --background: hsl(95, 12%, 9%);
+    --foreground: hsl(95, 22%, 84%);
+    --default: hsl(95, 14%, 14%);
+    --outline: hsl(95, 12%, 20%);
+    --shadow: hsla(0, 0%, 0%, 0.14);
+    --success: hsl(146, 56%, 52%);
+    --danger: hsl(350, 68%, 60%);
+    --warning: hsl(38, 88%, 62%);
+    --link: hsl(188, 72%, 66%);
+  }
+
+  .theme-dark-indigo {
+    --background: hsl(232, 25%, 9%);
+    --foreground: hsl(232, 34%, 86%);
+    --default: hsl(232, 22%, 14%);
+    --outline: hsl(232, 22%, 21%);
+    --shadow: hsla(0, 0%, 0%, 0.14);
+    --success: hsl(148, 52%, 55%);
+    --danger: hsl(350, 65%, 60%);
+    --warning: hsl(38, 88%, 62%);
+    --link: hsl(210, 85%, 70%);
+  }
+
+  .theme-ice {
+    --background: hsl(195, 60%, 96%);
+    --foreground: hsl(200, 35%, 20%);
+    --default: hsl(195, 45%, 84%);
+    --outline: hsl(195, 48%, 86%);
+    --shadow: hsla(0, 0%, 48%, 0.12);
+    --success: hsl(152, 58%, 32%);
+    --danger: hsl(350, 68%, 44%);
+    --warning: hsl(32, 84%, 46%);
+    --link: hsl(205, 82%, 44%);
+  }
+
+  .theme-peach {
+    --background: hsl(22, 75%, 95%);
+    --foreground: hsl(22, 40%, 22%);
+    --default: hsl(22, 55%, 82%);
+    --outline: hsl(22, 58%, 85%);
+    --shadow: hsla(0, 0%, 48%, 0.12);
+    --success: hsl(152, 58%, 32%);
+    --danger: hsl(350, 68%, 44%);
+    --warning: hsl(32, 84%, 46%);
+    --link: hsl(205, 80%, 44%);
   }
 }

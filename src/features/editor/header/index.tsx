@@ -13,6 +13,24 @@ export function EditorHeader() {
       <EditName />
       <EditDescription />
       <EditSocialMedia />
+      <div className="flex items-center gap-2">
+        <div className="h-10 w-10 bg-success" />
+        <p className="font-medium text-base text-success">
+          100 sdawedsadsa das asd
+        </p>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="h-10 w-10 bg-warning" />
+        <p className="font-medium text-base text-warning">
+          100 sdawedsadsa das asd
+        </p>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="h-10 w-10 bg-danger" />
+        <p className="font-medium text-base text-danger">
+          100 sdawedsadsa das asd
+        </p>
+      </div>
     </header>
   );
 }

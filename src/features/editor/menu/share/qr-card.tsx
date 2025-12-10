@@ -19,7 +19,7 @@ export function QrCard() {
       id="qr-root"
     >
       <div
-        className="flex w-full max-w-70 flex-col items-center justify-center gap-4 rounded p-3"
+        className="flex w-full max-w-70 flex-col items-center justify-center gap-3 rounded p-4"
         style={{ backgroundColor: "var(--color-white)" }}
       >
         {avatar_url && (

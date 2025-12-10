@@ -172,7 +172,6 @@ msgid "Enter URL"
 msgstr "Введите URL"
 
 #: src/features/editor/menu/menu/project-settings/font-selector.tsx:40
-#: src/features/editor/menu/menu/project-settings/index.tsx:36
 msgid "Font"
 msgstr "Шрифт"
 
@@ -261,6 +260,10 @@ msgstr "Нумерованный список"
 msgid "Only digits are allowed"
 msgstr "Разрешены только цифры"
 
+#: src/app/[lang]/(brand)/404/page.tsx:10
+msgid "Page not found"
+msgstr ""
+
 #: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:24
 msgid "Password must contain at least one lowercase letter"
 msgstr "Пароль должен содержать хотя бы одну строчную букву"
@@ -332,8 +335,7 @@ msgstr "Статус синхронизации"
 msgid "Text"
 msgstr "Текст"
 
-#: src/features/editor/menu/menu/project-settings/index.tsx:30
-#: src/features/editor/menu/menu/project-settings/theme-selector.tsx:40
+#: src/features/editor/menu/menu/project-settings/theme-selector.tsx:45
 msgid "Theme"
 msgstr "Тема"
 
@@ -411,7 +413,7 @@ msgstr "Ваша ссылка"
 msgid "Your name"
 msgstr "Ваше имя"
 
-#: src/app/[lang]/page.tsx:8
+#: src/app/[lang]/(brand)/page.tsx:8
 msgid "Домашняя страница"
 msgstr "Домашняя страница"
 

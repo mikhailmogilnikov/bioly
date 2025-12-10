@@ -2,7 +2,6 @@
 
 @import "./scrollbar.css";
 @import "./themes.css";
-@import "./fonts.css";
 @import "./text-editor.css";
 
 @plugin "tailwindcss-motion";
@@ -52,6 +51,8 @@
 
 @layer base {
   :root {
+    --smooth: 0.85;
+
     *:focus-visible {
       outline: 2px solid var(--foreground);
       outline-offset: 2px;

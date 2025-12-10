@@ -57,8 +57,8 @@ export const Spoiler: React.FC<
         <SpoilerComponent
           density={density}
           fps={14}
-          hidden={!isOpen}
           // mimicWords={false}
+          hidden={!isOpen}
           onClick={() => {
             setIsOpen(!isOpen);
           }}

@@ -15,6 +15,7 @@ const localizedPaths = [
   "login",
   "signup",
   "reset-password",
+  "404",
 ] as const;
 
 export function proxy(request: NextRequest) {

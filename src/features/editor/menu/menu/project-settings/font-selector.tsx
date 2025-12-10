@@ -1,6 +1,7 @@
 import { Trans } from "@lingui/react/macro";
 import { ChevronDownIcon } from "lucide-react";
-import { FONTS, type Font } from "@/shared/domain/theme";
+import { changeBodyFont } from "@/features/editor/use-init-editor";
+import { FONT_CLASSNAMES, FONTS, type Font } from "@/shared/domain/theme";
 import { cn } from "@/shared/lib/utils";
 import {
   DropdownMenu,
@@ -17,8 +18,7 @@ export function FontSelector() {
   const currentFont = useProfile((state) => state.profile.theme.font);
 
   const handleFontChange = (font: Font) => {
-    window.document.body.classList.remove(currentFont);
-    window.document.body.classList.add(font);
+    changeBodyFont(font);
     updateThemeField("font", font);
   };
 
@@ -28,7 +28,7 @@ export function FontSelector() {
         <ChevronDownIcon className="size-4 opacity-50" />
         <p
           className={cn(
-            currentFont,
+            FONT_CLASSNAMES[currentFont],
             "font-medium text-base first-letter:capitalize"
           )}
         >
@@ -47,7 +47,7 @@ export function FontSelector() {
           >
             <p
               className={cn(
-                font,
+                FONT_CLASSNAMES[font],
                 "font-medium text-base first-letter:capitalize"
               )}
             >

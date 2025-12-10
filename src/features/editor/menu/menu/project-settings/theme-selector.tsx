@@ -1,6 +1,12 @@
 import { Trans } from "@lingui/react/macro";
 import { ChevronDownIcon } from "lucide-react";
-import { THEMES, type Theme, ThemesNames } from "@/shared/domain/theme";
+import { changeBodyTheme } from "@/features/editor/use-init-editor";
+import {
+  THEME_CLASSNAMES,
+  THEMES,
+  type Theme,
+  ThemesNames,
+} from "@/shared/domain/theme";
 import { cn } from "@/shared/lib/utils";
 import {
   DropdownMenu,
@@ -17,8 +23,7 @@ export function ThemeSelector() {
   const currentTheme = useProfile((state) => state.profile.theme.theme);
 
   const handleThemeChange = (theme: Theme) => {
-    window.document.body.classList.remove(currentTheme);
-    window.document.body.classList.add(theme);
+    changeBodyTheme(theme);
     updateThemeField("theme", theme);
   };
 
@@ -47,7 +52,7 @@ export function ThemeSelector() {
           >
             <div
               className={cn(
-                theme,
+                THEME_CLASSNAMES[theme],
                 "size-6 rounded-full border border-outline bg-linear-to-bl from-background to-default"
               )}
             />
