@@ -43,7 +43,7 @@ export default async function RootLayout({
       </head>
       <body
         className={cn(
-          "theme-dark min-h-screen overflow-y-scroll bg-background text-foreground antialiased",
+          "theme-dark min-h-screen overflow-x-hidden overflow-y-scroll bg-background text-foreground antialiased",
           openRundeFont.className
         )}
         // TODO: temporal styles for worklet

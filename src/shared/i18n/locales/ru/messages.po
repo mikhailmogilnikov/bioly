@@ -25,7 +25,7 @@ msgstr "Добавить новый блок"
 msgid "Add avatar"
 msgstr "Добавить аватар"
 
-#: src/features/editor/header/description.tsx:35
+#: src/features/editor/header/description.tsx:38
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Добавьте биографию... Введите \"/\" для команд."
 

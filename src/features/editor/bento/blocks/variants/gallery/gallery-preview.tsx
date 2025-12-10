@@ -27,6 +27,19 @@ export const BentoBlockGalleryPreview = () => {
   }, [carouselInstance]);
 
   return (
+    // <Spoiler
+    //   className="size-full"
+    //   revealOn="click"
+    //   rootClassName="size-full"
+    //   spoilerFallback={
+    //     <Image
+    //       alt="Sample image #1"
+    //       className="size-full object-cover opacity-30 blur-xl"
+    //       fill
+    //       src="https://i.scdn.co/image/ab67616d0000b27398d711627751989d1ae8b0fb"
+    //     />
+    //   }
+    // >
     <div
       className="relative size-full"
       id={`bento-item-${id}-gallery-preview`}
@@ -63,5 +76,6 @@ export const BentoBlockGalleryPreview = () => {
         />
       </div>
     </div>
+    // </Spoiler>
   );
 };
