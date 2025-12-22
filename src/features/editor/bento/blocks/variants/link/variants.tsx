@@ -2,11 +2,11 @@ import { ArrowUpRightIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/shared/lib/utils";
 
-type BentoItemLinkFaviconProps = {
+interface BentoItemLinkFaviconProps {
   faviconImg: ReactNode;
   faviconLightClassName?: string;
   arrowUpRightClassName?: string;
-};
+}
 
 const BentoItemDefaultAbsoluteItems = ({
   faviconImg,
@@ -25,7 +25,7 @@ const BentoItemDefaultAbsoluteItems = ({
 
     <div
       className={cn(
-        "group-hover:-translate-y-0.5 absolute top-4 right-4 z-10 duration-300 group-hover:translate-x-0.5 group-hover:text-link",
+        "absolute top-4 right-4 z-10 duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-link",
         arrowUpRightClassName
       )}
     >

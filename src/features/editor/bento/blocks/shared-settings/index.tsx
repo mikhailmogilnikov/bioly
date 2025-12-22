@@ -1,9 +1,9 @@
 import { useBlockContext } from "../../grid/ui/block-context";
 import { useRenderBlockSettings } from "../model/use-render-block-settings";
 
-export type BentoItemOptionsProps = {
+export interface BentoItemOptionsProps {
   id: string;
-};
+}
 
 export const BentoItemOptions = () => {
   const { id } = useBlockContext();

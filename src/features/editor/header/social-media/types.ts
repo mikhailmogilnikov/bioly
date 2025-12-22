@@ -23,20 +23,20 @@ export const SocialMediaPlatforms = {
   WHATSAPP: "whatsapp",
 } as const;
 
-type SocialMediaItemInner = {
+interface SocialMediaItemInner {
   name: string;
   icon: string;
   url: string;
-};
+}
 
 export type SocialMediaPlatform =
   (typeof SocialMediaPlatforms)[keyof typeof SocialMediaPlatforms];
 
-export type SocialMediaItem = {
+export interface SocialMediaItem {
   platform: SocialMediaPlatform;
   slug: string;
   order: number;
-};
+}
 
 export const SocialMedia: Record<SocialMediaPlatform, SocialMediaItemInner> = {
   [SocialMediaPlatforms.BLUESKY]: {

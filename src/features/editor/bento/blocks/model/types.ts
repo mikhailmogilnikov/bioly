@@ -49,11 +49,11 @@ export type BentoBlockProperties<T extends BentoBlockTypeKey> =
         ? BentoBlockPropertiesText
         : never;
 
-export type BentoBlock<T extends BentoBlockTypeKey> = {
+export interface BentoBlock<T extends BentoBlockTypeKey> {
   id: string;
   size: BentoBlockSize;
   order: number;
   style: BentoBlockStyle;
   type: T;
   properties: BentoBlockProperties<T>;
-};
+}

@@ -10,7 +10,7 @@
     "start:standalone": "node scripts/start-standalone.js",
     "typegen": "next typegen",
     "lint": "ultracite check",
-    "lint:fix": "ultracite check --fix",
+    "fix": "ultracite fix --unsafe",
     "typecheck": "tsc --noEmit",
     "extract": "lingui extract --clean",
     "compile": "lingui compile"

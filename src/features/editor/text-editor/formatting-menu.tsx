@@ -13,9 +13,9 @@ import {
 } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
 
-type FormattingMenuProps = {
+interface FormattingMenuProps {
   editor: Editor;
-};
+}
 
 export function FormattingMenu({ editor }: FormattingMenuProps) {
   const { t } = useLingui();

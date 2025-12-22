@@ -19,14 +19,14 @@ import {
 import type { ChangePasswordStep } from "./modal";
 import { useChangePasswordSchemas } from "./use-change-password-schemas";
 
-type ChangePasswordStep2Props = {
+interface ChangePasswordStep2Props {
   setStep: (step: ChangePasswordStep) => void;
   onSuccess: () => void;
-};
+}
 
-type OTPFormData = {
+interface OTPFormData {
   otp: string;
-};
+}
 
 export function ChangePasswordStep2({
   setStep,

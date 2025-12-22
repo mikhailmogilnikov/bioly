@@ -137,10 +137,10 @@ export const THEME_CLASSNAMES: Record<Theme, string> = {
 export type Font = (typeof FONTS)[keyof typeof FONTS];
 export type Theme = (typeof THEMES)[keyof typeof THEMES];
 
-export type ThemeSettings = {
+export interface ThemeSettings {
   font: Font;
   theme: Theme;
   show_avatar_blur: boolean;
   border_radius: number;
   border_width: number;
-};
+}

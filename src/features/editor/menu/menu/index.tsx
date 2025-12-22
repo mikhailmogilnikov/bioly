@@ -27,12 +27,12 @@ import { useProfile } from "../../profile/use-profile";
 import { ProfileModal } from "./profile";
 import { ProjectSettingsModal } from "./project-settings";
 
-type IconHandle = {
+interface IconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
-};
+}
 
-type MenuItemConfig = {
+interface MenuItemConfig {
   id: string;
   label: string;
   Icon:
@@ -40,7 +40,7 @@ type MenuItemConfig = {
     | typeof ActivityIcon
     | typeof UserIcon
     | typeof ChartSplineIcon;
-};
+}
 
 const menuItems: MenuItemConfig[] = [
   { id: "settings", label: "", Icon: CogIcon },
@@ -160,7 +160,7 @@ export const EditBarMenu = () => {
             >
               <Pulse className="mx-1.5" />
               <Trans>Go to live</Trans>
-              <ArrowUpRight className="group-hover:-translate-y-0.5 absolute right-3 size-4 opacity-50 transition-transform group-hover:translate-x-0.5" />
+              <ArrowUpRight className="absolute right-3 size-4 opacity-50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>

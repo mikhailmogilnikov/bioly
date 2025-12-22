@@ -10,9 +10,9 @@ import { useBentoStore } from "../model/use-bento-store";
 import { useBlockContext } from "./block-context";
 import { SpringTransition } from "./item";
 
-type BentoGridItemUnfocusedProps = {
+interface BentoGridItemUnfocusedProps {
   transitionStyle: CSSProperties;
-};
+}
 
 const BENTO_MARGIN_PX = 8;
 
@@ -77,7 +77,7 @@ const BentoGridBlockHandle = () => {
 
   return (
     <div
-      className="handle -right-2 -bottom-2 absolute z-1 flex size-8 cursor-grab items-center justify-center rounded-full bg-background/70 outline outline-outline transition-transform active:scale-120"
+      className="handle absolute -right-2 -bottom-2 z-1 flex size-8 cursor-grab items-center justify-center rounded-full bg-background/70 outline outline-outline transition-transform active:scale-120"
       id={`bento-item-${id}-handle`}
     >
       <Move className="size-5 text-foreground" />

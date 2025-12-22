@@ -14,7 +14,7 @@ import { PasswordInput } from "@/shared/ui/kit/primitives/password-input";
 import type { ChangePasswordStep } from "./modal";
 import { useChangePasswordSchemas } from "./use-change-password-schemas";
 
-type ChangePasswordStep1Props = {
+interface ChangePasswordStep1Props {
   setStep: (step: ChangePasswordStep) => void;
   passwordData: {
     oldPassword: string;
@@ -26,13 +26,13 @@ type ChangePasswordStep1Props = {
     newPassword: string;
     confirmPassword: string;
   }) => void;
-};
+}
 
-type PasswordFormData = {
+interface PasswordFormData {
   oldPassword: string;
   newPassword: string;
   confirmPassword: string;
-};
+}
 
 export function ChangePasswordStep1({
   setStep,

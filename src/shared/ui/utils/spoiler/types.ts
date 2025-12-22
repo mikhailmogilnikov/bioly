@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from "react";
 
-export type SpoilerPainterOptions = {
+export interface SpoilerPainterOptions {
   readonly fps?: number;
   readonly gap?: number | boolean;
   readonly density?: number;
@@ -8,7 +8,7 @@ export type SpoilerPainterOptions = {
   readonly accentColor?: string;
   readonly fallback?: string | false;
   readonly forceFallback?: boolean;
-};
+}
 
 export type SpoilerProps = {
   // control spoiler state from the parent

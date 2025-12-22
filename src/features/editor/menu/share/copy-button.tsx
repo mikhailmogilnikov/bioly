@@ -2,12 +2,12 @@ import { Trans } from "@lingui/react/macro";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
-type CopyButtonProps = {
+interface CopyButtonProps {
   text: string;
   className?: string;
   iconClassName?: string;
   children?: React.ReactNode;
-};
+}
 
 export function CopyButton({
   text,

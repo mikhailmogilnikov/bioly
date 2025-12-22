@@ -22,11 +22,11 @@ export const BentoGridBlockContext = createContext<{
   closeBlockOverlay: () => {},
 });
 
-type BentoGridBlockProviderProps = {
+interface BentoGridBlockProviderProps {
   children: React.ReactNode;
   id: string;
   block: BentoBlock<BentoBlockTypeKey>;
-};
+}
 
 export const BentoGridBlockProvider = ({
   children,

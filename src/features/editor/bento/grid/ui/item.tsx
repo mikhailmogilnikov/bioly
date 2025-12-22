@@ -9,9 +9,9 @@ import { BentoGridBlockProvider } from "./block-context";
 import { BentoGridItemFocused } from "./item-focused";
 import { BentoGridItemUnfocused } from "./item-unfocused";
 
-export type BentoGridItemProps = {
+export interface BentoGridItemProps {
   id: string;
-};
+}
 
 export const SpringTransition: Transition = {
   type: "spring",

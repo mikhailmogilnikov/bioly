@@ -1,5 +1,5 @@
 import type { JSONContent } from "@tiptap/react";
 
-export type BentoBlockPropertiesText = {
+export interface BentoBlockPropertiesText {
   content: JSONContent | null;
-};
+}

@@ -9,10 +9,10 @@ import { BentoItemOptions } from "../../blocks/shared-settings";
 import { useBlockContext } from "./block-context";
 import { SpringTransition } from "./item";
 
-type BentoGridItemFocusedProps = {
+interface BentoGridItemFocusedProps {
   transitionStyle: CSSProperties;
   gridSize: number;
-};
+}
 
 export function BentoGridItemFocused({
   transitionStyle,

@@ -5,14 +5,14 @@ import { createPortal } from "react-dom";
 import FocusLock from "react-focus-lock";
 import { RemoveScroll } from "react-remove-scroll";
 
-type PortalOverlayProps = {
+interface PortalOverlayProps {
   children: ReactNode;
   isOpen: boolean;
   overlayId?: string;
   onClose: () => void;
   onAnimationEnd?: () => void;
   className?: string;
-};
+}
 
 export const PortalOverlay = ({
   children,

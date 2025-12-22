@@ -30,7 +30,7 @@ function PasswordInput({ className, ...props }: PasswordInputProps) {
       />
       <button
         aria-label={showPassword ? t`Скрыть пароль` : t`Показать пароль`}
-        className="-translate-y-1/2 absolute top-1/2 right-3 rounded p-1 text-foreground/60 transition-colors hover:text-foreground"
+        className="absolute top-1/2 right-3 -translate-y-1/2 rounded p-1 text-foreground/60 transition-colors hover:text-foreground"
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();

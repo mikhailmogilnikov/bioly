@@ -38,7 +38,6 @@ export default async function PersonalLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
-        {/** biome-ignore lint/nursery/noSyncScripts: sync script is required for worklet */}
         <script src="/scripts/init-worklet.js" />
 
         <link href="https://fonts.googleapis.com" rel="preconnect" />

@@ -24,13 +24,13 @@ import {
   type ModalProps,
 } from "./modal";
 
-export type AdaptiveModalProps = {
+export interface AdaptiveModalProps {
   children?: ReactNode;
   open: boolean;
   onOpenChange: () => void;
   modalProps?: ModalProps;
   drawerProps?: DrawerProps;
-};
+}
 
 const BREAKPOINT_MOBILE = CONFIG.BREAKPOINT_MOBILE;
 
@@ -54,11 +54,11 @@ export const AdaptiveModal = ({
   );
 };
 
-type AdaptiveModalHeaderProps = {
+interface AdaptiveModalHeaderProps {
   children?: ReactNode;
   drawerProps?: DrawerHeaderProps;
   modalProps?: ModalHeaderProps;
-};
+}
 
 export const AdaptiveModalHeader = ({
   children,
@@ -79,11 +79,11 @@ export const AdaptiveModalHeader = ({
   );
 };
 
-type AdaptiveModalContentProps = {
+interface AdaptiveModalContentProps {
   children?: ReactNode;
   drawerProps?: DrawerContentProps;
   modalProps?: ModalContentProps;
-};
+}
 
 export const AdaptiveModalContent = ({
   children,
@@ -100,12 +100,12 @@ export const AdaptiveModalContent = ({
   );
 };
 
-type AdaptiveModalFooterProps = {
+interface AdaptiveModalFooterProps {
   children?: ReactNode;
   drawerProps?: DrawerFooterProps;
   modalProps?: ModalFooterProps;
   cancelButton?: boolean;
-};
+}
 
 export const AdaptiveModalFooter = ({
   children,

@@ -12,7 +12,7 @@ const modalTV = tv({
     overlay:
       "data-[state=closed]:motion-opacity-out data-[state=open]:motion-opacity-in fixed inset-0 z-50 bg-black/50",
     content:
-      "-translate-x-1/2 -translate-y-1/2 data-[state=closed]:motion-scale-out-98 data-[state=closed]:motion-opacity-out data-[state=open]:motion-scale-in-98 motion-duration-200 data-[state=open]:motion-opacity-in fixed top-1/2 left-1/2 z-50 flex h-auto min-h-16 w-full flex-col rounded border border-outline bg-background",
+      "data-[state=closed]:motion-scale-out-98 data-[state=closed]:motion-opacity-out data-[state=open]:motion-scale-in-98 motion-duration-200 data-[state=open]:motion-opacity-in fixed top-1/2 left-1/2 z-50 flex h-auto min-h-16 w-full -translate-x-1/2 -translate-y-1/2 flex-col rounded border border-outline bg-background",
     close:
       "absolute top-6 right-6 z-30 flex size-8 cursor-pointer items-center justify-center rounded-full bg-default",
     closeIcon: "size-5 opacity-60",

@@ -6,7 +6,7 @@ import type {
 import type { SocialMediaItem } from "../header/social-media/types";
 import type { ProfileTheme } from "./theme.type";
 
-export type Profile = {
+export interface Profile {
   id: string;
   name: string;
   slug: string;
@@ -17,7 +17,7 @@ export type Profile = {
   theme: ProfileTheme;
   social_media: SocialMediaItem[];
   bento: BentoBlock<BentoBlockTypeKey>[];
-};
+}
 
 export type ProfileMainEditableFields = Omit<Profile, "id">;
 

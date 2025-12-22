@@ -2,9 +2,9 @@ import { type CommandProps, Node, type RawCommands } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
 import { SpoilerNodeView } from "@/shared/ui/utils/spoiler/spoiler-node-view";
 
-type SpoilerOptions = {
+interface SpoilerOptions {
   isStatic?: boolean;
-};
+}
 
 export const Spoiler = Node.create<SpoilerOptions>({
   name: "spoiler",

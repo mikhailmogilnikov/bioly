@@ -5,10 +5,10 @@ import { type Editor, posToDOMRect, type Range } from "@tiptap/core";
 import { ReactRenderer } from "@tiptap/react";
 import { CommandsList, type CommandsListRef } from "../commands-list";
 
-type SuggestionProps = {
+interface SuggestionProps {
   editor: Editor;
   range: Range;
-};
+}
 
 export const COMMAND_TITLES: Record<string, MessageDescriptor> = {
   heading: msg`Heading`,

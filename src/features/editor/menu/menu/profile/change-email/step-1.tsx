@@ -14,15 +14,15 @@ import {
 import { Input } from "@/shared/ui/kit/primitives/input";
 import type { ChangeEmailStep } from "./modal";
 
-type ChangeEmailStep1Props = {
+interface ChangeEmailStep1Props {
   setStep: (step: ChangeEmailStep) => void;
   newEmail: string;
   setNewEmail: (email: string) => void;
-};
+}
 
-type EmailFormData = {
+interface EmailFormData {
   newEmail: string;
-};
+}
 
 export function ChangeEmailStep1({
   setStep,

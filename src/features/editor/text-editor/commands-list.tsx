@@ -12,11 +12,11 @@ import {
 import { useEffect, useImperativeHandle, useState } from "react";
 import { COMMAND_TITLES } from "./extensions/suggestion";
 
-export type CommandsListRef = {
+export interface CommandsListRef {
   onKeyDown: (props: { event: KeyboardEvent }) => boolean;
-};
+}
 
-type CommandsListProps = {
+interface CommandsListProps {
   items: Array<{
     title: string;
     id: string;
@@ -30,7 +30,7 @@ type CommandsListProps = {
     disabled?: boolean;
   }) => void;
   ref?: React.RefObject<CommandsListRef>;
-};
+}
 
 export const CommandsList = ({ items, command, ref }: CommandsListProps) => {
   const { i18n } = useLingui();

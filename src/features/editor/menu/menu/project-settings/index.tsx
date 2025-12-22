@@ -9,10 +9,10 @@ import { FontSelector } from "./font-selector";
 import { RoundSlider } from "./round-slider";
 import { ThemeSelector } from "./theme-selector";
 
-type ProjectSettingsProps = {
+interface ProjectSettingsProps {
   open: boolean;
   onOpenChange: () => void;
-};
+}
 
 export function ProjectSettingsModal({
   open,

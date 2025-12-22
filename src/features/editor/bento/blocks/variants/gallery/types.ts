@@ -1,3 +1,3 @@
-export type BentoBlockPropertiesGallery = {
+export interface BentoBlockPropertiesGallery {
   media: string[];
-};
+}

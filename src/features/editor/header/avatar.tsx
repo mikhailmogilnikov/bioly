@@ -112,7 +112,7 @@ export const EditAvatar = ({
       )}
 
       <AnimatePresence
-        className="-z-1 absolute top-18 left-10 size-full"
+        className="absolute top-18 left-10 -z-1 size-full"
         inClass="motion-opacity-in-0 motion-scale-in-0"
         outClass="motion-opacity-out-0 motion-scale-out-0"
         show={!!avatar_url && show_avatar_blur}

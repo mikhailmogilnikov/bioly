@@ -4,9 +4,9 @@ import { cn } from "@/shared/lib/utils";
 import { useBlockContext } from "../../grid/ui/block-context";
 import { BentoBlockSize } from "../model/types";
 
-type BentoBlockSizeProps = {
+interface BentoBlockSizeProps {
   sizes: BentoBlockSize[];
-};
+}
 
 export const BentoBlockSizeSetting = ({ sizes }: BentoBlockSizeProps) => {
   const updateBentoBlockField = useProfile(

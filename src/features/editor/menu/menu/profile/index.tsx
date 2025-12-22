@@ -10,10 +10,10 @@ import { ChangePassword } from "./change-password/change-password";
 import { ChangeSlug } from "./change-slug";
 import { Logout } from "./logout";
 
-type ProfileModalProps = {
+interface ProfileModalProps {
   open: boolean;
   onOpenChange: () => void;
-};
+}
 
 export function ProfileModal({ open, onOpenChange }: ProfileModalProps) {
   return (
