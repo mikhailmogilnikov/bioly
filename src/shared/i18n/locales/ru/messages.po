@@ -42,7 +42,7 @@ msgstr "Назад к паролям"
 msgid "Blockquote"
 msgstr "Цитата"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:65
+#: src/features/editor/text-editor/formatting-menu.tsx:84
 msgid "Bold"
 msgstr "Жирный"
 
@@ -70,7 +70,7 @@ msgstr "Изменить пароль"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:89
+#: src/features/editor/text-editor/formatting-menu.tsx:108
 msgid "Code"
 msgstr "Код"
 
@@ -119,6 +119,10 @@ msgstr "Удалить"
 #: src/features/editor/header/avatar.tsx:160
 msgid "Delete avatar"
 msgstr "Удалить аватар"
+
+#: src/features/editor/text-editor/extensions/suggestion.tsx:20
+msgid "Details"
+msgstr "Детали"
 
 #: src/features/editor/header/social-media/modal.tsx:39
 msgid "Edit social media"
@@ -191,7 +195,7 @@ msgstr "Заголовок"
 msgid "Invalid email address"
 msgstr "Неверный email адрес"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:71
+#: src/features/editor/text-editor/formatting-menu.tsx:90
 msgid "Italic"
 msgstr "Курсив"
 
@@ -199,7 +203,7 @@ msgstr "Курсив"
 msgid "Last update:"
 msgstr "Последнее обновление:"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:101
+#: src/features/editor/text-editor/formatting-menu.tsx:120
 msgid "Link"
 msgstr "Ссылка"
 
@@ -220,7 +224,7 @@ msgstr "Медиа галерея"
 msgid "Menu"
 msgstr "Меню"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:95
+#: src/features/editor/text-editor/formatting-menu.tsx:114
 msgid "Muted"
 msgstr "Приглушенный"
 
@@ -319,11 +323,11 @@ msgstr "Поделитесь всем важным на одной красив�
 msgid "Share my profile"
 msgstr "Поделиться моим профилем"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:107
+#: src/features/editor/text-editor/formatting-menu.tsx:126
 msgid "Spoiler"
 msgstr ""
 
-#: src/features/editor/text-editor/formatting-menu.tsx:77
+#: src/features/editor/text-editor/formatting-menu.tsx:96
 msgid "Strikethrough"
 msgstr "Зачеркнутый"
 
@@ -359,7 +363,7 @@ msgstr "Введите текст здесь или \"/\" для открыти�
 msgid "Type your text here"
 msgstr "Введите ваш текст здесь"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:83
+#: src/features/editor/text-editor/formatting-menu.tsx:102
 msgid "Underline"
 msgstr "Подчеркнутый"
 
@@ -409,7 +413,7 @@ msgstr "Мы отправим код подтверждения на ваш emai
 msgid "Your link"
 msgstr "Ваша ссылка"
 
-#: src/features/editor/header/name.tsx:24
+#: src/features/editor/header/name.tsx:25
 msgid "Your name"
 msgstr "Ваше имя"
 
