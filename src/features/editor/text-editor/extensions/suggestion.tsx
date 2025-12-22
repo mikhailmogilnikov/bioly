@@ -17,6 +17,7 @@ export const COMMAND_TITLES: Record<string, MessageDescriptor> = {
   blockquote: msg`Blockquote`,
   "code-block": msg`Code Block`,
   separator: msg`Separator`,
+  details: msg`Details`,
 };
 
 const updatePosition = (editor: Editor, element: HTMLElement) => {
@@ -42,7 +43,22 @@ const updatePosition = (editor: Editor, element: HTMLElement) => {
 };
 
 export const suggestion = {
-  items: () => {
+  items: ({ editor }: { editor: Editor }) => {
+    const isInDetailsSummary = (() => {
+      const { from, to } = editor.state.selection;
+      let insideSummary = false;
+
+      editor.state.doc.nodesBetween(from, to, (node) => {
+        if (node.type?.name === "detailsSummary") {
+          insideSummary = true;
+          return false;
+        }
+        return true;
+      });
+
+      return insideSummary;
+    })();
+
     // const checkDetailsDepth = () => {
     //   const $from = editor.state.selection.$from;
     //   let depth = 0;
@@ -59,6 +75,7 @@ export const suggestion = {
       {
         title: "Heading",
         id: "heading",
+        disabled: isInDetailsSummary,
         command: ({
           editor: currentEditor,
           range,
@@ -77,6 +94,7 @@ export const suggestion = {
       {
         title: "Bullet List",
         id: "bullet-list",
+        disabled: isInDetailsSummary,
         command: ({ editor: currentEditor, range }: SuggestionProps) => {
           currentEditor
             .chain()
@@ -89,6 +107,7 @@ export const suggestion = {
       {
         title: "Numbered List",
         id: "numbered-list",
+        disabled: isInDetailsSummary,
         command: ({ editor: currentEditor, range }: SuggestionProps) => {
           currentEditor
             .chain()
@@ -101,6 +120,7 @@ export const suggestion = {
       {
         title: "Blockquote",
         id: "blockquote",
+        disabled: isInDetailsSummary,
         command: ({ editor: currentEditor, range }: SuggestionProps) => {
           currentEditor
             .chain()
@@ -113,6 +133,7 @@ export const suggestion = {
       {
         title: "Separator",
         id: "separator",
+        disabled: isInDetailsSummary,
         command: ({ editor: currentEditor, range }: SuggestionProps) => {
           currentEditor
             .chain()
@@ -120,6 +141,14 @@ export const suggestion = {
             .deleteRange(range)
             .setHorizontalRule()
             .run();
+        },
+      },
+      {
+        title: "Details",
+        id: "details",
+        disabled: isInDetailsSummary,
+        command: ({ editor: currentEditor, range }: SuggestionProps) => {
+          currentEditor.chain().focus().deleteRange(range).setDetails().run();
         },
       },
       // {

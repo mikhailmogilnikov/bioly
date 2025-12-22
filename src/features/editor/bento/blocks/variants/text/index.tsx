@@ -74,5 +74,9 @@ const PreviewTitle = () => {
       </p>
     );
 
-  return <div className="ProseMirror tiptap w-full text-left">{output}</div>;
+  return (
+    <div className="ProseMirror tiptap tiptap-static w-full text-left">
+      {output}
+    </div>
+  );
 };

@@ -55,7 +55,12 @@ export function BentoGridItemUnfocused({
         <BentoGridBlockHandle />
         <button
           className={clsx("size-full", BentoBlockStyleClassNames[block.style])}
-          onClick={handleBlockFocus}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            handleBlockFocus();
+          }}
           type="button"
         >
           {renderBlock(id, { isFullscreen: false })}

@@ -1,3 +1,7 @@
+import Details, {
+  DetailsContent,
+  DetailsSummary,
+} from "@tiptap/extension-details";
 import Placeholder from "@tiptap/extension-placeholder";
 import Typography from "@tiptap/extension-typography";
 import StarterKit from "@tiptap/starter-kit";
@@ -20,6 +24,15 @@ export const getBasicTextEditorExtensions = (
     Muted,
     Spoiler.configure({ isStatic }),
     Typography,
+    Details.configure({
+      // true cause autoclose details when typing
+      persist: false,
+      HTMLAttributes: {
+        class: "details",
+      },
+    }),
+    DetailsSummary,
+    DetailsContent,
     Commands.configure({
       suggestion,
     }),
@@ -28,6 +41,8 @@ export const getBasicTextEditorExtensions = (
       trailingNode: false,
       undoRedo: false,
       codeBlock: false,
+      gapcursor: false,
+      dropcursor: false,
       link: {
         HTMLAttributes: {
           class: "editor-link",

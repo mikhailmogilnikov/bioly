@@ -29,6 +29,7 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
     isMuted,
     isLink,
     isSpoiler,
+    isInDetailsSummary,
   } = useEditorState({
     editor,
     selector: (ctx) => ({
@@ -40,6 +41,24 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
       isMuted: ctx.editor.isActive("muted"),
       isLink: ctx.editor.isActive("link"),
       isSpoiler: ctx.editor.isActive("spoiler"),
+      isInDetailsSummary: (() => {
+        const {
+          editor: { state },
+        } = ctx;
+        const { from, to } = state.selection;
+        let insideSummary = false;
+
+        state.doc.nodesBetween(from, to, (node) => {
+          if (node.type?.name === "detailsSummary") {
+            insideSummary = true;
+            return false;
+          }
+
+          return true;
+        });
+
+        return insideSummary;
+      })(),
     }),
   });
 
@@ -107,6 +126,7 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
       label: t`Spoiler`,
       icon: <EyeOff className={iconClass} />,
       isActive: isSpoiler,
+      isDisabled: isInDetailsSummary,
       // @ts-expect-error - toggleSpoiler is not typed correctly
       onClick: () => editor.chain().focus().toggleSpoiler().run(),
     },
@@ -118,17 +138,22 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
       editor={editor}
       options={{ placement: "top" }}
     >
-      {menuItems.map(({ label, icon, isActive, onClick }) => (
+      {menuItems.map(({ label, icon, isActive, isDisabled, onClick }) => (
         <button
           aria-label={label}
           className={cn(
             "flex size-9 shrink-0 items-center justify-center gap-2 rounded-lg hover:bg-foreground/10",
             {
               "bg-foreground/20": isActive,
+              "cursor-not-allowed opacity-50": isDisabled,
             }
           )}
+          disabled={isDisabled}
           key={label}
-          onClick={onClick}
+          onClick={() => {
+            if (isDisabled) return;
+            onClick();
+          }}
           type="button"
         >
           {icon}
