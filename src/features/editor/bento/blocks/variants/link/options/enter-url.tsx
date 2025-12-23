@@ -5,22 +5,19 @@ import z from "zod";
 import { useBlockContext } from "@/features/editor/bento/grid/ui/block-context";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { SectionTitle } from "@/shared/ui/kit/section-title";
-import type { BentoBlock, BentoBlockType } from "../../../model/types";
 
 const schema = z.object({
   url: z.url(),
 });
 
 export function BentoBlockLinkSettingEnterUrl() {
-  const { block } = useBlockContext();
+  const { block } = useBlockContext<"link">();
   const { t } = useLingui();
   const updateBentoBlockField = useProfile(
     (state) => state.updateBentoBlockField
   );
 
-  const linkBlock = block as BentoBlock<typeof BentoBlockType.LINK>;
-
-  if (!linkBlock) return null;
+  if (!block) return null;
 
   const handleUrlChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -29,8 +26,8 @@ export function BentoBlockLinkSettingEnterUrl() {
     if (url.length > 100) return;
     const validatedUrl = schema.safeParse({ url });
 
-    updateBentoBlockField(linkBlock.id, "properties", {
-      ...linkBlock.properties,
+    updateBentoBlockField(block.id, "properties", {
+      ...block.properties,
       url,
       url_valid: validatedUrl.success,
     });
@@ -40,7 +37,7 @@ export function BentoBlockLinkSettingEnterUrl() {
     <SectionTitle
       className="gap-1"
       sideContent={
-        linkBlock.properties.url_valid ? (
+        block.properties.url_valid ? (
           <CheckCircle className="size-4 text-success" />
         ) : (
           <XCircle className="size-4 text-danger" />
@@ -53,7 +50,7 @@ export function BentoBlockLinkSettingEnterUrl() {
         onChange={handleUrlChange}
         placeholder={t`Enter URL`}
         type="text"
-        value={linkBlock.properties.url}
+        value={block.properties.url}
       />
     </SectionTitle>
   );

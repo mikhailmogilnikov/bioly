@@ -5,10 +5,9 @@ import { useProfile } from "@/features/editor/profile/use-profile";
 import { BasicTextEditor } from "@/features/editor/text-editor";
 import { getEditorJsonPayload } from "@/features/editor/text-editor/lib/get-editor-json-payload";
 import { useBlockContext } from "../../../grid/ui/block-context";
-import type { BentoBlock, BentoBlockType } from "../../model/types";
 
 export function FullscreenTitle() {
-  const { block } = useBlockContext();
+  const { block } = useBlockContext<"text">();
 
   const { t } = useLingui();
 
@@ -19,27 +18,25 @@ export function FullscreenTitle() {
     "shallow"
   );
 
-  const textBlock = block as BentoBlock<typeof BentoBlockType.TEXT>;
+  useRefresh([block?.properties.content]);
 
-  useRefresh([textBlock.properties.content]);
-
-  if (!textBlock) return null;
+  if (!block) return null;
 
   return (
     <motion.div className="w-full" layout transition={{ duration: 0 }}>
       <BasicTextEditor
         autofocus="end"
         className="editor-dynamic"
-        content={textBlock.properties.content}
+        content={block.properties.content}
         onUpdate={(props) => {
           const payload = getEditorJsonPayload(props.editor.getJSON());
 
-          updateBentoBlockField(textBlock.id, "properties", {
-            ...textBlock.properties,
+          updateBentoBlockField(block.id, "properties", {
+            ...block.properties,
             content: payload,
           });
         }}
-        placeholder={t`Type text here or "/" to open the commands`}
+        placeholder={t`Type your text here`}
       />
     </motion.div>
   );

@@ -1,15 +1,13 @@
 import { useBlockContext } from "@/features/editor/bento/grid/ui/block-context";
-import type { BentoBlock, BentoBlockType } from "../../../model/types";
 import { BentoBlockDeleteSetting } from "../../../shared-settings/delete";
 import { BentoBlockSizeSetting } from "../../../shared-settings/size";
 import { BentoBlockLinkSettingEnterTitle } from "./enter-title";
 import { BentoBlockLinkSettingEnterUrl } from "./enter-url";
 
 export function BentoBlockLinkOptions() {
-  const { block } = useBlockContext();
-  const linkBlock = block as BentoBlock<typeof BentoBlockType.LINK>;
+  const { block } = useBlockContext<"link">();
 
-  if (!linkBlock) return null;
+  if (!block) return null;
 
   return (
     <>
@@ -17,7 +15,7 @@ export function BentoBlockLinkOptions() {
       <hr className="border-outline" />
       <BentoBlockLinkSettingEnterUrl />
 
-      {linkBlock.properties.url_valid && <BentoBlockLinkSettingEnterTitle />}
+      {block.properties.url_valid && <BentoBlockLinkSettingEnterTitle />}
       <hr className="border-outline" />
       <BentoBlockDeleteSetting />
     </>

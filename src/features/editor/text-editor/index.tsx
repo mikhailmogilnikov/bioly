@@ -29,7 +29,7 @@ export function BasicTextEditor({
     <>
       <FormattingMenu editor={editor} />
       <EditorContent
-        className={cn("ProseMirror tiptap w-full", className)}
+        className={cn("ProseMirror w-full", className)}
         editor={editor}
         ref={ref}
       />
