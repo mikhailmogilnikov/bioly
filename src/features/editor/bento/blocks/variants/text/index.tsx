@@ -1,11 +1,11 @@
 import { Trans, useLingui } from "@lingui/react/macro";
 import { renderToReactElement } from "@tiptap/static-renderer";
 import { useMemo } from "react";
-import { getBasicTextEditorExtensions } from "@/features/editor/text-editor/get-extensions";
+import { getBasicTextEditorExtensions } from "@/features/editor/text-editor/lib/get-extensions";
 import { Spoiler } from "@/shared/ui/utils/spoiler";
 import { useBlockContext } from "../../../grid/ui/block-context";
 import type { BentoBlock, BentoBlockType } from "../../model/types";
-import { FullscreenTitle } from "./fullscreen-title";
+import { FullscreenTitle } from "./fullscreen-text";
 
 export const BentoBlockText = ({ isFullscreen }: { isFullscreen: boolean }) => (
   <div className="relative flex size-full items-end justify-start px-1">

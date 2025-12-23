@@ -25,7 +25,7 @@ msgstr "Add a new block"
 msgid "Add avatar"
 msgstr "Add avatar"
 
-#: src/features/editor/header/description.tsx:38
+#: src/features/editor/header/description.tsx:29
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Add bio... Type \"/\" for commands."
 
@@ -137,11 +137,9 @@ msgid "Email:"
 msgstr "Email:"
 
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:88
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:14
 msgid "Enter current password"
 msgstr "Enter current password"
 
-#: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:37
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:82
 msgid "Enter new email"
@@ -175,7 +173,7 @@ msgstr "Enter Title"
 msgid "Enter URL"
 msgstr "Enter URL"
 
-#: src/features/editor/menu/menu/project-settings/font-selector.tsx:40
+#: src/features/editor/menu/menu/project-settings/index.tsx:36
 msgid "Font"
 msgstr "Font"
 
@@ -339,7 +337,7 @@ msgstr "Synchronization status"
 msgid "Text"
 msgstr "Text"
 
-#: src/features/editor/menu/menu/project-settings/theme-selector.tsx:45
+#: src/features/editor/menu/menu/project-settings/index.tsx:30
 msgid "Theme"
 msgstr "Theme"
 
@@ -355,6 +353,7 @@ msgstr "Title"
 msgid "Toggle avatar blur"
 msgstr "Toggle avatar blur"
 
+#: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:42
 #: src/features/editor/bento/blocks/variants/text/index.tsx:73
 msgid "Type text here or \"/\" to open the commands"
 msgstr "Type text here or \"/\" to open the commands"
@@ -382,7 +381,6 @@ msgid "Verification code must be 6 digits"
 msgstr "Verification code must be 6 digits"
 
 #: src/features/editor/menu/menu/profile/change-email/step-2.tsx:147
-#: src/features/editor/menu/menu/profile/change-password/progress.tsx:16
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:142
 msgid "Verify code"
 msgstr "Verify code"

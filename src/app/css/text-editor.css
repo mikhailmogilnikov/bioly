@@ -14,30 +14,6 @@
   @apply text-link no-underline cursor-pointer;
 }
 
-/* .ProseMirror .editor-link::after {
-  content: "";
-  display: inline-block;
-  width: 0.9rem;
-  aspect-ratio: 1 / 1;
-  background-color: currentColor;
-  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LXVwLXJpZ2h0LWljb24gbHVjaWRlLWFycm93LXVwLXJpZ2h0Ij48cGF0aCBkPSJNNyA3aDEwdjEwIi8+PHBhdGggZD0iTTcgMTcgMTcgNyIvPjwvc3ZnPg==");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
-}
-
-.ProseMirror .editor-link:hover::after {
-  transform: translate(0.1rem, -0.1rem);
-  opacity: 0.8;
-}
-
-.ProseMirror h1 .editor-link::after {
-  width: 1.1rem;
-  position: relative;
-  top: -0.15rem;
-} */
-
 .ProseMirror p.is-editor-empty:first-child::before {
   @apply text-foreground/40 pointer-events-none h-0 float-left;
   position: relative;
@@ -78,7 +54,7 @@
 }
 
 .ProseMirror blockquote {
-  @apply border-l-4 border-foreground/30 pl-4 my-4 italic text-foreground/80;
+  @apply border-l-4 border-foreground/30 pl-4 my-4 italic text-foreground;
 }
 
 .ProseMirror code {
@@ -132,104 +108,3 @@
   font-weight: normal;
   line-height: 1;
 }
-
-/* Details styles */
-.ProseMirror .details {
-  @apply flex gap-1 my-2.5 relative;
-}
-
-.tiptap .details:first-child {
-  @apply mt-0;
-}
-
-.ProseMirror .details summary {
-  @apply pl-7 text-base font-medium;
-  list-style: none;
-}
-
-.ProseMirror .details summary::-webkit-details-marker {
-  display: none;
-}
-
-.ProseMirror .details > button {
-  @apply flex items-center justify-center bg-transparent rounded-full text-[0.625rem] h-5 w-5 p-0 m-0 border-none cursor-pointer mt-0.5 shrink-0 absolute top-0 left-0;
-  line-height: 1;
-}
-
-/* .ProseMirror .details > button:hover {
-  @apply bg-foreground/10;
-} */
-
-.ProseMirror .details > button::before {
-  content: "";
-  display: inline-block;
-  width: 2rem;
-  aspect-ratio: 1 / 1;
-  background-color: var(--foreground);
-  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tZG93bi1pY29uIGx1Y2lkZS1jaGV2cm9uLWRvd24iPjxwYXRoIGQ9Im02IDkgNiA2IDYtNiIvPjwvc3ZnPg==");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  transition:
-    transform 0.15s ease-in-out,
-    opacity 0.15s ease-in-out;
-  opacity: 0.5;
-}
-
-.ProseMirror .details.is-open > button::before {
-  transform: rotate(180deg);
-}
-
-.ProseMirror .details > button:hover::before {
-  opacity: 1;
-}
-
-.ProseMirror .details > div {
-  @apply flex flex-col gap-2 w-full;
-}
-
-.ProseMirror .details > div > [data-type="detailsContent"] {
-  @apply border-l border-foreground/20 text-sm pl-[18px] ml-[9px];
-}
-
-.ProseMirror .details > div > [data-type="detailsContent"] > :last-child {
-  @apply mb-2;
-}
-
-.ProseMirror
-  .details
-  > div
-  > [data-type="detailsContent"]:last-child
-  > :last-child {
-  @apply mb-0;
-}
-
-.ProseMirror .details .details {
-  @apply my-2;
-}
-
-/* .ProseMirror .node-spoiler {
-  display: inline;
-  vertical-align: baseline;
-}
-
-.ProseMirror .spoiler-node-view {
-  display: inline;
-  vertical-align: baseline;
-  white-space: normal;
-  -webkit-user-select: text;
-  user-select: text;
-}
-
-.ProseMirror .spoiler-node-view .flex {
-  display: inline-flex;
-  vertical-align: baseline;
-}
-
-.ProseMirror .spoiler-node-view .content {
-  -webkit-user-select: text;
-  user-select: text;
-} */

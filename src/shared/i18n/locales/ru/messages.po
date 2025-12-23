@@ -25,7 +25,7 @@ msgstr "Добавить новый блок"
 msgid "Add avatar"
 msgstr "Добавить аватар"
 
-#: src/features/editor/header/description.tsx:38
+#: src/features/editor/header/description.tsx:29
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Добавьте биографию... Введите \"/\" для команд."
 
@@ -137,11 +137,9 @@ msgid "Email:"
 msgstr "Email:"
 
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:88
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:14
 msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
-#: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:37
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:82
 msgid "Enter new email"
@@ -175,7 +173,7 @@ msgstr "Введите заголовок"
 msgid "Enter URL"
 msgstr "Введите URL"
 
-#: src/features/editor/menu/menu/project-settings/font-selector.tsx:40
+#: src/features/editor/menu/menu/project-settings/index.tsx:36
 msgid "Font"
 msgstr "Шрифт"
 
@@ -339,7 +337,7 @@ msgstr "Статус синхронизации"
 msgid "Text"
 msgstr "Текст"
 
-#: src/features/editor/menu/menu/project-settings/theme-selector.tsx:45
+#: src/features/editor/menu/menu/project-settings/index.tsx:30
 msgid "Theme"
 msgstr "Тема"
 
@@ -355,6 +353,7 @@ msgstr "Заголовок"
 msgid "Toggle avatar blur"
 msgstr "Переключить размытие аватара"
 
+#: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:42
 #: src/features/editor/bento/blocks/variants/text/index.tsx:73
 msgid "Type text here or \"/\" to open the commands"
 msgstr "Введите текст здесь или \"/\" для открытия команд"
@@ -382,7 +381,6 @@ msgid "Verification code must be 6 digits"
 msgstr "Код подтверждения должен состоять из 6 цифр"
 
 #: src/features/editor/menu/menu/profile/change-email/step-2.tsx:147
-#: src/features/editor/menu/menu/profile/change-password/progress.tsx:16
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:142
 msgid "Verify code"
 msgstr "Подтвердить код"

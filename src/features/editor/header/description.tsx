@@ -1,8 +1,8 @@
 import { useLingui } from "@lingui/react/macro";
-import type { JSONContent } from "@tiptap/react";
 import clsx from "clsx";
 import { useProfile } from "../profile/use-profile";
 import { BasicTextEditor } from "../text-editor";
+import { getEditorJsonPayload } from "../text-editor/lib/get-editor-json-payload";
 
 export const EditDescription = () => {
   const { t } = useLingui();
@@ -17,21 +17,12 @@ export const EditDescription = () => {
 
   return (
     <BasicTextEditor
-      className={clsx("z-2 px-1", {
+      className={clsx("editor-dynamic z-2 px-1", {
         "max-sm:min-h-14": !description,
       })}
       content={description}
       onUpdate={(props) => {
-        let payload: JSONContent | null = props.editor.getJSON();
-
-        const isEmptyParagraph =
-          payload?.content &&
-          payload.content.length === 1 &&
-          JSON.stringify(payload.content?.[0]) === '{"type":"paragraph"}';
-
-        if (isEmptyParagraph) {
-          payload = null;
-        }
+        const payload = getEditorJsonPayload(props.editor.getJSON());
 
         updateMainField("description", payload);
       }}

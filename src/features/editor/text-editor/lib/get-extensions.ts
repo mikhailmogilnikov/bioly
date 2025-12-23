@@ -5,10 +5,10 @@ import Details, {
 import Placeholder from "@tiptap/extension-placeholder";
 import Typography from "@tiptap/extension-typography";
 import StarterKit from "@tiptap/starter-kit";
-import { Commands } from "./extensions/commands";
-import { Muted } from "./extensions/muted";
-import { Spoiler } from "./extensions/spoiler";
-import { suggestion } from "./extensions/suggestion";
+import { Commands } from "../extensions/commands";
+import { Muted } from "../extensions/muted";
+import { Spoiler } from "../extensions/spoiler";
+import { suggestion } from "../extensions/suggestion";
 
 export const getBasicTextEditorExtensions = (
   options:
@@ -98,12 +98,10 @@ export const getBasicTextEditorExtensions = (
         // },
         shouldAutoLink: (url) => {
           try {
-            // construct URL
             const parsedUrl = url.includes(":")
               ? new URL(url)
               : new URL(`https://${url}`);
 
-            // only auto-link if the domain is not in the disallowed list
             const disallowedDomains = [
               "example-no-autolink.com",
               "another-no-autolink.com",

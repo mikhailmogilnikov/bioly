@@ -2,7 +2,7 @@ import { EditorContent, type UseEditorOptions, useEditor } from "@tiptap/react";
 import { cn } from "@/shared/lib/utils";
 import { FormattingMenu } from "./formatting-menu";
 
-import { getBasicTextEditorExtensions } from "./get-extensions";
+import { getBasicTextEditorExtensions } from "./lib/get-extensions";
 
 export function BasicTextEditor({
   className,
