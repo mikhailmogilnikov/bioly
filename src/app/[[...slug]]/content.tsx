@@ -1,8 +1,13 @@
 "use client";
 
+import { useRef } from "react";
 import { renderStaticEditor } from "@/features/editor/text-editor/lib/render-static-editor";
+import { useDetailsAccordion } from "@/shared/lib/hooks/use-details-accordion";
 
 export function UserContent() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useDetailsAccordion(containerRef);
+
   const jsonContent = {
     type: "doc",
     content: [
@@ -130,7 +135,7 @@ export function UserContent() {
             content: [
               {
                 type: "text",
-                text: "1232132131",
+                text: "qweqweeqw",
               },
             ],
           },
@@ -139,6 +144,42 @@ export function UserContent() {
             content: [
               {
                 type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: "eqwqewqewqeweqwqew",
+                  },
+                ],
+              },
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: "dadsas",
+                  },
+                ],
+              },
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: "dsaasddsadas",
+                  },
+                ],
+              },
+              {
+                type: "heading",
+                attrs: {
+                  level: 1,
+                },
+                content: [
+                  {
+                    type: "text",
+                    text: "21321132312",
+                  },
+                ],
               },
             ],
           },
@@ -162,7 +203,12 @@ export function UserContent() {
 
   return (
     <main className="mx-auto w-full max-w-116 px-4 lg:px-0">
-      <div className="ProseMirror tiptap-static w-full text-left">{output}</div>
+      <div
+        className="ProseMirror tiptap-static w-full text-left"
+        ref={containerRef}
+      >
+        {output}
+      </div>
     </main>
   );
 }

@@ -47,6 +47,11 @@ export const renderStaticEditor = (
             {children}
           </Spoiler>
         ),
+        details: ({ children }) => (
+          <details className="details" suppressHydrationWarning>
+            {children}
+          </details>
+        ),
       },
     },
   });
