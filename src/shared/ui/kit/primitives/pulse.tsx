@@ -19,7 +19,7 @@ export const Pulse = ({
   const colorClass = COLORS[color as keyof typeof COLORS] || COLORS.link;
 
   return (
-    <div className={cn("relative inline-flex size-2 leading-none", className)}>
+    <div className={cn("relative flex size-2 leading-none", className)}>
       <div
         className={cn(
           "inline-block size-full rounded-full leading-none",

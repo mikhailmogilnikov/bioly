@@ -10,7 +10,7 @@ import { Pulse } from "@/shared/ui/kit/primitives/pulse";
 export function EditorMenuStatusBar() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="pressable size-12 cursor-pointer rounded-full border border-foreground/8 bg-default/50 pb-[4px] backdrop-blur-md">
+      <DropdownMenuTrigger className="pressable flex size-12 cursor-pointer items-center justify-center rounded-full border border-foreground/8 bg-default/50 backdrop-blur-md">
         <Pulse color="success" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">

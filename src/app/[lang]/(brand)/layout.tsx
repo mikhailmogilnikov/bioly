@@ -42,7 +42,7 @@ export default async function RootLayout({
       </head>
       <body
         className={cn(
-          "theme-light min-h-screen overflow-x-hidden overflow-y-scroll bg-background text-foreground antialiased",
+          "theme-light min-h-screen overflow-x-hidden bg-background text-foreground antialiased",
           brandFont.className
         )}
         style={
@@ -57,7 +57,6 @@ export default async function RootLayout({
           initialMessages={allMessages[lang]}
         >
           {children}
-          <div className="relative z-10" id="portal-root" />
         </LinguiClientProvider>
       </body>
     </html>
