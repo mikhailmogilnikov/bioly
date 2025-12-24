@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { type ReactNode, useRef, useState } from "react";
+import { type CSSProperties, type ReactNode, useRef, useState } from "react";
 import { useIntersectionObserver, useIsClient } from "usehooks-ts";
 import { Spoiler as SpoilerComponent } from "./spoiler-init.js";
 import type { SpoilerProps } from "./types";
@@ -31,13 +31,23 @@ export const Spoiler: React.FC<
     "wrap-anywhere inline-block min-w-0 max-w-full align-baseline"
   );
 
+  // Важно: прячем текст через inline-стили, чтобы не было "flash" до загрузки CSS.
+  // (Например, когда `public/css/spoiler.css` или Tailwind CSS применяются чуть позже первого paint.)
+  const hiddenTextStyle: CSSProperties = {
+    opacity: 0,
+    color: "transparent",
+    textDecorationColor: "transparent",
+  };
+
   const fallback = (
     <span
+      aria-hidden="true"
       className={clsx(
-        "invisible inline-flex align-baseline",
+        "inline-flex align-baseline",
         rootClassName,
         "min-w-0 max-w-full"
       )}
+      style={{ visibility: "hidden" }}
     >
       <span className={contentClass}>{children}</span>
     </span>
@@ -65,7 +75,12 @@ export const Spoiler: React.FC<
           revealOn={false}
           {...props}
         >
-          <span className={contentClass}>{children}</span>
+          <span
+            className={contentClass}
+            style={isOpen ? undefined : hiddenTextStyle}
+          >
+            {children}
+          </span>
         </SpoilerComponent>
       ) : (
         fallback
