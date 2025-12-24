@@ -144,6 +144,15 @@ export function UserContent() {
           },
         ],
       },
+      {
+        type: "paragraph",
+        content: [
+          {
+            type: "text",
+            text: "test",
+          },
+        ],
+      },
     ],
   };
 
@@ -152,6 +161,8 @@ export function UserContent() {
   });
 
   return (
-    <div className="ProseMirror tiptap-static w-full text-left">{output}</div>
+    <main className="mx-auto w-full max-w-116 px-4 lg:px-0">
+      <div className="ProseMirror tiptap-static w-full text-left">{output}</div>
+    </main>
   );
 }
