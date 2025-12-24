@@ -35,6 +35,115 @@ export function UserContent() {
           },
         ],
       },
+      {
+        type: "bulletList",
+        content: [
+          {
+            type: "listItem",
+            content: [
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: "qwewqewq",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "listItem",
+            content: [
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: "213",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "orderedList",
+        attrs: {
+          start: 1,
+          type: null,
+        },
+        content: [
+          {
+            type: "listItem",
+            content: [
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: "3213132",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "listItem",
+            content: [
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: "21321",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "blockquote",
+        content: [
+          {
+            type: "paragraph",
+            content: [
+              {
+                type: "text",
+                text: "231123321213",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "horizontalRule",
+      },
+      {
+        type: "details",
+        content: [
+          {
+            type: "detailsSummary",
+            content: [
+              {
+                type: "text",
+                text: "1232132131",
+              },
+            ],
+          },
+          {
+            type: "detailsContent",
+            content: [
+              {
+                type: "paragraph",
+              },
+            ],
+          },
+        ],
+      },
     ],
   };
 

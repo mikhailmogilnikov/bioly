@@ -4,7 +4,7 @@
   body {
     --scrollbar-width: 0.5rem;
     --scrollbar-border-radius: 0.25rem;
-    --scrollbar-track-background: var(--background);
+    --scrollbar-track-background: transparent;
     --scrollbar-thumb-background: var(--default);
     --scrollbar-thumb-hover-background: var(--default);
   }
