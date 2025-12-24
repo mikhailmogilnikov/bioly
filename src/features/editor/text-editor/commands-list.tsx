@@ -1,3 +1,5 @@
+"use client";
+
 import { Trans, useLingui } from "@lingui/react/macro";
 import type { Editor, Range } from "@tiptap/core";
 import {

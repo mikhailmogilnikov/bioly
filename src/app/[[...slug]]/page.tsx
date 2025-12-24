@@ -1,8 +1,11 @@
 import "@/app/css/global.user.css";
+import "@/app/css/text-editor.static.css";
+
 import { cn } from "@/shared/lib/utils";
+import { UserContent } from "./content";
 import { validateUserPageParams } from "./utils";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function UserPage({
   params: paramsPromise,
@@ -11,10 +14,14 @@ export default async function UserPage({
 
   return (
     <html lang="en">
+      <head>
+        <script src="/scripts/init-worklet.js" />
+      </head>
       <body
-        className={cn("theme-purple bg-background text-foreground antialiased")}
+        className={cn("theme-dark bg-background text-foreground antialiased")}
       >
         <h1 className="font-bold text-4xl">username: {username}</h1>
+        <UserContent />
       </body>
     </html>
   );

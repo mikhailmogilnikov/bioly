@@ -3,6 +3,7 @@
 @import "./scrollbar.css";
 @import "./themes.css";
 @import "./fonts.css";
+@import "./text-editor.css";
 
 @theme inline {
   --color-background: var(--background);
@@ -24,19 +25,19 @@
     --smooth: 0.85;
 
     *:focus-visible {
-      outline: 2px solid var(--color-foreground);
+      outline: 2px solid var(--foreground);
       outline-offset: 2px;
     }
 
     ::selection {
-      background: var(--color-foreground);
-      color: var(--color-background);
+      background: var(--foreground);
+      color: var(--background);
       text-shadow: none;
     }
 
     ::-moz-selection {
-      background: var(--color-foreground);
-      color: var(--color-background);
+      background: var(--foreground);
+      color: var(--background);
       text-shadow: none;
     }
   }

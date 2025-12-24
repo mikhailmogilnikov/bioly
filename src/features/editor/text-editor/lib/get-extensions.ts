@@ -33,10 +33,17 @@ export const getBasicTextEditorExtensions = (
     }),
     DetailsSummary,
     DetailsContent,
-    Commands.configure({
-      suggestion,
-    }),
+
+    ...(isStatic
+      ? []
+      : [
+          Commands.configure({
+            suggestion,
+          }),
+        ]),
+
     ...(placeholder ? [Placeholder.configure({ placeholder })] : []),
+
     StarterKit.configure({
       trailingNode: false,
       undoRedo: false,

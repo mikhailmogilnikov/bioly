@@ -80,13 +80,13 @@ function getRequestLocale(requestHeaders: Headers): string {
 
 export const config = {
   matcher: [
-    /*
-     * Исключаем:
-     * - _next/* - все внутренние маршруты Next.js (chunks, static и т.д.)
-     * - _vercel/* - маршруты Vercel
-     * - api/* - API маршруты
-     * - Статические файлы (изображения, шрифты, CSS, JS и т.д.)
-     */
-    "/((?!_next|_vercel|api|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot|css|js|map)$).*)",
+    "/",
+    "/editor",
+    "/explore",
+    "/login",
+    "/signup",
+    "/reset-password",
+    "/404",
+    // "/((?!_next|_vercel|api|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot|css|js|map)$).*)",
   ],
 };

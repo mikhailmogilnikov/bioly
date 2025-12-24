@@ -169,7 +169,7 @@ msgstr "Введите 6-значный код, который мы отправ
 msgid "Enter Title"
 msgstr "Введите заголовок"
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:54
+#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:51
 msgid "Enter URL"
 msgstr "Введите URL"
 
@@ -250,7 +250,7 @@ msgstr "Новый пароль должен содержать минимум 8
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "Блоки еще не добавлены. Нажмите <0>+</0> в нижнем меню, чтобы добавить первый."
 
-#: src/features/editor/text-editor/commands-list.tsx:111
+#: src/features/editor/text-editor/commands-list.tsx:113
 msgid "No result"
 msgstr "Нет результатов"
 
@@ -341,7 +341,7 @@ msgstr "Текст"
 msgid "Theme"
 msgstr "Тема"
 
-#: src/features/editor/text-editor/commands-list.tsx:149
+#: src/features/editor/text-editor/commands-list.tsx:151
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Совет: вы можете выделить фрагмент текста и применить к нему дополнительное форматирование."
 
@@ -358,7 +358,9 @@ msgstr "Переключить размытие аватара"
 msgid "Type text here or \"/\" to open the commands"
 msgstr "Введите текст здесь или \"/\" для открытия команд"
 
-#: src/features/editor/bento/blocks/variants/text/index.tsx:30
+#: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:39
+#: src/features/editor/bento/blocks/variants/text/index.tsx:17
+#: src/features/editor/bento/blocks/variants/text/index.tsx:23
 msgid "Type your text here"
 msgstr "Введите ваш текст здесь"
 

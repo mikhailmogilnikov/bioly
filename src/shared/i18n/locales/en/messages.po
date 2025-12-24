@@ -169,7 +169,7 @@ msgstr "Enter the 6-digit code we sent to your email address."
 msgid "Enter Title"
 msgstr "Enter Title"
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:54
+#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:51
 msgid "Enter URL"
 msgstr "Enter URL"
 
@@ -250,7 +250,7 @@ msgstr "New password must contain at least 8 characters"
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 
-#: src/features/editor/text-editor/commands-list.tsx:111
+#: src/features/editor/text-editor/commands-list.tsx:113
 msgid "No result"
 msgstr "No result"
 
@@ -341,7 +341,7 @@ msgstr "Text"
 msgid "Theme"
 msgstr "Theme"
 
-#: src/features/editor/text-editor/commands-list.tsx:149
+#: src/features/editor/text-editor/commands-list.tsx:151
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Tip: you can select fragment of text and apply additional styling to it."
 
@@ -358,7 +358,9 @@ msgstr "Toggle avatar blur"
 msgid "Type text here or \"/\" to open the commands"
 msgstr "Type text here or \"/\" to open the commands"
 
-#: src/features/editor/bento/blocks/variants/text/index.tsx:30
+#: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:39
+#: src/features/editor/bento/blocks/variants/text/index.tsx:17
+#: src/features/editor/bento/blocks/variants/text/index.tsx:23
 msgid "Type your text here"
 msgstr "Type your text here"
 
