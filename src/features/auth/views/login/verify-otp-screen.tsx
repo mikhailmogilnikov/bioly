@@ -63,6 +63,7 @@ export function LoginVerifyOtpScreen() {
               <FieldContent className="items-center justify-center gap-6">
                 <InputOTP
                   aria-invalid={fieldState.invalid}
+                  autoFocus
                   disabled={form.formState.isSubmitting}
                   inputMode="numeric"
                   maxLength={6}

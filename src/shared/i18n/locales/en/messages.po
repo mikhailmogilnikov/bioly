@@ -38,7 +38,7 @@ msgstr "Add social media"
 msgid "Back to email"
 msgstr "Back to email"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:127
+#: src/features/auth/views/login/verify-otp-screen.tsx:131
 msgid "Back to enter email"
 msgstr "Back to enter email"
 
@@ -102,7 +102,7 @@ msgstr "Confirm New Password"
 msgid "Confirmation"
 msgstr "Confirmation"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:95
+#: src/features/auth/views/enter-email/enter-email-form.tsx:94
 msgid "Continue"
 msgstr "Continue"
 
@@ -146,7 +146,7 @@ msgstr "Delete avatar"
 msgid "Details"
 msgstr "Details"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:99
+#: src/features/auth/views/login/verify-otp-screen.tsx:100
 msgid "Didn't receive the code? <0>Resend</0>"
 msgstr "Didn't receive the code? <0>Resend</0>"
 
@@ -154,7 +154,7 @@ msgstr "Didn't receive the code? <0>Resend</0>"
 msgid "Edit social media"
 msgstr "Edit social media"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:64
+#: src/features/auth/views/enter-email/enter-email-form.tsx:63
 msgid "Email"
 msgstr "Email"
 
@@ -199,8 +199,8 @@ msgstr "Enter Title"
 msgid "Enter URL"
 msgstr "Enter URL"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:28
-#: src/features/auth/views/enter-email/enter-email-form.tsx:72
+#: src/features/auth/views/enter-email/enter-email-form.tsx:27
+#: src/features/auth/views/enter-email/enter-email-form.tsx:71
 msgid "Enter your email"
 msgstr "Enter your email"
 
@@ -236,7 +236,7 @@ msgstr "Heading"
 msgid "Home"
 msgstr "Home"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:28
+#: src/features/auth/views/enter-email/enter-email-form.tsx:27
 msgid "Invalid email address"
 msgstr "Invalid email address"
 
@@ -368,7 +368,7 @@ msgstr "Share everything important on one beautiful page."
 msgid "Share my profile"
 msgstr "Share my profile"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:93
+#: src/features/auth/views/enter-email/enter-email-form.tsx:92
 msgid "Signing in..."
 msgstr "Signing in..."
 
@@ -433,7 +433,7 @@ msgstr "Verification code"
 msgid "Verification code must be 6 digits"
 msgstr "Verification code must be 6 digits"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:111
+#: src/features/auth/views/login/verify-otp-screen.tsx:115
 msgid "Verify code"
 msgstr "Verify code"
 
@@ -453,7 +453,7 @@ msgstr "Verify your email"
 msgid "Verify your email to continue"
 msgstr "Verify your email to continue"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:109
+#: src/features/auth/views/login/verify-otp-screen.tsx:113
 msgid "Verifying..."
 msgstr "Verifying..."
 
