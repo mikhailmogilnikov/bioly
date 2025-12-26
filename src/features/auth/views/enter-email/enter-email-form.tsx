@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-
 import { Button } from "@/shared/ui/kit/primitives/button";
 import {
   Field,

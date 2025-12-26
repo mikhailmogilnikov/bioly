@@ -104,7 +104,10 @@ export function LoginVerifyOtpScreen() {
         </Trans>
       </p>
 
-      <Button className="mt-4 text-link" disabled={form.formState.isSubmitting}>
+      <Button
+        className="group mt-4 text-link"
+        disabled={form.formState.isSubmitting}
+      >
         {form.formState.isSubmitting ? (
           <Trans>Verifying...</Trans>
         ) : (
@@ -117,13 +120,13 @@ export function LoginVerifyOtpScreen() {
       </Button>
 
       <Button
-        className="mt-2 flex items-center gap-1 rounded-xl font-medium text-foreground/50 text-sm hover:text-foreground/50"
+        className="group mt-2 flex items-center gap-1 rounded-xl font-medium text-foreground/50 text-sm hover:text-foreground/50"
         onClick={() => navigateToScreen("enter-email")}
         size="sm"
         type="button"
         variant="ghost"
       >
-        <ChevronLeftIcon className="-ml-1 size-4" />
+        <ChevronLeftIcon className="-ml-1 size-4 transition-transform group-hover:-translate-x-0.5" />
         <Trans>Back to enter email</Trans>
       </Button>
     </form>
