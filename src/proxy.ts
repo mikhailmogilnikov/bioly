@@ -84,8 +84,6 @@ export const config = {
     "/editor",
     "/explore",
     "/login",
-    "/signup",
-    "/reset-password",
     "/404",
     // "/((?!_next|_vercel|api|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot|css|js|map)$).*)",
   ],

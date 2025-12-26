@@ -11,7 +11,7 @@ export default async function AuthLayout({
 
   return (
     <ScreenSplitLayout
-      sideContent={<div className="squircle size-full bg-foreground/5" />}
+      sideContent={<div className="squircle size-full bg-default" />}
       sideWrapperClassName="p-2"
     >
       {children}

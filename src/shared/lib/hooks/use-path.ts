@@ -2,13 +2,7 @@ import type { Locale } from "@lingui/core";
 import { useLingui } from "@lingui/react/macro";
 import { CONFIG } from "@/shared/model/config";
 
-export type LocalizedPath =
-  | "/"
-  | "/editor"
-  | "/explore"
-  | "/login"
-  | "/signup"
-  | "/reset-password";
+export type LocalizedPath = "/" | "/editor" | "/explore" | "/login";
 
 export const useLocalizedPath = () => {
   const { i18n } = useLingui();

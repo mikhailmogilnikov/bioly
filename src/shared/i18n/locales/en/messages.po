@@ -34,6 +34,14 @@ msgstr "Add bio... Type \"/\" for commands."
 msgid "Add social media"
 msgstr "Add social media"
 
+#: src/features/auth/views/login/verify-otp-screen.tsx:129
+msgid "Back to email"
+msgstr "Back to email"
+
+#: src/features/auth/views/login/verify-otp-screen.tsx:127
+msgid "Back to enter email"
+msgstr "Back to enter email"
+
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:65
 msgid "Back to passwords"
 msgstr "Back to passwords"
@@ -53,6 +61,10 @@ msgstr "Border width"
 #: src/features/editor/text-editor/extensions/suggestion.tsx:15
 msgid "Bullet List"
 msgstr "Bullet List"
+
+#: src/features/auth/views/enter-email/index.tsx:20
+msgid "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
+msgstr "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
 
 #: src/features/editor/menu/menu/profile/change-slug.tsx:48
 msgid "Can be changed only once in 7 days."
@@ -86,11 +98,17 @@ msgstr "Confirm new password"
 msgid "Confirm New Password"
 msgstr "Confirm New Password"
 
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:134
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:110
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:165
+#: src/features/auth/model/screens.tsx:30
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#: src/features/auth/views/enter-email/enter-email-form.tsx:95
 msgid "Continue"
 msgstr "Continue"
+
+#: src/features/auth/views/enter-email/index.tsx:12
+msgid "Continue with Google"
+msgstr "Continue with Google"
 
 #: src/features/editor/menu/share/copy-button.tsx:38
 msgid "Copied!"
@@ -108,6 +126,10 @@ msgstr "Copy profile URL"
 msgid "Corner radius"
 msgstr "Corner radius"
 
+#: src/features/auth/model/screens.tsx:26
+msgid "Create an account or sign in to your existing. No credit card required."
+msgstr "Create an account or sign in to your existing. No credit card required."
+
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:80
 msgid "Current Password"
 msgstr "Current Password"
@@ -124,11 +146,15 @@ msgstr "Delete avatar"
 msgid "Details"
 msgstr "Details"
 
+#: src/features/auth/views/login/verify-otp-screen.tsx:99
+msgid "Didn't receive the code? <0>Resend</0>"
+msgstr "Didn't receive the code? <0>Resend</0>"
+
 #: src/features/editor/header/social-media/modal.tsx:39
 msgid "Edit social media"
 msgstr "Edit social media"
 
-#: src/features/editor/menu/menu/profile/change-email/change-email.tsx:21
+#: src/features/auth/views/enter-email/enter-email-form.tsx:64
 msgid "Email"
 msgstr "Email"
 
@@ -173,9 +199,26 @@ msgstr "Enter Title"
 msgid "Enter URL"
 msgstr "Enter URL"
 
+#: src/features/auth/views/enter-email/enter-email-form.tsx:28
+#: src/features/auth/views/enter-email/enter-email-form.tsx:72
+msgid "Enter your email"
+msgstr "Enter your email"
+
+#: src/features/auth/model/screens.tsx:35
+msgid "Enter your slug"
+msgstr "Enter your slug"
+
+#: src/features/auth/model/screens.tsx:36
+msgid "Enter your slug to continue"
+msgstr "Enter your slug to continue"
+
 #: src/features/editor/menu/menu/project-settings/index.tsx:36
 msgid "Font"
 msgstr "Font"
+
+#: src/features/auth/model/screens.tsx:25
+msgid "Getting started"
+msgstr "Getting started"
 
 #: src/features/editor/menu/menu/index.tsx:162
 msgid "Go to live"
@@ -189,7 +232,11 @@ msgstr "Go to live page"
 msgid "Heading"
 msgstr "Heading"
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:38
+#: src/features/auth/content.tsx:24
+msgid "Home"
+msgstr "Home"
+
+#: src/features/auth/views/enter-email/enter-email-form.tsx:28
 msgid "Invalid email address"
 msgstr "Invalid email address"
 
@@ -258,7 +305,7 @@ msgstr "No result"
 msgid "Numbered List"
 msgstr "Numbered List"
 
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:45
+#: src/features/auth/views/login/verify-otp-screen.tsx:31
 msgid "Only digits are allowed"
 msgstr "Only digits are allowed"
 
@@ -321,6 +368,10 @@ msgstr "Share everything important on one beautiful page."
 msgid "Share my profile"
 msgstr "Share my profile"
 
+#: src/features/auth/views/enter-email/enter-email-form.tsx:93
+msgid "Signing in..."
+msgstr "Signing in..."
+
 #: src/features/editor/text-editor/formatting-menu.tsx:126
 msgid "Spoiler"
 msgstr "Spoiler"
@@ -378,12 +429,11 @@ msgstr "Unlinked"
 msgid "Verification code"
 msgstr "Verification code"
 
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:44
+#: src/features/auth/views/login/verify-otp-screen.tsx:30
 msgid "Verification code must be 6 digits"
 msgstr "Verification code must be 6 digits"
 
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:147
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:142
+#: src/features/auth/views/login/verify-otp-screen.tsx:111
 msgid "Verify code"
 msgstr "Verify code"
 
@@ -395,11 +445,21 @@ msgstr "Verify current email"
 msgid "Verify new email"
 msgstr "Verify new email"
 
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:132
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:145
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:140
+#: src/features/auth/model/screens.tsx:40
+msgid "Verify your email"
+msgstr "Verify your email"
+
+#: src/features/auth/model/screens.tsx:41
+msgid "Verify your email to continue"
+msgstr "Verify your email to continue"
+
+#: src/features/auth/views/login/verify-otp-screen.tsx:109
 msgid "Verifying..."
 msgstr "Verifying..."
+
+#: src/features/auth/model/screens.tsx:31
+msgid "We sent a one-time code to your email. Enter it below to continue."
+msgstr "We sent a one-time code to your email. Enter it below to continue."
 
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:95
 msgid "We'll send a verification code to the new email address to change your email."

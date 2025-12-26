@@ -16,7 +16,10 @@ export function ScreenSplitLayout({
   return (
     <main className="flex md:min-h-screen">
       <section
-        className={cn("box-border w-full min-w-md", childrenWrapperClassName)}
+        className={cn(
+          "box-border w-full min-w-md max-md:min-w-0",
+          childrenWrapperClassName
+        )}
       >
         {children}
       </section>

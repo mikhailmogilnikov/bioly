@@ -1,9 +1,13 @@
-import { msg } from "@lingui/core/macro";
+import Link from "next/link";
 import { getI18nInstance } from "@/shared/i18n/i18n";
 
 export default async function HomePage(props: PageProps<"/[lang]">) {
   const lang = (await props.params).lang;
-  const i18n = getI18nInstance(lang);
+  getI18nInstance(lang);
 
-  return <div className="p-4">{i18n._(msg`Домашняя страница`)}</div>;
+  return (
+    <div className="p-4">
+      <Link href="/login">Login</Link>
+    </div>
+  );
 }
