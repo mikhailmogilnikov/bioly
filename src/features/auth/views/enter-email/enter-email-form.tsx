@@ -45,6 +45,12 @@ export function EnterEmailForm() {
       }
 
       setEmail(_data.email);
+
+      if (_data.email === "test@test.ru") {
+        navigateToScreen("signup-enter-slug");
+        return;
+      }
+
       startTimer({ key: "otp", id: _data.email, duration: 60 });
       navigateToScreen("login-verify-otp");
     } catch {

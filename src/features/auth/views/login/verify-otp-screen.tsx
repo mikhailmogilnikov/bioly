@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 import { useLocalizedRouter } from "@/shared/lib/hooks/use-localized-router";
@@ -13,6 +13,7 @@ import {
   FieldGroup,
 } from "@/shared/ui/kit/primitives/field";
 import { InputOTP, InputOTPSlot } from "@/shared/ui/kit/primitives/input-otp";
+import { BackButton } from "../../back-button";
 import { useAuthContext } from "../../model/provider";
 import { LoginResendButton } from "./resend";
 
@@ -114,16 +115,9 @@ export function LoginVerifyOtpScreen() {
         />
       </Button>
 
-      <Button
-        className="group mt-2 flex items-center gap-1 rounded-xl font-medium text-foreground/50 text-sm hover:text-foreground/50"
-        onClick={() => navigateToScreen("enter-email")}
-        size="sm"
-        type="button"
-        variant="ghost"
-      >
-        <ChevronLeftIcon className="-ml-1 size-4 transition-transform group-hover:-translate-x-0.5" />
+      <BackButton onClick={() => navigateToScreen("enter-email")}>
         <Trans>Back to enter email</Trans>
-      </Button>
+      </BackButton>
     </form>
   );
 }

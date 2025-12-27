@@ -42,7 +42,7 @@ export default async function RootLayout({
       </head>
       <body
         className={cn(
-          "theme-dark overflow-x-hidden bg-background text-foreground antialiased",
+          "theme-light overflow-x-hidden bg-background text-foreground antialiased",
           brandFont.className
         )}
         style={

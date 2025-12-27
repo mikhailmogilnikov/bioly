@@ -34,11 +34,8 @@ msgstr "Добавьте биографию... Введите \"/\" для ко�
 msgid "Add social media"
 msgstr "Добавить социальную сеть"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:129
-msgid "Back to email"
-msgstr "Назад к email"
-
-#: src/features/auth/views/login/verify-otp-screen.tsx:125
+#: src/features/auth/views/login/verify-otp-screen.tsx:119
+#: src/features/auth/views/signup/enter-slug-screen.tsx:15
 msgid "Back to enter email"
 msgstr "Назад к вводу email"
 
@@ -102,7 +99,7 @@ msgstr "Подтвердите новый пароль"
 msgid "Confirmation"
 msgstr "Подтверждение"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:100
+#: src/features/auth/views/enter-email/enter-email-form.tsx:106
 msgid "Continue"
 msgstr "Продолжить"
 
@@ -146,20 +143,15 @@ msgstr "Удалить аватар"
 msgid "Details"
 msgstr "Детали"
 
-#. placeholder {0}: duration > 0 ? ( <span className="font-medium text-foreground/50"> Resend in {duration} seconds </span> ) : ( <button className="font-medium text-foreground" onClick={handleResend} type="button" > Resend </button> )
 #: src/features/auth/views/login/resend.tsx:23
-msgid "Didn't receive the code? {0}"
-msgstr ""
-
-#: src/features/auth/views/login/verify-otp-screen.tsx:100
-msgid "Didn't receive the code? <0>Resend</0>"
-msgstr "Не получили код? <0>Отправить повторно</0>"
+msgid "Didn't receive the code?"
+msgstr "Не получили код?"
 
 #: src/features/editor/header/social-media/modal.tsx:39
 msgid "Edit social media"
 msgstr "Редактировать социальную сеть"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:69
+#: src/features/auth/views/enter-email/enter-email-form.tsx:75
 msgid "Email"
 msgstr "Email"
 
@@ -168,9 +160,11 @@ msgid "Email:"
 msgstr "Email:"
 
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:88
+#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:14
 msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
+#: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:37
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:82
 msgid "Enter new email"
@@ -205,18 +199,15 @@ msgid "Enter URL"
 msgstr "Введите URL"
 
 #: src/features/auth/views/enter-email/enter-email-form.tsx:29
-#: src/features/auth/views/enter-email/enter-email-form.tsx:77
+#: src/features/auth/views/enter-email/enter-email-form.tsx:83
 msgid "Enter your email"
 msgstr "Введите ваш email"
 
-#: src/features/auth/model/screens.tsx:35
-msgid "Enter your slug"
-msgstr "Введите ваш slug"
-
 #: src/features/auth/model/screens.tsx:36
-msgid "Enter your slug to continue"
-msgstr "Введите ваш slug для продолжения"
+msgid "Enter your unique url link to get started. You can change it later."
+msgstr "Введите вашу уникальную ссылку для начала работы. Вы сможете изменить её позже."
 
+#: src/features/editor/menu/menu/project-settings/font-selector.tsx:40
 #: src/features/editor/menu/menu/project-settings/index.tsx:36
 msgid "Font"
 msgstr "Шрифт"
@@ -253,6 +244,7 @@ msgstr "Курсив"
 msgid "Last update:"
 msgstr "Последнее обновление:"
 
+#: src/features/editor/menu/new-item/index.tsx:142
 #: src/features/editor/text-editor/formatting-menu.tsx:120
 msgid "Link"
 msgstr "Ссылка"
@@ -310,7 +302,7 @@ msgstr "Нет результатов"
 msgid "Numbered List"
 msgstr "Нумерованный список"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:32
+#: src/features/auth/views/login/verify-otp-screen.tsx:33
 msgid "Only digits are allowed"
 msgstr "Разрешены только цифры"
 
@@ -348,6 +340,14 @@ msgstr "Настройки проекта"
 msgid "Re-enter new password"
 msgstr "Повторите новый пароль"
 
+#: src/features/auth/views/login/resend.tsx:34
+msgid "Resend"
+msgstr "Отправить повторно"
+
+#: src/features/auth/views/login/resend.tsx:26
+msgid "Resend in {duration} seconds"
+msgstr "Отправить повторно через {duration} секунд"
+
 #: src/features/editor/menu/share/modal.tsx:53
 msgid "Save QR image"
 msgstr "Сохранить QR изображение"
@@ -373,7 +373,7 @@ msgstr "Поделитесь всем важным на одной красив�
 msgid "Share my profile"
 msgstr "Поделиться моим профилем"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:98
+#: src/features/auth/views/enter-email/enter-email-form.tsx:104
 msgid "Signing in..."
 msgstr "Вход..."
 
@@ -394,6 +394,7 @@ msgid "Text"
 msgstr "Текст"
 
 #: src/features/editor/menu/menu/project-settings/index.tsx:30
+#: src/features/editor/menu/menu/project-settings/theme-selector.tsx:45
 msgid "Theme"
 msgstr "Тема"
 
@@ -408,11 +409,6 @@ msgstr "Заголовок"
 #: src/features/editor/header/avatar.tsx:190
 msgid "Toggle avatar blur"
 msgstr "Переключить размытие аватара"
-
-#: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:42
-#: src/features/editor/bento/blocks/variants/text/index.tsx:73
-msgid "Type text here or \"/\" to open the commands"
-msgstr "Введите текст здесь или \"/\" для открытия команд"
 
 #: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:39
 #: src/features/editor/bento/blocks/variants/text/index.tsx:17
@@ -434,11 +430,11 @@ msgstr "Отвязано"
 msgid "Verification code"
 msgstr "Код подтверждения"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:31
+#: src/features/auth/views/login/verify-otp-screen.tsx:32
 msgid "Verification code must be 6 digits"
 msgstr "Код подтверждения должен состоять из 6 цифр"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:109
+#: src/features/auth/views/login/verify-otp-screen.tsx:110
 msgid "Verify code"
 msgstr "Подтвердить код"
 
@@ -458,7 +454,7 @@ msgstr "Подтвердите ваш email"
 msgid "Verify your email to continue"
 msgstr "Подтвердите ваш email для продолжения"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:107
+#: src/features/auth/views/login/verify-otp-screen.tsx:108
 msgid "Verifying..."
 msgstr "Проверка..."
 
@@ -474,6 +470,10 @@ msgstr "Мы отправим код подтверждения на новый 
 msgid "We'll send a verification code to your email address to change your password."
 msgstr "Мы отправим код подтверждения на ваш email адрес для изменения пароля."
 
+#: src/features/auth/model/screens.tsx:35
+msgid "Welcome!"
+msgstr "Добро пожаловать!"
+
 #: src/features/editor/menu/menu/profile/change-slug.tsx:26
 msgid "Your link"
 msgstr "Ваша ссылка"
@@ -481,10 +481,6 @@ msgstr "Ваша ссылка"
 #: src/features/editor/header/name.tsx:25
 msgid "Your name"
 msgstr "Ваше имя"
-
-#: src/app/[lang]/(brand)/page.tsx:8
-msgid "Домашняя страница"
-msgstr "Домашняя страница"
 
 #: src/shared/ui/kit/primitives/password-input.tsx:32
 msgid "Показать пароль"

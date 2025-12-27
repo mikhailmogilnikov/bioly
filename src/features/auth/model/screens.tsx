@@ -32,8 +32,8 @@ export const AUTH_SCREENS_DATA: Record<AuthScreen, AuthScreenData> = {
     component: <LoginVerifyOtpScreen />,
   },
   [AUTH_SCREENS.SIGNUP_ENTER_SLUG]: {
-    title: msg`Enter your slug`,
-    description: msg`Enter your slug to continue`,
+    title: msg`Welcome!`,
+    description: msg`Enter your unique url link to get started. You can change it later.`,
     component: <EnterSlugScreen />,
   },
   [AUTH_SCREENS.SIGNUP_VERIFY_OTP]: {
