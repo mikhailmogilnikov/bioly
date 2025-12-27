@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
+import { useHandleTimers } from "@/shared/lib/hooks/use-handle-timers";
 import { Button } from "@/shared/ui/kit/primitives/button";
 import {
   Field,
@@ -22,6 +23,7 @@ interface LoginFormData {
 export function EnterEmailForm() {
   const { t } = useLingui();
   const { navigateToScreen, setEmail, email } = useAuthContext();
+  const { startTimer, getTimer } = useHandleTimers();
 
   const emailSchema = z.object({
     email: z.email(t`Invalid email address`).min(1, t`Enter your email`),
@@ -36,10 +38,14 @@ export function EnterEmailForm() {
 
   const onSubmit = async (_data: LoginFormData) => {
     try {
-      // TODO: API call to login
-      // await login(_data.email);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const existingTimer = getTimer("otp", _data.email);
+
+      if (!existingTimer) {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
+
       setEmail(_data.email);
+      startTimer({ key: "otp", id: _data.email, duration: 60 });
       navigateToScreen("login-verify-otp");
     } catch {
       // Error handling

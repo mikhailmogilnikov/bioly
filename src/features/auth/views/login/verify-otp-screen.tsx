@@ -14,6 +14,7 @@ import {
 } from "@/shared/ui/kit/primitives/field";
 import { InputOTP, InputOTPSlot } from "@/shared/ui/kit/primitives/input-otp";
 import { useAuthContext } from "../../model/provider";
+import { LoginResendButton } from "./resend";
 
 interface OTPFormData {
   otp: string;
@@ -96,14 +97,7 @@ export function LoginVerifyOtpScreen() {
         />
       </FieldGroup>
 
-      <p className="mt-4 font-medium text-foreground/50 text-sm">
-        <Trans>
-          Didn't receive the code?{" "}
-          <button className="font-medium text-foreground" type="button">
-            Resend
-          </button>
-        </Trans>
-      </p>
+      <LoginResendButton />
 
       <Button
         className="group mt-4 text-link"

@@ -38,7 +38,7 @@ msgstr "Добавить социальную сеть"
 msgid "Back to email"
 msgstr "Назад к email"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:130
+#: src/features/auth/views/login/verify-otp-screen.tsx:125
 msgid "Back to enter email"
 msgstr "Назад к вводу email"
 
@@ -102,7 +102,7 @@ msgstr "Подтвердите новый пароль"
 msgid "Confirmation"
 msgstr "Подтверждение"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:94
+#: src/features/auth/views/enter-email/enter-email-form.tsx:100
 msgid "Continue"
 msgstr "Продолжить"
 
@@ -146,7 +146,12 @@ msgstr "Удалить аватар"
 msgid "Details"
 msgstr "Детали"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:99
+#. placeholder {0}: duration > 0 ? ( <span className="font-medium text-foreground/50"> Resend in {duration} seconds </span> ) : ( <button className="font-medium text-foreground" onClick={handleResend} type="button" > Resend </button> )
+#: src/features/auth/views/login/resend.tsx:23
+msgid "Didn't receive the code? {0}"
+msgstr ""
+
+#: src/features/auth/views/login/verify-otp-screen.tsx:100
 msgid "Didn't receive the code? <0>Resend</0>"
 msgstr "Не получили код? <0>Отправить повторно</0>"
 
@@ -154,7 +159,7 @@ msgstr "Не получили код? <0>Отправить повторно</0>
 msgid "Edit social media"
 msgstr "Редактировать социальную сеть"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:63
+#: src/features/auth/views/enter-email/enter-email-form.tsx:69
 msgid "Email"
 msgstr "Email"
 
@@ -199,8 +204,8 @@ msgstr "Введите заголовок"
 msgid "Enter URL"
 msgstr "Введите URL"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:27
-#: src/features/auth/views/enter-email/enter-email-form.tsx:71
+#: src/features/auth/views/enter-email/enter-email-form.tsx:29
+#: src/features/auth/views/enter-email/enter-email-form.tsx:77
 msgid "Enter your email"
 msgstr "Введите ваш email"
 
@@ -236,7 +241,7 @@ msgstr "Заголовок"
 msgid "Home"
 msgstr "Главная"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:27
+#: src/features/auth/views/enter-email/enter-email-form.tsx:29
 msgid "Invalid email address"
 msgstr "Неверный email адрес"
 
@@ -305,7 +310,7 @@ msgstr "Нет результатов"
 msgid "Numbered List"
 msgstr "Нумерованный список"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:31
+#: src/features/auth/views/login/verify-otp-screen.tsx:32
 msgid "Only digits are allowed"
 msgstr "Разрешены только цифры"
 
@@ -368,7 +373,7 @@ msgstr "Поделитесь всем важным на одной красив�
 msgid "Share my profile"
 msgstr "Поделиться моим профилем"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:92
+#: src/features/auth/views/enter-email/enter-email-form.tsx:98
 msgid "Signing in..."
 msgstr "Вход..."
 
@@ -429,11 +434,11 @@ msgstr "Отвязано"
 msgid "Verification code"
 msgstr "Код подтверждения"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:30
+#: src/features/auth/views/login/verify-otp-screen.tsx:31
 msgid "Verification code must be 6 digits"
 msgstr "Код подтверждения должен состоять из 6 цифр"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:114
+#: src/features/auth/views/login/verify-otp-screen.tsx:109
 msgid "Verify code"
 msgstr "Подтвердить код"
 
@@ -453,7 +458,7 @@ msgstr "Подтвердите ваш email"
 msgid "Verify your email to continue"
 msgstr "Подтвердите ваш email для продолжения"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:112
+#: src/features/auth/views/login/verify-otp-screen.tsx:107
 msgid "Verifying..."
 msgstr "Проверка..."
 
