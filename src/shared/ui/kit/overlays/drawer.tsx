@@ -44,7 +44,7 @@ export const Drawer = (props: DrawerProps) => {
               >
                 <div
                   aria-hidden
-                  className="mx-auto mt-4 h-1.5 w-10 shrink-0 rounded-full bg-foreground/20"
+                  className="mx-auto mt-5 h-1.5 w-10 shrink-0 rounded-full bg-foreground/20"
                   id="drawer-thumb"
                 />
               </div>
@@ -54,7 +54,7 @@ export const Drawer = (props: DrawerProps) => {
                 <X className="size-5 opacity-30" />
               </VaulDrawer.Close>
             )}
-            <div className="z-0 flex max-h-[95svh] flex-col gap-4 overflow-y-auto pb-6">
+            <div className="z-0 flex max-h-[95svh] flex-col gap-5 overflow-y-auto pb-5">
               {children}
             </div>
           </div>
@@ -74,12 +74,12 @@ export function DrawerHeader(props: DrawerHeaderProps) {
 
   return (
     <div
-      className={cn("flex shrink-0 flex-col gap-6 p-6 pb-0", className)}
+      className={cn("flex shrink-0 flex-col gap-5 p-5 pb-0", className)}
       {...wrapperProps}
     >
       <VaulDrawer.Title
         {...rest}
-        className="mt-6 shrink-0 font-semibold text-2xl"
+        className="mt-5 shrink-0 font-semibold text-2xl"
       />
       <VisuallyHidden asChild>
         <VaulDrawer.Description />
@@ -96,7 +96,7 @@ export function DrawerContent(props: DrawerContentProps) {
 
   return (
     <ScrollArea
-      className="flex h-full shrink flex-col gap-6 overflow-y-auto px-6"
+      className="flex h-full shrink flex-col gap-5 overflow-y-auto px-5"
       classNames={{
         scrollbar: "px-1",
         verticalScrollbar: "w-3.5",
@@ -118,11 +118,11 @@ export function DrawerFooter(props: DrawerFooterProps) {
   const { cancelButton = false, children, ...rest } = props;
 
   return (
-    <div className="flex shrink-0 gap-4 px-6" {...rest}>
+    <div className="flex shrink-0 gap-4 px-5" {...rest}>
       {cancelButton && (
         <VaulDrawer.Close asChild>
           <button
-            className="w-full cursor-pointer rounded bg-default px-6 py-3 font-medium"
+            className="w-full cursor-pointer rounded bg-default px-5 py-3 font-medium"
             type="button"
           >
             Cancel
