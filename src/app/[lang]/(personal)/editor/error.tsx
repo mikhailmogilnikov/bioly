@@ -5,7 +5,6 @@ import { RefreshCcwIcon } from "lucide-react";
 import { Button } from "@/shared/ui/kit/primitives/button";
 
 export default function EditorErrorBoundary({
-  error,
   reset,
 }: {
   error: Error;
