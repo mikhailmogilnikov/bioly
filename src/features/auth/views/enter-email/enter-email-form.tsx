@@ -5,6 +5,7 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { useHandleTimers } from "@/shared/lib/hooks/use-handle-timers";
+import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { Button } from "@/shared/ui/kit/primitives/button";
 import {
   Field,
@@ -24,9 +25,10 @@ export function EnterEmailForm() {
   const { t } = useLingui();
   const { navigateToScreen, setEmail, email } = useAuthContext();
   const { startTimer, getTimer } = useHandleTimers();
+  const { email: emailSchemaString } = useValidationSchemas();
 
   const emailSchema = z.object({
-    email: z.email(t`Invalid email address`).min(1, t`Enter your email`),
+    email: emailSchemaString,
   });
 
   const form = useForm<LoginFormData>({
@@ -46,12 +48,13 @@ export function EnterEmailForm() {
 
       setEmail(_data.email);
 
+      startTimer({ key: "otp", id: _data.email, duration: 60 });
+
       if (_data.email === "test@test.ru") {
         navigateToScreen("signup-enter-slug");
         return;
       }
 
-      startTimer({ key: "otp", id: _data.email, duration: 60 });
       navigateToScreen("login-verify-otp");
     } catch {
       // Error handling

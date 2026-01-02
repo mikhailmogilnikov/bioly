@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { ChevronRightIcon } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
-
+import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import {
   Field,
   FieldContent,
@@ -12,7 +12,6 @@ import {
 } from "@/shared/ui/kit/primitives/field";
 import { PasswordInput } from "@/shared/ui/kit/primitives/password-input";
 import type { ChangePasswordStep } from "./modal";
-import { useChangePasswordSchemas } from "./use-change-password-schemas";
 
 interface ChangePasswordStep1Props {
   setStep: (step: ChangePasswordStep) => void;
@@ -40,7 +39,7 @@ export function ChangePasswordStep1({
   setPasswordData,
 }: ChangePasswordStep1Props) {
   const { t } = useLingui();
-  const { passwordSchema } = useChangePasswordSchemas();
+  const { passwordSchema } = useValidationSchemas();
 
   const form = useForm<PasswordFormData>({
     resolver: zodResolver(passwordSchema),

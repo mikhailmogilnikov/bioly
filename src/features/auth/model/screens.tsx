@@ -37,8 +37,8 @@ export const AUTH_SCREENS_DATA: Record<AuthScreen, AuthScreenData> = {
     component: <EnterSlugScreen />,
   },
   [AUTH_SCREENS.SIGNUP_VERIFY_OTP]: {
-    title: msg`Verify your email`,
-    description: msg`Verify your email to continue`,
+    title: msg`Verification`,
+    description: msg`We sent a one-time code to your email. Enter it below to continue.`,
     component: <SignupVerifyOtpScreen />,
   },
 } as const;

@@ -3,7 +3,7 @@ import { Trans } from "@lingui/react/macro";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
-
+import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import {
   Field,
   FieldContent,
@@ -16,7 +16,6 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/shared/ui/kit/primitives/input-otp";
-import { useChangePasswordSchemas } from "../change-password/use-change-password-schemas";
 import type { ChangeEmailStep } from "./modal";
 
 interface ChangeEmailStep2Props {
@@ -34,7 +33,7 @@ export function ChangeEmailStep2({
   setStep,
   onSuccess,
 }: ChangeEmailStep2Props) {
-  const { otpSchema } = useChangePasswordSchemas();
+  const { otpSchema } = useValidationSchemas();
 
   const form = useForm<OTPFormData>({
     resolver: zodResolver(otpSchema),

@@ -1,10 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Trans, useLingui } from "@lingui/react/macro";
+import { Trans } from "@lingui/react/macro";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { ChevronRightIcon } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 import { useLocalizedRouter } from "@/shared/lib/hooks/use-localized-router";
+import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { Button } from "@/shared/ui/kit/primitives/button";
 import {
   Field,
@@ -15,22 +16,19 @@ import {
 import { InputOTP, InputOTPSlot } from "@/shared/ui/kit/primitives/input-otp";
 import { BackButton } from "../../back-button";
 import { useAuthContext } from "../../model/provider";
-import { LoginResendButton } from "./resend";
+import { ResendOtpButton } from "./resend";
 
 interface OTPFormData {
   otp: string;
 }
 
 export function LoginVerifyOtpScreen() {
-  const { t } = useLingui();
   const { navigateToScreen } = useAuthContext();
   const router = useLocalizedRouter();
+  const { otp } = useValidationSchemas();
 
   const otpSchema = z.object({
-    otp: z
-      .string()
-      .length(6, t`Verification code must be 6 digits`)
-      .regex(new RegExp(REGEXP_ONLY_DIGITS), t`Only digits are allowed`),
+    otp,
   });
 
   const form = useForm<OTPFormData>({
@@ -98,7 +96,7 @@ export function LoginVerifyOtpScreen() {
         />
       </FieldGroup>
 
-      <LoginResendButton />
+      <ResendOtpButton />
 
       <Button
         className="group mt-4 text-link"

@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import { useProfile } from "@/features/editor/profile/use-profile";
+import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import {
   Field,
   FieldContent,
@@ -18,7 +19,6 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/shared/ui/kit/primitives/input-otp";
-import { useChangePasswordSchemas } from "../change-password/use-change-password-schemas";
 import type { ChangeEmailStep } from "./modal";
 
 interface ChangeEmailStep0Props {
@@ -30,7 +30,7 @@ interface OTPFormData {
 }
 
 export function ChangeEmailStep0({ setStep }: ChangeEmailStep0Props) {
-  const { otpSchema } = useChangePasswordSchemas();
+  const { otpSchema } = useValidationSchemas();
   const { email } = useProfile(
     (state) => ({
       email: state.profile.email,

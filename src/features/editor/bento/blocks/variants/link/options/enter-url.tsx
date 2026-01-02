@@ -4,20 +4,22 @@ import type { ChangeEvent } from "react";
 import z from "zod";
 import { useBlockContext } from "@/features/editor/bento/grid/ui/block-context";
 import { useProfile } from "@/features/editor/profile/use-profile";
+import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { SectionTitle } from "@/shared/ui/kit/section-title";
-
-const schema = z.object({
-  url: z.url(),
-});
 
 export function BentoBlockLinkSettingEnterUrl() {
   const { block } = useBlockContext<"link">();
   const { t } = useLingui();
+  const { url: urlSchema } = useValidationSchemas();
   const updateBentoBlockField = useProfile(
     (state) => state.updateBentoBlockField
   );
 
   if (!block) return null;
+
+  const schema = z.object({
+    url: urlSchema,
+  });
 
   const handleUrlChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

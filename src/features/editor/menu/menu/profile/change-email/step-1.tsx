@@ -3,7 +3,7 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import { ChevronRightIcon } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-
+import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import {
   Field,
   FieldContent,
@@ -30,12 +30,10 @@ export function ChangeEmailStep1({
   setNewEmail,
 }: ChangeEmailStep1Props) {
   const { t } = useLingui();
+  const { newEmail: newEmailSchema } = useValidationSchemas();
 
   const emailSchema = z.object({
-    newEmail: z
-      .string()
-      .min(1, t`Enter new email`)
-      .email(t`Invalid email address`),
+    newEmail: newEmailSchema,
   });
 
   const form = useForm<EmailFormData>({

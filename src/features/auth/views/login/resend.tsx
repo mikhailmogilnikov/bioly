@@ -5,7 +5,7 @@ import {
 } from "@/shared/lib/hooks/use-handle-timers";
 import { useAuthContext } from "../../model/provider";
 
-export function LoginResendButton() {
+export function ResendOtpButton() {
   const { email } = useAuthContext();
 
   const duration = useTimers((state) => state.timers.otp?.[email || ""]);

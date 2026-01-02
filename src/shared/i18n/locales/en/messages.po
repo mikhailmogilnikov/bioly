@@ -34,12 +34,16 @@ msgstr "Add bio... Type \"/\" for commands."
 msgid "Add social media"
 msgstr "Add social media"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:119
-#: src/features/auth/views/signup/enter-slug-screen.tsx:15
+#: src/features/auth/views/login/verify-otp-screen.tsx:117
+#: src/features/auth/views/signup/enter-slug-screen.tsx:87
 msgid "Back to enter email"
 msgstr "Back to enter email"
 
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:65
+#: src/features/auth/views/signup/verify-otp-screen.tsx:120
+msgid "Back to enter slug"
+msgstr "Back to enter slug"
+
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:64
 msgid "Back to passwords"
 msgstr "Back to passwords"
 
@@ -87,11 +91,11 @@ msgstr "Code"
 msgid "Code Block"
 msgstr "Code Block"
 
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:30
+#: src/shared/lib/hooks/use-validation.ts:64
 msgid "Confirm new password"
 msgstr "Confirm new password"
 
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:130
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:129
 msgid "Confirm New Password"
 msgstr "Confirm New Password"
 
@@ -99,7 +103,11 @@ msgstr "Confirm New Password"
 msgid "Confirmation"
 msgstr "Confirmation"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:106
+#: src/features/auth/views/enter-email/enter-email-form.tsx:109
+#: src/features/auth/views/signup/enter-slug-screen.tsx:79
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:134
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:108
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:164
 msgid "Continue"
 msgstr "Continue"
 
@@ -127,7 +135,11 @@ msgstr "Corner radius"
 msgid "Create an account or sign in to your existing. No credit card required."
 msgstr "Create an account or sign in to your existing. No credit card required."
 
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:80
+#: src/features/auth/views/signup/enter-slug-screen.tsx:77
+msgid "Creating account..."
+msgstr "Creating account..."
+
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:79
 msgid "Current Password"
 msgstr "Current Password"
 
@@ -151,26 +163,25 @@ msgstr "Didn't receive the code?"
 msgid "Edit social media"
 msgstr "Edit social media"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:75
+#: src/features/auth/views/enter-email/enter-email-form.tsx:78
 msgid "Email"
 msgstr "Email"
 
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:67
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:66
 msgid "Email:"
 msgstr "Email:"
 
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:88
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:14
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:87
+#: src/shared/lib/hooks/use-validation.ts:62
 msgid "Enter current password"
 msgstr "Enter current password"
 
-#: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:37
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:82
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:80
+#: src/shared/lib/hooks/use-validation.ts:42
 msgid "Enter new email"
 msgstr "Enter new email"
 
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:113
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:112
 msgid "Enter new password"
 msgstr "Enter new password"
 
@@ -178,7 +189,7 @@ msgstr "Enter new password"
 msgid "Enter passwords"
 msgstr "Enter passwords"
 
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:133
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:132
 msgid "Enter the 6-digit code we sent to the new email address."
 msgstr "Enter the 6-digit code we sent to the new email address."
 
@@ -186,7 +197,7 @@ msgstr "Enter the 6-digit code we sent to the new email address."
 msgid "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
 msgstr "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
 
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:130
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:129
 msgid "Enter the 6-digit code we sent to your email address."
 msgstr "Enter the 6-digit code we sent to your email address."
 
@@ -194,12 +205,16 @@ msgstr "Enter the 6-digit code we sent to your email address."
 msgid "Enter Title"
 msgstr "Enter Title"
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:51
+#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:53
 msgid "Enter URL"
 msgstr "Enter URL"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:29
-#: src/features/auth/views/enter-email/enter-email-form.tsx:83
+#: src/shared/lib/hooks/use-validation.ts:22
+msgid "Enter username"
+msgstr "Enter username"
+
+#: src/features/auth/views/enter-email/enter-email-form.tsx:86
+#: src/shared/lib/hooks/use-validation.ts:38
 msgid "Enter your email"
 msgstr "Enter your email"
 
@@ -232,9 +247,14 @@ msgstr "Heading"
 msgid "Home"
 msgstr "Home"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:29
+#: src/shared/lib/hooks/use-validation.ts:38
+#: src/shared/lib/hooks/use-validation.ts:41
 msgid "Invalid email address"
 msgstr "Invalid email address"
+
+#: src/shared/lib/hooks/use-validation.ts:44
+msgid "Invalid URL"
+msgstr "Invalid URL"
 
 #: src/features/editor/text-editor/formatting-menu.tsx:90
 msgid "Italic"
@@ -274,21 +294,17 @@ msgstr "Muted"
 msgid "New block"
 msgstr "New block"
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:74
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:72
 msgid "New Email"
 msgstr "New Email"
 
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:105
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:104
 msgid "New Password"
 msgstr "New Password"
 
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:37
+#: src/shared/lib/hooks/use-validation.ts:77
 msgid "New password must be different from old password"
 msgstr "New password must be different from old password"
-
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:17
-msgid "New password must contain at least 8 characters"
-msgstr "New password must contain at least 8 characters"
 
 #: src/features/editor/bento/grid/ui/root.tsx:41
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
@@ -302,27 +318,35 @@ msgstr "No result"
 msgid "Numbered List"
 msgstr "Numbered List"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:33
+#: src/shared/lib/hooks/use-validation.ts:18
 msgid "Only digits are allowed"
 msgstr "Only digits are allowed"
+
+#: src/app/[lang]/(personal)/editor/error.tsx:18
+msgid "Oops! Something went wrong."
+msgstr "Oops! Something went wrong."
 
 #: src/app/[lang]/(brand)/404/page.tsx:10
 msgid "Page not found"
 msgstr "Page not found"
 
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:24
+#: src/shared/lib/hooks/use-validation.ts:48
+msgid "Password must contain at least 8 characters"
+msgstr "Password must contain at least 8 characters"
+
+#: src/shared/lib/hooks/use-validation.ts:55
 msgid "Password must contain at least one lowercase letter"
 msgstr "Password must contain at least one lowercase letter"
 
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:28
+#: src/shared/lib/hooks/use-validation.ts:59
 msgid "Password must contain at least one number"
 msgstr "Password must contain at least one number"
 
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:20
+#: src/shared/lib/hooks/use-validation.ts:51
 msgid "Password must contain at least one uppercase letter"
 msgstr "Password must contain at least one uppercase letter"
 
-#: src/features/editor/menu/menu/profile/change-password/use-change-password-schemas.ts:33
+#: src/shared/lib/hooks/use-validation.ts:73
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
@@ -336,9 +360,13 @@ msgstr "Profile"
 msgid "Project settings"
 msgstr "Project settings"
 
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:138
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:137
 msgid "Re-enter new password"
 msgstr "Re-enter new password"
+
+#: src/app/[lang]/(personal)/editor/error.tsx:29
+msgid "Reload"
+msgstr "Reload"
 
 #: src/features/auth/views/login/resend.tsx:34
 msgid "Resend"
@@ -352,8 +380,8 @@ msgstr "Resend in {duration} seconds"
 msgid "Save QR image"
 msgstr "Save QR image"
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:108
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:163
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:106
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:162
 msgid "Sending code..."
 msgstr "Sending code..."
 
@@ -373,7 +401,7 @@ msgstr "Share everything important on one beautiful page."
 msgid "Share my profile"
 msgstr "Share my profile"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:104
+#: src/features/auth/views/enter-email/enter-email-form.tsx:107
 msgid "Signing in..."
 msgstr "Signing in..."
 
@@ -424,17 +452,44 @@ msgstr "Underline"
 msgid "Unlinked"
 msgstr "Unlinked"
 
+#: src/shared/lib/hooks/use-validation.ts:27
+msgid "Username can only contain lowercase Latin letters, numbers, hyphens, and underscores"
+msgstr "Username can only contain lowercase Latin letters, numbers, hyphens, and underscores"
+
+#: src/shared/lib/hooks/use-validation.ts:35
+msgid "Username cannot end with a hyphen or underscore"
+msgstr "Username cannot end with a hyphen or underscore"
+
+#: src/shared/lib/hooks/use-validation.ts:31
+msgid "Username cannot start with a hyphen or underscore"
+msgstr "Username cannot start with a hyphen or underscore"
+
+#: src/shared/lib/hooks/use-validation.ts:23
+msgid "Username must be at least 3 characters"
+msgstr "Username must be at least 3 characters"
+
+#: src/shared/lib/hooks/use-validation.ts:24
+msgid "Username must be no more than 30 characters"
+msgstr "Username must be no more than 30 characters"
+
+#: src/features/auth/model/screens.tsx:40
+msgid "Verification"
+msgstr "Verification"
+
 #: src/features/editor/menu/menu/profile/change-email/step-0.tsx:89
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:85
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:82
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:84
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:81
 msgid "Verification code"
 msgstr "Verification code"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:32
+#: src/shared/lib/hooks/use-validation.ts:17
 msgid "Verification code must be 6 digits"
 msgstr "Verification code must be 6 digits"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:110
+#: src/features/auth/views/login/verify-otp-screen.tsx:108
+#: src/features/auth/views/signup/verify-otp-screen.tsx:111
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:146
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:141
 msgid "Verify code"
 msgstr "Verify code"
 
@@ -446,29 +501,30 @@ msgstr "Verify current email"
 msgid "Verify new email"
 msgstr "Verify new email"
 
-#: src/features/auth/model/screens.tsx:40
-msgid "Verify your email"
-msgstr "Verify your email"
-
-#: src/features/auth/model/screens.tsx:41
-msgid "Verify your email to continue"
-msgstr "Verify your email to continue"
-
-#: src/features/auth/views/login/verify-otp-screen.tsx:108
+#: src/features/auth/views/login/verify-otp-screen.tsx:106
+#: src/features/auth/views/signup/verify-otp-screen.tsx:109
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:132
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:144
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:139
 msgid "Verifying..."
 msgstr "Verifying..."
 
 #: src/features/auth/model/screens.tsx:31
+#: src/features/auth/model/screens.tsx:41
 msgid "We sent a one-time code to your email. Enter it below to continue."
 msgstr "We sent a one-time code to your email. Enter it below to continue."
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:95
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:93
 msgid "We'll send a verification code to the new email address to change your email."
 msgstr "We'll send a verification code to the new email address to change your email."
 
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:150
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:149
 msgid "We'll send a verification code to your email address to change your password."
 msgstr "We'll send a verification code to your email address to change your password."
+
+#: src/app/[lang]/(personal)/editor/error.tsx:21
+msgid "We're sorry, but an error occurred while loading this page. If the problem persists, please contact support."
+msgstr "We're sorry, but an error occurred while loading this page. If the problem persists, please contact support."
 
 #: src/features/auth/model/screens.tsx:35
 msgid "Welcome!"
