@@ -20,7 +20,7 @@ export function AuthContent() {
 
   return (
     <AuthLayout>
-      <m.div layout="position">
+      <m.div layout="position" layoutId="home-link">
         <AuthLayoutHomeLink homeLabel={t`Home`} />
       </m.div>
 

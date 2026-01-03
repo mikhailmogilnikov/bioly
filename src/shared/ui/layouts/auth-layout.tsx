@@ -1,4 +1,5 @@
 import LinkIcon from "@/shared/assets/icons/link.svg";
+import { cn } from "@/shared/lib/utils";
 import { LocalizedLink } from "../utils/localized-link";
 
 interface AuthLayoutProps {
@@ -25,9 +26,15 @@ export function AuthLayoutDescription({
   return <p className="font-medium text-foreground/50 text-sm">{children}</p>;
 }
 
-export function AuthLayoutHomeLink({ homeLabel }: { homeLabel: string }) {
+export function AuthLayoutHomeLink({
+  homeLabel,
+  className,
+}: {
+  homeLabel: string;
+  className?: string;
+}) {
   return (
-    <div className="squircle size-16 bg-default">
+    <div className={cn("squircle size-16 bg-default", className)}>
       <LocalizedLink
         aria-label={homeLabel}
         className="flex size-full items-center justify-center"
