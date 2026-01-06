@@ -11,7 +11,9 @@ export interface Profile {
   name: string;
   slug: string;
   email: string;
+  created_at: string;
   avatar_url: string | null;
+  protected_by_password: boolean;
   short_description: string;
   description: JSONContent | null;
   theme: ProfileTheme;
@@ -27,6 +29,8 @@ export const DEFAULT_MOCK_PROFILE: Profile = {
   name: "",
   slug: "example",
   email: "mail@example.com",
+  created_at: new Date().toISOString(),
+  protected_by_password: false,
   avatar_url: "https://avatars.githubusercontent.com/u/125604210?v=4",
   short_description: "",
   description: null,

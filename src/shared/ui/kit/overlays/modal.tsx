@@ -1,10 +1,10 @@
 /** biome-ignore-all lint/performance/noNamespaceImport: 1 */
 import * as Dialog from "@radix-ui/react-dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { X } from "lucide-react";
+import { ChevronLeftIcon, X } from "lucide-react";
 import type { HTMLAttributes, ReactNode } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
-
+import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
 import { ScrollArea, type ScrollAreaProps } from "../primitives/scroll-area";
 
 const modalTV = tv({
@@ -12,7 +12,7 @@ const modalTV = tv({
     overlay:
       "data-[state=closed]:motion-opacity-out data-[state=open]:motion-opacity-in fixed inset-0 z-50 bg-black/50",
     content:
-      "data-[state=closed]:motion-scale-out-98 data-[state=closed]:motion-opacity-out data-[state=open]:motion-scale-in-98 motion-duration-200 data-[state=open]:motion-opacity-in fixed top-1/2 left-1/2 z-50 flex h-auto min-h-16 w-full -translate-x-1/2 -translate-y-1/2 flex-col rounded border border-outline bg-background",
+      "data-[state=closed]:motion-scale-out-98 data-[state=closed]:motion-opacity-out data-[state=open]:motion-scale-in-98 motion-duration-200 data-[state=open]:motion-opacity-in fixed top-1/2 left-1/2 z-50 flex h-auto min-h-16 w-full -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded border border-foreground/5 bg-background outline-none",
     close:
       "absolute top-6 right-6 z-30 flex size-8 cursor-pointer items-center justify-center rounded-full bg-default",
     closeIcon: "size-5 opacity-60",
@@ -107,14 +107,37 @@ export function Modal(props: ModalProps) {
 export interface ModalHeaderProps extends Dialog.DialogTitleProps {
   wrapperProps?: HTMLAttributes<HTMLDivElement>;
   restContent?: ReactNode;
+  onBack?: () => void;
 }
 
 export function ModalHeader(props: ModalHeaderProps) {
-  const { wrapperProps, restContent, ...rest } = props;
+  const { wrapperProps, restContent, onBack, ...rest } = props;
+  const modalViewsContext = useModalViews<string>();
 
   return (
-    <div className="flex shrink-0 flex-col gap-6 p-6 pr-13" {...wrapperProps}>
-      <Dialog.Title {...rest} className="shrink-0 font-semibold text-2xl" />
+    <div
+      className="absolute flex w-full shrink-0 flex-col gap-6"
+      {...wrapperProps}
+    >
+      {!modalViewsContext?.isFirstView && (
+        <button
+          className="absolute top-6 left-6 z-30 flex size-8 cursor-pointer items-center justify-center rounded-full bg-default"
+          onClick={() => {
+            if (onBack) {
+              onBack();
+            } else {
+              modalViewsContext.pop();
+            }
+          }}
+          type="button"
+        >
+          <ChevronLeftIcon className="size-6 opacity-60" strokeWidth={1.7} />
+        </button>
+      )}
+      <Dialog.Title
+        {...rest}
+        className="mx-auto mt-6 max-w-sm shrink-0 text-center font-semibold text-lg"
+      />
       <VisuallyHidden asChild>
         <Dialog.Description />
       </VisuallyHidden>
@@ -130,7 +153,7 @@ export function ModalContent(props: ModalContentProps) {
 
   return (
     <ScrollArea
-      className="mb-6 flex h-full shrink flex-col gap-6 overflow-y-auto px-6"
+      className="flex h-full shrink flex-col gap-6 overflow-y-auto px-6 pt-19 pb-6"
       classNames={{
         scrollbar: "px-1",
         verticalScrollbar: "w-3.5",

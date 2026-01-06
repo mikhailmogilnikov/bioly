@@ -36,7 +36,7 @@ export function EditSocialMediaModal({
   return (
     <AdaptiveModal onOpenChange={onOpenChange} open={open}>
       <AdaptiveModalHeader>
-        <Trans>Edit social media</Trans>
+        <Trans>Social media</Trans>
       </AdaptiveModalHeader>
       <AdaptiveModalContent>
         <div className="flex w-full flex-col gap-6 py-1">

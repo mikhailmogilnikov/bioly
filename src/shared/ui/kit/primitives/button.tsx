@@ -5,18 +5,19 @@ import type * as React from "react";
 import { cn } from "@/shared/lib/utils";
 
 const buttonVariants = cva(
-  "pressable inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-all focus-visible:border-link focus-visible:ring-[3px] focus-visible:ring-link/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-all focus-visible:border-link focus-visible:ring-[3px] focus-visible:ring-link/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-default text-foreground hover:bg-default/90",
+        default: "pressable bg-default text-foreground hover:bg-default/90",
         destructive:
-          "bg-danger text-white hover:bg-danger/90 focus-visible:ring-danger/20 dark:bg-danger/60 dark:focus-visible:ring-danger/40",
+          "pressable bg-danger text-white hover:bg-danger/90 focus-visible:ring-danger/20 dark:bg-danger/60 dark:focus-visible:ring-danger/40",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
-        ghost:
-          "hover:bg-default hover:text-foreground dark:hover:bg-default/50",
-        link: "bg-link text-white hover:bg-link/90",
+          "pressable border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+        ghost: "hover:bg-foreground/10 active:bg-foreground/20",
+        link: "pressable bg-link text-white hover:bg-link/90",
+        inverse:
+          "pressable bg-foreground text-background hover:bg-foreground/90",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

@@ -13,6 +13,27 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: action.label
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:114
+msgid "{0}"
+msgstr ""
+
+#: src/features/auth/views/login/resend.tsx:31
+msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:81
+msgid "Account is protected by password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:82
+msgid "Account isn't protected by password"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:102
+msgid "Actions"
+msgstr ""
+
 #: src/features/editor/menu/status-bar/index.tsx:24
 msgid "Active"
 msgstr "Активен"
@@ -29,13 +50,16 @@ msgstr "Добавить аватар"
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Добавьте биографию... Введите \"/\" для команд."
 
+#: src/features/editor/menu/menu/profile-new/controller.tsx:48
+msgid "Add Password"
+msgstr ""
+
 #: src/features/editor/header/social-media/social-media.tsx:36
 #: src/features/editor/header/social-media/social-media.tsx:75
 msgid "Add social media"
 msgstr "Добавить социальную сеть"
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:117
-#: src/features/auth/views/signup/enter-slug-screen.tsx:87
 msgid "Back to enter email"
 msgstr "Назад к вводу email"
 
@@ -71,15 +95,23 @@ msgstr "Продолжая, вы соглашаетесь с нашими <0>У�
 msgid "Can be changed only once in 7 days."
 msgstr "Можно изменить только один раз в 7 дней."
 
-#: src/features/editor/menu/menu/profile/change-email/modal.tsx:63
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:35
+msgid "Change email"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile-new/controller.tsx:28
 msgid "Change Email"
 msgstr "Изменить email"
 
-#: src/features/editor/menu/menu/profile/change-password/change-password.tsx:18
+#: src/shared/ui/utils/lang-picker.tsx:28
+msgid "Change language"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:46
 msgid "Change password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/menu/menu/profile/change-password/modal.tsx:71
+#: src/features/editor/menu/menu/profile-new/controller.tsx:40
 msgid "Change Password"
 msgstr "Изменить пароль"
 
@@ -91,6 +123,10 @@ msgstr "Код"
 msgid "Code Block"
 msgstr "Блок кода"
 
+#: src/features/editor/menu/menu/profile-new/controller.tsx:36
+msgid "Confirm email change"
+msgstr ""
+
 #: src/shared/lib/hooks/use-validation.ts:64
 msgid "Confirm new password"
 msgstr "Подтвердите новый пароль"
@@ -99,15 +135,19 @@ msgstr "Подтвердите новый пароль"
 msgid "Confirm New Password"
 msgstr "Подтвердите новый пароль"
 
+#: src/features/editor/menu/menu/profile-new/controller.tsx:52
+msgid "Confirm password addition"
+msgstr ""
+
+#: src/features/editor/menu/menu/profile-new/controller.tsx:44
+msgid "Confirm password change"
+msgstr ""
+
 #: src/features/auth/model/screens.tsx:30
 msgid "Confirmation"
 msgstr "Подтверждение"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:109
-#: src/features/auth/views/signup/enter-slug-screen.tsx:79
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:134
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:108
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:164
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:119
 msgid "Continue"
 msgstr "Продолжить"
 
@@ -155,7 +195,7 @@ msgstr "Удалить аватар"
 msgid "Details"
 msgstr "Детали"
 
-#: src/features/auth/views/login/resend.tsx:23
+#: src/features/auth/views/login/resend.tsx:27
 msgid "Didn't receive the code?"
 msgstr "Не получили код?"
 
@@ -163,7 +203,7 @@ msgstr "Не получили код?"
 msgid "Edit social media"
 msgstr "Редактировать социальную сеть"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:78
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:62
 msgid "Email"
 msgstr "Email"
 
@@ -176,8 +216,8 @@ msgstr "Email:"
 msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:80
-#: src/shared/lib/hooks/use-validation.ts:42
+#: src/features/editor/menu/menu/profile-new/controller.tsx:32
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:88
 msgid "Enter new email"
 msgstr "Введите новый email"
 
@@ -193,13 +233,17 @@ msgstr "Введите пароли"
 msgid "Enter the 6-digit code we sent to the new email address."
 msgstr "Введите 6-значный код, который мы отправили на новый email адрес."
 
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:119
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:104
 msgid "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
 msgstr "Введите 6-значный код, который мы отправили на ваш текущий email адрес ({email}) для подтверждения вашей личности."
 
 #: src/features/editor/menu/menu/profile/change-password/step-2.tsx:129
 msgid "Enter the 6-digit code we sent to your email address."
 msgstr "Введите 6-значный код, который мы отправили на ваш email адрес."
+
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:124
+msgid "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
+msgstr ""
 
 #: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:33
 msgid "Enter Title"
@@ -260,6 +304,10 @@ msgstr "Неверный URL"
 msgid "Italic"
 msgstr "Курсив"
 
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:66
+msgid "Joined on"
+msgstr ""
+
 #: src/features/editor/menu/status-bar/index.tsx:28
 msgid "Last update:"
 msgstr "Последнее обновление:"
@@ -294,7 +342,7 @@ msgstr "Приглушенный"
 msgid "New block"
 msgstr "Новый блок"
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:72
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:80
 msgid "New Email"
 msgstr "Новый Email"
 
@@ -309,6 +357,10 @@ msgstr "Новый пароль должен отличаться от стар�
 #: src/features/editor/bento/grid/ui/root.tsx:41
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "Блоки еще не добавлены. Нажмите <0>+</0> в нижнем меню, чтобы добавить первый."
+
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:67
+msgid "No email provided. Please go back and enter a new email."
+msgstr ""
 
 #: src/features/editor/text-editor/commands-list.tsx:113
 msgid "No result"
@@ -329,6 +381,10 @@ msgstr "Упс! Что-то пошло не так."
 #: src/app/[lang]/(brand)/404/page.tsx:10
 msgid "Page not found"
 msgstr "Страница не найдена"
+
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:73
+msgid "Password"
+msgstr ""
 
 #: src/shared/lib/hooks/use-validation.ts:48
 msgid "Password must contain at least 8 characters"
@@ -351,14 +407,17 @@ msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
 #: src/features/editor/menu/menu/index.tsx:121
-#: src/features/editor/menu/menu/profile/index.tsx:22
+#: src/features/editor/menu/menu/profile-new/controller.tsx:24
 msgid "Profile"
 msgstr "Профиль"
 
 #: src/features/editor/menu/menu/index.tsx:118
-#: src/features/editor/menu/menu/project-settings/index.tsx:24
 msgid "Project settings"
 msgstr "Настройки проекта"
+
+#: src/features/editor/menu/menu/profile-new/views/profile.tsx:94
+msgid "Protect profile with password"
+msgstr ""
 
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:137
 msgid "Re-enter new password"
@@ -368,9 +427,13 @@ msgstr "Повторите новый пароль"
 msgid "Reload"
 msgstr "Перезагрузить"
 
-#: src/features/auth/views/login/resend.tsx:34
+#: src/features/auth/views/login/resend.tsx:45
 msgid "Resend"
 msgstr "Отправить повторно"
+
+#: src/features/auth/views/login/resend.tsx:30
+msgid "Resend in {duration}"
+msgstr ""
 
 #: src/features/auth/views/login/resend.tsx:26
 msgid "Resend in {duration} seconds"
@@ -384,6 +447,10 @@ msgstr "Сохранить QR изображение"
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:162
 msgid "Sending code..."
 msgstr "Отправка кода..."
+
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:117
+msgid "Sending..."
+msgstr ""
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:19
 msgid "Separator"
@@ -404,6 +471,10 @@ msgstr "Поделиться моим профилем"
 #: src/features/auth/views/enter-email/enter-email-form.tsx:107
 msgid "Signing in..."
 msgstr "Вход..."
+
+#: src/features/editor/header/social-media/modal.tsx:39
+msgid "Social media"
+msgstr ""
 
 #: src/features/editor/text-editor/formatting-menu.tsx:126
 msgid "Spoiler"
@@ -452,6 +523,10 @@ msgstr "Подчеркнутый"
 msgid "Unlinked"
 msgstr "Отвязано"
 
+#: src/features/editor/bento/blocks/variants/text/options/index.tsx:8
+msgid "Use \"/\" when typing to access commands.<0/> <1/>Select a text fragment to apply additional formatting."
+msgstr ""
+
 #: src/shared/lib/hooks/use-validation.ts:27
 msgid "Username can only contain lowercase Latin letters, numbers, hyphens, and underscores"
 msgstr "Имя пользователя может содержать только строчные латинские буквы, цифры, дефисы и подчеркивания"
@@ -488,8 +563,8 @@ msgstr "Код подтверждения должен состоять из 6 �
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:108
 #: src/features/auth/views/signup/verify-otp-screen.tsx:111
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:146
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:141
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:119
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:139
 msgid "Verify code"
 msgstr "Подтвердить код"
 
@@ -503,9 +578,8 @@ msgstr "Подтвердить новый email"
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:106
 #: src/features/auth/views/signup/verify-otp-screen.tsx:109
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:132
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:144
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:139
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:117
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:137
 msgid "Verifying..."
 msgstr "Проверка..."
 
@@ -514,7 +588,7 @@ msgstr "Проверка..."
 msgid "We sent a one-time code to your email. Enter it below to continue."
 msgstr "Мы отправили одноразовый код на ваш email. Введите его ниже для продолжения."
 
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:93
+#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:104
 msgid "We'll send a verification code to the new email address to change your email."
 msgstr "Мы отправим код подтверждения на новый email адрес для изменения вашего email."
 

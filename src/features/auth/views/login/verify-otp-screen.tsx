@@ -23,7 +23,7 @@ interface OTPFormData {
 }
 
 export function LoginVerifyOtpScreen() {
-  const { navigateToScreen } = useAuthContext();
+  const { navigateToScreen, email } = useAuthContext();
   const router = useLocalizedRouter();
   const { otp } = useValidationSchemas();
 
@@ -96,7 +96,7 @@ export function LoginVerifyOtpScreen() {
         />
       </FieldGroup>
 
-      <ResendOtpButton />
+      <ResendOtpButton email={email || ""} />
 
       <Button
         className="group mt-4 text-link"

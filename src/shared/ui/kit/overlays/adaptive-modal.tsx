@@ -58,22 +58,24 @@ interface AdaptiveModalHeaderProps {
   children?: ReactNode;
   drawerProps?: DrawerHeaderProps;
   modalProps?: ModalHeaderProps;
+  onBack?: () => void;
 }
 
 export const AdaptiveModalHeader = ({
   children,
   drawerProps,
   modalProps,
+  onBack,
   ...props
 }: AdaptiveModalHeaderProps) => {
   const isMobile = useMediaQuery(BREAKPOINT_MOBILE.toString());
 
   return isMobile ? (
-    <DrawerHeader {...drawerProps} {...props}>
+    <DrawerHeader onBack={onBack} {...drawerProps} {...props}>
       {children}
     </DrawerHeader>
   ) : (
-    <ModalHeader {...modalProps} {...props}>
+    <ModalHeader onBack={onBack} {...modalProps} {...props}>
       {children}
     </ModalHeader>
   );

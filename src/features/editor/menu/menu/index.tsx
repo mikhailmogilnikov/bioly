@@ -24,7 +24,7 @@ import {
 } from "@/shared/ui/kit/overlays/react-tooltip";
 import { Pulse } from "@/shared/ui/kit/primitives/pulse";
 import { useProfile } from "../../profile/use-profile";
-import { ProfileModal } from "./profile";
+import { ProfileModalNew } from "./profile-new";
 import { ProjectSettingsModal } from "./project-settings";
 
 interface IconHandle {
@@ -170,7 +170,7 @@ export const EditBarMenu = () => {
         onOpenChange={() => handleToggleModal("settings", false)}
         open={openModals.settings ?? false}
       />
-      <ProfileModal
+      <ProfileModalNew
         onOpenChange={() => handleToggleModal("profile", false)}
         open={openModals.profile ?? false}
       />

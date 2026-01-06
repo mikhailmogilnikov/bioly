@@ -1,14 +1,18 @@
-import { Trans } from "@lingui/react/macro";
+import { Plural, Trans } from "@lingui/react/macro";
 import {
   useHandleTimers,
   useTimers,
 } from "@/shared/lib/hooks/use-handle-timers";
-import { useAuthContext } from "../../model/provider";
+import { cn } from "@/shared/lib/utils";
 
-export function ResendOtpButton() {
-  const { email } = useAuthContext();
-
-  const duration = useTimers((state) => state.timers.otp?.[email || ""]);
+export function ResendOtpButton({
+  email,
+  className,
+}: {
+  email: string;
+  className?: string;
+}) {
+  const duration = useTimers((state) => state.timers.otp?.[email]);
 
   const { startTimer } = useHandleTimers();
 
@@ -19,11 +23,18 @@ export function ResendOtpButton() {
   };
 
   return (
-    <p className="mt-4 font-medium text-foreground/50 text-sm">
+    <p className={cn("mt-4 font-medium text-foreground/50 text-sm", className)}>
       <Trans>Didn't receive the code?</Trans>{" "}
       {duration > 0 ? (
         <span className="font-medium text-foreground/50">
-          <Trans>Resend in {duration} seconds</Trans>
+          <Trans>Resend in {duration}</Trans>{" "}
+          <Plural
+            few="seconds"
+            many="seconds"
+            one="second"
+            other="seconds"
+            value={duration}
+          />
         </span>
       ) : (
         <button

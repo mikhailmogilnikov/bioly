@@ -56,7 +56,7 @@ function DropdownMenuContent({
   const content = (
     <DropdownMenuPrimitive.Content
       className={cn(
-        "motion-ease-in-out-quad motion-duration-200 data-[side=bottom]:motion-translate-y-in-[1rem] data-[side=left]:motion-translate-x-in-[1rem] data-[side=right]:motion-translate-x-in-[1rem] data-[side=top]:motion-translate-y-in-[1rem] data-[state=closed]:motion-scale-out-95 data-[state=closed]:motion-opacity-out-0 data-[state=open]:motion-scale-in-90 data-[state=open]:motion-opacity-in-0 z-50 flex max-h-(--radix-dropdown-menu-content-available-height) min-w-40 origin-(--radix-dropdown-menu-content-transform-origin) flex-col gap-1 overflow-y-auto overflow-x-hidden rounded-2xl border border-outline bg-background p-2 text-foreground shadow shadow-shadow",
+        "motion-ease-in-out-quad motion-duration-200 data-[side=bottom]:motion-translate-y-in-[1rem] data-[side=left]:motion-translate-x-in-[1rem] data-[side=right]:motion-translate-x-in-[1rem] data-[side=top]:motion-translate-y-in-[1rem] data-[state=closed]:motion-scale-out-95 data-[state=closed]:motion-opacity-out-0 data-[state=open]:motion-scale-in-90 data-[state=open]:motion-opacity-in-0 z-50 flex max-h-(--radix-dropdown-menu-content-available-height) min-w-40 origin-(--radix-dropdown-menu-content-transform-origin) flex-col gap-1 overflow-y-auto overflow-x-hidden rounded-2xl border border-foreground/10 bg-background p-2 text-foreground shadow shadow-shadow",
         className
       )}
       collisionPadding={16}
@@ -193,7 +193,7 @@ function DropdownMenuSeparator({
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Separator>) {
   return (
     <DropdownMenuPrimitive.Separator
-      className={cn("-mx-1 my-1 h-px bg-outline", className)}
+      className={cn("-mx-2 my-1 h-1 bg-foreground/10", className)}
       data-slot="dropdown-menu-separator"
       {...props}
     />

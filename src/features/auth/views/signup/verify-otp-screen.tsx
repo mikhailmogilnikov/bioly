@@ -25,7 +25,7 @@ interface OTPFormData {
 }
 
 export function SignupVerifyOtpScreen() {
-  const { navigateToScreen } = useAuthContext();
+  const { navigateToScreen, email } = useAuthContext();
   const router = useLocalizedRouter();
   const { otp } = useValidationSchemas();
 
@@ -98,7 +98,7 @@ export function SignupVerifyOtpScreen() {
         />
       </FieldGroup>
 
-      <ResendOtpButton />
+      <ResendOtpButton email={email || ""} />
 
       <Button
         className="group mt-4 text-link"

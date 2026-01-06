@@ -1,7 +1,7 @@
 import "@/app/css/global.css";
 import "@/app/css/fonts.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { LinguiClientProvider } from "@/shared/i18n/client-provider";
 import { allMessages, getI18nInstance } from "@/shared/i18n/i18n";
 import { initLingui } from "@/shared/i18n/init-lingui";
@@ -15,6 +15,15 @@ export function generateStaticParams() {
     lang,
   }));
 }
+
+export const viewport: Viewport = {
+  width: "device-width",
+  height: "device-height",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "auto",
+};
 
 export async function generateMetadata(
   props: LayoutProps<"/[lang]">
