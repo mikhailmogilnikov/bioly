@@ -13,7 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: action.label
 #: src/features/editor/menu/menu/profile-new/views/profile.tsx:114
 msgid "{0}"
 msgstr "{0}"
@@ -60,6 +59,7 @@ msgid "Add social media"
 msgstr "Add social media"
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:117
+#: src/features/auth/views/signup/enter-slug-screen.tsx:87
 msgid "Back to enter email"
 msgstr "Back to enter email"
 
@@ -100,6 +100,7 @@ msgid "Change email"
 msgstr "Change email"
 
 #: src/features/editor/menu/menu/profile-new/controller.tsx:28
+#: src/features/editor/menu/menu/profile/change-email/modal.tsx:63
 msgid "Change Email"
 msgstr "Change Email"
 
@@ -108,10 +109,12 @@ msgid "Change language"
 msgstr "Change language"
 
 #: src/features/editor/menu/menu/profile-new/views/profile.tsx:46
+#: src/features/editor/menu/menu/profile/change-password/change-password.tsx:18
 msgid "Change password"
 msgstr "Change password"
 
 #: src/features/editor/menu/menu/profile-new/controller.tsx:40
+#: src/features/editor/menu/menu/profile/change-password/modal.tsx:71
 msgid "Change Password"
 msgstr "Change Password"
 
@@ -147,7 +150,12 @@ msgstr "Confirm password change"
 msgid "Confirmation"
 msgstr "Confirmation"
 
+#: src/features/auth/views/enter-email/enter-email-form.tsx:109
+#: src/features/auth/views/signup/enter-slug-screen.tsx:79
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:119
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:134
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:108
+#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:164
 msgid "Continue"
 msgstr "Continue"
 
@@ -199,11 +207,9 @@ msgstr "Details"
 msgid "Didn't receive the code?"
 msgstr "Didn't receive the code?"
 
-#: src/features/editor/header/social-media/modal.tsx:39
-msgid "Edit social media"
-msgstr "Edit social media"
-
+#: src/features/auth/views/enter-email/enter-email-form.tsx:78
 #: src/features/editor/menu/menu/profile-new/views/profile.tsx:62
+#: src/features/editor/menu/menu/profile/change-email/change-email.tsx:21
 msgid "Email"
 msgstr "Email"
 
@@ -218,6 +224,9 @@ msgstr "Enter current password"
 
 #: src/features/editor/menu/menu/profile-new/controller.tsx:32
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:88
+#: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:80
+#: src/shared/lib/hooks/use-validation.ts:42
 msgid "Enter new email"
 msgstr "Enter new email"
 
@@ -234,6 +243,7 @@ msgid "Enter the 6-digit code we sent to the new email address."
 msgstr "Enter the 6-digit code we sent to the new email address."
 
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:104
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:119
 msgid "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
 msgstr "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
 
@@ -343,6 +353,7 @@ msgid "New block"
 msgstr "New block"
 
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:80
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:72
 msgid "New Email"
 msgstr "New Email"
 
@@ -408,10 +419,12 @@ msgstr "Passwords do not match"
 
 #: src/features/editor/menu/menu/index.tsx:121
 #: src/features/editor/menu/menu/profile-new/controller.tsx:24
+#: src/features/editor/menu/menu/profile/index.tsx:22
 msgid "Profile"
 msgstr "Profile"
 
 #: src/features/editor/menu/menu/index.tsx:118
+#: src/features/editor/menu/menu/project-settings/index.tsx:24
 msgid "Project settings"
 msgstr "Project settings"
 
@@ -434,10 +447,6 @@ msgstr "Resend"
 #: src/features/auth/views/login/resend.tsx:30
 msgid "Resend in {duration}"
 msgstr "Resend in {duration}"
-
-#: src/features/auth/views/login/resend.tsx:26
-msgid "Resend in {duration} seconds"
-msgstr "Resend in {duration} seconds"
 
 #: src/features/editor/menu/share/modal.tsx:53
 msgid "Save QR image"
@@ -565,6 +574,9 @@ msgstr "Verification code must be 6 digits"
 #: src/features/auth/views/signup/verify-otp-screen.tsx:111
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:119
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:139
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:146
+#: src/features/editor/menu/menu/profile/change-password/progress.tsx:16
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:141
 msgid "Verify code"
 msgstr "Verify code"
 
@@ -580,6 +592,9 @@ msgstr "Verify new email"
 #: src/features/auth/views/signup/verify-otp-screen.tsx:109
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:117
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:137
+#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:132
+#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:144
+#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:139
 msgid "Verifying..."
 msgstr "Verifying..."
 
@@ -589,6 +604,7 @@ msgid "We sent a one-time code to your email. Enter it below to continue."
 msgstr "We sent a one-time code to your email. Enter it below to continue."
 
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:104
+#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:93
 msgid "We'll send a verification code to the new email address to change your email."
 msgstr "We'll send a verification code to the new email address to change your email."
 
