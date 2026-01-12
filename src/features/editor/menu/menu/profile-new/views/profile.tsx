@@ -1,11 +1,12 @@
 import { Trans, useLingui } from "@lingui/react/macro";
-import { ChevronRight, KeyRound, Lock, Mail } from "lucide-react";
+import { ChevronRight, KeyRound, Lock, LogOut, Mail } from "lucide-react";
 import { Fragment } from "react";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import {
   useHandleTimers,
   useTimers,
 } from "@/shared/lib/hooks/use-handle-timers";
+import { useLocalizedRouter } from "@/shared/lib/hooks/use-localized-router";
 import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
 import { cn } from "@/shared/lib/utils";
 import { AdaptiveModalContent } from "@/shared/ui/kit/overlays/adaptive-modal";
@@ -14,9 +15,19 @@ import { Separator } from "@/shared/ui/kit/primitives/separator";
 import { SectionTitle } from "@/shared/ui/kit/section-title";
 import type { ProfileNewViews } from "..";
 
+interface Action {
+  label: string;
+  icon: React.ElementType;
+  onClick: () => void;
+  disabled: boolean;
+  className?: string;
+}
+
 export function ProfileView() {
   const { t } = useLingui();
   const { push } = useModalViews<ProfileNewViews>();
+  const router = useLocalizedRouter();
+
   const { email, created_at, protected_by_password } = useProfile(
     (state) => ({
       email: state.profile.email,
@@ -30,7 +41,7 @@ export function ProfileView() {
     (state) => state.timers.otp?.[email || ""]
   );
 
-  const actions = [
+  const actions: Action[] = [
     {
       label: t`Change email`,
       icon: Mail,
@@ -48,13 +59,17 @@ export function ProfileView() {
       onClick: () => push("change-password-step-1"),
       disabled: !protected_by_password,
     },
-    // {
-    //   label: t`Reset `,
-    //   icon: Lock,
-    //   onClick: () => push("remove-password-step-1"),
-    //   disabled: !protected_by_password,
-    // },
-  ];
+    {
+      label: t`Logout`,
+      icon: LogOut,
+      onClick: () => {
+        // TODO: Implement logout
+        router.push("/");
+      },
+      disabled: false,
+      className: "text-danger",
+    },
+  ] as const;
 
   return (
     <AdaptiveModalContent>
@@ -104,7 +119,10 @@ export function ProfileView() {
         {actions.map((action, index) => (
           <Fragment key={action.label}>
             <Button
-              className="h-16 w-full justify-between rounded-none"
+              className={cn(
+                "h-16 w-full justify-between rounded-none",
+                action?.className
+              )}
               disabled={action.disabled}
               onClick={action.onClick}
               variant="ghost"

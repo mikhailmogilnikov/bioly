@@ -16,7 +16,7 @@ export default async function AuthLayout({
       sideContent={<div className="squircle size-full bg-default" />}
       sideWrapperClassName="p-2"
     >
-      <LangPicker className="absolute top-8 right-4 text-lg max-md:py-1.5 md:bottom-2 md:left-1/2 md:-translate-x-1/2" />
+      <LangPicker className="absolute top-8 right-4 h-min w-min text-lg max-md:py-1.5 md:bottom-2 md:left-1/2 md:-translate-x-1/2" />
       {children}
     </ScreenSplitLayout>
   );
