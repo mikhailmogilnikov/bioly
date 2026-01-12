@@ -45,6 +45,18 @@ export const generateNewBentoItemDefaults = (
         url_valid: false,
       },
     },
+    [BentoBlockType.MAP]: {
+      id,
+      size: "2x2",
+      order,
+      style: "plain",
+      type: BentoBlockType.MAP,
+      properties: {
+        theme: "light",
+        labels: true,
+        zoom: 16,
+      },
+    },
   };
 
   return defaults[type];

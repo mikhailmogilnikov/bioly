@@ -5,7 +5,10 @@ import {
   BentoBlockType,
   type BentoBlockTypeKey,
 } from "@/features/editor/bento/blocks/model/types";
-import type { AArrowUpIconHandle } from "@/shared/ui/animated-icons/a-arrow-up";
+import {
+  AArrowUpIcon,
+  type AArrowUpIconHandle,
+} from "@/shared/ui/animated-icons/a-arrow-up";
 import type { BookTextIconHandle } from "@/shared/ui/animated-icons/book-text";
 import {
   GalleryHorizontalEndIcon,
@@ -140,6 +143,18 @@ export const EditBarNewItem = () => {
         >
           <LinkIcon className="opacity-50" ref={linkIconRef} size={20} />
           <Trans>Link</Trans>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => handleAddItem(BentoBlockType.MAP)}
+          onPointerEnter={() => aArrowUpIconRef.current?.startAnimation()}
+          onPointerLeave={() => aArrowUpIconRef.current?.stopAnimation()}
+        >
+          <AArrowUpIcon
+            className="opacity-50"
+            ref={aArrowUpIconRef}
+            size={20}
+          />
+          <Trans>Map</Trans>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -5,16 +5,16 @@
   "tsx": true,
   "tailwind": {
     "config": "",
-    "css": "src/app/globals.css",
+    "css": "src/app/css/global.css",
     "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@/shared/ui/components",
+    "components": "@/shared/kit/shadcn",
     "utils": "@/shared/lib/utils",
-    "ui": "@/shared/ui/components",
+    "ui": "@/shared/kit/shadcn",
     "lib": "@/shared/lib",
     "hooks": "@/shared/lib/hooks"
   },

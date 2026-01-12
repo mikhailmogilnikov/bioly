@@ -3,6 +3,7 @@ import { findBentoItem } from "@/features/editor/profile/find-bento-item";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { BentoBlockGallery } from "../variants/gallery";
 import { BentoBlockLink } from "../variants/link";
+import { BentoBlockMap } from "../variants/map";
 import { BentoBlockText } from "../variants/text";
 import { BentoBlockType } from "./types";
 
@@ -20,6 +21,8 @@ export const useRenderBlock = () => {
           return <BentoBlockLink />;
         case BentoBlockType.TEXT:
           return <BentoBlockText isFullscreen={isFullscreen} />;
+        case BentoBlockType.MAP:
+          return <BentoBlockMap />;
         default:
           return null;
       }

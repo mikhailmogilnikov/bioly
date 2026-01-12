@@ -1,5 +1,6 @@
 import type { BentoBlockPropertiesGallery } from "../variants/gallery/types";
 import type { BentoBlockPropertiesLink } from "../variants/link/types";
+import type { BentoBlockPropertiesMap } from "../variants/map/types";
 import type { BentoBlockPropertiesText } from "../variants/text/types";
 
 export const BentoBlockSize = {
@@ -35,6 +36,7 @@ export const BentoBlockType = {
   GALLERY: "gallery",
   LINK: "link",
   TEXT: "text",
+  MAP: "map",
 } as const;
 
 export type BentoBlockTypeKey =
@@ -47,7 +49,9 @@ export type BentoBlockProperties<T extends BentoBlockTypeKey> =
       ? BentoBlockPropertiesLink
       : T extends typeof BentoBlockType.TEXT
         ? BentoBlockPropertiesText
-        : never;
+        : T extends typeof BentoBlockType.MAP
+          ? BentoBlockPropertiesMap
+          : never;
 
 export interface BentoBlock<T extends BentoBlockTypeKey> {
   id: string;

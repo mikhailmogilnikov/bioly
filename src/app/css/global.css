@@ -87,4 +87,16 @@
   button:not([disabled]) {
     @apply cursor-pointer;
   }
+  .maplibregl-popup-content {
+    @apply bg-transparent! shadow-none! p-0! rounded-none!;
+  }
+  .maplibregl-popup-tip {
+    @apply hidden!;
+  }
+  .maplibregl-ctrl-attrib.maplibregl-compact-show {
+    @apply hidden!;
+  }
+  .maplibregl-ctrl.maplibregl-ctrl-attrib.maplibregl-compact {
+    @apply hidden!;
+  }
 }
