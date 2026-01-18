@@ -1,10 +1,24 @@
 import { DARK_THEMES, type Theme } from "@/shared/domain/theme";
 
+export const BentoBlockMapTitleAlignOptions = {
+  BOTTOM_LEFT: "bottom-left",
+  BOTTOM_RIGHT: "bottom-right",
+  TOP_LEFT: "top-left",
+  TOP_RIGHT: "top-right",
+} as const;
+
+export type BentoBlockMapTitleAlign =
+  (typeof BentoBlockMapTitleAlignOptions)[keyof typeof BentoBlockMapTitleAlignOptions];
+
 export interface BentoBlockPropertiesMap {
   theme: BentoBlockMapThemesOptions;
   labels: boolean;
   interactions: boolean;
   zoom: number;
+  title: string;
+  titleAlign: BentoBlockMapTitleAlign;
+  latitude: number;
+  longitude: number;
 }
 
 export const BentoBlockMapThemes = {

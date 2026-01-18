@@ -3,12 +3,17 @@ import { BentoBlockSizeSetting } from "../../../shared-settings/size";
 import { BentoBlockMapInteractions } from "./interactions";
 import { BentoBlockMapLabels } from "./labels";
 import { BentoBlockMapTheme } from "./theme";
+import { BentoBlockMapTitle } from "./title";
+import { BentoBlockMapTitleAlignOption } from "./title-align";
 import { BentoBlockMapZoom } from "./zoom";
 
 export function BentoBlockMapOptions() {
   return (
     <>
       <BentoBlockSizeSetting sizes={["2x2", "2x4", "4x2", "4x4"]} />
+      <hr className="border-outline" />
+      <BentoBlockMapTitle />
+      <BentoBlockMapTitleAlignOption />
       <hr className="border-outline" />
       <BentoBlockMapZoom className="mb-2" />
       <BentoBlockMapTheme />

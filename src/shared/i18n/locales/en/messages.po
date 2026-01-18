@@ -87,6 +87,14 @@ msgstr "Bold"
 msgid "Border width"
 msgstr "Border width"
 
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:24
+msgid "Bottom left"
+msgstr "Bottom left"
+
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:25
+msgid "Bottom right"
+msgstr "Bottom right"
+
 #: src/features/editor/text-editor/extensions/suggestion.tsx:15
 msgid "Bullet List"
 msgstr "Bullet List"
@@ -235,6 +243,10 @@ msgstr "Email:"
 msgid "Enter current password"
 msgstr "Enter current password"
 
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:35
+msgid "Enter map title"
+msgstr "Enter map title"
+
 #: src/features/editor/menu/menu/profile-new/controller.tsx:32
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:88
 #: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
@@ -372,9 +384,13 @@ msgstr "Map"
 msgid "Map labels"
 msgstr "Map labels"
 
-#: src/features/editor/bento/blocks/variants/map/options/theme.tsx:29
+#: src/features/editor/bento/blocks/variants/map/options/theme.tsx:30
 msgid "Map theme"
 msgstr "Map theme"
+
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:30
+msgid "Map title"
+msgstr "Map title"
 
 #: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:30
 msgid "Map zoom"
@@ -577,9 +593,21 @@ msgstr "Tip: you can select fragment of text and apply additional styling to it.
 msgid "Title"
 msgstr "Title"
 
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:42
+msgid "Title position"
+msgstr "Title position"
+
 #: src/features/editor/header/avatar.tsx:190
 msgid "Toggle avatar blur"
 msgstr "Toggle avatar blur"
+
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:26
+msgid "Top left"
+msgstr "Top left"
+
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:27
+msgid "Top right"
+msgstr "Top right"
 
 #: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:39
 #: src/features/editor/bento/blocks/variants/text/index.tsx:17

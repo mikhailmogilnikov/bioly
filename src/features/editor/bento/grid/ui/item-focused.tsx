@@ -41,7 +41,7 @@ export function BentoGridItemFocused({
             {isFocused && (
               <motion.div
                 className={clsx(
-                  "transition-[width,height] duration-300 will-change-[width,height]",
+                  "relative transition-[width,height] duration-300 will-change-[width,height]",
                   BentoBlockStyleClassNames[block.style]
                 )}
                 id={`bento-item-${block.id}-wrapper`}

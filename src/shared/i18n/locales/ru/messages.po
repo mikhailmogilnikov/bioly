@@ -87,6 +87,14 @@ msgstr "Жирный"
 msgid "Border width"
 msgstr "Ширина границы"
 
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:24
+msgid "Bottom left"
+msgstr ""
+
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:25
+msgid "Bottom right"
+msgstr ""
+
 #: src/features/editor/text-editor/extensions/suggestion.tsx:15
 msgid "Bullet List"
 msgstr "Маркированный список"
@@ -235,6 +243,10 @@ msgstr "Email:"
 msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:35
+msgid "Enter map title"
+msgstr ""
+
 #: src/features/editor/menu/menu/profile-new/controller.tsx:32
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:88
 #: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
@@ -372,9 +384,13 @@ msgstr "Карта"
 msgid "Map labels"
 msgstr "Подписи на карте"
 
-#: src/features/editor/bento/blocks/variants/map/options/theme.tsx:29
+#: src/features/editor/bento/blocks/variants/map/options/theme.tsx:30
 msgid "Map theme"
 msgstr "Тема карты"
+
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:30
+msgid "Map title"
+msgstr ""
 
 #: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:30
 msgid "Map zoom"
@@ -577,9 +593,21 @@ msgstr "Совет: вы можете выделить фрагмент текс
 msgid "Title"
 msgstr "Заголовок"
 
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:42
+msgid "Title position"
+msgstr ""
+
 #: src/features/editor/header/avatar.tsx:190
 msgid "Toggle avatar blur"
 msgstr "Переключить размытие аватара"
+
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:26
+msgid "Top left"
+msgstr ""
+
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:27
+msgid "Top right"
+msgstr ""
 
 #: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:39
 #: src/features/editor/bento/blocks/variants/text/index.tsx:17
