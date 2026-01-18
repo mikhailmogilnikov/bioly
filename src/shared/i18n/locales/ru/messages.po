@@ -87,13 +87,17 @@ msgstr "Жирный"
 msgid "Border width"
 msgstr "Ширина границы"
 
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:25
+msgid "Bottom center"
+msgstr "Снизу по центру"
+
 #: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:24
 msgid "Bottom left"
-msgstr ""
+msgstr "Снизу слева"
 
-#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:25
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:26
 msgid "Bottom right"
-msgstr ""
+msgstr "Снизу справа"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:15
 msgid "Bullet List"
@@ -243,9 +247,9 @@ msgstr "Email:"
 msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
-#: src/features/editor/bento/blocks/variants/map/options/title.tsx:35
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:41
 msgid "Enter map title"
-msgstr ""
+msgstr "Введите заголовок карты"
 
 #: src/features/editor/menu/menu/profile-new/controller.tsx:32
 #: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:88
@@ -361,6 +365,7 @@ msgid "Last update:"
 msgstr "Последнее обновление:"
 
 #: src/features/editor/menu/new-item/index.tsx:143
+#: src/features/editor/text-editor/formatting-menu.tsx:120
 msgid "Link"
 msgstr "Ссылка"
 
@@ -388,9 +393,9 @@ msgstr "Подписи на карте"
 msgid "Map theme"
 msgstr "Тема карты"
 
-#: src/features/editor/bento/blocks/variants/map/options/title.tsx:30
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:36
 msgid "Map title"
-msgstr ""
+msgstr "Заголовок карты"
 
 #: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:30
 msgid "Map zoom"
@@ -593,21 +598,25 @@ msgstr "Совет: вы можете выделить фрагмент текс
 msgid "Title"
 msgstr "Заголовок"
 
-#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:42
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:44
 msgid "Title position"
-msgstr ""
+msgstr "Позиция заголовка"
 
 #: src/features/editor/header/avatar.tsx:190
 msgid "Toggle avatar blur"
 msgstr "Переключить размытие аватара"
 
-#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:26
-msgid "Top left"
-msgstr ""
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:28
+msgid "Top center"
+msgstr "Сверху по центру"
 
 #: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:27
+msgid "Top left"
+msgstr "Сверху слева"
+
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:29
 msgid "Top right"
-msgstr ""
+msgstr "Сверху справа"
 
 #: src/features/editor/bento/blocks/variants/text/fullscreen-text.tsx:39
 #: src/features/editor/bento/blocks/variants/text/index.tsx:17

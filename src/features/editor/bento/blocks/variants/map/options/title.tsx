@@ -1,5 +1,5 @@
 import { useLingui } from "@lingui/react/macro";
-import type { ChangeEvent } from "react";
+import { type ChangeEvent, useEffect, useState } from "react";
 import { useBlockContext } from "@/features/editor/bento/grid/ui/block-context";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { Input } from "@/shared/ui/kit/primitives/input";
@@ -12,17 +12,23 @@ export function BentoBlockMapTitle() {
     (state) => state.updateBentoBlockField
   );
 
+  const [localTitle, setLocalTitle] = useState(block?.properties.title ?? "");
+
+  useEffect(() => {
+    if (block?.properties.title !== undefined) {
+      setLocalTitle(block.properties.title);
+    }
+  }, [block?.properties.title]);
+
   if (!block) return null;
 
-  const { title } = block.properties;
-
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    const title = e.target.value;
+    const newTitle = e.target.value;
+    setLocalTitle(newTitle);
 
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
-      title,
+      title: newTitle,
     });
   };
 
@@ -34,7 +40,7 @@ export function BentoBlockMapTitle() {
         onChange={handleTitleChange}
         placeholder={t`Enter map title`}
         type="text"
-        value={title}
+        value={localTitle}
       />
     </SectionTitle>
   );

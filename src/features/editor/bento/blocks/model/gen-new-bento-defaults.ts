@@ -57,7 +57,7 @@ export const generateNewBentoItemDefaults = (
         interactions: false,
         zoom: 15,
         title: "New York, USA",
-        titleAlign: "bottom-left",
+        titleAlign: "bottom-center",
         latitude: 40.7128,
         longitude: -74.006,
       },

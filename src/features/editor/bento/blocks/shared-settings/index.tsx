@@ -21,7 +21,7 @@ export const BentoItemOptions = () => {
       id={`bento-item-${id}-panel`}
       onClick={(e) => e.stopPropagation()}
     >
-      {renderBlockSettings()}
+      {renderBlockSettings(id)}
     </div>
   );
 };

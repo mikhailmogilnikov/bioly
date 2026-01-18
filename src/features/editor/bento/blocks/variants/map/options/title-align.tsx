@@ -22,8 +22,10 @@ export function BentoBlockMapTitleAlignOption() {
     () =>
       ({
         "bottom-left": t`Bottom left`,
+        "bottom-center": t`Bottom center`,
         "bottom-right": t`Bottom right`,
         "top-left": t`Top left`,
+        "top-center": t`Top center`,
         "top-right": t`Top right`,
       }) as Record<BentoBlockMapTitleAlign, string>,
     [t]

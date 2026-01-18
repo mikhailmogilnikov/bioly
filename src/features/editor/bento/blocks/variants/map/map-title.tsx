@@ -10,33 +10,45 @@ export function MapTitle({
   mapTheme: BentoBlockMapThemes;
   align?: BentoBlockMapTitleAlign;
 }) {
+  const isCenter = align === "bottom-center" || align === "top-center";
+
   return (
     <div
-      className={cn(
-        "absolute w-fit max-w-[calc(100%-1.25rem)] rounded-full px-2 py-1 backdrop-blur-lg",
-        {
-          "bottom-2.5 left-2.5": align === "bottom-left",
-          "right-2.5 bottom-2.5": align === "bottom-right",
-          "top-2.5 left-2.5": align === "top-left",
-          "top-2.5 right-2.5": align === "top-right",
-          "bg-white/30": mapTheme === "light" || mapTheme === "positron",
-          "bg-black/30": mapTheme === "dark",
-        }
-      )}
+      className={cn("absolute", {
+        "max-w-[calc(100%-1.25rem)]": !isCenter,
+        "max-w-full": isCenter,
+        "bottom-2.5 left-2.5": align === "bottom-left",
+        "inset-x-2.5 bottom-2.5 flex justify-center": align === "bottom-center",
+        "right-2.5 bottom-2.5": align === "bottom-right",
+        "top-2.5 left-2.5": align === "top-left",
+        "inset-x-2.5 top-2.5 flex justify-center": align === "top-center",
+        "top-2.5 right-2.5": align === "top-right",
+      })}
     >
-      <p
+      <div
         className={cn(
-          "wrap-break-word line-clamp-2 font-medium text-white text-xs",
+          "w-fit max-w-full rounded-full px-2 py-1 backdrop-blur-lg",
           {
-            "text-start": align === "bottom-left" || align === "top-left",
-            "text-end": align === "bottom-right" || align === "top-right",
-            "text-white/75": mapTheme === "dark",
-            "text-black/75": mapTheme === "light" || mapTheme === "positron",
+            "bg-white/30": mapTheme === "light" || mapTheme === "positron",
+            "bg-black/30": mapTheme === "dark",
           }
         )}
       >
-        {title}
-      </p>
+        <p
+          className={cn(
+            "wrap-break-word line-clamp-2 font-medium text-white text-xs",
+            {
+              "text-start": align === "bottom-left" || align === "top-left",
+              "text-center": isCenter,
+              "text-end": align === "bottom-right" || align === "top-right",
+              "text-white/75": mapTheme === "dark",
+              "text-black/75": mapTheme === "light" || mapTheme === "positron",
+            }
+          )}
+        >
+          {title}
+        </p>
+      </div>
     </div>
   );
 }
