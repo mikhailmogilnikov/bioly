@@ -3,7 +3,7 @@ import { useBlockContext } from "@/features/editor/bento/grid/ui/block-context";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { SwitchField } from "@/shared/ui/kit/primitives/switch-field";
 
-export function BentoBlockMapLabels() {
+export function BentoBlockMapInteractions() {
   const { block } = useBlockContext<"map">();
   const updateBentoBlockField = useProfile(
     (state) => state.updateBentoBlockField
@@ -11,20 +11,20 @@ export function BentoBlockMapLabels() {
 
   if (!block) return null;
 
-  const { labels } = block.properties;
+  const { interactions } = block.properties;
 
-  const handleLabelsChange = (checked: boolean) => {
+  const handleInteractionsChange = (checked: boolean) => {
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
-      labels: checked,
+      interactions: checked,
     });
   };
 
   return (
     <SwitchField
-      checked={labels}
-      label={<Trans>Map labels</Trans>}
-      onCheckedChange={handleLabelsChange}
+      checked={interactions}
+      label={<Trans>Allow map interaction</Trans>}
+      onCheckedChange={handleInteractionsChange}
     />
   );
 }

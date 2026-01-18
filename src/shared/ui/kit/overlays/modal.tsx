@@ -12,7 +12,7 @@ const modalTV = tv({
     overlay:
       "data-[state=closed]:motion-opacity-out data-[state=open]:motion-opacity-in fixed inset-0 z-50 bg-black/50",
     content:
-      "data-[state=closed]:motion-scale-out-98 data-[state=closed]:motion-opacity-out data-[state=open]:motion-scale-in-98 motion-duration-200 data-[state=open]:motion-opacity-in fixed top-1/2 left-1/2 z-50 flex h-auto min-h-16 w-full -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded border border-foreground/5 bg-background outline-none",
+      "data-[state=closed]:motion-scale-out-98 data-[state=closed]:motion-opacity-out data-[state=open]:motion-scale-in-98 motion-duration-200 data-[state=open]:motion-opacity-in fixed top-1/2 left-1/2 z-50 flex h-auto min-h-16 w-full -translate-x-1/2 -translate-y-1/2 flex-col rounded border border-foreground/5 bg-background outline-none",
     close:
       "absolute top-6 right-6 z-30 flex size-8 cursor-pointer items-center justify-center rounded-full bg-default",
     closeIcon: "size-5 opacity-60",
@@ -115,10 +115,7 @@ export function ModalHeader(props: ModalHeaderProps) {
   const modalViewsContext = useModalViews<string>();
 
   return (
-    <div
-      className="absolute flex w-full shrink-0 flex-col gap-6"
-      {...wrapperProps}
-    >
+    <div className="flex w-full shrink-0 flex-col gap-6" {...wrapperProps}>
       {!modalViewsContext?.isFirstView && (
         <button
           className="absolute top-6 left-6 z-30 flex size-8 cursor-pointer items-center justify-center rounded-full bg-default"
@@ -153,7 +150,7 @@ export function ModalContent(props: ModalContentProps) {
 
   return (
     <ScrollArea
-      className="flex h-full shrink flex-col gap-6 overflow-y-auto px-6 pt-19 pb-6"
+      className="flex h-full shrink flex-col gap-6 overflow-y-auto px-6 pt-6 pb-6"
       classNames={{
         scrollbar: "px-1",
         verticalScrollbar: "w-3.5",

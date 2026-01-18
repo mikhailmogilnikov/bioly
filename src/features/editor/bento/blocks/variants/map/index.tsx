@@ -1,21 +1,27 @@
 // biome-ignore-all lint/suspicious/noShadowRestrictedNames: false positive
+
+import { useProfile } from "@/features/editor/profile/use-profile";
 import { Map, MapMarker, MarkerContent } from "@/shared/ui/kit/registry/map";
 import { useBlockContext } from "../../../grid/ui/block-context";
-import { getMapTheme } from "./types";
+import { getMapTheme, resolveMapTheme } from "./types";
 
 export function BentoBlockMap() {
   const { block } = useBlockContext<"map">();
+  const profileTheme = useProfile((state) => state.profile.theme.theme);
 
   if (!block) return null;
 
-  const { theme, labels } = block.properties;
+  const { theme, labels, interactions, zoom } = block.properties;
+
+  const resolvedTheme = resolveMapTheme(theme, profileTheme);
+  const mapTheme = getMapTheme(resolvedTheme, labels);
 
   return (
     <Map
-      blockInteractions
+      blockInteractions={!interactions}
       center={[-74.006, 40.7128]}
-      theme={getMapTheme(theme, labels)}
-      zoom={16}
+      theme={mapTheme}
+      zoom={zoom}
     >
       <MapMarker latitude={40.7128} longitude={-74.006}>
         <MarkerContent className="relative">

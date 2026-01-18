@@ -40,6 +40,32 @@ const loadPaintWorkletsOnce = () => {
     try {
       await CSS.paintWorklet.addModule("/scripts/squircle.min.js");
       removeBorderRadius();
+
+      let timings = [100, 500];
+
+      const forceSquircleUpdate = () => {
+        const squircleElements = document.querySelectorAll(
+          ".squircle, .squircle-outline, .squircle-shadow"
+        );
+
+        squircleElements.forEach((element) => {
+          const currentRadius = getComputedStyle(element).getPropertyValue(
+            "--squircle-radius"
+          );
+          if (currentRadius) {
+            element.style.setProperty("--squircle-radius", currentRadius);
+            requestAnimationFrame(() => {
+              element.style.removeProperty("--squircle-radius");
+            });
+          }
+        });
+      };
+
+      for (const timing of timings) {
+        setTimeout(() => {
+          forceSquircleUpdate();
+        }, timing);
+      }
     } catch (error) {
       console.warn("Failed to load squircle paintWorklet:", error);
     }

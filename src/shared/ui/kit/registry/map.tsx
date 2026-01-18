@@ -95,6 +95,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     projection,
     theme = "light",
     blockInteractions = false,
+    zoom,
     ...props
   },
   ref
@@ -148,6 +149,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
       doubleClickZoom: !blockInteractions,
       touchZoomRotate: !blockInteractions,
       keyboard: !blockInteractions,
+      zoom,
       ...props,
     });
 
@@ -193,6 +195,37 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
 
     mapInstance.setStyle(newStyle, { diff: true });
   }, [mapInstance, theme, mapStyles, clearStyleTimeout]);
+
+  useEffect(() => {
+    if (!mapInstance) return;
+
+    const handlers = [
+      mapInstance.dragPan,
+      mapInstance.dragRotate,
+      mapInstance.scrollZoom,
+      mapInstance.boxZoom,
+      mapInstance.doubleClickZoom,
+      mapInstance.touchZoomRotate,
+      mapInstance.keyboard,
+    ];
+
+    for (const handler of handlers) {
+      if (blockInteractions) {
+        handler.disable();
+      } else {
+        handler.enable();
+      }
+    }
+  }, [mapInstance, blockInteractions]);
+
+  useEffect(() => {
+    if (!mapInstance || zoom === undefined) return;
+
+    const currentZoom = mapInstance.getZoom();
+    if (Math.abs(currentZoom - zoom) < 0.01) return;
+
+    mapInstance.easeTo({ zoom, duration: 150 });
+  }, [mapInstance, zoom]);
 
   const isLoading = !(isLoaded && isStyleLoaded);
 

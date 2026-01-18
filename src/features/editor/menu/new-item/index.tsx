@@ -6,15 +6,14 @@ import {
   type BentoBlockTypeKey,
 } from "@/features/editor/bento/blocks/model/types";
 import {
-  AArrowUpIcon,
-  type AArrowUpIconHandle,
-} from "@/shared/ui/animated-icons/a-arrow-up";
-import type { BookTextIconHandle } from "@/shared/ui/animated-icons/book-text";
-import {
   GalleryHorizontalEndIcon,
   type GalleryHorizontalEndIconHandle,
 } from "@/shared/ui/animated-icons/gallery";
 import { LinkIcon, type LinkIconHandle } from "@/shared/ui/animated-icons/link";
+import {
+  MapPinIcon,
+  type MapPinIconHandle,
+} from "@/shared/ui/animated-icons/map-pin";
 import { PlusIcon, type PlusIconHandle } from "@/shared/ui/animated-icons/plus";
 import {
   ScanTextIcon,
@@ -49,8 +48,7 @@ export const EditBarNewItem = () => {
     useRef<GalleryHorizontalEndIconHandle>(null);
   const scanTextIconRef = useRef<ScanTextIconHandle>(null);
   const linkIconRef = useRef<LinkIconHandle>(null);
-  const aArrowUpIconRef = useRef<AArrowUpIconHandle>(null);
-  const bookTextIconRef = useRef<BookTextIconHandle>(null);
+  const mapPinIconRef = useRef<MapPinIconHandle>(null);
 
   const handleAddItem = (type: BentoBlockTypeKey) => {
     // TODO: TEMPORAL
@@ -77,8 +75,8 @@ export const EditBarNewItem = () => {
             galleryHorizontalEndIconRef.current?.startAnimation();
             scanTextIconRef.current?.startAnimation();
             linkIconRef.current?.startAnimation();
-            aArrowUpIconRef.current?.startAnimation();
-            bookTextIconRef.current?.startAnimation();
+
+            mapPinIconRef.current?.startAnimation();
           });
         } else {
           plusIconRef.current?.stopAnimation();
@@ -146,14 +144,10 @@ export const EditBarNewItem = () => {
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => handleAddItem(BentoBlockType.MAP)}
-          onPointerEnter={() => aArrowUpIconRef.current?.startAnimation()}
-          onPointerLeave={() => aArrowUpIconRef.current?.stopAnimation()}
+          onPointerEnter={() => mapPinIconRef.current?.startAnimation()}
+          onPointerLeave={() => mapPinIconRef.current?.stopAnimation()}
         >
-          <AArrowUpIcon
-            className="opacity-50"
-            ref={aArrowUpIconRef}
-            size={20}
-          />
+          <MapPinIcon className="opacity-50" ref={mapPinIconRef} size={20} />
           <Trans>Map</Trans>
         </DropdownMenuItem>
       </DropdownMenuContent>

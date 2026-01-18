@@ -37,7 +37,7 @@ msgstr "Действия"
 msgid "Active"
 msgstr "Активен"
 
-#: src/features/editor/menu/new-item/index.tsx:101
+#: src/features/editor/menu/new-item/index.tsx:99
 msgid "Add a new block"
 msgstr "Добавить новый блок"
 
@@ -57,6 +57,10 @@ msgstr "Добавить пароль"
 #: src/features/editor/header/social-media/social-media.tsx:75
 msgid "Add social media"
 msgstr "Добавить социальную сеть"
+
+#: src/features/editor/bento/blocks/variants/map/options/interactions.tsx:26
+msgid "Allow map interaction"
+msgstr "Разрешить взаимодействие с картой"
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:117
 #: src/features/auth/views/signup/enter-slug-screen.tsx:87
@@ -344,7 +348,7 @@ msgstr "Присоединился"
 msgid "Last update:"
 msgstr "Последнее обновление:"
 
-#: src/features/editor/menu/new-item/index.tsx:145
+#: src/features/editor/menu/new-item/index.tsx:143
 msgid "Link"
 msgstr "Ссылка"
 
@@ -360,15 +364,23 @@ msgstr "Выйти"
 msgid "Logout"
 msgstr "Выйти"
 
-#: src/features/editor/menu/new-item/index.tsx:157
+#: src/features/editor/menu/new-item/index.tsx:151
 msgid "Map"
 msgstr "Карта"
+
+#: src/features/editor/bento/blocks/variants/map/options/labels.tsx:26
+msgid "Map labels"
+msgstr "Подписи на карте"
 
 #: src/features/editor/bento/blocks/variants/map/options/theme.tsx:29
 msgid "Map theme"
 msgstr "Тема карты"
 
-#: src/features/editor/menu/new-item/index.tsx:125
+#: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:30
+msgid "Map zoom"
+msgstr "Масштаб карты"
+
+#: src/features/editor/menu/new-item/index.tsx:123
 msgid "Media gallery"
 msgstr "Медиа галерея"
 
@@ -381,7 +393,7 @@ msgstr "Меню"
 msgid "Muted"
 msgstr "Приглушенный"
 
-#: src/features/editor/menu/new-item/index.tsx:108
+#: src/features/editor/menu/new-item/index.tsx:106
 msgid "New block"
 msgstr "Новый блок"
 
@@ -548,7 +560,7 @@ msgstr "Зачеркнутый"
 msgid "Synchronization status"
 msgstr "Статус синхронизации"
 
-#: src/features/editor/menu/new-item/index.tsx:137
+#: src/features/editor/menu/new-item/index.tsx:135
 msgid "Text"
 msgstr "Текст"
 

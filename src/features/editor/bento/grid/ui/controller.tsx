@@ -50,7 +50,7 @@ export const BentoGridController = () => {
       dragSortPredicate={{
         action: "move",
         migrateAction: "move",
-        threshold: 1,
+        threshold: 50,
       }}
       itemClass="bento-item"
       itemDraggingClass="bento-item-dragging"

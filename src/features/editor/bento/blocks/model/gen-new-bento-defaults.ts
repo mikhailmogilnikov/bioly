@@ -52,8 +52,9 @@ export const generateNewBentoItemDefaults = (
       style: "plain",
       type: BentoBlockType.MAP,
       properties: {
-        theme: "light",
+        theme: "auto",
         labels: true,
+        interactions: false,
         zoom: 16,
       },
     },

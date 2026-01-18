@@ -10,7 +10,7 @@ pre-commit:
         - "*.jsonc"
         - "*.css"
       stage_fixed: true
-    - run: bun run typecheck
+    - run: bun run ts
       stage_fixed: true
     - run: bun x lingui extract $(git diff --name-only --staged)
       stage_fixed: true

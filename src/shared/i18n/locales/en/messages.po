@@ -37,7 +37,7 @@ msgstr "Actions"
 msgid "Active"
 msgstr "Active"
 
-#: src/features/editor/menu/new-item/index.tsx:101
+#: src/features/editor/menu/new-item/index.tsx:99
 msgid "Add a new block"
 msgstr "Add a new block"
 
@@ -57,6 +57,10 @@ msgstr "Add Password"
 #: src/features/editor/header/social-media/social-media.tsx:75
 msgid "Add social media"
 msgstr "Add social media"
+
+#: src/features/editor/bento/blocks/variants/map/options/interactions.tsx:26
+msgid "Allow map interaction"
+msgstr "Allow map interaction"
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:117
 #: src/features/auth/views/signup/enter-slug-screen.tsx:87
@@ -344,7 +348,7 @@ msgstr "Joined on"
 msgid "Last update:"
 msgstr "Last update:"
 
-#: src/features/editor/menu/new-item/index.tsx:145
+#: src/features/editor/menu/new-item/index.tsx:143
 msgid "Link"
 msgstr "Link"
 
@@ -360,15 +364,23 @@ msgstr "Log out"
 msgid "Logout"
 msgstr "Logout"
 
-#: src/features/editor/menu/new-item/index.tsx:157
+#: src/features/editor/menu/new-item/index.tsx:151
 msgid "Map"
 msgstr "Map"
+
+#: src/features/editor/bento/blocks/variants/map/options/labels.tsx:26
+msgid "Map labels"
+msgstr "Map labels"
 
 #: src/features/editor/bento/blocks/variants/map/options/theme.tsx:29
 msgid "Map theme"
 msgstr "Map theme"
 
-#: src/features/editor/menu/new-item/index.tsx:125
+#: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:30
+msgid "Map zoom"
+msgstr "Map zoom"
+
+#: src/features/editor/menu/new-item/index.tsx:123
 msgid "Media gallery"
 msgstr "Media gallery"
 
@@ -381,7 +393,7 @@ msgstr "Menu"
 msgid "Muted"
 msgstr "Muted"
 
-#: src/features/editor/menu/new-item/index.tsx:108
+#: src/features/editor/menu/new-item/index.tsx:106
 msgid "New block"
 msgstr "New block"
 
@@ -548,7 +560,7 @@ msgstr "Strikethrough"
 msgid "Synchronization status"
 msgstr "Synchronization status"
 
-#: src/features/editor/menu/new-item/index.tsx:137
+#: src/features/editor/menu/new-item/index.tsx:135
 msgid "Text"
 msgstr "Text"
 

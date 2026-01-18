@@ -4,7 +4,7 @@ import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { useBlockContext } from "@/features/editor/bento/grid/ui/block-context";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { SectionTitle } from "@/shared/ui/kit/section-title";
-import { BentoBlockMapThemes } from "../types";
+import { BentoBlockMapThemesOptions } from "../types";
 
 const itemClass =
   "flex items-center gap-2 rounded-lg px-2 py-2 text-sm text-foreground hover:bg-foreground/10 justify-between";
@@ -18,7 +18,7 @@ export function BentoBlockMapTheme() {
 
   if (!block) return null;
 
-  const handleThemeChange = (theme: BentoBlockMapThemes) => {
+  const handleThemeChange = (theme: BentoBlockMapThemesOptions) => {
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
       theme,
@@ -31,9 +31,10 @@ export function BentoBlockMapTheme() {
         <Menu.Container
           buttonRadius={20}
           buttonSize={{ width: 206, height: 40 }}
-          className="bg-default shadow-lg ring-1 ring-black/5"
+          className="bg-default ring-1 ring-black/5"
           menuRadius={12}
           menuWidth={160}
+          style={{ boxShadow: "none" }}
         >
           <Menu.Trigger>
             <span className="flex w-full items-center justify-between gap-2 px-4 py-2">
@@ -45,7 +46,7 @@ export function BentoBlockMapTheme() {
             </span>
           </Menu.Trigger>
           <Menu.Content className="p-2">
-            {Object.values(BentoBlockMapThemes).map((theme) => (
+            {Object.values(BentoBlockMapThemesOptions).map((theme) => (
               <Menu.Item
                 className={itemClass}
                 key={theme}

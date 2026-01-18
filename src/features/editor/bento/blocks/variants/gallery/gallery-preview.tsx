@@ -75,6 +75,14 @@ export const BentoBlockGalleryPreview = () => {
           src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/4f/47/4f4f4733-7c38-a86c-d543-a74bc406ea09/198704489945_Cover.jpg/1200x630bb.jpg"
         />
       </div>
+      <div className="f-carousel__slide h-full" data-fancybox="gallery">
+        <Image
+          alt="Sample image #1"
+          className="size-full object-cover"
+          fill
+          src="https://www.hdwallpapers.in/download/dark__black-1080x1920.jpg"
+        />
+      </div>
     </div>
     // </Spoiler>
   );
