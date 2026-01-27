@@ -5,6 +5,7 @@ import { Eye, EyeOff } from "lucide-react";
 import type * as React from "react";
 import { useState } from "react";
 import { cn } from "@/shared/lib/utils";
+import { inputBaseClasses } from "./input";
 
 interface PasswordInputProps
   extends Omit<React.ComponentProps<"input">, "type"> {
@@ -18,12 +19,7 @@ function PasswordInput({ className, ...props }: PasswordInputProps) {
   return (
     <div className="relative">
       <input
-        className={cn(
-          "h-11 w-full min-w-0 rounded-xl border border-outline bg-default py-1 pr-10 pl-3 text-base outline-none transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-foreground/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-          "focus-visible:border-foreground focus-visible:ring-[3px] focus-visible:ring-foreground/50",
-          "aria-invalid:border-danger aria-invalid:ring-danger/20",
-          className
-        )}
+        className={cn(inputBaseClasses, className)}
         data-slot="input"
         type={showPassword ? "text" : "password"}
         {...props}

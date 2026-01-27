@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   experimental: {
     swcPlugins: [["@lingui/swc-plugin", {}]],
     typedEnv: true,
+    optimizePackageImports: ["package-name"],
   },
   typedRoutes: true,
   turbopack: {

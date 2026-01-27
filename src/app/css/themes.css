@@ -14,7 +14,7 @@
   .theme-blue {
     --background: hsl(205.43, 100%, 93.85%);
     --foreground: hsl(203, 56%, 20%);
-    --default: hsl(206, 50%, 77%);
+    --default: hsl(206, 67%, 87%);
     --outline: hsl(205, 61%, 81%);
     --shadow: hsla(0, 0%, 57%, 0.1);
     --success: hsl(148, 58%, 32%);
@@ -26,7 +26,7 @@
   .theme-green {
     --background: hsl(123, 77%, 95%);
     --foreground: hsl(124, 57%, 20%);
-    --default: hsl(127, 50%, 77%);
+    --default: hsl(127, 68%, 87%);
     --outline: hsl(126, 61%, 81%);
     --shadow: hsla(0, 0%, 70%, 0.2);
     --success: hsl(132, 63%, 30%);
@@ -38,7 +38,7 @@
   .theme-purple {
     --background: hsl(270, 100%, 93.85%);
     --foreground: hsl(270, 56%, 20%);
-    --default: hsl(268, 57%, 81%);
+    --default: hsl(268, 59%, 86%);
     --outline: hsl(270, 61%, 81%);
     --shadow: hsla(0, 0%, 50%, 0.1);
     --success: hsl(152, 58%, 32%);
@@ -50,7 +50,7 @@
   .theme-pink {
     --background: hsl(318, 80%, 94%);
     --foreground: hsl(320, 56%, 20%);
-    --default: hsl(320, 57%, 81%);
+    --default: hsl(320, 69%, 86%);
     --outline: hsl(320, 61%, 81%);
     --shadow: hsla(0, 0%, 52%, 0.1);
     --success: hsl(148, 58%, 32%);
@@ -62,7 +62,7 @@
   .theme-golden {
     --background: hsl(30, 100%, 93.85%);
     --foreground: hsl(30, 56%, 20%);
-    --default: hsl(30, 57%, 81%);
+    --default: hsl(30, 54%, 84%);
     --outline: hsl(30, 61%, 81%);
     --shadow: hsla(0, 0%, 49%, 0.1);
     --success: hsl(150, 55%, 32%);
@@ -86,7 +86,7 @@
   .theme-dark-blue {
     --background: hsl(205, 66%, 6%);
     --foreground: hsl(205, 53%, 83%);
-    --default: hsl(204, 79%, 13%);
+    --default: hsl(204, 78%, 11%);
     --outline: hsl(206, 63%, 23%);
     --shadow: hsla(0, 0%, 0%, 0.1);
     --success: hsl(151, 52%, 55%);
