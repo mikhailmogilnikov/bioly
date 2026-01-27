@@ -96,6 +96,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     theme = "light",
     blockInteractions = false,
     zoom,
+    center,
     ...props
   },
   ref
@@ -150,6 +151,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
       touchZoomRotate: !blockInteractions,
       keyboard: !blockInteractions,
       zoom,
+      center,
       ...props,
     });
 
@@ -226,6 +228,40 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
 
     mapInstance.easeTo({ zoom, duration: 150 });
   }, [mapInstance, zoom]);
+
+  useEffect(() => {
+    if (!(mapInstance && center)) return;
+
+    const currentCenter = mapInstance.getCenter();
+
+    // Convert center to lng/lat values
+    let lng: number;
+    let lat: number;
+
+    if (Array.isArray(center)) {
+      [lng, lat] = center;
+    } else if ("lng" in center) {
+      lng = center.lng;
+      lat = center.lat;
+    } else {
+      lng = center.lon;
+      lat = center.lat;
+    }
+
+    // Skip if center hasn't changed significantly
+    if (
+      Math.abs(currentCenter.lng - lng) < 0.0001 &&
+      Math.abs(currentCenter.lat - lat) < 0.0001
+    ) {
+      return;
+    }
+
+    mapInstance.flyTo({
+      center,
+      duration: 1000,
+      essential: true,
+    });
+  }, [mapInstance, center]);
 
   const isLoading = !(isLoaded && isStyleLoaded);
 

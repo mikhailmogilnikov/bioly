@@ -58,6 +58,14 @@ msgstr "Add Password"
 msgid "Add social media"
 msgstr "Add social media"
 
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:49
+msgid "Address not found"
+msgstr "Address not found"
+
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:42
+msgid "Address picker"
+msgstr "Address picker"
+
 #: src/features/editor/bento/blocks/variants/map/options/interactions.tsx:26
 msgid "Allow map interaction"
 msgstr "Allow map interaction"
@@ -241,13 +249,17 @@ msgstr "Email"
 msgid "Email:"
 msgstr "Email:"
 
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:52
+msgid "Enter address..."
+msgstr "Enter address..."
+
 #: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:90
 #: src/features/editor/menu/menu/profile/change-password/step-1.tsx:87
 #: src/shared/lib/hooks/use-validation.ts:62
 msgid "Enter current password"
 msgstr "Enter current password"
 
-#: src/features/editor/bento/blocks/variants/map/options/title.tsx:41
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:40
 msgid "Enter map title"
 msgstr "Enter map title"
 
@@ -534,6 +546,10 @@ msgstr "Resend in {duration}"
 msgid "Save QR image"
 msgstr "Save QR image"
 
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:50
+msgid "Searching..."
+msgstr "Searching..."
+
 #: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:151
 #: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:174
 #: src/features/editor/menu/menu/profile/change-email/step-1.tsx:106
@@ -737,10 +753,10 @@ msgstr "Your link"
 msgid "Your name"
 msgstr "Your name"
 
-#: src/shared/ui/kit/primitives/password-input.tsx:32
+#: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Показать пароль"
 msgstr ""
 
-#: src/shared/ui/kit/primitives/password-input.tsx:32
+#: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Скрыть пароль"
 msgstr ""

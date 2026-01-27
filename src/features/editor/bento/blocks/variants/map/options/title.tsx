@@ -35,7 +35,6 @@ export function BentoBlockMapTitle() {
   return (
     <SectionTitle title={t`Map title`}>
       <Input
-        className="h-10 rounded-full"
         maxLength={100}
         onChange={handleTitleChange}
         placeholder={t`Enter map title`}
