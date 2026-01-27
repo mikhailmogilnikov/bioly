@@ -207,7 +207,7 @@ export function createNominatimAdapter(
 
     return {
       id: String(item.place_id),
-      label,
+      label: label ?? "",
       formattedAddress,
       coordinates: {
         latitude: Number.parseFloat(item.lat),

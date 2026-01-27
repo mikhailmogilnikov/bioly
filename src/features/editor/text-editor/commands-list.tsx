@@ -133,6 +133,9 @@ export const CommandsList = ({ items, command, ref }: CommandsListProps) => {
             " bg-transparent text-foreground/80 hover:bg-foreground/5";
         }
 
+        const title = COMMAND_TITLES[item.id] ?? "";
+        if (!title) return null;
+
         return (
           <button
             className={buttonClassName}
@@ -142,7 +145,7 @@ export const CommandsList = ({ items, command, ref }: CommandsListProps) => {
             type="button"
           >
             {getIcon(item.id)}
-            <span>{i18n._(COMMAND_TITLES[item.id])}</span>
+            <span>{i18n._(title)}</span>
           </button>
         );
       })}

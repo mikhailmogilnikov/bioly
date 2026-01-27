@@ -134,7 +134,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     if (!containerRef.current) return;
 
     const initialStyle = mapStyles[theme];
-    currentStyleRef.current = initialStyle;
+    currentStyleRef.current = initialStyle ?? null;
 
     const map = new MapLibreGL.Map({
       container: containerRef.current,
@@ -192,10 +192,10 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     if (currentStyleRef.current === newStyle) return;
 
     clearStyleTimeout();
-    currentStyleRef.current = newStyle;
+    currentStyleRef.current = newStyle ?? null;
     setIsStyleLoaded(false);
 
-    mapInstance.setStyle(newStyle, { diff: true });
+    mapInstance.setStyle(newStyle ?? "", { diff: true });
   }, [mapInstance, theme, mapStyles, clearStyleTimeout]);
 
   useEffect(() => {
@@ -1307,6 +1307,7 @@ function MapClusterLayer<
       if (!features.length) return;
 
       const feature = features[0];
+      if (!feature) return;
       const clusterId = feature.properties?.cluster_id as number;
       const pointCount = feature.properties?.point_count as number;
       const coordinates = (feature.geometry as GeoJSON.Point).coordinates as [
@@ -1336,6 +1337,7 @@ function MapClusterLayer<
       if (!(onPointClick && e.features?.length)) return;
 
       const feature = e.features[0];
+      if (!feature) return;
       const coordinates = (
         feature.geometry as GeoJSON.Point
       ).coordinates.slice() as [number, number];

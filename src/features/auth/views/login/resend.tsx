@@ -25,7 +25,7 @@ export function ResendOtpButton({
   return (
     <p className={cn("mt-4 font-medium text-foreground/50 text-sm", className)}>
       <Trans>Didn't receive the code?</Trans>{" "}
-      {duration > 0 ? (
+      {duration && duration > 0 ? (
         <span className="font-medium text-foreground/50">
           <Trans>Resend in {duration}</Trans>{" "}
           <Plural

@@ -1,0 +1,472 @@
+openapi: 3.0.3
+info:
+  title: Bioly API
+  version: 1.0.0
+  description: API схемы для бизнес-логики приложения Bioly
+
+servers:
+  - url: https://api.bioly.me/v1
+    description: Production server
+
+paths: {}
+
+components:
+  schemas:
+    # Profile schemas
+    Profile:
+      type: object
+      required:
+        - id
+        - name
+        - slug
+        - email
+        - created_at
+        - protected_by_password
+        - short_description
+        - theme
+        - social_media
+        - bento
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор профиля
+        name:
+          type: string
+          description: Имя профиля
+        slug:
+          type: string
+          description: URL-слаг профиля
+        email:
+          type: string
+          format: email
+          description: Email пользователя
+        created_at:
+          type: string
+          format: date-time
+          description: Дата создания профиля
+        avatar_url:
+          type: string
+          format: uri
+          nullable: true
+          description: URL аватара профиля
+        protected_by_password:
+          type: boolean
+          description: Защищен ли профиль паролем
+        short_description:
+          type: string
+          description: Краткое описание профиля
+        description:
+          $ref: '#/components/schemas/JSONContent'
+          nullable: true
+          description: Полное описание профиля в формате TipTap JSON
+        theme:
+          $ref: '#/components/schemas/ProfileTheme'
+        social_media:
+          type: array
+          items:
+            $ref: '#/components/schemas/SocialMediaItem'
+          description: Список социальных сетей
+        bento:
+          type: array
+          items:
+            $ref: '#/components/schemas/BentoBlock'
+          description: Список блоков Bento
+
+    ProfileMainEditableFields:
+      type: object
+      required:
+        - name
+        - slug
+        - email
+        - created_at
+        - protected_by_password
+        - short_description
+        - theme
+        - social_media
+        - bento
+      properties:
+        name:
+          type: string
+        slug:
+          type: string
+        email:
+          type: string
+          format: email
+        created_at:
+          type: string
+          format: date-time
+        avatar_url:
+          type: string
+          format: uri
+          nullable: true
+        protected_by_password:
+          type: boolean
+        short_description:
+          type: string
+        description:
+          $ref: '#/components/schemas/JSONContent'
+          nullable: true
+        theme:
+          $ref: '#/components/schemas/ProfileTheme'
+        social_media:
+          type: array
+          items:
+            $ref: '#/components/schemas/SocialMediaItem'
+        bento:
+          type: array
+          items:
+            $ref: '#/components/schemas/BentoBlock'
+
+    ProfileTheme:
+      type: object
+      required:
+        - font
+        - theme
+        - show_avatar_blur
+        - border_radius
+        - border_width
+      properties:
+        font:
+          $ref: '#/components/schemas/Font'
+        theme:
+          $ref: '#/components/schemas/Theme'
+        show_avatar_blur:
+          type: boolean
+          description: Показывать ли размытие аватара
+        border_radius:
+          type: number
+          minimum: 0
+          description: Радиус скругления границ
+        border_width:
+          type: number
+          minimum: 0
+          description: Ширина границы
+
+    Font:
+      type: string
+      enum:
+        - open-runde
+        - inter
+        - gilroy
+        - vollkorn
+        - jetbrains-mono
+        - montserrat
+        - oswald
+        - caveat
+      description: Доступные шрифты
+
+    Theme:
+      type: string
+      enum:
+        - light
+        - dark
+        - green
+        - pink
+        - blue
+        - purple
+        - golden
+        - dark-blue
+        - dark-slate
+        - dark-forest
+        - dark-plum
+        - dark-amber
+        - dark-ink
+        - dark-copper
+        - dark-olive
+        - dark-indigo
+        - teal
+        - coral
+        - lavender
+        - sand
+        - mint
+        - sky
+        - ice
+        - peach
+      description: Доступные темы оформления
+
+    # Social Media schemas
+    SocialMediaItem:
+      type: object
+      required:
+        - platform
+        - slug
+        - order
+      properties:
+        platform:
+          $ref: '#/components/schemas/SocialMediaPlatform'
+        slug:
+          type: string
+          description: Идентификатор пользователя на платформе
+        order:
+          type: integer
+          minimum: 0
+          description: Порядок отображения
+
+    SocialMediaPlatform:
+      type: string
+      enum:
+        - instagram
+        - telegram
+        - x
+        - bluesky
+        - discord
+        - dribbble
+        - facebook
+        - github
+        - linkedin
+        - tiktok
+        - threads
+        - pinterest
+        - medium
+        - youtube
+        - messenger
+        - reddit
+        - snapchat
+        - spotify
+        - tumblr
+        - twitch
+        - vk
+        - whatsapp
+      description: Доступные платформы социальных сетей
+
+    # Bento Block schemas
+    BentoBlock:
+      oneOf:
+        - $ref: '#/components/schemas/BentoBlockGallery'
+        - $ref: '#/components/schemas/BentoBlockLink'
+        - $ref: '#/components/schemas/BentoBlockText'
+        - $ref: '#/components/schemas/BentoBlockMap'
+      discriminator:
+        propertyName: type
+        mapping:
+          gallery: '#/components/schemas/BentoBlockGallery'
+          link: '#/components/schemas/BentoBlockLink'
+          text: '#/components/schemas/BentoBlockText'
+          map: '#/components/schemas/BentoBlockMap'
+
+    BentoBlockBase:
+      type: object
+      required:
+        - id
+        - size
+        - order
+        - style
+        - type
+        - properties
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор блока
+        size:
+          $ref: '#/components/schemas/BentoBlockSize'
+        order:
+          type: integer
+          minimum: 0
+          description: Порядок отображения блока
+        style:
+          $ref: '#/components/schemas/BentoBlockStyle'
+        type:
+          $ref: '#/components/schemas/BentoBlockType'
+
+    BentoBlockGallery:
+      allOf:
+        - $ref: '#/components/schemas/BentoBlockBase'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [gallery]
+            properties:
+              $ref: '#/components/schemas/BentoBlockPropertiesGallery'
+
+    BentoBlockLink:
+      allOf:
+        - $ref: '#/components/schemas/BentoBlockBase'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [link]
+            properties:
+              $ref: '#/components/schemas/BentoBlockPropertiesLink'
+
+    BentoBlockText:
+      allOf:
+        - $ref: '#/components/schemas/BentoBlockBase'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [text]
+            properties:
+              $ref: '#/components/schemas/BentoBlockPropertiesText'
+
+    BentoBlockMap:
+      allOf:
+        - $ref: '#/components/schemas/BentoBlockBase'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [map]
+            properties:
+              $ref: '#/components/schemas/BentoBlockPropertiesMap'
+
+    BentoBlockSize:
+      type: string
+      enum:
+        - "2x2"
+        - "4x1"
+        - "2x4"
+        - "4x2"
+        - "4x4"
+        - dynamic
+      description: Размер блока Bento
+
+    BentoBlockStyle:
+      type: string
+      enum:
+        - plain
+        - shadow
+        - outline
+        - transparent
+      description: Стиль блока Bento
+
+    BentoBlockType:
+      type: string
+      enum:
+        - gallery
+        - link
+        - text
+        - map
+      description: Тип блока Bento
+
+    BentoBlockPropertiesGallery:
+      type: object
+      required:
+        - media
+      properties:
+        media:
+          type: array
+          items:
+            type: string
+            format: uri
+          description: Массив URL изображений для галереи
+
+    BentoBlockPropertiesLink:
+      type: object
+      required:
+        - url
+        - title
+        - url_valid
+      properties:
+        url:
+          type: string
+          format: uri
+          description: URL ссылки
+        title:
+          type: string
+          description: Заголовок ссылки
+        url_valid:
+          type: boolean
+          description: Валидна ли ссылка
+
+    BentoBlockPropertiesText:
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          $ref: '#/components/schemas/JSONContent'
+          nullable: true
+          description: Содержимое текстового блока в формате TipTap JSON
+
+    BentoBlockPropertiesMap:
+      type: object
+      required:
+        - theme
+        - labels
+        - interactions
+        - zoom
+        - title
+        - titleAlign
+        - latitude
+        - longitude
+      properties:
+        theme:
+          $ref: '#/components/schemas/BentoBlockMapThemesOptions'
+        labels:
+          type: boolean
+          description: Показывать ли подписи на карте
+        interactions:
+          type: boolean
+          description: Разрешены ли взаимодействия с картой
+        zoom:
+          type: number
+          minimum: 0
+          maximum: 20
+          description: Уровень масштабирования карты
+        title:
+          type: string
+          description: Заголовок карты
+        titleAlign:
+          $ref: '#/components/schemas/BentoBlockMapTitleAlign'
+        latitude:
+          type: number
+          format: float
+          minimum: -90
+          maximum: 90
+          description: Широта центра карты
+        longitude:
+          type: number
+          format: float
+          minimum: -180
+          maximum: 180
+          description: Долгота центра карты
+
+    BentoBlockMapThemesOptions:
+      type: string
+      enum:
+        - auto
+        - light
+        - dark
+        - positron
+      description: Тема карты (auto означает автоматический выбор на основе темы профиля)
+
+    BentoBlockMapTitleAlign:
+      type: string
+      enum:
+        - bottom-left
+        - bottom-center
+        - bottom-right
+        - top-left
+        - top-center
+        - top-right
+      description: Выравнивание заголовка карты
+
+    # TipTap JSON Content schema
+    JSONContent:
+      type: object
+      description: Структурированный JSON контент из TipTap редактора
+      properties:
+        type:
+          type: string
+          description: Тип узла (doc, paragraph, heading, text и т.д.)
+        attrs:
+          type: object
+          additionalProperties: true
+          description: Атрибуты узла
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/JSONContent'
+          description: Вложенное содержимое узла
+        text:
+          type: string
+          description: Текстовое содержимое для текстовых узлов
+        marks:
+          type: array
+          items:
+            type: object
+          description: Маркировки текста (жирный, курсив и т.д.)
+      additionalProperties: true

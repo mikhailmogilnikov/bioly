@@ -63,7 +63,7 @@ export default async function RootLayout({
       >
         <LinguiClientProvider
           initialLocale={lang}
-          initialMessages={allMessages[lang]}
+          initialMessages={allMessages[lang] ?? {}}
         >
           {children}
         </LinguiClientProvider>

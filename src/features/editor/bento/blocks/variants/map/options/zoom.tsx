@@ -18,7 +18,7 @@ export function BentoBlockMapZoom({ className }: { className?: string }) {
   const handleZoomChange = (zoom: number[]) => {
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
-      zoom: zoom[0],
+      zoom: zoom[0] ?? 0,
     });
   };
 
