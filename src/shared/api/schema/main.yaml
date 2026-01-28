@@ -78,9 +78,10 @@ components:
           maxLength: 200
           example: "Software developer and designer"
         description:
-          $ref: "#/components/schemas/JSONContent"
-          nullable: true
-          description: Полное описание профиля в формате TipTap JSON
+          oneOf:
+            - type: "null"
+            - $ref: "#/components/schemas/JSONContent"
+          description: Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent.
         theme:
           $ref: "#/components/schemas/ProfileTheme"
         social_media:
@@ -144,8 +145,10 @@ components:
           minLength: 0
           maxLength: 200
         description:
-          $ref: "#/components/schemas/JSONContent"
-          nullable: true
+          oneOf:
+            - type: "null"
+            - $ref: "#/components/schemas/JSONContent"
+          description: Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent.
         theme:
           $ref: "#/components/schemas/ProfileTheme"
         social_media:
@@ -943,9 +946,10 @@ components:
           minLength: 0
           maxLength: 200
         description:
-          $ref: "#/components/schemas/JSONContent"
-          nullable: true
-          description: Полное описание профиля в формате TipTap JSON
+          oneOf:
+            - type: "null"
+            - $ref: "#/components/schemas/JSONContent"
+          description: Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent.
         theme:
           $ref: "#/components/schemas/ProfileTheme"
         social_media:

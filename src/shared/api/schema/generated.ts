@@ -49,8 +49,8 @@ export interface components {
        * @example Software developer and designer
        */
       short_description: string;
-      /** @description Полное описание профиля в формате TipTap JSON */
-      description?: components["schemas"]["JSONContent"];
+      /** @description Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent. */
+      description?: null | components["schemas"]["JSONContent"];
       theme: components["schemas"]["ProfileTheme"];
       /**
        * @description Массив социальных сетей. Максимум 20 элементов.
@@ -74,7 +74,8 @@ export interface components {
       avatar_url?: string | null;
       protected_by_password: boolean;
       short_description: string;
-      description?: components["schemas"]["JSONContent"];
+      /** @description Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent. */
+      description?: null | components["schemas"]["JSONContent"];
       theme: components["schemas"]["ProfileTheme"];
       social_media: components["schemas"]["SocialMediaItem"][];
       bento: components["schemas"]["BentoBlock"][];
@@ -586,8 +587,8 @@ export interface components {
       avatar_url: string | null;
       /** @description Краткое описание профиля */
       short_description: string;
-      /** @description Полное описание профиля в формате TipTap JSON */
-      description: components["schemas"]["JSONContent"];
+      /** @description Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent. */
+      description: null | components["schemas"]["JSONContent"];
       theme: components["schemas"]["ProfileTheme"];
       /**
        * @description Массив социальных сетей. Максимум 20 элементов.
