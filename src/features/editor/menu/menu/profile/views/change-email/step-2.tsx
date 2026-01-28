@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
+import type { components } from "@/shared/api/schema/generated";
 import { useHandleTimers } from "@/shared/lib/hooks/use-handle-timers";
 import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
@@ -20,9 +21,7 @@ import { Input } from "@/shared/ui/kit/primitives/input";
 import type { ProfileNewViews } from "../..";
 import { useProfileStore } from "../../use-profile-store";
 
-interface EmailFormData {
-  newEmail: string;
-}
+type EmailFormData = components["schemas"]["ChangeEmailRequest"];
 
 export function ChangeEmailStep2() {
   const { t } = useLingui();
@@ -32,29 +31,29 @@ export function ChangeEmailStep2() {
   const { newEmail: newEmailSchema } = useValidationSchemas();
 
   const emailSchema = z.object({
-    newEmail: newEmailSchema,
+    new_email: newEmailSchema,
   });
 
   const form = useForm<EmailFormData>({
     resolver: zodResolver(emailSchema),
     defaultValues: {
-      newEmail: newEmail || "",
+      new_email: newEmail || "",
     },
   });
 
   const onSubmit = async (data: EmailFormData) => {
     try {
-      const existingTimer = getTimer("otp", data.newEmail);
+      const existingTimer = getTimer("otp", data.new_email);
 
       if (!existingTimer) {
         // TODO: API call to send OTP code to new email
-        // await sendOTPToNewEmail(data.newEmail);
+        // await sendOTPToNewEmail(data.new_email);
         await new Promise((resolve) => setTimeout(resolve, 1000));
       }
 
-      setNewEmail(data.newEmail);
+      setNewEmail(data.new_email);
 
-      startTimer({ key: "otp", id: data.newEmail, duration: 60 });
+      startTimer({ key: "otp", id: data.new_email, duration: 60 });
 
       push("change-email-step-3");
     } catch {
@@ -72,7 +71,7 @@ export function ChangeEmailStep2() {
         <FieldGroup>
           <Controller
             control={form.control}
-            name="newEmail"
+            name="new_email"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
                 <FieldContent>

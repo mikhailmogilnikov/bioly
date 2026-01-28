@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
+import type { components } from "@/shared/api/schema/generated";
 import { useHandleTimers } from "@/shared/lib/hooks/use-handle-timers";
 import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { Button } from "@/shared/ui/kit/primitives/button";
@@ -17,9 +18,7 @@ import {
 import { Input } from "@/shared/ui/kit/primitives/input";
 import { useAuthContext } from "../../model/provider";
 
-interface LoginFormData {
-  email: string;
-}
+type LoginFormData = components["schemas"]["LoginRequest"];
 
 export function EnterEmailForm() {
   const { t } = useLingui();

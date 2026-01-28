@@ -1,35 +1,28 @@
-import { Trans } from "@lingui/react/macro";
+import { ModalViewsProvider } from "@/shared/lib/providers/modal-views/modal-views-provider";
+import { AdaptiveModal } from "@/shared/ui/kit/overlays/adaptive-modal";
+import { ProfileNewController } from "./controller";
 
-import {
-  AdaptiveModal,
-  AdaptiveModalContent,
-  AdaptiveModalHeader,
-} from "@/shared/ui/kit/overlays/adaptive-modal";
-import { ChangeEmail } from "./change-email/change-email";
-import { ChangePassword } from "./change-password/change-password";
-import { ChangeSlug } from "./change-slug";
-import { Logout } from "./logout";
-
-interface ProfileModalProps {
+interface ProfileModalNewProps {
   open: boolean;
   onOpenChange: () => void;
 }
 
-export function ProfileModal({ open, onOpenChange }: ProfileModalProps) {
+export type ProfileNewViews =
+  | "profile"
+  | "change-email-step-1"
+  | "change-email-step-2"
+  | "change-email-step-3"
+  | "change-password-step-1"
+  | "change-password-step-2"
+  | "add-password-step-1"
+  | "add-password-step-2";
+
+export function ProfileModalNew({ open, onOpenChange }: ProfileModalNewProps) {
   return (
     <AdaptiveModal onOpenChange={onOpenChange} open={open}>
-      <AdaptiveModalHeader>
-        <Trans>Profile</Trans>
-      </AdaptiveModalHeader>
-      <AdaptiveModalContent>
-        <div className="flex flex-col gap-6 py-1">
-          <ChangeSlug />
-          <hr className="h-px border-outline" />
-          <ChangeEmail />
-          <ChangePassword />
-          <Logout />
-        </div>
-      </AdaptiveModalContent>
+      <ModalViewsProvider<ProfileNewViews> initialView="profile">
+        <ProfileNewController />
+      </ModalViewsProvider>
     </AdaptiveModal>
   );
 }

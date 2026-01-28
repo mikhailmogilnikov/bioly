@@ -24,7 +24,7 @@ import {
 } from "@/shared/ui/kit/overlays/react-tooltip";
 import { Pulse } from "@/shared/ui/kit/primitives/pulse";
 import { useProfile } from "../../profile/use-profile";
-import { ProfileModalNew } from "./profile-new";
+import { ProfileModalNew } from "./profile";
 import { ProjectSettingsModal } from "./project-settings";
 
 interface IconHandle {

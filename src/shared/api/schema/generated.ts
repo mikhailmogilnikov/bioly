@@ -8,15 +8,27 @@ export type webhooks = Record<string, never>;
 export interface components {
   schemas: {
     Profile: {
-      /** @description Уникальный идентификатор профиля */
+      /**
+       * @description Уникальный идентификатор профиля (UUID или другой уникальный идентификатор)
+       * @example 550e8400-e29b-41d4-a716-446655440000
+       */
       id: string;
-      /** @description Имя профиля */
+      /**
+       * @description Имя профиля
+       * @example John Doe
+       */
       name: string;
-      /** @description URL-слаг профиля */
+      /**
+       * @description URL-слаг профиля. Должен содержать только строчные латинские буквы,
+       *     цифры, дефисы и подчеркивания. Не может начинаться или заканчиваться
+       *     на дефис или подчеркивание. Должен быть уникальным.
+       * @example johndoe
+       */
       slug: string;
       /**
        * Format: email
        * @description Email пользователя
+       * @example user@example.com
        */
       email: string;
       /**
@@ -26,19 +38,29 @@ export interface components {
       created_at: string;
       /**
        * Format: uri
-       * @description URL аватара профиля
+       * @description URL аватара профиля. Должен быть валидным HTTP/HTTPS URL.
+       * @example https://example.com/avatar.jpg
        */
       avatar_url?: string | null;
       /** @description Защищен ли профиль паролем */
       protected_by_password: boolean;
-      /** @description Краткое описание профиля */
+      /**
+       * @description Краткое описание профиля
+       * @example Software developer and designer
+       */
       short_description: string;
       /** @description Полное описание профиля в формате TipTap JSON */
       description?: components["schemas"]["JSONContent"];
       theme: components["schemas"]["ProfileTheme"];
-      /** @description Список социальных сетей */
+      /**
+       * @description Массив социальных сетей. Максимум 20 элементов.
+       *     Порядок (order) должен быть уникальным для каждого элемента.
+       */
       social_media: components["schemas"]["SocialMediaItem"][];
-      /** @description Список блоков Bento */
+      /**
+       * @description Массив блоков Bento. Максимум 50 элементов.
+       *     ID и порядок (order) должны быть уникальными для каждого блока.
+       */
       bento: components["schemas"]["BentoBlock"][];
     };
     ProfileMainEditableFields: {
@@ -62,9 +84,15 @@ export interface components {
       theme: components["schemas"]["Theme"];
       /** @description Показывать ли размытие аватара */
       show_avatar_blur: boolean;
-      /** @description Радиус скругления границ */
+      /**
+       * @description Радиус скругления границ в пикселях
+       * @example 24
+       */
       border_radius: number;
-      /** @description Ширина границы */
+      /**
+       * @description Ширина границы в пикселях
+       * @example 1
+       */
       border_width: number;
     };
     /**
@@ -111,9 +139,15 @@ export interface components {
       | "peach";
     SocialMediaItem: {
       platform: components["schemas"]["SocialMediaPlatform"];
-      /** @description Идентификатор пользователя на платформе */
+      /**
+       * @description Идентификатор пользователя на платформе
+       * @example johndoe
+       */
       slug: string;
-      /** @description Порядок отображения */
+      /**
+       * @description Порядок отображения. Должен быть уникальным в массиве social_media.
+       * @example 0
+       */
       order: number;
     };
     /**
@@ -149,10 +183,13 @@ export interface components {
       | components["schemas"]["BentoBlockText"]
       | components["schemas"]["BentoBlockMap"];
     BentoBlockBase: {
-      /** @description Уникальный идентификатор блока */
+      /** @description Уникальный идентификатор блока. Должен быть уникальным в массиве bento. */
       id: string;
       size: components["schemas"]["BentoBlockSize"];
-      /** @description Порядок отображения блока */
+      /**
+       * @description Порядок отображения блока. Должен быть уникальным в массиве bento.
+       * @example 0
+       */
       order: number;
       style: components["schemas"]["BentoBlockStyle"];
       type: components["schemas"]["BentoBlockType"];
@@ -217,43 +254,65 @@ export interface components {
      */
     BentoBlockType: "gallery" | "link" | "text" | "map";
     BentoBlockPropertiesGallery: {
-      /** @description Массив URL изображений для галереи */
+      /**
+       * @description Массив URL изображений для галереи
+       * @example [
+       *       "https://example.com/image1.jpg",
+       *       "https://example.com/image2.jpg"
+       *     ]
+       */
       media: string[];
     };
     BentoBlockPropertiesLink: {
       /**
        * Format: uri
-       * @description URL ссылки
+       * @description URL ссылки. Должен быть валидным HTTP/HTTPS URL.
+       * @example https://example.com
        */
       url: string;
-      /** @description Заголовок ссылки */
+      /**
+       * @description Заголовок ссылки
+       * @example My Website
+       */
       title: string;
-      /** @description Валидна ли ссылка */
+      /** @description Валидна ли ссылка (проверяется на сервере) */
       url_valid: boolean;
     };
     BentoBlockPropertiesText: {
-      /** @description Содержимое текстового блока в формате TipTap JSON */
+      /**
+       * @description Содержимое текстового блока в формате TipTap JSON.
+       *     Максимальный размер JSON: 50KB (50,000 символов в сериализованном виде).
+       */
       content: components["schemas"]["JSONContent"];
     };
     BentoBlockPropertiesMap: {
       theme: components["schemas"]["BentoBlockMapThemesOptions"];
       /** @description Показывать ли подписи на карте */
       labels: boolean;
-      /** @description Разрешены ли взаимодействия с картой */
+      /** @description Разрешены ли взаимодействия с картой (зум, перетаскивание) */
       interactions: boolean;
-      /** @description Уровень масштабирования карты */
+      /**
+       * @description Уровень масштабирования карты (0 - минимальный, 22 - максимальный)
+       * @default 11
+       * @example 11
+       */
       zoom: number;
-      /** @description Заголовок карты */
+      /**
+       * @description Заголовок карты
+       * @example My Location
+       */
       title: string;
       titleAlign: components["schemas"]["BentoBlockMapTitleAlign"];
       /**
        * Format: float
-       * @description Широта центра карты
+       * @description Широта центра карты в градусах (WGS84)
+       * @example 55.7558
        */
       latitude: number;
       /**
        * Format: float
-       * @description Долгота центра карты
+       * @description Долгота центра карты в градусах (WGS84)
+       * @example 37.6173
        */
       longitude: number;
     };
@@ -273,7 +332,10 @@ export interface components {
       | "top-left"
       | "top-center"
       | "top-right";
-    /** @description Структурированный JSON контент из TipTap редактора */
+    /**
+     * @description Структурированный JSON контент из TipTap редактора.
+     *     Максимальный размер JSON: 50KB (50,000 символов в сериализованном виде).
+     */
     JSONContent: {
       /** @description Тип узла (doc, paragraph, heading, text и т.д.) */
       type?: string;
@@ -289,6 +351,306 @@ export interface components {
       marks?: Record<string, never>[];
     } & {
       [key: string]: unknown;
+    };
+    LoginRequest: {
+      /**
+       * Format: email
+       * @description Email пользователя для входа
+       * @example user@example.com
+       */
+      email: string;
+    };
+    LoginVerifyOtpRequest: {
+      /**
+       * Format: email
+       * @description Email пользователя
+       * @example user@example.com
+       */
+      email: string;
+      /**
+       * @description Код подтверждения из 6 цифр
+       * @example 123456
+       */
+      otp: string;
+    };
+    /**
+     * @description Refresh token устанавливается в HTTP-only cookie с именем `refresh_token`.
+     *     Cookie имеет флаги HttpOnly, Secure и SameSite=Strict для безопасности.
+     */
+    LoginResponse: {
+      /** @description JWT токен доступа */
+      access_token: string;
+      user: components["schemas"]["Profile"];
+    };
+    SignupRequest: {
+      /**
+       * Format: email
+       * @description Email пользователя для регистрации
+       * @example user@example.com
+       */
+      email: string;
+    };
+    SignupEnterSlugRequest: {
+      /**
+       * Format: email
+       * @description Email пользователя
+       * @example user@example.com
+       */
+      email: string;
+      /**
+       * @description URL-слаг профиля. Должен содержать только строчные латинские буквы,
+       *     цифры, дефисы и подчеркивания. Не может начинаться или заканчиваться
+       *     на дефис или подчеркивание.
+       * @example username
+       */
+      slug: string;
+    };
+    SignupVerifyOtpRequest: {
+      /**
+       * Format: email
+       * @description Email пользователя
+       * @example user@example.com
+       */
+      email: string;
+      /**
+       * @description URL-слаг профиля
+       * @example username
+       */
+      slug: string;
+      /**
+       * @description Код подтверждения из 6 цифр
+       * @example 123456
+       */
+      otp: string;
+    };
+    /**
+     * @description Refresh token устанавливается в HTTP-only cookie с именем `refresh_token`.
+     *     Cookie имеет флаги HttpOnly, Secure и SameSite=Strict для безопасности.
+     */
+    SignupResponse: {
+      /** @description JWT токен доступа */
+      access_token: string;
+    };
+    SendOtpRequest: {
+      /**
+       * Format: email
+       * @description Email для отправки кода подтверждения
+       * @example user@example.com
+       */
+      email: string;
+    };
+    SendOtpResponse: {
+      /** @description Успешно ли отправлен код */
+      success: boolean;
+      /**
+       * Format: date-time
+       * @description Время истечения кода подтверждения
+       */
+      expires_at: string;
+    };
+    ChangePasswordRequest: {
+      /** @description Текущий пароль пользователя */
+      old_password: string;
+      /**
+       * @description Новый пароль. Должен содержать минимум 8 символов,
+       *     минимум одну заглавную букву, одну строчную букву и одну цифру.
+       *     Новый пароль должен отличаться от старого пароля.
+       */
+      new_password: string;
+      /** @description Подтверждение нового пароля (должно совпадать с new_password) */
+      confirm_password: string;
+    };
+    ChangePasswordVerifyOtpRequest: {
+      /**
+       * Format: email
+       * @description Email пользователя
+       * @example user@example.com
+       */
+      email: string;
+      /**
+       * @description Код подтверждения из 6 цифр
+       * @example 123456
+       */
+      otp: string;
+      /** @description Новый пароль */
+      new_password: string;
+    };
+    ChangePasswordResponse: {
+      /** @description Успешно ли изменен пароль */
+      success: boolean;
+    };
+    AddPasswordRequest: {
+      /**
+       * @description Новый пароль. Должен содержать минимум 8 символов,
+       *     минимум одну заглавную букву, одну строчную букву и одну цифру.
+       */
+      new_password: string;
+      /** @description Подтверждение нового пароля (должно совпадать с new_password) */
+      confirm_password: string;
+    };
+    AddPasswordVerifyOtpRequest: {
+      /**
+       * Format: email
+       * @description Email пользователя
+       * @example user@example.com
+       */
+      email: string;
+      /**
+       * @description Код подтверждения из 6 цифр
+       * @example 123456
+       */
+      otp: string;
+      /** @description Новый пароль */
+      new_password: string;
+    };
+    AddPasswordResponse: {
+      /** @description Успешно ли добавлен пароль */
+      success: boolean;
+    };
+    ChangeEmailRequest: {
+      /**
+       * Format: email
+       * @description Новый email адрес
+       * @example newemail@example.com
+       */
+      new_email: string;
+    };
+    ChangeEmailVerifyOtpRequest: {
+      /**
+       * Format: email
+       * @description Новый email адрес
+       * @example newemail@example.com
+       */
+      new_email: string;
+      /**
+       * @description Код подтверждения из 6 цифр, отправленный на новый email
+       * @example 123456
+       */
+      otp: string;
+    };
+    ChangeEmailResponse: {
+      /** @description Успешно ли изменен email */
+      success: boolean;
+      /**
+       * Format: email
+       * @description Новый email адрес
+       * @example newemail@example.com
+       */
+      email: string;
+    };
+    ChangeSlugRequest: {
+      /**
+       * @description Новый URL-слаг профиля. Должен содержать только строчные латинские буквы,
+       *     цифры, дефисы и подчеркивания. Не может начинаться или заканчиваться
+       *     на дефис или подчеркивание. Можно изменить только раз в 7 дней.
+       * @example newusername
+       */
+      slug: string;
+    };
+    ChangeSlugResponse: {
+      /** @description Успешно ли изменен slug */
+      success: boolean;
+      /**
+       * @description Новый slug профиля
+       * @example newusername
+       */
+      slug: string;
+    };
+    CheckSlugAvailabilityRequest: {
+      /**
+       * @description URL-слаг для проверки доступности
+       * @example username
+       */
+      slug: string;
+    };
+    CheckSlugAvailabilityResponse: {
+      /** @description Доступен ли slug для использования */
+      available: boolean;
+      /**
+       * @description Сообщение о причине недоступности (если available = false)
+       * @example This username is already taken
+       */
+      message?: string | null;
+    };
+    PublicProfile: {
+      /** @description Уникальный идентификатор профиля */
+      id: string;
+      /** @description Имя профиля */
+      name: string;
+      /** @description URL-слаг профиля */
+      slug: string;
+      /**
+       * Format: uri
+       * @description URL аватара профиля
+       */
+      avatar_url: string | null;
+      /** @description Краткое описание профиля */
+      short_description: string;
+      /** @description Полное описание профиля в формате TipTap JSON */
+      description: components["schemas"]["JSONContent"];
+      theme: components["schemas"]["ProfileTheme"];
+      /**
+       * @description Массив социальных сетей. Максимум 20 элементов.
+       *     Порядок (order) должен быть уникальным для каждого элемента.
+       */
+      social_media: components["schemas"]["SocialMediaItem"][];
+      /**
+       * @description Массив блоков Bento. Максимум 50 элементов.
+       *     ID и порядок (order) должны быть уникальными для каждого блока.
+       */
+      bento: components["schemas"]["BentoBlock"][];
+    };
+    GetProfileBySlugRequest: {
+      /**
+       * @description URL-слаг профиля для получения публичных данных
+       * @example username
+       */
+      slug: string;
+    };
+    GetProfileBySlugResponse: components["schemas"]["PublicProfile"];
+    /**
+     * @description Refresh token должен быть передан в HTTP-only cookie с именем `refresh_token`.
+     *     Тело запроса может быть пустым, так как токен читается из cookie.
+     */
+    RefreshTokenRequest: Record<string, never>;
+    /**
+     * @description Новый refresh token устанавливается в HTTP-only cookie с именем `refresh_token`.
+     *     Cookie имеет флаги HttpOnly, Secure и SameSite=Strict для безопасности.
+     */
+    RefreshTokenResponse: {
+      /** @description Новый JWT токен доступа */
+      access_token: string;
+    };
+    /**
+     * @description Refresh token для инвалидации читается из HTTP-only cookie с именем `refresh_token`.
+     *     Тело запроса может быть пустым, так как токен читается из cookie.
+     *     Сервер инвалидирует refresh token из cookie и все связанные токены пользователя.
+     */
+    LogoutRequest: Record<string, never>;
+    LogoutResponse: {
+      /** @description Успешно ли выполнен выход из системы */
+      success: boolean;
+      /**
+       * @description Сообщение о результате операции
+       * @example Successfully logged out
+       */
+      message?: string | null;
+    };
+    ErrorResponse: {
+      /**
+       * @description Код ошибки
+       * @example VALIDATION_ERROR
+       */
+      error: string;
+      /**
+       * @description Сообщение об ошибке
+       * @example Invalid email address
+       */
+      message: string;
+      /** @description Дополнительные детали ошибки */
+      details?: {
+        [key: string]: unknown;
+      };
     };
   };
   responses: never;

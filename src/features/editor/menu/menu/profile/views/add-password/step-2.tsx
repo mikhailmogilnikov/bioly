@@ -6,6 +6,7 @@ import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 import { ResendOtpButton } from "@/features/auth/views/login/resend";
 import { useProfile } from "@/features/editor/profile/use-profile";
+import type { components } from "@/shared/api/schema/generated";
 import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
 import { AdaptiveModalContent } from "@/shared/ui/kit/overlays/adaptive-modal";
@@ -20,15 +21,17 @@ import { InputOTP, InputOTPSlot } from "@/shared/ui/kit/primitives/input-otp";
 import type { ProfileNewViews } from "../..";
 import { useProfileStore } from "../../use-profile-store";
 
-interface OTPFormData {
-  otp: string;
-}
+type OTPFormData = Pick<
+  components["schemas"]["AddPasswordVerifyOtpRequest"],
+  "otp"
+>;
 
-export function ChangePasswordStep2() {
+export function AddPasswordStep2() {
   const { clearAndPush } = useModalViews<ProfileNewViews>();
   const { otp } = useValidationSchemas();
   const { newPassword, setNewPassword } = useProfileStore();
   const email = useProfile((state) => state.profile.email);
+  const updateProfile = useProfile((store) => store.updateProfile);
 
   const otpSchema = z.object({
     otp,
@@ -43,13 +46,13 @@ export function ChangePasswordStep2() {
 
   const onSubmit = async (_data: OTPFormData) => {
     try {
-      // TODO: API call to verify OTP and change password
-      // await verifyOTPAndChangePassword(_data.otp, newPassword);
+      // TODO: API call to verify OTP and add password
+      // await verifyOTPAndAddPassword(_data.otp, newPassword);
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       if (newPassword) {
-        // Password is stored on the server, we just confirm it was changed
-        // The profile doesn't store the password itself
+        // Update profile to indicate password is set
+        updateProfile({ protected_by_password: true });
         setNewPassword(null);
       }
 
@@ -66,7 +69,7 @@ export function ChangePasswordStep2() {
       <AdaptiveModalContent>
         <p className="text-foreground/50 text-sm">
           <Trans>
-            No password provided. Please go back and enter a new password.
+            No password provided. Please go back and enter a password.
           </Trans>
         </p>
       </AdaptiveModalContent>
@@ -77,7 +80,7 @@ export function ChangePasswordStep2() {
     <AdaptiveModalContent>
       <form
         className="mt-4 flex w-full flex-col items-center justify-center gap-4"
-        id="change-password-step-2-form"
+        id="add-password-step-2-form"
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FieldGroup>
@@ -124,7 +127,7 @@ export function ChangePasswordStep2() {
         <p className="mt-4 text-center text-foreground/50 text-sm">
           <Trans>
             Enter the 6-digit code we sent to your email address ({email}) to
-            complete changing your password.
+            complete adding a password.
           </Trans>
         </p>
 

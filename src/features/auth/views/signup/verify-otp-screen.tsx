@@ -6,6 +6,7 @@ import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { ChevronRightIcon } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";
+import type { components } from "@/shared/api/schema/generated";
 import { useLocalizedRouter } from "@/shared/lib/hooks/use-localized-router";
 import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { Button } from "@/shared/ui/kit/primitives/button";
@@ -20,9 +21,7 @@ import { BackButton } from "../../back-button";
 import { useAuthContext } from "../../model/provider";
 import { ResendOtpButton } from "../login/resend";
 
-interface OTPFormData {
-  otp: string;
-}
+type OTPFormData = Pick<components["schemas"]["SignupVerifyOtpRequest"], "otp">;
 
 export function SignupVerifyOtpScreen() {
   const { navigateToScreen, email } = useAuthContext();

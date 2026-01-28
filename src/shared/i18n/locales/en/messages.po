@@ -13,7 +13,8 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:132
+#. placeholder {0}: action.label
+#: src/features/editor/menu/menu/profile/views/profile.tsx:132
 msgid "{0}"
 msgstr "{0}"
 
@@ -21,15 +22,15 @@ msgstr "{0}"
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:96
+#: src/features/editor/menu/menu/profile/views/profile.tsx:96
 msgid "Account is protected by password"
 msgstr "Account is protected by password"
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:97
+#: src/features/editor/menu/menu/profile/views/profile.tsx:97
 msgid "Account isn't protected by password"
 msgstr "Account isn't protected by password"
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:117
+#: src/features/editor/menu/menu/profile/views/profile.tsx:117
 msgid "Actions"
 msgstr "Actions"
 
@@ -49,7 +50,7 @@ msgstr "Add avatar"
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Add bio... Type \"/\" for commands."
 
-#: src/features/editor/menu/menu/profile-new/controller.tsx:48
+#: src/features/editor/menu/menu/profile/controller.tsx:48
 msgid "Add Password"
 msgstr "Add Password"
 
@@ -70,12 +71,12 @@ msgstr "Address picker"
 msgid "Allow map interaction"
 msgstr "Allow map interaction"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:117
-#: src/features/auth/views/signup/enter-slug-screen.tsx:87
+#: src/features/auth/views/login/verify-otp-screen.tsx:116
+#: src/features/auth/views/signup/enter-slug-screen.tsx:89
 msgid "Back to enter email"
 msgstr "Back to enter email"
 
-#: src/features/auth/views/signup/verify-otp-screen.tsx:120
+#: src/features/auth/views/signup/verify-otp-screen.tsx:119
 msgid "Back to enter slug"
 msgstr "Back to enter slug"
 
@@ -119,12 +120,11 @@ msgstr "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "Can be changed only once in 7 days."
 msgstr "Can be changed only once in 7 days."
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:46
+#: src/features/editor/menu/menu/profile/views/profile.tsx:46
 msgid "Change email"
 msgstr "Change email"
 
-#: src/features/editor/menu/menu/profile-new/controller.tsx:28
-#: src/features/editor/menu/menu/profile/change-email/modal.tsx:63
+#: src/features/editor/menu/menu/profile/controller.tsx:28
 msgid "Change Email"
 msgstr "Change Email"
 
@@ -132,13 +132,11 @@ msgstr "Change Email"
 msgid "Change language"
 msgstr "Change language"
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:57
-#: src/features/editor/menu/menu/profile/change-password/change-password.tsx:18
+#: src/features/editor/menu/menu/profile/views/profile.tsx:57
 msgid "Change password"
 msgstr "Change password"
 
-#: src/features/editor/menu/menu/profile-new/controller.tsx:40
-#: src/features/editor/menu/menu/profile/change-password/modal.tsx:71
+#: src/features/editor/menu/menu/profile/controller.tsx:40
 msgid "Change Password"
 msgstr "Change Password"
 
@@ -150,7 +148,7 @@ msgstr "Code"
 msgid "Code Block"
 msgstr "Code Block"
 
-#: src/features/editor/menu/menu/profile-new/controller.tsx:36
+#: src/features/editor/menu/menu/profile/controller.tsx:36
 msgid "Confirm email change"
 msgstr "Confirm email change"
 
@@ -158,20 +156,19 @@ msgstr "Confirm email change"
 msgid "Confirm new password"
 msgstr "Confirm new password"
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:138
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:129
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:151
 msgid "Confirm New Password"
 msgstr "Confirm New Password"
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:115
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:113
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
-#: src/features/editor/menu/menu/profile-new/controller.tsx:52
+#: src/features/editor/menu/menu/profile/controller.tsx:52
 msgid "Confirm password addition"
 msgstr "Confirm password addition"
 
-#: src/features/editor/menu/menu/profile-new/controller.tsx:44
+#: src/features/editor/menu/menu/profile/controller.tsx:44
 msgid "Confirm password change"
 msgstr "Confirm password change"
 
@@ -179,14 +176,11 @@ msgstr "Confirm password change"
 msgid "Confirmation"
 msgstr "Confirmation"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:109
-#: src/features/auth/views/signup/enter-slug-screen.tsx:79
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:153
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:119
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:176
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:134
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:108
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:164
+#: src/features/auth/views/enter-email/enter-email-form.tsx:108
+#: src/features/auth/views/signup/enter-slug-screen.tsx:81
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:151
+#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:118
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:189
 msgid "Continue"
 msgstr "Continue"
 
@@ -214,12 +208,11 @@ msgstr "Corner radius"
 msgid "Create an account or sign in to your existing. No credit card required."
 msgstr "Create an account or sign in to your existing. No credit card required."
 
-#: src/features/auth/views/signup/enter-slug-screen.tsx:77
+#: src/features/auth/views/signup/enter-slug-screen.tsx:79
 msgid "Creating account..."
 msgstr "Creating account..."
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:82
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:79
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:95
 msgid "Current Password"
 msgstr "Current Password"
 
@@ -239,9 +232,8 @@ msgstr "Details"
 msgid "Didn't receive the code?"
 msgstr "Didn't receive the code?"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:78
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:77
-#: src/features/editor/menu/menu/profile/change-email/change-email.tsx:21
+#: src/features/auth/views/enter-email/enter-email-form.tsx:77
+#: src/features/editor/menu/menu/profile/views/profile.tsx:77
 msgid "Email"
 msgstr "Email"
 
@@ -253,9 +245,7 @@ msgstr "Email:"
 msgid "Enter address..."
 msgstr "Enter address..."
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:90
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:87
-#: src/shared/lib/hooks/use-validation.ts:62
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:103
 msgid "Enter current password"
 msgstr "Enter current password"
 
@@ -263,20 +253,16 @@ msgstr "Enter current password"
 msgid "Enter map title"
 msgstr "Enter map title"
 
-#: src/features/editor/menu/menu/profile-new/controller.tsx:32
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:88
-#: src/features/editor/menu/menu/profile/change-email/progress.tsx:16
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:80
-#: src/shared/lib/hooks/use-validation.ts:42
+#: src/features/editor/menu/menu/profile/controller.tsx:32
+#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:87
 msgid "Enter new email"
 msgstr "Enter new email"
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:118
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:112
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:131
 msgid "Enter new password"
 msgstr "Enter new password"
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:95
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:93
 msgid "Enter password"
 msgstr "Enter password"
 
@@ -288,16 +274,15 @@ msgstr "Enter passwords"
 msgid "Enter the 6-digit code we sent to the new email address."
 msgstr "Enter the 6-digit code we sent to the new email address."
 
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:104
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:119
+#: src/features/editor/menu/menu/profile/views/change-email/step-1.tsx:104
 msgid "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
 msgstr "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-2.tsx:126
+#: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:128
 msgid "Enter the 6-digit code we sent to your email address ({email}) to complete adding a password."
 msgstr "Enter the 6-digit code we sent to your email address ({email}) to complete adding a password."
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-2.tsx:125
+#: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:127
 msgid "Enter the 6-digit code we sent to your email address ({email}) to complete changing your password."
 msgstr "Enter the 6-digit code we sent to your email address ({email}) to complete changing your password."
 
@@ -305,7 +290,7 @@ msgstr "Enter the 6-digit code we sent to your email address ({email}) to comple
 msgid "Enter the 6-digit code we sent to your email address."
 msgstr "Enter the 6-digit code we sent to your email address."
 
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:124
+#: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:126
 msgid "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
 msgstr "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
 
@@ -321,8 +306,7 @@ msgstr "Enter URL"
 msgid "Enter username"
 msgstr "Enter username"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:86
-#: src/shared/lib/hooks/use-validation.ts:38
+#: src/features/auth/views/enter-email/enter-email-form.tsx:85
 msgid "Enter your email"
 msgstr "Enter your email"
 
@@ -368,7 +352,7 @@ msgstr "Invalid URL"
 msgid "Italic"
 msgstr "Italic"
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:81
+#: src/features/editor/menu/menu/profile/views/profile.tsx:81
 msgid "Joined on"
 msgstr "Joined on"
 
@@ -389,7 +373,7 @@ msgstr "Linked"
 msgid "Log out"
 msgstr "Log out"
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:63
+#: src/features/editor/menu/menu/profile/views/profile.tsx:63
 msgid "Logout"
 msgstr "Logout"
 
@@ -430,17 +414,15 @@ msgstr "Muted"
 msgid "New block"
 msgstr "New block"
 
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:80
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:72
+#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:79
 msgid "New Email"
 msgstr "New Email"
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:110
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:104
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:123
 msgid "New Password"
 msgstr "New Password"
 
-#: src/shared/lib/hooks/use-validation.ts:77
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:47
 msgid "New password must be different from old password"
 msgstr "New password must be different from old password"
 
@@ -448,15 +430,15 @@ msgstr "New password must be different from old password"
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:67
+#: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:69
 msgid "No email provided. Please go back and enter a new email."
 msgstr "No email provided. Please go back and enter a new email."
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-2.tsx:68
+#: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:70
 msgid "No password provided. Please go back and enter a new password."
 msgstr "No password provided. Please go back and enter a new password."
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-2.tsx:69
+#: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:71
 msgid "No password provided. Please go back and enter a password."
 msgstr "No password provided. Please go back and enter a password."
 
@@ -480,8 +462,8 @@ msgstr "Oops! Something went wrong."
 msgid "Page not found"
 msgstr "Page not found"
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:87
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:88
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:85
+#: src/features/editor/menu/menu/profile/views/profile.tsx:88
 msgid "Password"
 msgstr "Password"
 
@@ -501,32 +483,29 @@ msgstr "Password must contain at least one number"
 msgid "Password must contain at least one uppercase letter"
 msgstr "Password must contain at least one uppercase letter"
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:44
-#: src/shared/lib/hooks/use-validation.ts:73
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:42
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:43
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
 #: src/features/editor/menu/menu/index.tsx:121
-#: src/features/editor/menu/menu/profile-new/controller.tsx:24
-#: src/features/editor/menu/menu/profile/index.tsx:22
+#: src/features/editor/menu/menu/profile/controller.tsx:24
 msgid "Profile"
 msgstr "Profile"
 
 #: src/features/editor/menu/menu/index.tsx:118
-#: src/features/editor/menu/menu/project-settings/index.tsx:24
 msgid "Project settings"
 msgstr "Project settings"
 
-#: src/features/editor/menu/menu/profile-new/views/profile.tsx:109
+#: src/features/editor/menu/menu/profile/views/profile.tsx:109
 msgid "Protect profile with password"
 msgstr "Protect profile with password"
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:146
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:137
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:159
 msgid "Re-enter new password"
 msgstr "Re-enter new password"
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:123
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:121
 msgid "Re-enter password"
 msgstr "Re-enter password"
 
@@ -550,14 +529,12 @@ msgstr "Save QR image"
 msgid "Searching..."
 msgstr "Searching..."
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:151
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:174
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:106
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:162
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:149
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:187
 msgid "Sending code..."
 msgstr "Sending code..."
 
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:117
+#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:116
 msgid "Sending..."
 msgstr "Sending..."
 
@@ -577,7 +554,7 @@ msgstr "Share everything important on one beautiful page."
 msgid "Share my profile"
 msgstr "Share my profile"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:107
+#: src/features/auth/views/enter-email/enter-email-form.tsx:106
 msgid "Signing in..."
 msgstr "Signing in..."
 
@@ -606,7 +583,7 @@ msgstr "Text"
 msgid "Theme"
 msgstr "Theme"
 
-#: src/features/editor/text-editor/commands-list.tsx:151
+#: src/features/editor/text-editor/commands-list.tsx:154
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Tip: you can select fragment of text and apply additional styling to it."
 
@@ -686,15 +663,12 @@ msgstr "Verification code"
 msgid "Verification code must be 6 digits"
 msgstr "Verification code must be 6 digits"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:108
-#: src/features/auth/views/signup/verify-otp-screen.tsx:111
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-2.tsx:141
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:119
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:139
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-2.tsx:140
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:146
-#: src/features/editor/menu/menu/profile/change-password/progress.tsx:16
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:141
+#: src/features/auth/views/login/verify-otp-screen.tsx:107
+#: src/features/auth/views/signup/verify-otp-screen.tsx:110
+#: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:143
+#: src/features/editor/menu/menu/profile/views/change-email/step-1.tsx:119
+#: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:141
+#: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:142
 msgid "Verify code"
 msgstr "Verify code"
 
@@ -706,15 +680,12 @@ msgstr "Verify current email"
 msgid "Verify new email"
 msgstr "Verify new email"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:106
-#: src/features/auth/views/signup/verify-otp-screen.tsx:109
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-2.tsx:139
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-1.tsx:117
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-3.tsx:137
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-2.tsx:138
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:132
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:144
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:139
+#: src/features/auth/views/login/verify-otp-screen.tsx:105
+#: src/features/auth/views/signup/verify-otp-screen.tsx:108
+#: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:141
+#: src/features/editor/menu/menu/profile/views/change-email/step-1.tsx:117
+#: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:139
+#: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:140
 msgid "Verifying..."
 msgstr "Verifying..."
 
@@ -723,17 +694,15 @@ msgstr "Verifying..."
 msgid "We sent a one-time code to your email. Enter it below to continue."
 msgstr "We sent a one-time code to your email. Enter it below to continue."
 
-#: src/features/editor/menu/menu/profile-new/views/change-email/step-2.tsx:104
-#: src/features/editor/menu/menu/profile/change-email/step-1.tsx:93
+#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:103
 msgid "We'll send a verification code to the new email address to change your email."
 msgstr "We'll send a verification code to the new email address to change your email."
 
-#: src/features/editor/menu/menu/profile-new/views/add-password/step-1.tsx:138
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:136
 msgid "We'll send a verification code to your email address to add a password."
 msgstr "We'll send a verification code to your email address to add a password."
 
-#: src/features/editor/menu/menu/profile-new/views/change-password/step-1.tsx:161
-#: src/features/editor/menu/menu/profile/change-password/step-1.tsx:149
+#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:174
 msgid "We'll send a verification code to your email address to change your password."
 msgstr "We'll send a verification code to your email address to change your password."
 

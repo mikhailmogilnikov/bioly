@@ -29,17 +29,34 @@ components:
       properties:
         id:
           type: string
-          description: Уникальный идентификатор профиля
+          description: Уникальный идентификатор профиля (UUID или другой уникальный идентификатор)
+          pattern: "^[a-zA-Z0-9_-]+$"
+          minLength: 1
+          maxLength: 255
+          example: "550e8400-e29b-41d4-a716-446655440000"
         name:
           type: string
           description: Имя профиля
+          minLength: 0
+          maxLength: 100
+          example: "John Doe"
         slug:
           type: string
-          description: URL-слаг профиля
+          minLength: 3
+          maxLength: 30
+          pattern: "^[a-z0-9_-]+$"
+          description: |
+            URL-слаг профиля. Должен содержать только строчные латинские буквы,
+            цифры, дефисы и подчеркивания. Не может начинаться или заканчиваться
+            на дефис или подчеркивание. Должен быть уникальным.
+          example: "johndoe"
         email:
           type: string
           format: email
           description: Email пользователя
+          minLength: 1
+          maxLength: 255
+          example: "user@example.com"
         created_at:
           type: string
           format: date-time
@@ -48,29 +65,42 @@ components:
           type: string
           format: uri
           nullable: true
-          description: URL аватара профиля
+          description: URL аватара профиля. Должен быть валидным HTTP/HTTPS URL.
+          maxLength: 2048
+          example: "https://example.com/avatar.jpg"
         protected_by_password:
           type: boolean
           description: Защищен ли профиль паролем
         short_description:
           type: string
           description: Краткое описание профиля
+          minLength: 0
+          maxLength: 200
+          example: "Software developer and designer"
         description:
-          $ref: '#/components/schemas/JSONContent'
+          $ref: "#/components/schemas/JSONContent"
           nullable: true
           description: Полное описание профиля в формате TipTap JSON
         theme:
-          $ref: '#/components/schemas/ProfileTheme'
+          $ref: "#/components/schemas/ProfileTheme"
         social_media:
           type: array
           items:
-            $ref: '#/components/schemas/SocialMediaItem'
-          description: Список социальных сетей
+            $ref: "#/components/schemas/SocialMediaItem"
+          maxItems: 20
+          uniqueItems: true
+          description: |
+            Массив социальных сетей. Максимум 20 элементов.
+            Порядок (order) должен быть уникальным для каждого элемента.
         bento:
           type: array
           items:
-            $ref: '#/components/schemas/BentoBlock'
-          description: Список блоков Bento
+            $ref: "#/components/schemas/BentoBlock"
+          maxItems: 50
+          uniqueItems: true
+          description: |
+            Массив блоков Bento. Максимум 50 элементов.
+            ID и порядок (order) должны быть уникальными для каждого блока.
 
     ProfileMainEditableFields:
       type: object
@@ -87,11 +117,18 @@ components:
       properties:
         name:
           type: string
+          minLength: 0
+          maxLength: 100
         slug:
           type: string
+          minLength: 3
+          maxLength: 30
+          pattern: "^[a-z0-9_-]+$"
         email:
           type: string
           format: email
+          minLength: 1
+          maxLength: 255
         created_at:
           type: string
           format: date-time
@@ -99,23 +136,30 @@ components:
           type: string
           format: uri
           nullable: true
+          maxLength: 2048
         protected_by_password:
           type: boolean
         short_description:
           type: string
+          minLength: 0
+          maxLength: 200
         description:
-          $ref: '#/components/schemas/JSONContent'
+          $ref: "#/components/schemas/JSONContent"
           nullable: true
         theme:
-          $ref: '#/components/schemas/ProfileTheme'
+          $ref: "#/components/schemas/ProfileTheme"
         social_media:
           type: array
           items:
-            $ref: '#/components/schemas/SocialMediaItem'
+            $ref: "#/components/schemas/SocialMediaItem"
+          maxItems: 20
+          uniqueItems: true
         bento:
           type: array
           items:
-            $ref: '#/components/schemas/BentoBlock'
+            $ref: "#/components/schemas/BentoBlock"
+          maxItems: 50
+          uniqueItems: true
 
     ProfileTheme:
       type: object
@@ -127,20 +171,24 @@ components:
         - border_width
       properties:
         font:
-          $ref: '#/components/schemas/Font'
+          $ref: "#/components/schemas/Font"
         theme:
-          $ref: '#/components/schemas/Theme'
+          $ref: "#/components/schemas/Theme"
         show_avatar_blur:
           type: boolean
           description: Показывать ли размытие аватара
         border_radius:
           type: number
           minimum: 0
-          description: Радиус скругления границ
+          maximum: 42
+          description: Радиус скругления границ в пикселях
+          example: 24
         border_width:
           type: number
-          minimum: 0
-          description: Ширина границы
+          minimum: 1
+          maximum: 6
+          description: Ширина границы в пикселях
+          example: 1
 
     Font:
       type: string
@@ -193,14 +241,18 @@ components:
         - order
       properties:
         platform:
-          $ref: '#/components/schemas/SocialMediaPlatform'
+          $ref: "#/components/schemas/SocialMediaPlatform"
         slug:
           type: string
           description: Идентификатор пользователя на платформе
+          minLength: 1
+          maxLength: 100
+          example: "johndoe"
         order:
           type: integer
           minimum: 0
-          description: Порядок отображения
+          description: Порядок отображения. Должен быть уникальным в массиве social_media.
+          example: 0
 
     SocialMediaPlatform:
       type: string
@@ -232,17 +284,17 @@ components:
     # Bento Block schemas
     BentoBlock:
       oneOf:
-        - $ref: '#/components/schemas/BentoBlockGallery'
-        - $ref: '#/components/schemas/BentoBlockLink'
-        - $ref: '#/components/schemas/BentoBlockText'
-        - $ref: '#/components/schemas/BentoBlockMap'
+        - $ref: "#/components/schemas/BentoBlockGallery"
+        - $ref: "#/components/schemas/BentoBlockLink"
+        - $ref: "#/components/schemas/BentoBlockText"
+        - $ref: "#/components/schemas/BentoBlockMap"
       discriminator:
         propertyName: type
         mapping:
-          gallery: '#/components/schemas/BentoBlockGallery'
-          link: '#/components/schemas/BentoBlockLink'
-          text: '#/components/schemas/BentoBlockText'
-          map: '#/components/schemas/BentoBlockMap'
+          gallery: "#/components/schemas/BentoBlockGallery"
+          link: "#/components/schemas/BentoBlockLink"
+          text: "#/components/schemas/BentoBlockText"
+          map: "#/components/schemas/BentoBlockMap"
 
     BentoBlockBase:
       type: object
@@ -256,61 +308,65 @@ components:
       properties:
         id:
           type: string
-          description: Уникальный идентификатор блока
+          description: Уникальный идентификатор блока. Должен быть уникальным в массиве bento.
+          pattern: "^[a-zA-Z0-9_-]+$"
+          minLength: 1
+          maxLength: 255
         size:
-          $ref: '#/components/schemas/BentoBlockSize'
+          $ref: "#/components/schemas/BentoBlockSize"
         order:
           type: integer
           minimum: 0
-          description: Порядок отображения блока
+          description: Порядок отображения блока. Должен быть уникальным в массиве bento.
+          example: 0
         style:
-          $ref: '#/components/schemas/BentoBlockStyle'
+          $ref: "#/components/schemas/BentoBlockStyle"
         type:
-          $ref: '#/components/schemas/BentoBlockType'
+          $ref: "#/components/schemas/BentoBlockType"
 
     BentoBlockGallery:
       allOf:
-        - $ref: '#/components/schemas/BentoBlockBase'
+        - $ref: "#/components/schemas/BentoBlockBase"
         - type: object
           properties:
             type:
               type: string
               enum: [gallery]
             properties:
-              $ref: '#/components/schemas/BentoBlockPropertiesGallery'
+              $ref: "#/components/schemas/BentoBlockPropertiesGallery"
 
     BentoBlockLink:
       allOf:
-        - $ref: '#/components/schemas/BentoBlockBase'
+        - $ref: "#/components/schemas/BentoBlockBase"
         - type: object
           properties:
             type:
               type: string
               enum: [link]
             properties:
-              $ref: '#/components/schemas/BentoBlockPropertiesLink'
+              $ref: "#/components/schemas/BentoBlockPropertiesLink"
 
     BentoBlockText:
       allOf:
-        - $ref: '#/components/schemas/BentoBlockBase'
+        - $ref: "#/components/schemas/BentoBlockBase"
         - type: object
           properties:
             type:
               type: string
               enum: [text]
             properties:
-              $ref: '#/components/schemas/BentoBlockPropertiesText'
+              $ref: "#/components/schemas/BentoBlockPropertiesText"
 
     BentoBlockMap:
       allOf:
-        - $ref: '#/components/schemas/BentoBlockBase'
+        - $ref: "#/components/schemas/BentoBlockBase"
         - type: object
           properties:
             type:
               type: string
               enum: [map]
             properties:
-              $ref: '#/components/schemas/BentoBlockPropertiesMap'
+              $ref: "#/components/schemas/BentoBlockPropertiesMap"
 
     BentoBlockSize:
       type: string
@@ -351,7 +407,14 @@ components:
           items:
             type: string
             format: uri
+            maxLength: 2048
           description: Массив URL изображений для галереи
+          minItems: 1
+          maxItems: 10
+          uniqueItems: true
+          example:
+            - "https://example.com/image1.jpg"
+            - "https://example.com/image2.jpg"
 
     BentoBlockPropertiesLink:
       type: object
@@ -363,13 +426,18 @@ components:
         url:
           type: string
           format: uri
-          description: URL ссылки
+          description: URL ссылки. Должен быть валидным HTTP/HTTPS URL.
+          maxLength: 2048
+          example: "https://example.com"
         title:
           type: string
           description: Заголовок ссылки
+          minLength: 0
+          maxLength: 200
+          example: "My Website"
         url_valid:
           type: boolean
-          description: Валидна ли ссылка
+          description: Валидна ли ссылка (проверяется на сервере)
 
     BentoBlockPropertiesText:
       type: object
@@ -377,9 +445,11 @@ components:
         - content
       properties:
         content:
-          $ref: '#/components/schemas/JSONContent'
+          $ref: "#/components/schemas/JSONContent"
           nullable: true
-          description: Содержимое текстового блока в формате TipTap JSON
+          description: |
+            Содержимое текстового блока в формате TipTap JSON.
+            Максимальный размер JSON: 50KB (50,000 символов в сериализованном виде).
 
     BentoBlockPropertiesMap:
       type: object
@@ -394,35 +464,42 @@ components:
         - longitude
       properties:
         theme:
-          $ref: '#/components/schemas/BentoBlockMapThemesOptions'
+          $ref: "#/components/schemas/BentoBlockMapThemesOptions"
         labels:
           type: boolean
           description: Показывать ли подписи на карте
         interactions:
           type: boolean
-          description: Разрешены ли взаимодействия с картой
+          description: Разрешены ли взаимодействия с картой (зум, перетаскивание)
         zoom:
           type: number
           minimum: 0
-          maximum: 20
-          description: Уровень масштабирования карты
+          maximum: 22
+          default: 11
+          description: Уровень масштабирования карты (0 - минимальный, 22 - максимальный)
+          example: 11
         title:
           type: string
           description: Заголовок карты
+          minLength: 0
+          maxLength: 200
+          example: "My Location"
         titleAlign:
-          $ref: '#/components/schemas/BentoBlockMapTitleAlign'
+          $ref: "#/components/schemas/BentoBlockMapTitleAlign"
         latitude:
           type: number
           format: float
           minimum: -90
           maximum: 90
-          description: Широта центра карты
+          description: Широта центра карты в градусах (WGS84)
+          example: 55.7558
         longitude:
           type: number
           format: float
           minimum: -180
           maximum: 180
-          description: Долгота центра карты
+          description: Долгота центра карты в градусах (WGS84)
+          example: 37.6173
 
     BentoBlockMapThemesOptions:
       type: string
@@ -447,7 +524,12 @@ components:
     # TipTap JSON Content schema
     JSONContent:
       type: object
-      description: Структурированный JSON контент из TipTap редактора
+      x-tags:
+        - Profile
+        - Bento
+      description: |
+        Структурированный JSON контент из TipTap редактора.
+        Максимальный размер JSON: 50KB (50,000 символов в сериализованном виде).
       properties:
         type:
           type: string
@@ -459,7 +541,7 @@ components:
         content:
           type: array
           items:
-            $ref: '#/components/schemas/JSONContent'
+            $ref: "#/components/schemas/JSONContent"
           description: Вложенное содержимое узла
         text:
           type: string
@@ -470,3 +552,492 @@ components:
             type: object
           description: Маркировки текста (жирный, курсив и т.д.)
       additionalProperties: true
+
+    # Authentication schemas
+    LoginRequest:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email пользователя для входа
+          example: user@example.com
+
+    LoginVerifyOtpRequest:
+      type: object
+      required:
+        - email
+        - otp
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email пользователя
+          example: user@example.com
+        otp:
+          type: string
+          pattern: "^[0-9]{6}$"
+          description: Код подтверждения из 6 цифр
+          example: "123456"
+
+    LoginResponse:
+      type: object
+      required:
+        - access_token
+        - user
+      properties:
+        access_token:
+          type: string
+          description: JWT токен доступа
+        user:
+          $ref: "#/components/schemas/Profile"
+      description: |
+        Refresh token устанавливается в HTTP-only cookie с именем `refresh_token`.
+        Cookie имеет флаги HttpOnly, Secure и SameSite=Strict для безопасности.
+
+    SignupRequest:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email пользователя для регистрации
+          example: user@example.com
+
+    SignupEnterSlugRequest:
+      type: object
+      required:
+        - email
+        - slug
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email пользователя
+          example: user@example.com
+        slug:
+          type: string
+          minLength: 3
+          maxLength: 30
+          pattern: "^[a-z0-9_-]+$"
+          description: |
+            URL-слаг профиля. Должен содержать только строчные латинские буквы,
+            цифры, дефисы и подчеркивания. Не может начинаться или заканчиваться
+            на дефис или подчеркивание.
+          example: username
+
+    SignupVerifyOtpRequest:
+      type: object
+      required:
+        - email
+        - slug
+        - otp
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email пользователя
+          example: user@example.com
+        slug:
+          type: string
+          minLength: 3
+          maxLength: 30
+          pattern: "^[a-z0-9_-]+$"
+          description: URL-слаг профиля
+          example: username
+        otp:
+          type: string
+          pattern: "^[0-9]{6}$"
+          description: Код подтверждения из 6 цифр
+          example: "123456"
+
+    SignupResponse:
+      type: object
+      required:
+        - access_token
+      properties:
+        access_token:
+          type: string
+          description: JWT токен доступа
+      description: |
+        Refresh token устанавливается в HTTP-only cookie с именем `refresh_token`.
+        Cookie имеет флаги HttpOnly, Secure и SameSite=Strict для безопасности.
+
+    SendOtpRequest:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email для отправки кода подтверждения
+          example: user@example.com
+
+    SendOtpResponse:
+      type: object
+      required:
+        - success
+        - expires_at
+      properties:
+        success:
+          type: boolean
+          description: Успешно ли отправлен код
+        expires_at:
+          type: string
+          format: date-time
+          description: Время истечения кода подтверждения
+
+    ChangePasswordRequest:
+      type: object
+      required:
+        - old_password
+        - new_password
+        - confirm_password
+      properties:
+        old_password:
+          type: string
+          minLength: 1
+          description: Текущий пароль пользователя
+        new_password:
+          type: string
+          minLength: 8
+          pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+$"
+          description: |
+            Новый пароль. Должен содержать минимум 8 символов,
+            минимум одну заглавную букву, одну строчную букву и одну цифру.
+            Новый пароль должен отличаться от старого пароля.
+        confirm_password:
+          type: string
+          minLength: 1
+          description: Подтверждение нового пароля (должно совпадать с new_password)
+
+    ChangePasswordVerifyOtpRequest:
+      type: object
+      required:
+        - email
+        - otp
+        - new_password
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email пользователя
+          example: user@example.com
+        otp:
+          type: string
+          pattern: "^[0-9]{6}$"
+          description: Код подтверждения из 6 цифр
+          example: "123456"
+        new_password:
+          type: string
+          minLength: 8
+          pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+$"
+          description: Новый пароль
+
+    ChangePasswordResponse:
+      type: object
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          description: Успешно ли изменен пароль
+
+    AddPasswordRequest:
+      type: object
+      required:
+        - new_password
+        - confirm_password
+      properties:
+        new_password:
+          type: string
+          minLength: 8
+          pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+$"
+          description: |
+            Новый пароль. Должен содержать минимум 8 символов,
+            минимум одну заглавную букву, одну строчную букву и одну цифру.
+        confirm_password:
+          type: string
+          minLength: 1
+          description: Подтверждение нового пароля (должно совпадать с new_password)
+
+    AddPasswordVerifyOtpRequest:
+      type: object
+      required:
+        - email
+        - otp
+        - new_password
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email пользователя
+          example: user@example.com
+        otp:
+          type: string
+          pattern: "^[0-9]{6}$"
+          description: Код подтверждения из 6 цифр
+          example: "123456"
+        new_password:
+          type: string
+          minLength: 8
+          pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+$"
+          description: Новый пароль
+
+    AddPasswordResponse:
+      type: object
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          description: Успешно ли добавлен пароль
+
+    # Change Email schemas
+    ChangeEmailRequest:
+      type: object
+      required:
+        - new_email
+      properties:
+        new_email:
+          type: string
+          format: email
+          description: Новый email адрес
+          example: newemail@example.com
+
+    ChangeEmailVerifyOtpRequest:
+      type: object
+      required:
+        - new_email
+        - otp
+      properties:
+        new_email:
+          type: string
+          format: email
+          description: Новый email адрес
+          example: newemail@example.com
+        otp:
+          type: string
+          pattern: "^[0-9]{6}$"
+          description: Код подтверждения из 6 цифр, отправленный на новый email
+          example: "123456"
+
+    ChangeEmailResponse:
+      type: object
+      required:
+        - success
+        - email
+      properties:
+        success:
+          type: boolean
+          description: Успешно ли изменен email
+        email:
+          type: string
+          format: email
+          description: Новый email адрес
+          example: newemail@example.com
+
+    # Change Slug schemas
+    ChangeSlugRequest:
+      type: object
+      required:
+        - slug
+      properties:
+        slug:
+          type: string
+          minLength: 3
+          maxLength: 30
+          pattern: "^[a-z0-9_-]+$"
+          description: |
+            Новый URL-слаг профиля. Должен содержать только строчные латинские буквы,
+            цифры, дефисы и подчеркивания. Не может начинаться или заканчиваться
+            на дефис или подчеркивание. Можно изменить только раз в 7 дней.
+          example: newusername
+
+    ChangeSlugResponse:
+      type: object
+      required:
+        - success
+        - slug
+      properties:
+        success:
+          type: boolean
+          description: Успешно ли изменен slug
+        slug:
+          type: string
+          description: Новый slug профиля
+          example: newusername
+
+    CheckSlugAvailabilityRequest:
+      type: object
+      required:
+        - slug
+      properties:
+        slug:
+          type: string
+          minLength: 3
+          maxLength: 30
+          pattern: "^[a-z0-9_-]+$"
+          description: URL-слаг для проверки доступности
+          example: username
+
+    CheckSlugAvailabilityResponse:
+      type: object
+      required:
+        - available
+      properties:
+        available:
+          type: boolean
+          description: Доступен ли slug для использования
+        message:
+          type: string
+          nullable: true
+          description: Сообщение о причине недоступности (если available = false)
+          example: "This username is already taken"
+
+    # Public Profile schema
+    PublicProfile:
+      type: object
+      required:
+        - id
+        - name
+        - slug
+        - avatar_url
+        - short_description
+        - description
+        - theme
+        - social_media
+        - bento
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор профиля
+          pattern: "^[a-zA-Z0-9_-]+$"
+          minLength: 1
+          maxLength: 255
+        name:
+          type: string
+          description: Имя профиля
+          minLength: 0
+          maxLength: 100
+        slug:
+          type: string
+          description: URL-слаг профиля
+          minLength: 3
+          maxLength: 30
+          pattern: "^[a-z0-9_-]+$"
+        avatar_url:
+          type: string
+          format: uri
+          nullable: true
+          description: URL аватара профиля
+          maxLength: 2048
+        short_description:
+          type: string
+          description: Краткое описание профиля
+          minLength: 0
+          maxLength: 200
+        description:
+          $ref: "#/components/schemas/JSONContent"
+          nullable: true
+          description: Полное описание профиля в формате TipTap JSON
+        theme:
+          $ref: "#/components/schemas/ProfileTheme"
+        social_media:
+          type: array
+          items:
+            $ref: "#/components/schemas/SocialMediaItem"
+          maxItems: 20
+          uniqueItems: true
+          description: |
+            Массив социальных сетей. Максимум 20 элементов.
+            Порядок (order) должен быть уникальным для каждого элемента.
+        bento:
+          type: array
+          items:
+            $ref: "#/components/schemas/BentoBlock"
+          maxItems: 50
+          uniqueItems: true
+          description: |
+            Массив блоков Bento. Максимум 50 элементов.
+            ID и порядок (order) должны быть уникальными для каждого блока.
+
+    GetProfileBySlugRequest:
+      type: object
+      required:
+        - slug
+      properties:
+        slug:
+          type: string
+          description: URL-слаг профиля для получения публичных данных
+          example: username
+
+    GetProfileBySlugResponse:
+      $ref: "#/components/schemas/PublicProfile"
+
+    # Refresh Token schemas
+    RefreshTokenRequest:
+      type: object
+      description: |
+        Refresh token должен быть передан в HTTP-only cookie с именем `refresh_token`.
+        Тело запроса может быть пустым, так как токен читается из cookie.
+      properties: {}
+
+    RefreshTokenResponse:
+      type: object
+      required:
+        - access_token
+      properties:
+        access_token:
+          type: string
+          description: Новый JWT токен доступа
+      description: |
+        Новый refresh token устанавливается в HTTP-only cookie с именем `refresh_token`.
+        Cookie имеет флаги HttpOnly, Secure и SameSite=Strict для безопасности.
+
+    # Logout schemas
+    LogoutRequest:
+      type: object
+      description: |
+        Refresh token для инвалидации читается из HTTP-only cookie с именем `refresh_token`.
+        Тело запроса может быть пустым, так как токен читается из cookie.
+        Сервер инвалидирует refresh token из cookie и все связанные токены пользователя.
+      properties: {}
+
+    LogoutResponse:
+      type: object
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          description: Успешно ли выполнен выход из системы
+        message:
+          type: string
+          nullable: true
+          description: Сообщение о результате операции
+          example: "Successfully logged out"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - message
+      properties:
+        error:
+          type: string
+          description: Код ошибки
+          example: "VALIDATION_ERROR"
+        message:
+          type: string
+          description: Сообщение об ошибке
+          example: "Invalid email address"
+        details:
+          type: object
+          additionalProperties: true
+          description: Дополнительные детали ошибки

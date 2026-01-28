@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans } from "@lingui/react/macro";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import type { components } from "@/shared/api/schema/generated";
 import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { CONFIG } from "@/shared/model/config";
 import { Button } from "@/shared/ui/kit/primitives/button";
@@ -11,9 +12,10 @@ import { FieldError } from "@/shared/ui/kit/primitives/field";
 import { BackButton } from "../../back-button";
 import { useAuthContext } from "../../model/provider";
 
-interface SlugFormData {
-  slug: string;
-}
+type SlugFormData = Pick<
+  components["schemas"]["SignupEnterSlugRequest"],
+  "slug"
+>;
 
 export function EnterSlugScreen() {
   const { navigateToScreen } = useAuthContext();

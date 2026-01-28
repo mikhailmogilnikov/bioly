@@ -6,6 +6,7 @@ import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 import { ResendOtpButton } from "@/features/auth/views/login/resend";
 import { useProfile } from "@/features/editor/profile/use-profile";
+import type { components } from "@/shared/api/schema/generated";
 import { useValidationSchemas } from "@/shared/lib/hooks/use-validation";
 import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
 import { AdaptiveModalContent } from "@/shared/ui/kit/overlays/adaptive-modal";
@@ -20,9 +21,10 @@ import { InputOTP, InputOTPSlot } from "@/shared/ui/kit/primitives/input-otp";
 import type { ProfileNewViews } from "../..";
 import { useProfileStore } from "../../use-profile-store";
 
-interface OTPFormData {
-  otp: string;
-}
+type OTPFormData = Pick<
+  components["schemas"]["ChangeEmailVerifyOtpRequest"],
+  "otp"
+>;
 
 export function ChangeEmailStep3() {
   const { clearAndPush } = useModalViews<ProfileNewViews>();
