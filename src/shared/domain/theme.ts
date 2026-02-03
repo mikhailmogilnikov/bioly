@@ -1,4 +1,6 @@
-export const FONTS = {
+import type { components } from "../api/schema/generated";
+
+export const FONTS: Record<string, components["schemas"]["Font"]> = {
   OPEN_RUNDE: "open-runde",
   INTER: "inter",
   GILROY: "gilroy",
@@ -10,17 +12,17 @@ export const FONTS = {
 } as const;
 
 export const FONT_CLASSNAMES: Record<Font, string> = {
-  [FONTS.OPEN_RUNDE]: "font-open-runde",
-  [FONTS.INTER]: "font-inter",
-  [FONTS.GILROY]: "font-gilroy",
-  [FONTS.VOLKORN]: "font-vollkorn",
-  [FONTS.JETBRAINS_MONO]: "font-jetbrains-mono",
-  [FONTS.MONTSERRAT]: "font-montserrat",
-  [FONTS.OSWALD]: "font-oswald",
-  [FONTS.CAVEAT]: "font-caveat",
+  "open-runde": "font-open-runde",
+  inter: "font-inter",
+  gilroy: "font-gilroy",
+  vollkorn: "font-vollkorn",
+  "jetbrains-mono": "font-jetbrains-mono",
+  montserrat: "font-montserrat",
+  oswald: "font-oswald",
+  caveat: "font-caveat",
 } as const;
 
-export const THEMES = {
+export const THEMES: Record<string, components["schemas"]["Theme"]> = {
   LIGHT: "light",
   DARK: "dark",
 
@@ -51,96 +53,90 @@ export const THEMES = {
 } as const;
 
 export const LIGHT_THEMES: Theme[] = [
-  THEMES.LIGHT,
-  THEMES.GREEN,
-  THEMES.PINK,
-  THEMES.BLUE,
-  THEMES.PURPLE,
-  THEMES.GOLDEN,
-  THEMES.TEAL,
-  THEMES.CORAL,
-  THEMES.LAVENDER,
-  THEMES.SAND,
-  THEMES.MINT,
-  THEMES.SKY,
-  THEMES.ICE,
-  THEMES.PEACH,
+  "light",
+  "green",
+  "pink",
+  "blue",
+  "purple",
+  "golden",
+  "teal",
+  "coral",
+  "lavender",
+  "sand",
+  "mint",
+  "sky",
+  "ice",
+  "peach",
 ] as const;
 
 export const DARK_THEMES: Theme[] = [
-  THEMES.DARK,
-  THEMES.DARK_BLUE,
-  THEMES.DARK_SLATE,
-  THEMES.DARK_FOREST,
-  THEMES.DARK_PLUM,
-  THEMES.DARK_AMBER,
-  THEMES.DARK_INK,
-  THEMES.DARK_COPPER,
-  THEMES.DARK_OLIVE,
-  THEMES.DARK_INDIGO,
+  "dark",
+  "dark-blue",
+  "dark-slate",
+  "dark-forest",
+  "dark-plum",
+  "dark-amber",
+  "dark-ink",
+  "dark-copper",
+  "dark-olive",
+  "dark-indigo",
 ] as const;
 
 export const ThemesNames: Record<Theme, string> = {
-  [THEMES.LIGHT]: "Light",
-  [THEMES.DARK]: "Dark",
-  [THEMES.GREEN]: "Green",
-  [THEMES.PINK]: "Pink",
-  [THEMES.BLUE]: "Blue",
-  [THEMES.PURPLE]: "Purple",
-  [THEMES.GOLDEN]: "Golden",
-  [THEMES.DARK_BLUE]: "Dark Blue",
-  [THEMES.DARK_SLATE]: "Dark Slate",
-  [THEMES.DARK_FOREST]: "Dark Forest",
-  [THEMES.DARK_PLUM]: "Dark Plum",
-  [THEMES.DARK_AMBER]: "Dark Amber",
-  [THEMES.DARK_INK]: "Dark Ink",
-  [THEMES.DARK_COPPER]: "Dark Copper",
-  [THEMES.DARK_OLIVE]: "Dark Olive",
-  [THEMES.DARK_INDIGO]: "Dark Indigo",
-  [THEMES.TEAL]: "Teal",
-  [THEMES.CORAL]: "Coral",
-  [THEMES.LAVENDER]: "Lavender",
-  [THEMES.SAND]: "Sand",
-  [THEMES.MINT]: "Mint",
-  [THEMES.SKY]: "Sky",
-  [THEMES.ICE]: "Ice",
-  [THEMES.PEACH]: "Peach",
+  light: "Light",
+  dark: "Dark",
+  green: "Green",
+  pink: "Pink",
+  blue: "Blue",
+  purple: "Purple",
+  golden: "Golden",
+  "dark-blue": "Dark Blue",
+  "dark-slate": "Dark Slate",
+  "dark-forest": "Dark Forest",
+  "dark-plum": "Dark Plum",
+  "dark-amber": "Dark Amber",
+  "dark-ink": "Dark Ink",
+  "dark-copper": "Dark Copper",
+  "dark-olive": "Dark Olive",
+  "dark-indigo": "Dark Indigo",
+  teal: "Teal",
+  coral: "Coral",
+  lavender: "Lavender",
+  sand: "Sand",
+  mint: "Mint",
+  sky: "Sky",
+  ice: "Ice",
+  peach: "Peach",
 } as const;
 
 export const THEME_CLASSNAMES: Record<Theme, string> = {
-  [THEMES.LIGHT]: "theme-light",
-  [THEMES.DARK]: "theme-dark",
-  [THEMES.GREEN]: "theme-green",
-  [THEMES.PINK]: "theme-pink",
-  [THEMES.BLUE]: "theme-blue",
-  [THEMES.PURPLE]: "theme-purple",
-  [THEMES.GOLDEN]: "theme-golden",
-  [THEMES.DARK_BLUE]: "theme-dark-blue",
-  [THEMES.DARK_SLATE]: "theme-dark-slate",
-  [THEMES.DARK_FOREST]: "theme-dark-forest",
-  [THEMES.DARK_PLUM]: "theme-dark-plum",
-  [THEMES.DARK_AMBER]: "theme-dark-amber",
-  [THEMES.DARK_INK]: "theme-dark-ink",
-  [THEMES.DARK_COPPER]: "theme-dark-copper",
-  [THEMES.DARK_OLIVE]: "theme-dark-olive",
-  [THEMES.DARK_INDIGO]: "theme-dark-indigo",
-  [THEMES.TEAL]: "theme-teal",
-  [THEMES.CORAL]: "theme-coral",
-  [THEMES.LAVENDER]: "theme-lavender",
-  [THEMES.SAND]: "theme-sand",
-  [THEMES.MINT]: "theme-mint",
-  [THEMES.SKY]: "theme-sky",
-  [THEMES.ICE]: "theme-ice",
-  [THEMES.PEACH]: "theme-peach",
+  light: "theme-light",
+  dark: "theme-dark",
+  green: "theme-green",
+  pink: "theme-pink",
+  blue: "theme-blue",
+  purple: "theme-purple",
+  golden: "theme-golden",
+  "dark-blue": "theme-dark-blue",
+  "dark-slate": "theme-dark-slate",
+  lavender: "theme-lavender",
+  sand: "theme-sand",
+  mint: "theme-mint",
+  sky: "theme-sky",
+  ice: "theme-ice",
+  peach: "theme-peach",
+  "dark-forest": "theme-dark-forest",
+  "dark-plum": "theme-dark-plum",
+  "dark-amber": "theme-dark-amber",
+  "dark-ink": "theme-dark-ink",
+  "dark-copper": "theme-dark-copper",
+  "dark-olive": "theme-dark-olive",
+  "dark-indigo": "theme-dark-indigo",
+  teal: "theme-teal",
+  coral: "theme-coral",
 } as const;
 
-export type Font = (typeof FONTS)[keyof typeof FONTS];
-export type Theme = (typeof THEMES)[keyof typeof THEMES];
+export type Font = components["schemas"]["Font"];
+export type Theme = components["schemas"]["Theme"];
 
-export interface ThemeSettings {
-  font: Font;
-  theme: Theme;
-  show_avatar_blur: boolean;
-  border_radius: number;
-  border_width: number;
-}
+export type ThemeSettings = components["schemas"]["ProfileTheme"];

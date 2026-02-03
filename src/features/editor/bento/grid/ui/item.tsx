@@ -36,7 +36,7 @@ export function BentoGridItem({ id }: BentoGridItemProps) {
 
   const itemSize = bentoItem?.size;
 
-  useRefresh([bentoItem?.size]);
+  useRefresh([itemSize]);
 
   const transitionStyle = useMemo(() => {
     if (!(gridSize && itemSize)) return;

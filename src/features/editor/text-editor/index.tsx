@@ -20,7 +20,7 @@ export function BasicTextEditor({
 } & UseEditorOptions) {
   const editor = useEditor({
     extensions: getBasicTextEditorExtensions({ placeholder, isStatic }),
-    content: "",
+    content: content ?? "",
     immediatelyRender: false,
     ...options,
   });

@@ -17,7 +17,8 @@
       "!src/shared/ui/animated-icons/**/*",
       "!public/**/*",
       "!src/shared/ui/utils/spoiler/spoiler-init.js",
-      "!src/shared/api/schema/generated.ts"
+      "!src/shared/api/schema/generated.ts",
+      "!scripts/**/*"
     ]
   }
 }
