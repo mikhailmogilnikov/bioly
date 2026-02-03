@@ -12,19 +12,21 @@ export function BentoBlockMapTitle() {
     (state) => state.updateBentoBlockField
   );
 
-  const [localTitle, setLocalTitle] = useState(block?.properties.title ?? "");
+  const [localTitle, setLocalTitle] = useState(block?.properties?.title ?? "");
 
   useEffect(() => {
-    if (block?.properties.title !== undefined) {
-      setLocalTitle(block.properties.title);
+    if (block?.properties?.title !== undefined) {
+      setLocalTitle(block.properties?.title);
     }
-  }, [block?.properties.title]);
+  }, [block?.properties?.title]);
 
   if (!block) return null;
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newTitle = e.target.value;
     setLocalTitle(newTitle);
+
+    if (typeof block.properties?.title !== "string") return;
 
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,

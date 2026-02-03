@@ -3,7 +3,7 @@ import type { ChangeEvent } from "react";
 import { useBlockContext } from "@/features/editor/bento/grid/ui/block-context";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { SectionTitle } from "@/shared/ui/kit/section-title";
-import type { BentoBlock, BentoBlockType } from "../../../model/types";
+import type { BentoBlock } from "../../../model/types";
 
 export function BentoBlockLinkSettingEnterTitle() {
   const { block } = useBlockContext();
@@ -12,7 +12,7 @@ export function BentoBlockLinkSettingEnterTitle() {
     (state) => state.updateBentoBlockField
   );
 
-  const linkBlock = block as BentoBlock<typeof BentoBlockType.LINK>;
+  const linkBlock = block as BentoBlock<"link">;
 
   if (!linkBlock) return null;
 
@@ -20,11 +20,14 @@ export function BentoBlockLinkSettingEnterTitle() {
     e.preventDefault();
     const title = e.target.value;
 
+    if (typeof linkBlock.properties?.title !== "string") return;
+
     updateBentoBlockField(linkBlock.id, "properties", {
       ...linkBlock.properties,
       title,
     });
   };
+
   return (
     <SectionTitle className="gap-1" title={t`Title`}>
       <input
@@ -32,7 +35,7 @@ export function BentoBlockLinkSettingEnterTitle() {
         onChange={handleTitleChange}
         placeholder={t`Enter Title`}
         type="text"
-        value={linkBlock.properties.title}
+        value={linkBlock.properties?.title ?? ""}
       />
     </SectionTitle>
   );

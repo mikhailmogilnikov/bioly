@@ -13,7 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: action.label
 #: src/features/editor/menu/menu/profile/views/profile.tsx:132
 msgid "{0}"
 msgstr "{0}"
@@ -38,7 +37,7 @@ msgstr "Действия"
 msgid "Active"
 msgstr "Активен"
 
-#: src/features/editor/menu/new-item/index.tsx:99
+#: src/features/editor/menu/new-item/index.tsx:98
 msgid "Add a new block"
 msgstr "Добавить новый блок"
 
@@ -59,15 +58,15 @@ msgstr "Добавить пароль"
 msgid "Add social media"
 msgstr "Добавить социальную сеть"
 
-#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:49
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:51
 msgid "Address not found"
 msgstr "Адрес не найден"
 
-#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:42
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:44
 msgid "Address picker"
 msgstr "Выбор адреса"
 
-#: src/features/editor/bento/blocks/variants/map/options/interactions.tsx:26
+#: src/features/editor/bento/blocks/variants/map/options/interactions.tsx:28
 msgid "Allow map interaction"
 msgstr "Разрешить взаимодействие с картой"
 
@@ -241,7 +240,7 @@ msgstr "Email"
 msgid "Email:"
 msgstr "Email:"
 
-#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:52
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:54
 msgid "Enter address..."
 msgstr "Введите адрес..."
 
@@ -249,7 +248,7 @@ msgstr "Введите адрес..."
 msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
-#: src/features/editor/bento/blocks/variants/map/options/title.tsx:40
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:42
 msgid "Enter map title"
 msgstr "Введите заголовок карты"
 
@@ -294,11 +293,11 @@ msgstr "Введите 6-значный код, который мы отправ
 msgid "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
 msgstr "Введите 6-значный код, который мы отправили на ваш новый email адрес ({newEmail}) для завершения изменения email."
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:33
+#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:36
 msgid "Enter Title"
 msgstr "Введите заголовок"
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:53
+#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:55
 msgid "Enter URL"
 msgstr "Введите URL"
 
@@ -360,8 +359,7 @@ msgstr "Присоединился"
 msgid "Last update:"
 msgstr "Последнее обновление:"
 
-#: src/features/editor/menu/new-item/index.tsx:143
-#: src/features/editor/text-editor/formatting-menu.tsx:120
+#: src/features/editor/menu/new-item/index.tsx:142
 msgid "Link"
 msgstr "Ссылка"
 
@@ -377,27 +375,27 @@ msgstr "Выйти"
 msgid "Logout"
 msgstr "Выйти"
 
-#: src/features/editor/menu/new-item/index.tsx:151
+#: src/features/editor/menu/new-item/index.tsx:150
 msgid "Map"
 msgstr "Карта"
 
-#: src/features/editor/bento/blocks/variants/map/options/labels.tsx:26
+#: src/features/editor/bento/blocks/variants/map/options/labels.tsx:28
 msgid "Map labels"
 msgstr "Подписи на карте"
 
-#: src/features/editor/bento/blocks/variants/map/options/theme.tsx:30
+#: src/features/editor/bento/blocks/variants/map/options/theme.tsx:32
 msgid "Map theme"
 msgstr "Тема карты"
 
-#: src/features/editor/bento/blocks/variants/map/options/title.tsx:36
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:38
 msgid "Map title"
 msgstr "Заголовок карты"
 
-#: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:30
+#: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:32
 msgid "Map zoom"
 msgstr "Масштаб карты"
 
-#: src/features/editor/menu/new-item/index.tsx:123
+#: src/features/editor/menu/new-item/index.tsx:122
 msgid "Media gallery"
 msgstr "Медиа галерея"
 
@@ -410,7 +408,7 @@ msgstr "Меню"
 msgid "Muted"
 msgstr "Приглушенный"
 
-#: src/features/editor/menu/new-item/index.tsx:106
+#: src/features/editor/menu/new-item/index.tsx:105
 msgid "New block"
 msgstr "Новый блок"
 
@@ -525,7 +523,7 @@ msgstr "Отправить повторно через {duration}"
 msgid "Save QR image"
 msgstr "Сохранить QR изображение"
 
-#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:50
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:52
 msgid "Searching..."
 msgstr "Поиск..."
 
@@ -574,7 +572,7 @@ msgstr "Зачеркнутый"
 msgid "Synchronization status"
 msgstr "Статус синхронизации"
 
-#: src/features/editor/menu/new-item/index.tsx:135
+#: src/features/editor/menu/new-item/index.tsx:134
 msgid "Text"
 msgstr "Текст"
 
@@ -587,11 +585,11 @@ msgstr "Тема"
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Совет: вы можете выделить фрагмент текста и применить к нему дополнительное форматирование."
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:29
+#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:32
 msgid "Title"
 msgstr "Заголовок"
 
-#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:44
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:46
 msgid "Title position"
 msgstr "Позиция заголовка"
 

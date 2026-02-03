@@ -13,9 +13,11 @@ export function BentoBlockMapZoom({ className }: { className?: string }) {
 
   if (!block) return null;
 
-  const { zoom } = block.properties;
+  const { zoom } = block.properties ?? {};
 
   const handleZoomChange = (zoom: number[]) => {
+    if (typeof block.properties?.zoom !== "number") return;
+
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
       zoom: zoom[0] ?? 0,
@@ -34,7 +36,7 @@ export function BentoBlockMapZoom({ className }: { className?: string }) {
         min={0}
         onValueChange={handleZoomChange}
         step={1}
-        value={[zoom]}
+        value={[zoom ?? 0]}
       />
     </SectionTitle>
   );

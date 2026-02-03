@@ -13,7 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: action.label
 #: src/features/editor/menu/menu/profile/views/profile.tsx:132
 msgid "{0}"
 msgstr "{0}"
@@ -38,7 +37,7 @@ msgstr "Actions"
 msgid "Active"
 msgstr "Active"
 
-#: src/features/editor/menu/new-item/index.tsx:99
+#: src/features/editor/menu/new-item/index.tsx:98
 msgid "Add a new block"
 msgstr "Add a new block"
 
@@ -59,15 +58,15 @@ msgstr "Add Password"
 msgid "Add social media"
 msgstr "Add social media"
 
-#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:49
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:51
 msgid "Address not found"
 msgstr "Address not found"
 
-#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:42
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:44
 msgid "Address picker"
 msgstr "Address picker"
 
-#: src/features/editor/bento/blocks/variants/map/options/interactions.tsx:26
+#: src/features/editor/bento/blocks/variants/map/options/interactions.tsx:28
 msgid "Allow map interaction"
 msgstr "Allow map interaction"
 
@@ -241,7 +240,7 @@ msgstr "Email"
 msgid "Email:"
 msgstr "Email:"
 
-#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:52
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:54
 msgid "Enter address..."
 msgstr "Enter address..."
 
@@ -249,7 +248,7 @@ msgstr "Enter address..."
 msgid "Enter current password"
 msgstr "Enter current password"
 
-#: src/features/editor/bento/blocks/variants/map/options/title.tsx:40
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:42
 msgid "Enter map title"
 msgstr "Enter map title"
 
@@ -294,11 +293,11 @@ msgstr "Enter the 6-digit code we sent to your email address."
 msgid "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
 msgstr "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:33
+#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:36
 msgid "Enter Title"
 msgstr "Enter Title"
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:53
+#: src/features/editor/bento/blocks/variants/link/options/enter-url.tsx:55
 msgid "Enter URL"
 msgstr "Enter URL"
 
@@ -360,8 +359,7 @@ msgstr "Joined on"
 msgid "Last update:"
 msgstr "Last update:"
 
-#: src/features/editor/menu/new-item/index.tsx:143
-#: src/features/editor/text-editor/formatting-menu.tsx:120
+#: src/features/editor/menu/new-item/index.tsx:142
 msgid "Link"
 msgstr "Link"
 
@@ -377,27 +375,27 @@ msgstr "Log out"
 msgid "Logout"
 msgstr "Logout"
 
-#: src/features/editor/menu/new-item/index.tsx:151
+#: src/features/editor/menu/new-item/index.tsx:150
 msgid "Map"
 msgstr "Map"
 
-#: src/features/editor/bento/blocks/variants/map/options/labels.tsx:26
+#: src/features/editor/bento/blocks/variants/map/options/labels.tsx:28
 msgid "Map labels"
 msgstr "Map labels"
 
-#: src/features/editor/bento/blocks/variants/map/options/theme.tsx:30
+#: src/features/editor/bento/blocks/variants/map/options/theme.tsx:32
 msgid "Map theme"
 msgstr "Map theme"
 
-#: src/features/editor/bento/blocks/variants/map/options/title.tsx:36
+#: src/features/editor/bento/blocks/variants/map/options/title.tsx:38
 msgid "Map title"
 msgstr "Map title"
 
-#: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:30
+#: src/features/editor/bento/blocks/variants/map/options/zoom.tsx:32
 msgid "Map zoom"
 msgstr "Map zoom"
 
-#: src/features/editor/menu/new-item/index.tsx:123
+#: src/features/editor/menu/new-item/index.tsx:122
 msgid "Media gallery"
 msgstr "Media gallery"
 
@@ -410,7 +408,7 @@ msgstr "Menu"
 msgid "Muted"
 msgstr "Muted"
 
-#: src/features/editor/menu/new-item/index.tsx:106
+#: src/features/editor/menu/new-item/index.tsx:105
 msgid "New block"
 msgstr "New block"
 
@@ -525,7 +523,7 @@ msgstr "Resend in {duration}"
 msgid "Save QR image"
 msgstr "Save QR image"
 
-#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:50
+#: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:52
 msgid "Searching..."
 msgstr "Searching..."
 
@@ -574,7 +572,7 @@ msgstr "Strikethrough"
 msgid "Synchronization status"
 msgstr "Synchronization status"
 
-#: src/features/editor/menu/new-item/index.tsx:135
+#: src/features/editor/menu/new-item/index.tsx:134
 msgid "Text"
 msgstr "Text"
 
@@ -587,11 +585,11 @@ msgstr "Theme"
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Tip: you can select fragment of text and apply additional styling to it."
 
-#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:29
+#: src/features/editor/bento/blocks/variants/link/options/enter-title.tsx:32
 msgid "Title"
 msgstr "Title"
 
-#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:44
+#: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:46
 msgid "Title position"
 msgstr "Title position"
 

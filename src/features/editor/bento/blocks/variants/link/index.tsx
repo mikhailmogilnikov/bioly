@@ -2,11 +2,7 @@ import { Link2Off } from "lucide-react";
 import Image from "next/image";
 import { type ReactNode, useState } from "react";
 import { useBlockContext } from "../../../grid/ui/block-context";
-import type {
-  BentoBlock,
-  BentoBlockSize,
-  BentoBlockType,
-} from "../../model/types";
+import type { BentoBlock, BentoBlockSize } from "../../model/types";
 import {
   BentoItemLink2x2,
   BentoItemLink2x4,
@@ -102,10 +98,10 @@ function OGImage({
 
 export function BentoBlockLink() {
   const { block } = useBlockContext();
-  const linkBlock = block as BentoBlock<typeof BentoBlockType.LINK>;
+  const linkBlock = block as BentoBlock<"link">;
 
   if (!linkBlock) return null;
-  if (!linkBlock.properties.url_valid)
+  if (!linkBlock.properties?.url_valid)
     return (
       <div className="flex size-full items-center justify-center">
         <Link2Off className="size-14 text-foreground opacity-50" />
@@ -131,6 +127,8 @@ export function BentoBlockLink() {
   );
 
   const getComponent = (size: BentoBlockSize) => {
+    if (!linkBlock.properties?.title) return null;
+
     const components: Record<BentoBlockSize, ReactNode> = {
       dynamic: null,
       "4x1": (

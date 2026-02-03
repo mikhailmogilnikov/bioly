@@ -11,9 +11,11 @@ export function BentoBlockMapInteractions() {
 
   if (!block) return null;
 
-  const { interactions } = block.properties;
+  const { interactions } = block.properties ?? {};
 
   const handleInteractionsChange = (checked: boolean) => {
+    if (typeof block.properties?.interactions !== "boolean") return;
+
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
       interactions: checked,

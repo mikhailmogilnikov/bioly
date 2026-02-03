@@ -12,17 +12,6 @@ export const BentoBlockMapTitleAlignOptions = {
 export type BentoBlockMapTitleAlign =
   (typeof BentoBlockMapTitleAlignOptions)[keyof typeof BentoBlockMapTitleAlignOptions];
 
-export interface BentoBlockPropertiesMap {
-  theme: BentoBlockMapThemesOptions;
-  labels: boolean;
-  interactions: boolean;
-  zoom: number;
-  title: string;
-  titleAlign: BentoBlockMapTitleAlign;
-  latitude: number;
-  longitude: number;
-}
-
 export const BentoBlockMapThemes = {
   LIGHT: "light",
   DARK: "dark",

@@ -13,7 +13,7 @@ const PreviewTitle = () => {
   const { t } = useLingui();
   const { block } = useBlockContext<"text">();
 
-  const output = useStaticEditorRenderer(block?.properties.content ?? null, {
+  const output = useStaticEditorRenderer(block?.properties?.content ?? null, {
     placeholder: t`Type your text here`,
   });
 

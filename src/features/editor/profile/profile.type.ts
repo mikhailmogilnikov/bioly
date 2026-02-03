@@ -1,26 +1,6 @@
-import type { JSONContent } from "@tiptap/react";
-import type {
-  BentoBlock,
-  BentoBlockTypeKey,
-} from "../bento/blocks/model/types";
-import type { SocialMediaItem } from "../header/social-media/types";
-import type { ProfileTheme } from "./theme.type";
+import type { components } from "@/shared/api/schema/generated";
 
-export interface Profile {
-  id: string;
-  name: string;
-  slug: string;
-  email: string;
-  created_at: string;
-  avatar_url: string | null;
-  protected_by_password: boolean;
-  short_description: string;
-  description: JSONContent | null;
-  theme: ProfileTheme;
-  social_media: SocialMediaItem[];
-  bento: BentoBlock<BentoBlockTypeKey>[];
-}
-
+export type Profile = components["schemas"]["Profile"];
 export type ProfileMainEditableFields = Omit<Profile, "id">;
 
 // TODO: TEMPORAL

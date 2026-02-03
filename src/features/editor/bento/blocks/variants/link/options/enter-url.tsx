@@ -28,6 +28,8 @@ export function BentoBlockLinkSettingEnterUrl() {
     if (url.length > 100) return;
     const validatedUrl = schema.safeParse({ url });
 
+    if (typeof block.properties?.url !== "string") return;
+
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
       url,
@@ -39,7 +41,7 @@ export function BentoBlockLinkSettingEnterUrl() {
     <SectionTitle
       className="gap-1"
       sideContent={
-        block.properties.url_valid ? (
+        block.properties?.url_valid ? (
           <CheckCircle className="size-4 text-success" />
         ) : (
           <XCircle className="size-4 text-danger" />
@@ -52,7 +54,7 @@ export function BentoBlockLinkSettingEnterUrl() {
         onChange={handleUrlChange}
         placeholder={t`Enter URL`}
         type="text"
-        value={block.properties.url}
+        value={block.properties?.url ?? ""}
       />
     </SectionTitle>
   );

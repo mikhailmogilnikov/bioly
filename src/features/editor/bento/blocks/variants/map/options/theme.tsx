@@ -20,6 +20,8 @@ export function BentoBlockMapTheme() {
   if (!block) return null;
 
   const handleThemeChange = (theme: BentoBlockMapThemesOptions) => {
+    if (typeof block.properties?.theme !== "string") return;
+
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
       theme,
@@ -31,7 +33,7 @@ export function BentoBlockMapTheme() {
       <SelectMenu
         onSelect={handleThemeChange}
         options={options}
-        value={block.properties.theme}
+        value={block.properties?.theme ?? "auto"}
       />
     </SectionTitle>
   );

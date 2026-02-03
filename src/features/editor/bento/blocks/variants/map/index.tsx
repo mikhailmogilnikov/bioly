@@ -14,15 +14,15 @@ export function BentoBlockMap() {
   if (!block) return null;
 
   const {
-    theme,
-    labels,
+    theme = "auto",
+    labels = true,
     interactions,
     zoom,
     title,
     titleAlign,
     latitude,
     longitude,
-  } = block.properties;
+  } = block.properties ?? {};
 
   const resolvedTheme = resolveMapTheme(theme, profileTheme);
   const mapTheme = getMapTheme(resolvedTheme, labels);

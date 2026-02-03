@@ -1,9 +1,8 @@
 import { Trans } from "@lingui/react/macro";
 import { useRef } from "react";
-import {
-  type BentoBlock,
-  BentoBlockType,
-  type BentoBlockTypeKey,
+import type {
+  BentoBlock,
+  BentoBlockTypeKey,
 } from "@/features/editor/bento/blocks/model/types";
 import {
   GalleryHorizontalEndIcon,
@@ -107,7 +106,7 @@ export const EditBarNewItem = () => {
         </DropdownMenuLabel>
         <DropdownMenuItem
           className="text-foreground"
-          onClick={() => handleAddItem(BentoBlockType.GALLERY)}
+          onClick={() => handleAddItem("gallery")}
           onPointerEnter={() =>
             galleryHorizontalEndIconRef.current?.startAnimation()
           }
@@ -123,7 +122,7 @@ export const EditBarNewItem = () => {
           <Trans>Media gallery</Trans>
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => handleAddItem(BentoBlockType.TEXT)}
+          onClick={() => handleAddItem("text")}
           onPointerEnter={() => scanTextIconRef.current?.startAnimation()}
           onPointerLeave={() => scanTextIconRef.current?.stopAnimation()}
         >
@@ -135,7 +134,7 @@ export const EditBarNewItem = () => {
           <Trans>Text</Trans>
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => handleAddItem(BentoBlockType.LINK)}
+          onClick={() => handleAddItem("link")}
           onPointerEnter={() => linkIconRef.current?.startAnimation()}
           onPointerLeave={() => linkIconRef.current?.stopAnimation()}
         >
@@ -143,7 +142,7 @@ export const EditBarNewItem = () => {
           <Trans>Link</Trans>
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => handleAddItem(BentoBlockType.MAP)}
+          onClick={() => handleAddItem("map")}
           onPointerEnter={() => mapPinIconRef.current?.startAnimation()}
           onPointerLeave={() => mapPinIconRef.current?.stopAnimation()}
         >

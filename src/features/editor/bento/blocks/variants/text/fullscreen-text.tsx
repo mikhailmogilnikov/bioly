@@ -18,7 +18,7 @@ export function FullscreenTitle() {
     "shallow"
   );
 
-  useRefresh([block?.properties.content]);
+  useRefresh([block?.properties?.content]);
 
   if (!block) return null;
 
@@ -27,7 +27,7 @@ export function FullscreenTitle() {
       <BasicTextEditor
         autofocus="end"
         className="editor-dynamic"
-        content={block.properties.content}
+        content={block.properties?.content}
         onUpdate={(props) => {
           const payload = getEditorJsonPayload(props.editor.getJSON());
 

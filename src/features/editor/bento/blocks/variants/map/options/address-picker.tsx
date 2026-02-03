@@ -30,6 +30,8 @@ export function BentoBlockMapAddressPicker() {
 
     const title = [city, country].filter(Boolean).join(", ") || address.label;
 
+    if (typeof block.properties?.title !== "string") return;
+
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
       latitude,
@@ -45,7 +47,7 @@ export function BentoBlockMapAddressPicker() {
         adapterConfig={{
           limit: 5,
         }}
-        defaultValue={block.properties.title}
+        defaultValue={block.properties?.title ?? ""}
         emptyMessage={t`Address not found`}
         loadingMessage={t`Searching...`}
         onSelect={handleSelect}

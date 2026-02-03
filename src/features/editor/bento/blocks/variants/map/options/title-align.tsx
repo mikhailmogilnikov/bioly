@@ -34,6 +34,8 @@ export function BentoBlockMapTitleAlignOption() {
   if (!block) return null;
 
   const handleAlignChange = (titleAlign: BentoBlockMapTitleAlign) => {
+    if (typeof block.properties?.titleAlign !== "string") return;
+
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
       titleAlign,
@@ -46,7 +48,7 @@ export function BentoBlockMapTitleAlignOption() {
         labels={labels}
         onSelect={handleAlignChange}
         options={options}
-        value={block.properties.titleAlign}
+        value={block.properties?.titleAlign ?? "bottom-left"}
       />
     </SectionTitle>
   );

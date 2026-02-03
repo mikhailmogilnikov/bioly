@@ -1,9 +1,9 @@
-import type { BentoBlockPropertiesGallery } from "../variants/gallery/types";
-import type { BentoBlockPropertiesLink } from "../variants/link/types";
-import type { BentoBlockPropertiesMap } from "../variants/map/types";
-import type { BentoBlockPropertiesText } from "../variants/text/types";
+import type { components } from "@/shared/api/schema/generated";
 
-export const BentoBlockSize = {
+export const BentoBlockSize: Record<
+  string,
+  components["schemas"]["BentoBlockSize"]
+> = {
   TWO_BY_TWO: "2x2",
   FOUR_BY_ONE: "4x1",
   TWO_BY_FOUR: "2x4",
@@ -12,52 +12,56 @@ export const BentoBlockSize = {
   DYNAMIC: "dynamic",
 } as const;
 
-export type BentoBlockSize =
-  (typeof BentoBlockSize)[keyof typeof BentoBlockSize];
+export type BentoBlockSize = components["schemas"]["BentoBlockSize"];
 
-export const BentoBlockStyle = {
+export const BentoBlockStyle: Record<
+  string,
+  components["schemas"]["BentoBlockStyle"]
+> = {
   PLAIN: "plain",
   SHADOW: "shadow",
   OUTLINE: "outline",
   TRANSPARENT: "transparent",
 } as const;
 
-export type BentoBlockStyle =
-  (typeof BentoBlockStyle)[keyof typeof BentoBlockStyle];
+export type BentoBlockStyle = components["schemas"]["BentoBlockStyle"];
 
 export const BentoBlockStyleClassNames: Record<BentoBlockStyle, string> = {
-  [BentoBlockStyle.PLAIN]: "squircle",
-  [BentoBlockStyle.SHADOW]: "squircle-shadow",
-  [BentoBlockStyle.OUTLINE]: "squircle-outline",
-  [BentoBlockStyle.TRANSPARENT]: "",
+  plain: "squircle",
+  shadow: "squircle-shadow",
+  outline: "squircle-outline",
+  transparent: "",
 } as const;
 
-export const BentoBlockType = {
+export const BentoBlockType: Record<
+  string,
+  components["schemas"]["BentoBlockType"]
+> = {
   GALLERY: "gallery",
   LINK: "link",
   TEXT: "text",
   MAP: "map",
 } as const;
 
-export type BentoBlockTypeKey =
-  (typeof BentoBlockType)[keyof typeof BentoBlockType];
+export type BentoBlockTypeKey = components["schemas"]["BentoBlockType"];
 
 export type BentoBlockProperties<T extends BentoBlockTypeKey> =
-  T extends typeof BentoBlockType.GALLERY
-    ? BentoBlockPropertiesGallery
-    : T extends typeof BentoBlockType.LINK
-      ? BentoBlockPropertiesLink
-      : T extends typeof BentoBlockType.TEXT
-        ? BentoBlockPropertiesText
-        : T extends typeof BentoBlockType.MAP
-          ? BentoBlockPropertiesMap
+  T extends "gallery"
+    ? components["schemas"]["BentoBlockPropertiesGallery"]
+    : T extends "link"
+      ? components["schemas"]["BentoBlockPropertiesLink"]
+      : T extends "text"
+        ? components["schemas"]["BentoBlockPropertiesText"]
+        : T extends "map"
+          ? components["schemas"]["BentoBlockPropertiesMap"]
           : never;
 
-export interface BentoBlock<T extends BentoBlockTypeKey> {
-  id: string;
-  size: BentoBlockSize;
-  order: number;
-  style: BentoBlockStyle;
-  type: T;
-  properties: BentoBlockProperties<T>;
-}
+export type BentoBlock<T extends BentoBlockTypeKey> = T extends "gallery"
+  ? components["schemas"]["BentoBlockGallery"]
+  : T extends "link"
+    ? components["schemas"]["BentoBlockLink"]
+    : T extends "text"
+      ? components["schemas"]["BentoBlockText"]
+      : T extends "map"
+        ? components["schemas"]["BentoBlockMap"]
+        : never;

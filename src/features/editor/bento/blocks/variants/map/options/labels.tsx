@@ -11,9 +11,11 @@ export function BentoBlockMapLabels() {
 
   if (!block) return null;
 
-  const { labels } = block.properties;
+  const { labels } = block.properties ?? {};
 
   const handleLabelsChange = (checked: boolean) => {
+    if (typeof block.properties?.labels !== "boolean") return;
+
     updateBentoBlockField(block.id, "properties", {
       ...block.properties,
       labels: checked,

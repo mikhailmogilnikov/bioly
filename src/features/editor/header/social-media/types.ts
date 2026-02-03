@@ -1,4 +1,9 @@
-export const SocialMediaPlatforms = {
+import type { components } from "@/shared/api/schema/generated";
+
+export const SocialMediaPlatforms: Record<
+  string,
+  components["schemas"]["SocialMediaPlatform"]
+> = {
   INSTAGRAM: "instagram",
   TELEGRAM: "telegram",
   X: "x",
@@ -29,122 +34,117 @@ interface SocialMediaItemInner {
   url: string;
 }
 
-export type SocialMediaPlatform =
-  (typeof SocialMediaPlatforms)[keyof typeof SocialMediaPlatforms];
+export type SocialMediaPlatform = components["schemas"]["SocialMediaPlatform"];
 
-export interface SocialMediaItem {
-  platform: SocialMediaPlatform;
-  slug: string;
-  order: number;
-}
+export type SocialMediaItem = components["schemas"]["SocialMediaItem"];
 
 export const SocialMedia: Record<SocialMediaPlatform, SocialMediaItemInner> = {
-  [SocialMediaPlatforms.BLUESKY]: {
+  bluesky: {
     name: "Bluesky",
     icon: "bluesky",
     url: "https://bsky.app/profile/",
   },
-  [SocialMediaPlatforms.TELEGRAM]: {
+  telegram: {
     name: "Telegram",
     icon: "telegram",
     url: "https://t.me/",
   },
-  [SocialMediaPlatforms.DISCORD]: {
+  discord: {
     name: "Discord",
     icon: "discord",
     url: "https://discord.com/users/",
   },
-  [SocialMediaPlatforms.DRIBBBLE]: {
+  dribbble: {
     name: "Dribbble",
     icon: "dribbble",
     url: "https://dribbble.com/",
   },
-  [SocialMediaPlatforms.FACEBOOK]: {
+  facebook: {
     name: "Facebook",
     icon: "facebook",
     url: "https://facebook.com/",
   },
-  [SocialMediaPlatforms.GITHUB]: {
+  github: {
     name: "GitHub",
     icon: "github",
     url: "https://github.com/",
   },
-  [SocialMediaPlatforms.INSTAGRAM]: {
+  instagram: {
     name: "Instagram",
     icon: "instagram",
     url: "https://instagram.com/",
   },
-  [SocialMediaPlatforms.LINKEDIN]: {
+  linkedin: {
     name: "LinkedIn",
     icon: "linkedin",
     url: "https://linkedin.com/in/",
   },
-  [SocialMediaPlatforms.MEDIUM]: {
+  medium: {
     name: "Medium",
     icon: "medium",
     url: "https://medium.com/@",
   },
-  [SocialMediaPlatforms.MESSENGER]: {
+  messenger: {
     name: "Messenger",
     icon: "messenger",
     url: "https://m.me/",
   },
-  [SocialMediaPlatforms.PINTEREST]: {
+  pinterest: {
     name: "Pinterest",
     icon: "pinterest",
     url: "https://pinterest.com/",
   },
-  [SocialMediaPlatforms.REDDIT]: {
+  reddit: {
     name: "Reddit",
     icon: "reddit",
     url: "https://reddit.com/user/",
   },
-  [SocialMediaPlatforms.SNAPCHAT]: {
+  snapchat: {
     name: "Snapchat",
     icon: "snapchat",
     url: "https://snapchat.com/add/",
   },
-  [SocialMediaPlatforms.SPOTIFY]: {
+  spotify: {
     name: "Spotify",
     icon: "spotify",
     url: "https://open.spotify.com/user/",
   },
-  [SocialMediaPlatforms.THREADS]: {
+  threads: {
     name: "Threads",
     icon: "threads",
     url: "https://threads.net/@",
   },
-  [SocialMediaPlatforms.TIKTOK]: {
+  tiktok: {
     name: "TikTok",
     icon: "tiktok",
     url: "https://tiktok.com/@",
   },
-  [SocialMediaPlatforms.TUMBLR]: {
+  tumblr: {
     name: "Tumblr",
     icon: "tumblr",
     url: "https://tumblr.com/",
   },
-  [SocialMediaPlatforms.TWITCH]: {
+  twitch: {
     name: "Twitch",
     icon: "twitch",
     url: "https://twitch.tv/",
   },
-  [SocialMediaPlatforms.VK]: {
+  vk: {
     name: "VK",
     icon: "vk",
     url: "https://vk.com/",
   },
-  [SocialMediaPlatforms.WHATSAPP]: {
+  whatsapp: {
     name: "WhatsApp",
     icon: "whatsapp",
     url: "https://wa.me/",
   },
-  [SocialMediaPlatforms.X]: {
+  x: {
     name: "X",
     icon: "x",
     url: "https://x.com/",
   },
-  [SocialMediaPlatforms.YOUTUBE]: {
+  youtube: {
     name: "YouTube",
     icon: "youtube",
     url: "https://youtube.com/@",

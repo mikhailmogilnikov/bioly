@@ -78,8 +78,8 @@ components:
           maxLength: 200
           example: "Software developer and designer"
         description:
-          oneOf:
-            - type: "null"
+          nullable: true
+          allOf:
             - $ref: "#/components/schemas/JSONContent"
           description: Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent.
         theme:
@@ -145,8 +145,8 @@ components:
           minLength: 0
           maxLength: 200
         description:
-          oneOf:
-            - type: "null"
+          nullable: true
+          allOf:
             - $ref: "#/components/schemas/JSONContent"
           description: Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent.
         theme:
@@ -448,8 +448,9 @@ components:
         - content
       properties:
         content:
-          $ref: "#/components/schemas/JSONContent"
           nullable: true
+          allOf:
+            - $ref: "#/components/schemas/JSONContent"
           description: |
             Содержимое текстового блока в формате TipTap JSON.
             Максимальный размер JSON: 50KB (50,000 символов в сериализованном виде).
@@ -540,20 +541,37 @@ components:
         attrs:
           type: object
           additionalProperties: true
-          description: Атрибуты узла
+          description: Атрибуты узла. Могут содержать любые JSON-сериализуемые значения.
         content:
           type: array
           items:
             $ref: "#/components/schemas/JSONContent"
-          description: Вложенное содержимое узла
-        text:
-          type: string
-          description: Текстовое содержимое для текстовых узлов
+          description: Дочерние узлы. Узел может содержать другие узлы.
         marks:
           type: array
           items:
-            type: object
-          description: Маркировки текста (жирный, курсив и т.д.)
+            $ref: "#/components/schemas/JSONContentMark"
+          description: Список марок узла. Инлайн-узлы могут иметь марки.
+        text:
+          type: string
+          description: |
+            Текстовое содержимое узла. Это свойство присутствует только у текстовых узлов
+            (т.е. узлов с type: 'text'). Текстовые узлы не могут иметь дочерних узлов,
+            но могут иметь марки.
+      additionalProperties: true
+
+    JSONContentMark:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          description: Тип марки (bold, italic, link и т.д.)
+        attrs:
+          type: object
+          additionalProperties: true
+          description: Атрибуты марки. Могут содержать любые JSON-сериализуемые значения.
       additionalProperties: true
 
     # Authentication schemas
@@ -946,8 +964,8 @@ components:
           minLength: 0
           maxLength: 200
         description:
-          oneOf:
-            - type: "null"
+          nullable: true
+          allOf:
             - $ref: "#/components/schemas/JSONContent"
           description: Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent.
         theme:

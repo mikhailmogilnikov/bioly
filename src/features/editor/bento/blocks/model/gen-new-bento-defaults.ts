@@ -13,7 +13,7 @@ export const generateNewBentoItemDefaults = (
   const id = Math.random().toString(36).substring(2, 15);
 
   const defaults: Record<BentoBlockTypeKey, BentoBlock<BentoBlockTypeKey>> = {
-    [BentoBlockType.GALLERY]: {
+    gallery: {
       id,
       size: "2x2",
       order,
@@ -22,8 +22,8 @@ export const generateNewBentoItemDefaults = (
       properties: {
         media: [],
       },
-    },
-    [BentoBlockType.TEXT]: {
+    } as BentoBlock<"gallery">,
+    text: {
       id,
       size: "dynamic",
       order,
@@ -32,8 +32,8 @@ export const generateNewBentoItemDefaults = (
       properties: {
         content: null,
       },
-    },
-    [BentoBlockType.LINK]: {
+    } as BentoBlock<"text">,
+    link: {
       id,
       size: "2x2",
       order,
@@ -44,8 +44,8 @@ export const generateNewBentoItemDefaults = (
         title: "",
         url_valid: false,
       },
-    },
-    [BentoBlockType.MAP]: {
+    } as BentoBlock<"link">,
+    map: {
       id,
       size: "2x2",
       order,
@@ -61,7 +61,7 @@ export const generateNewBentoItemDefaults = (
         latitude: 40.7128,
         longitude: -74.006,
       },
-    },
+    } as BentoBlock<"map">,
   };
 
   return defaults[type];
