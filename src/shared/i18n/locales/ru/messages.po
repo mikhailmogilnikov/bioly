@@ -311,8 +311,7 @@ msgstr "Введите ваш email"
 msgid "Enter your unique url link to get started. You can change it later."
 msgstr "Введите вашу уникальную ссылку для начала работы. Вы сможете изменить её позже."
 
-#: src/features/editor/menu/menu/project-settings/font-selector.tsx:40
-#: src/features/editor/menu/menu/project-settings/index.tsx:36
+#: src/features/editor/menu/menu/project-settings/views/settings.tsx:20
 msgid "Font"
 msgstr "Шрифт"
 
@@ -487,7 +486,7 @@ msgstr "Пароли не совпадают"
 msgid "Profile"
 msgstr "Профиль"
 
-#: src/features/editor/menu/menu/index.tsx:118
+#: src/features/editor/menu/menu/project-settings/controller.tsx:17
 msgid "Project settings"
 msgstr "Настройки проекта"
 
@@ -572,8 +571,7 @@ msgstr "Статус синхронизации"
 msgid "Text"
 msgstr "Текст"
 
-#: src/features/editor/menu/menu/project-settings/index.tsx:30
-#: src/features/editor/menu/menu/project-settings/theme-selector.tsx:45
+#: src/features/editor/menu/menu/project-settings/views/settings.tsx:14
 msgid "Theme"
 msgstr "Тема"
 
