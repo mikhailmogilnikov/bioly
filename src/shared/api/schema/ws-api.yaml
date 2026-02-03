@@ -1,0 +1,215 @@
+asyncapi: "2.6.0"
+id: "bioly-websocket-api"
+info:
+  title: Bioly WebSocket API
+  version: "1.0.0"
+  description: |
+    WebSocket API для получения данных профиля в реальном времени.
+    Требует аутентификации через bearer token в query параметре или заголовке.
+
+servers:
+  production:
+    url: wss://api.bioly.me/ws
+    protocol: ws
+    description: Production WebSocket server
+    security:
+      - bearerAuth: []
+
+defaultContentType: application/json
+
+channels:
+  profile/get:
+    description: |
+      Канал для запроса полного профиля пользователя.
+      Клиент отправляет запрос (publish) с идентификатором профиля,
+      сервер отвечает полным профилем (subscribe).
+    publish:
+      operationId: getProfileRequest
+      message:
+        $ref: "#/components/messages/GetProfileRequest"
+    subscribe:
+      operationId: getProfileResponse
+      message:
+        $ref: "#/components/messages/GetProfileResponse"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        JWT токен доступа передается в query параметре `token` или в заголовке Authorization.
+        Формат: `wss://api.bioly.me/ws?token=<access_token>` или `Authorization: Bearer <token>`
+
+  messages:
+    GetProfileRequest:
+      messageId: getProfileRequest
+      name: GetProfileRequest
+      title: Запрос профиля
+      summary: Запрос на получение полного профиля пользователя
+      contentType: application/json
+      payload:
+        $ref: "#/components/schemas/GetProfileRequestPayload"
+      examples:
+        - payload:
+            profile_id: "550e8400-e29b-41d4-a716-446655440000"
+        - payload:
+            slug: "johndoe"
+
+    GetProfileResponse:
+      messageId: getProfileResponse
+      name: GetProfileResponse
+      title: Ответ с профилем
+      summary: Полный профиль пользователя
+      contentType: application/json
+      payload:
+        $ref: "#/components/schemas/Profile"
+      examples:
+        - payload:
+            id: "550e8400-e29b-41d4-a716-446655440000"
+            name: "John Doe"
+            slug: "johndoe"
+            email: "user@example.com"
+            created_at: "2024-01-01T12:00:00Z"
+            protected_by_password: false
+            short_description: "Software developer and designer"
+            avatar_url: "https://example.com/avatar.jpg"
+            theme:
+              font: "inter"
+              theme: "light"
+              show_avatar_blur: false
+              border_radius: 24
+              border_width: 1
+            social_media: []
+            bento: []
+
+  schemas:
+    GetProfileRequestPayload:
+      oneOf:
+        - type: object
+          required:
+            - profile_id
+          properties:
+            profile_id:
+              type: string
+              description: Уникальный идентификатор профиля (UUID)
+              pattern: "^[a-zA-Z0-9_-]+$"
+              minLength: 1
+              maxLength: 255
+              example: "550e8400-e29b-41d4-a716-446655440000"
+        - type: object
+          required:
+            - slug
+          properties:
+            slug:
+              type: string
+              description: URL-слаг профиля
+              minLength: 3
+              maxLength: 30
+              pattern: "^[a-z0-9_-]+$"
+              example: "johndoe"
+      description: |
+        Запрос профиля по ID или slug.
+        Можно указать либо profile_id, либо slug.
+
+    Profile:
+      type: object
+      required:
+        - id
+        - name
+        - slug
+        - email
+        - created_at
+        - protected_by_password
+        - short_description
+        - theme
+        - social_media
+        - bento
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор профиля (UUID или другой уникальный идентификатор)
+          pattern: "^[a-zA-Z0-9_-]+$"
+          minLength: 1
+          maxLength: 255
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        name:
+          type: string
+          description: Имя профиля
+          minLength: 0
+          maxLength: 100
+          example: "John Doe"
+        slug:
+          type: string
+          minLength: 3
+          maxLength: 30
+          pattern: "^[a-z0-9_-]+$"
+          description: |
+            URL-слаг профиля. Должен содержать только строчные латинские буквы,
+            цифры, дефисы и подчеркивания. Не может начинаться или заканчиваться
+            на дефис или подчеркивание. Должен быть уникальным.
+          example: "johndoe"
+        email:
+          type: string
+          format: email
+          description: Email пользователя
+          minLength: 1
+          maxLength: 255
+          example: "user@example.com"
+        created_at:
+          type: string
+          format: date-time
+          description: Дата создания профиля
+          example: "2024-01-01T12:00:00Z"
+        avatar_url:
+          type: string
+          format: uri
+          nullable: true
+          description: URL аватара профиля. Должен быть валидным HTTP/HTTPS URL.
+          maxLength: 2048
+          example: "https://example.com/avatar.jpg"
+        protected_by_password:
+          type: boolean
+          description: Защищен ли профиль паролем
+          example: false
+        short_description:
+          type: string
+          description: Краткое описание профиля
+          minLength: 0
+          maxLength: 200
+          example: "Software developer and designer"
+        description:
+          type: object
+          nullable: true
+          additionalProperties: true
+          description: |
+            Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent.
+            Максимальный размер JSON: 50KB (50,000 символов в сериализованном виде).
+        theme:
+          type: object
+          additionalProperties: true
+          description: |
+            Тема оформления профиля. Для полной типизации используйте тип ProfileTheme из rest-api.yaml.
+        social_media:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+          maxItems: 20
+          uniqueItems: true
+          description: |
+            Массив социальных сетей. Максимум 20 элементов.
+            Для полной типизации используйте тип SocialMediaItem[] из rest-api.yaml.
+          example: []
+        bento:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+          maxItems: 50
+          uniqueItems: true
+          description: |
+            Массив блоков Bento. Максимум 50 элементов.
+            Для полной типизации используйте тип BentoBlock[] из rest-api.yaml.
+          example: []

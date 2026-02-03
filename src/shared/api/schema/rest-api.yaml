@@ -8,7 +8,492 @@ servers:
   - url: https://api.bioly.me/v1
     description: Production server
 
-paths: {}
+paths:
+  # Авторизация и регистрация
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 1 - Ввод email (общий для входа и регистрации)
+      description: |
+        Принимает email и определяет следующие шаги:
+        - Если пользователь существует и у него есть пароль: возвращает next_step = "password"
+        - Если пользователь существует, но пароля нет: отправляет OTP и возвращает next_step = "otp"
+        - Если пользователь не существует: отправляет OTP и возвращает next_step = "signup_slug"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Информация о следующих шагах
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginInitResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "429":
+          $ref: "#/components/responses/RateLimitExceeded"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  /auth/login/password:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 2 - Вход по паролю (опционально)
+      description: |
+        Выполняет вход пользователя по паролю.
+        Используется только если у пользователя установлен пароль (has_password = true).
+        При успешной верификации возвращает access token.
+        Refresh token устанавливается в HTTP-only cookie.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginPasswordRequest"
+      responses:
+        "200":
+          description: Успешный вход
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/WrongPassword"
+        "404":
+          $ref: "#/components/responses/UserNotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  /auth/login/otp:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 2 - Вход по OTP коду
+      description: |
+        Проверяет OTP код и выполняет вход пользователя в систему.
+        Используется если у пользователя нет пароля или он выбрал вход по OTP.
+        При успешной верификации возвращает access token.
+        Refresh token устанавливается в HTTP-only cookie.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginVerifyOtpRequest"
+      responses:
+        "200":
+          description: Успешный вход
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/InvalidOtp"
+        "404":
+          $ref: "#/components/responses/UserNotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  # Регистрация
+  /auth/signup/slug:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 2 - Ввод slug для регистрации
+      description: |
+        Проверяет доступность slug и сохраняет его для процесса регистрации.
+        Используется только если пользователь не существует (user_exists = false из /auth/login).
+        После успешного запроса пользователь должен ввести OTP код на следующем шаге.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignupEnterSlugRequest"
+      responses:
+        "200":
+          description: Slug доступен и сохранен
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - success
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+        "400":
+          $ref: "#/components/responses/InvalidSlugFormat"
+        "409":
+          $ref: "#/components/responses/SlugAlreadyTaken"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  /auth/signup/verify:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 3 - Верификация OTP и завершение регистрации
+      description: |
+        Проверяет OTP код и завершает регистрацию нового пользователя.
+        Используется только для регистрации (после ввода slug).
+        При успешной верификации создается новый профиль и возвращается access token.
+        Refresh token устанавливается в HTTP-only cookie.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignupVerifyOtpRequest"
+      responses:
+        "200":
+          description: Успешная регистрация
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SignupResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/InvalidOtp"
+        "409":
+          $ref: "#/components/responses/EmailAlreadyExists"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  # Смена пароля
+  /auth/password/change:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 1 - Запрос на смену пароля
+      description: |
+        Отправляет код подтверждения на email пользователя для смены пароля.
+        Требует аутентификации. После успешного запроса пользователь должен ввести OTP код на следующем шаге.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangePasswordRequest"
+      responses:
+        "200":
+          description: Код подтверждения успешно отправлен на email
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SendOtpResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/UserNotFound"
+        "429":
+          $ref: "#/components/responses/RateLimitExceeded"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  /auth/password/change/verify:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 2 - Верификация OTP и смена пароля
+      description: |
+        Проверяет OTP код и изменяет пароль пользователя.
+        Требует аутентификации.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangePasswordVerifyOtpRequest"
+      responses:
+        "200":
+          description: Пароль успешно изменен
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChangePasswordResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/InvalidOtp"
+        "404":
+          $ref: "#/components/responses/UserNotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  # Добавление пароля
+  /auth/password/add:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 1 - Запрос на добавление пароля
+      description: |
+        Отправляет код подтверждения на email пользователя для добавления пароля к аккаунту.
+        Требует аутентификации. После успешного запроса пользователь должен ввести OTP код на следующем шаге.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddPasswordRequest"
+      responses:
+        "200":
+          description: Код подтверждения успешно отправлен на email
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SendOtpResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/RateLimitExceeded"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  /auth/password/add/verify:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 2 - Верификация OTP и добавление пароля
+      description: |
+        Проверяет OTP код и добавляет пароль к аккаунту пользователя.
+        Требует аутентификации.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddPasswordVerifyOtpRequest"
+      responses:
+        "200":
+          description: Пароль успешно добавлен
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AddPasswordResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/InvalidOtp"
+        "404":
+          $ref: "#/components/responses/UserNotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  # Смена email
+  /auth/email/change:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 1 - Запрос на смену email
+      description: |
+        Отправляет код подтверждения на новый email адрес для смены email пользователя.
+        Требует аутентификации (bearer token подтверждает владение аккаунтом).
+        Уведомление о попытке смены email отправляется на текущий (старый) email адрес.
+        После успешного запроса пользователь должен ввести OTP код на следующем шаге.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangeEmailRequest"
+      responses:
+        "200":
+          description: Код подтверждения успешно отправлен на новый email. Уведомление отправлено на старый email.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SendOtpResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "409":
+          $ref: "#/components/responses/EmailAlreadyExists"
+        "429":
+          $ref: "#/components/responses/RateLimitExceeded"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  /auth/email/change/verify:
+    post:
+      tags:
+        - Authentication
+      summary: Шаг 2 - Верификация OTP и смена email
+      description: |
+        Проверяет OTP код, отправленный на новый email, и изменяет email пользователя.
+        Требует аутентификации. После успешной смены email пользователь должен будет использовать новый email для входа.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangeEmailVerifyOtpRequest"
+      responses:
+        "200":
+          description: Email успешно изменен
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChangeEmailResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+        "401":
+          $ref: "#/components/responses/InvalidOtp"
+        "404":
+          $ref: "#/components/responses/UserNotFound"
+        "409":
+          $ref: "#/components/responses/EmailAlreadyExists"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  # Смена slug
+  /auth/slug/check:
+    get:
+      tags:
+        - Authentication
+      summary: Проверка доступности slug
+      description: |
+        Проверяет доступность slug для использования.
+        Можно использовать без аутентификации для проверки перед регистрацией.
+      parameters:
+        - name: slug
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 3
+            maxLength: 30
+            pattern: "^[a-z0-9_-]+$"
+          description: URL-слаг для проверки доступности
+          example: username
+      responses:
+        "200":
+          description: Результат проверки доступности
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CheckSlugAvailabilityResponse"
+        "400":
+          $ref: "#/components/responses/InvalidSlugFormat"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  /auth/slug/change:
+    post:
+      tags:
+        - Authentication
+      summary: Смена slug профиля
+      description: |
+        Изменяет slug профиля пользователя.
+        Требует аутентификации. Можно изменить только раз в 7 дней.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangeSlugRequest"
+      responses:
+        "200":
+          description: Slug успешно изменен
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChangeSlugResponse"
+        "400":
+          $ref: "#/components/responses/InvalidSlugFormat"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/SlugChangeLimitExceeded"
+        "409":
+          $ref: "#/components/responses/SlugAlreadyTaken"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  # Обновление токена
+  /auth/refresh:
+    post:
+      tags:
+        - Authentication
+      summary: Обновление access token
+      description: |
+        Обновляет access token используя refresh token из HTTP-only cookie.
+        Новый refresh token устанавливается в HTTP-only cookie.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RefreshTokenRequest"
+      responses:
+        "200":
+          description: Токен успешно обновлен
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RefreshTokenResponse"
+        "401":
+          $ref: "#/components/responses/InvalidRefreshToken"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+
+  # Выход из системы
+  /auth/logout:
+    post:
+      tags:
+        - Authentication
+      summary: Выход из системы
+      description: |
+        Инвалидирует refresh token из HTTP-only cookie и все связанные токены пользователя.
+        Требует аутентификации через refresh token в cookie.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LogoutRequest"
+      responses:
+        "200":
+          description: Успешный выход из системы
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LogoutResponse"
+        "401":
+          $ref: "#/components/responses/InvalidRefreshToken"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
 components:
   schemas:
@@ -607,16 +1092,63 @@ components:
       type: object
       required:
         - access_token
-        - user
       properties:
         access_token:
           type: string
           description: JWT токен доступа
-        user:
-          $ref: "#/components/schemas/Profile"
       description: |
         Refresh token устанавливается в HTTP-only cookie с именем `refresh_token`.
         Cookie имеет флаги HttpOnly, Secure и SameSite=Strict для безопасности.
+
+    LoginInitResponse:
+      type: object
+      required:
+        - user_exists
+        - next_step
+      properties:
+        user_exists:
+          type: boolean
+          description: Существует ли пользователь с таким email
+          example: true
+        has_password:
+          type: boolean
+          description: Есть ли у пользователя пароль (только если user_exists = true)
+          example: true
+        next_step:
+          type: string
+          enum:
+            - password
+            - otp
+            - signup_slug
+          description: |
+            Следующий шаг для пользователя:
+            - password - ввод пароля (если user_exists = true и has_password = true)
+            - otp - ввод OTP кода (если user_exists = true и has_password = false)
+            - signup_slug - ввод slug для регистрации (если user_exists = false)
+          example: "password"
+        expires_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: Время истечения OTP кода (если отправлен OTP)
+          example: "2024-01-01T12:00:00Z"
+
+    LoginPasswordRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email пользователя
+          example: user@example.com
+        password:
+          type: string
+          minLength: 1
+          description: Пароль пользователя
+          example: "MyPassword123"
 
     SignupRequest:
       type: object
@@ -1063,3 +1595,233 @@ components:
           type: object
           additionalProperties: true
           description: Дополнительные детали ошибки
+
+  responses:
+    ValidationError:
+      description: Ошибка валидации
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+
+    InvalidEmail:
+      description: Неверный формат email
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "VALIDATION_ERROR"
+            message: "Invalid email format"
+
+    InvalidOtpFormat:
+      description: Неверный формат OTP
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "VALIDATION_ERROR"
+            message: "OTP must be 6 digits"
+
+    InvalidOtp:
+      description: Неверный или истекший OTP код
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          examples:
+            invalid_otp:
+              value:
+                error: "INVALID_OTP"
+                message: "Invalid or expired OTP code"
+            otp_expired:
+              value:
+                error: "OTP_EXPIRED"
+                message: "OTP code has expired"
+
+    InvalidSlugFormat:
+      description: Неверный формат slug
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          examples:
+            invalid_format:
+              value:
+                error: "VALIDATION_ERROR"
+                message: "Slug must be 3-30 characters, lowercase letters, numbers, dashes and underscores only"
+            too_short:
+              value:
+                error: "VALIDATION_ERROR"
+                message: "Slug must be at least 3 characters"
+            too_long:
+              value:
+                error: "VALIDATION_ERROR"
+                message: "Slug must be at most 30 characters"
+            starts_with_dash:
+              value:
+                error: "VALIDATION_ERROR"
+                message: "Slug cannot start or end with dash or underscore"
+
+    InvalidPasswordFormat:
+      description: Неверный формат пароля
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "VALIDATION_ERROR"
+            message: "Password must be at least 8 characters with uppercase, lowercase and number"
+
+    Unauthorized:
+      description: Не авторизован
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "UNAUTHORIZED"
+            message: "Authentication required"
+
+    UserNotFound:
+      description: Пользователь не найден
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "USER_NOT_FOUND"
+            message: "User with this email does not exist"
+
+    EmailAlreadyExists:
+      description: Email уже занят
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "EMAIL_ALREADY_EXISTS"
+            message: "User with this email already exists"
+
+    SlugAlreadyTaken:
+      description: Slug уже занят
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "SLUG_ALREADY_TAKEN"
+            message: "This username is already taken"
+
+    RateLimitExceeded:
+      description: Слишком много запросов
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "RATE_LIMIT_EXCEEDED"
+            message: "Too many requests. Please try again later."
+
+    InternalServerError:
+      description: Внутренняя ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+
+    WrongPassword:
+      description: Неверный пароль
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "WRONG_PASSWORD"
+            message: "Current password is incorrect"
+
+    SamePassword:
+      description: Новый пароль совпадает со старым
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "SAME_PASSWORD"
+            message: "New password must be different from old password"
+
+    PasswordsDoNotMatch:
+      description: Пароли не совпадают
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "VALIDATION_ERROR"
+            message: "New password and confirmation do not match"
+
+    PasswordAlreadyExists:
+      description: Пароль уже установлен
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "PASSWORD_ALREADY_EXISTS"
+            message: "Account already has a password"
+
+    SameEmail:
+      description: Новый email совпадает со старым
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "SAME_EMAIL"
+            message: "New email must be different from current email"
+
+    SameSlug:
+      description: Новый slug совпадает со старым
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "SAME_SLUG"
+            message: "New slug must be different from current slug"
+
+    SlugChangeLimitExceeded:
+      description: Превышен лимит смены slug
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            error: "SLUG_CHANGE_LIMIT_EXCEEDED"
+            message: "Slug can be changed only once per 7 days"
+
+    InvalidRefreshToken:
+      description: Неверный или истекший refresh token
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          examples:
+            invalid_token:
+              value:
+                error: "INVALID_REFRESH_TOKEN"
+                message: "Invalid or expired refresh token"
+            token_not_found:
+              value:
+                error: "REFRESH_TOKEN_NOT_FOUND"
+                message: "Refresh token not found in cookies"
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        JWT токен доступа передается в заголовке Authorization в формате:
+        `Authorization: Bearer <token>`

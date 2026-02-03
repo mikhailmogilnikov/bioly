@@ -3,7 +3,740 @@
  * Do not make direct changes to the file.
  */
 
-export type paths = Record<string, never>;
+export interface paths {
+    "/auth/login": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 1 - Ввод email (общий для входа и регистрации)
+         * @description Принимает email и определяет следующие шаги:
+         *     - Если пользователь существует и у него есть пароль: возвращает next_step = "password"
+         *     - Если пользователь существует, но пароля нет: отправляет OTP и возвращает next_step = "otp"
+         *     - Если пользователь не существует: отправляет OTP и возвращает next_step = "signup_slug"
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["LoginRequest"];
+                };
+            };
+            responses: {
+                /** @description Информация о следующих шагах */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LoginInitResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                429: components["responses"]["RateLimitExceeded"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/login/password": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 2 - Вход по паролю (опционально)
+         * @description Выполняет вход пользователя по паролю.
+         *     Используется только если у пользователя установлен пароль (has_password = true).
+         *     При успешной верификации возвращает access token.
+         *     Refresh token устанавливается в HTTP-only cookie.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["LoginPasswordRequest"];
+                };
+            };
+            responses: {
+                /** @description Успешный вход */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LoginResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["WrongPassword"];
+                404: components["responses"]["UserNotFound"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/login/otp": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 2 - Вход по OTP коду
+         * @description Проверяет OTP код и выполняет вход пользователя в систему.
+         *     Используется если у пользователя нет пароля или он выбрал вход по OTP.
+         *     При успешной верификации возвращает access token.
+         *     Refresh token устанавливается в HTTP-only cookie.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["LoginVerifyOtpRequest"];
+                };
+            };
+            responses: {
+                /** @description Успешный вход */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LoginResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["InvalidOtp"];
+                404: components["responses"]["UserNotFound"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/signup/slug": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 2 - Ввод slug для регистрации
+         * @description Проверяет доступность slug и сохраняет его для процесса регистрации.
+         *     Используется только если пользователь не существует (user_exists = false из /auth/login).
+         *     После успешного запроса пользователь должен ввести OTP код на следующем шаге.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SignupEnterSlugRequest"];
+                };
+            };
+            responses: {
+                /** @description Slug доступен и сохранен */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            /** @example true */
+                            success: boolean;
+                        };
+                    };
+                };
+                400: components["responses"]["InvalidSlugFormat"];
+                409: components["responses"]["SlugAlreadyTaken"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/signup/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 3 - Верификация OTP и завершение регистрации
+         * @description Проверяет OTP код и завершает регистрацию нового пользователя.
+         *     Используется только для регистрации (после ввода slug).
+         *     При успешной верификации создается новый профиль и возвращается access token.
+         *     Refresh token устанавливается в HTTP-only cookie.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SignupVerifyOtpRequest"];
+                };
+            };
+            responses: {
+                /** @description Успешная регистрация */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SignupResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["InvalidOtp"];
+                409: components["responses"]["EmailAlreadyExists"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/password/change": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 1 - Запрос на смену пароля
+         * @description Отправляет код подтверждения на email пользователя для смены пароля.
+         *     Требует аутентификации. После успешного запроса пользователь должен ввести OTP код на следующем шаге.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ChangePasswordRequest"];
+                };
+            };
+            responses: {
+                /** @description Код подтверждения успешно отправлен на email */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SendOtpResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["Unauthorized"];
+                404: components["responses"]["UserNotFound"];
+                429: components["responses"]["RateLimitExceeded"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/password/change/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 2 - Верификация OTP и смена пароля
+         * @description Проверяет OTP код и изменяет пароль пользователя.
+         *     Требует аутентификации.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ChangePasswordVerifyOtpRequest"];
+                };
+            };
+            responses: {
+                /** @description Пароль успешно изменен */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ChangePasswordResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["InvalidOtp"];
+                404: components["responses"]["UserNotFound"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/password/add": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 1 - Запрос на добавление пароля
+         * @description Отправляет код подтверждения на email пользователя для добавления пароля к аккаунту.
+         *     Требует аутентификации. После успешного запроса пользователь должен ввести OTP код на следующем шаге.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AddPasswordRequest"];
+                };
+            };
+            responses: {
+                /** @description Код подтверждения успешно отправлен на email */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SendOtpResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["Unauthorized"];
+                429: components["responses"]["RateLimitExceeded"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/password/add/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 2 - Верификация OTP и добавление пароля
+         * @description Проверяет OTP код и добавляет пароль к аккаунту пользователя.
+         *     Требует аутентификации.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AddPasswordVerifyOtpRequest"];
+                };
+            };
+            responses: {
+                /** @description Пароль успешно добавлен */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AddPasswordResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["InvalidOtp"];
+                404: components["responses"]["UserNotFound"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/email/change": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 1 - Запрос на смену email
+         * @description Отправляет код подтверждения на новый email адрес для смены email пользователя.
+         *     Требует аутентификации (bearer token подтверждает владение аккаунтом).
+         *     Уведомление о попытке смены email отправляется на текущий (старый) email адрес.
+         *     После успешного запроса пользователь должен ввести OTP код на следующем шаге.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ChangeEmailRequest"];
+                };
+            };
+            responses: {
+                /** @description Код подтверждения успешно отправлен на новый email. Уведомление отправлено на старый email. */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SendOtpResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["Unauthorized"];
+                409: components["responses"]["EmailAlreadyExists"];
+                429: components["responses"]["RateLimitExceeded"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/email/change/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Шаг 2 - Верификация OTP и смена email
+         * @description Проверяет OTP код, отправленный на новый email, и изменяет email пользователя.
+         *     Требует аутентификации. После успешной смены email пользователь должен будет использовать новый email для входа.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ChangeEmailVerifyOtpRequest"];
+                };
+            };
+            responses: {
+                /** @description Email успешно изменен */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ChangeEmailResponse"];
+                    };
+                };
+                400: components["responses"]["ValidationError"];
+                401: components["responses"]["InvalidOtp"];
+                404: components["responses"]["UserNotFound"];
+                409: components["responses"]["EmailAlreadyExists"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/slug/check": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Проверка доступности slug
+         * @description Проверяет доступность slug для использования.
+         *     Можно использовать без аутентификации для проверки перед регистрацией.
+         */
+        get: {
+            parameters: {
+                query: {
+                    /**
+                     * @description URL-слаг для проверки доступности
+                     * @example username
+                     */
+                    slug: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Результат проверки доступности */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CheckSlugAvailabilityResponse"];
+                    };
+                };
+                400: components["responses"]["InvalidSlugFormat"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/slug/change": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Смена slug профиля
+         * @description Изменяет slug профиля пользователя.
+         *     Требует аутентификации. Можно изменить только раз в 7 дней.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ChangeSlugRequest"];
+                };
+            };
+            responses: {
+                /** @description Slug успешно изменен */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ChangeSlugResponse"];
+                    };
+                };
+                400: components["responses"]["InvalidSlugFormat"];
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["SlugChangeLimitExceeded"];
+                409: components["responses"]["SlugAlreadyTaken"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/refresh": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Обновление access token
+         * @description Обновляет access token используя refresh token из HTTP-only cookie.
+         *     Новый refresh token устанавливается в HTTP-only cookie.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: {
+                content: {
+                    "application/json": components["schemas"]["RefreshTokenRequest"];
+                };
+            };
+            responses: {
+                /** @description Токен успешно обновлен */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["RefreshTokenResponse"];
+                    };
+                };
+                401: components["responses"]["InvalidRefreshToken"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/logout": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Выход из системы
+         * @description Инвалидирует refresh token из HTTP-only cookie и все связанные токены пользователя.
+         *     Требует аутентификации через refresh token в cookie.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: {
+                content: {
+                    "application/json": components["schemas"]["LogoutRequest"];
+                };
+            };
+            responses: {
+                /** @description Успешный выход из системы */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LogoutResponse"];
+                    };
+                };
+                401: components["responses"]["InvalidRefreshToken"];
+                500: components["responses"]["InternalServerError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+}
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
@@ -331,7 +1064,46 @@ export interface components {
         LoginResponse: {
             /** @description JWT токен доступа */
             access_token: string;
-            user: components["schemas"]["Profile"];
+        };
+        LoginInitResponse: {
+            /**
+             * @description Существует ли пользователь с таким email
+             * @example true
+             */
+            user_exists: boolean;
+            /**
+             * @description Есть ли у пользователя пароль (только если user_exists = true)
+             * @example true
+             */
+            has_password?: boolean;
+            /**
+             * @description Следующий шаг для пользователя:
+             *     - password - ввод пароля (если user_exists = true и has_password = true)
+             *     - otp - ввод OTP кода (если user_exists = true и has_password = false)
+             *     - signup_slug - ввод slug для регистрации (если user_exists = false)
+             * @example password
+             * @enum {string}
+             */
+            next_step: "password" | "otp" | "signup_slug";
+            /**
+             * Format: date-time
+             * @description Время истечения OTP кода (если отправлен OTP)
+             * @example 2024-01-01T12:00:00Z
+             */
+            expires_at?: string | null;
+        };
+        LoginPasswordRequest: {
+            /**
+             * Format: email
+             * @description Email пользователя
+             * @example user@example.com
+             */
+            email: string;
+            /**
+             * @description Пароль пользователя
+             * @example MyPassword123
+             */
+            password: string;
         };
         SignupRequest: {
             /**
@@ -604,7 +1376,278 @@ export interface components {
             };
         };
     };
-    responses: never;
+    responses: {
+        /** @description Ошибка валидации */
+        ValidationError: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Неверный формат email */
+        InvalidEmail: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "VALIDATION_ERROR",
+                 *       "message": "Invalid email format"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Неверный формат OTP */
+        InvalidOtpFormat: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "VALIDATION_ERROR",
+                 *       "message": "OTP must be 6 digits"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Неверный или истекший OTP код */
+        InvalidOtp: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Неверный формат slug */
+        InvalidSlugFormat: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Неверный формат пароля */
+        InvalidPasswordFormat: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "VALIDATION_ERROR",
+                 *       "message": "Password must be at least 8 characters with uppercase, lowercase and number"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Не авторизован */
+        Unauthorized: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "UNAUTHORIZED",
+                 *       "message": "Authentication required"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Пользователь не найден */
+        UserNotFound: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "USER_NOT_FOUND",
+                 *       "message": "User with this email does not exist"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Email уже занят */
+        EmailAlreadyExists: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "EMAIL_ALREADY_EXISTS",
+                 *       "message": "User with this email already exists"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Slug уже занят */
+        SlugAlreadyTaken: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "SLUG_ALREADY_TAKEN",
+                 *       "message": "This username is already taken"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Слишком много запросов */
+        RateLimitExceeded: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "RATE_LIMIT_EXCEEDED",
+                 *       "message": "Too many requests. Please try again later."
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Внутренняя ошибка сервера */
+        InternalServerError: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Неверный пароль */
+        WrongPassword: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "WRONG_PASSWORD",
+                 *       "message": "Current password is incorrect"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Новый пароль совпадает со старым */
+        SamePassword: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "SAME_PASSWORD",
+                 *       "message": "New password must be different from old password"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Пароли не совпадают */
+        PasswordsDoNotMatch: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "VALIDATION_ERROR",
+                 *       "message": "New password and confirmation do not match"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Пароль уже установлен */
+        PasswordAlreadyExists: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "PASSWORD_ALREADY_EXISTS",
+                 *       "message": "Account already has a password"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Новый email совпадает со старым */
+        SameEmail: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "SAME_EMAIL",
+                 *       "message": "New email must be different from current email"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Новый slug совпадает со старым */
+        SameSlug: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "SAME_SLUG",
+                 *       "message": "New slug must be different from current slug"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Превышен лимит смены slug */
+        SlugChangeLimitExceeded: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                /**
+                 * @example {
+                 *       "error": "SLUG_CHANGE_LIMIT_EXCEEDED",
+                 *       "message": "Slug can be changed only once per 7 days"
+                 *     }
+                 */
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+        /** @description Неверный или истекший refresh token */
+        InvalidRefreshToken: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorResponse"];
+            };
+        };
+    };
     parameters: never;
     requestBodies: never;
     headers: never;

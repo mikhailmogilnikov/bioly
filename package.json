@@ -15,7 +15,7 @@
     "extract": "lingui extract --clean",
     "compile": "lingui compile",
     "update-deps": "ncu -u",
-    "gen-api": "openapi-typescript ./src/shared/api/schema/main.yaml -o ./src/shared/api/schema/generated.ts"
+    "gen-api": "openapi-typescript ./src/shared/api/schema/rest-api.yaml -o ./src/shared/api/schema/generated.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
