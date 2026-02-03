@@ -38,7 +38,7 @@ export const SpoilerNodeView: React.FC<NodeViewProps> = (props) => {
       data-spoiler-node="true"
       style={{ whiteSpace: "normal" }}
     >
-      {shouldMask && (
+      {shouldMask ? (
         <Spoiler revealOn="click">
           <NodeViewContent
             // @ts-expect-error - NodeViewContent is not typed correctly
@@ -47,8 +47,8 @@ export const SpoilerNodeView: React.FC<NodeViewProps> = (props) => {
             style={{ display: "inline" }}
           />
         </Spoiler>
-      )}
-      {!shouldMask && (
+      ) : null}
+      {shouldMask ? null : (
         <span className="rounded-sm bg-foreground/15">
           <NodeViewContent
             // @ts-expect-error - NodeViewContent is not typed correctly

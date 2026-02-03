@@ -35,7 +35,7 @@ function AutocompleteInput({
         data-slot="autocomplete-input"
         {...props}
       />
-      {showClear && (
+      {showClear ? (
         <div className="pointer-events-none absolute right-3 flex items-center">
           <BaseAutocomplete.Clear
             className="pointer-events-auto flex size-5 cursor-pointer items-center justify-center rounded-full text-foreground/50 outline-none hover:bg-foreground/10 hover:text-foreground focus-visible:ring-2 focus-visible:ring-link/50"
@@ -44,7 +44,7 @@ function AutocompleteInput({
             <XIcon className="size-3.5" />
           </BaseAutocomplete.Clear>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

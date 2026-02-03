@@ -162,14 +162,14 @@ export function AddressAutocomplete({
         showClear={showClear}
       />
       <AutocompleteContent>
-        {isLoading && (
+        {isLoading ? (
           <AutocompleteStatus>
             <span className="flex items-center gap-2">
               <span className="size-4 animate-spin rounded-full border-2 border-foreground/20 border-t-foreground/60" />
               {loadingMessage}
             </span>
           </AutocompleteStatus>
-        )}
+        ) : null}
         <AutocompleteEmpty>{emptyMessage}</AutocompleteEmpty>
         <AutocompleteList>
           {(suggestion: AddressSuggestion) => (

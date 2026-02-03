@@ -117,7 +117,7 @@ export const EditAvatar = ({
         outClass="motion-opacity-out-0 motion-scale-out-0"
         show={!!avatar_url && show_avatar_blur}
       >
-        {avatar_url && (
+        {avatar_url ? (
           <Image
             alt={name}
             aria-hidden={true}
@@ -130,7 +130,7 @@ export const EditAvatar = ({
             loading="eager"
             src={avatar_url}
           />
-        )}
+        ) : null}
       </AnimatePresence>
 
       <AnimatePresence

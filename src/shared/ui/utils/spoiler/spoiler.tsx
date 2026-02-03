@@ -85,9 +85,9 @@ export const Spoiler: React.FC<
       ) : (
         fallback
       )}
-      {isIntersecting && spoilerFallback && (
+      {isIntersecting && spoilerFallback ? (
         <span className="absolute inset-0">{spoilerFallback}</span>
-      )}
+      ) : null}
     </span>
   );
 };

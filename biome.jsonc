@@ -7,7 +7,7 @@
         "useBlockStatements": "off"
       },
       "nursery": {
-        "noLeakedRender": "off"
+        "noLeakedRender": "error"
       }
     }
   },

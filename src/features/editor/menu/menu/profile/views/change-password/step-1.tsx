@@ -102,12 +102,12 @@ export function ChangePasswordStep1() {
                     id="old-password"
                     placeholder={t`Enter current password`}
                   />
-                  {fieldState.invalid && (
+                  {fieldState.invalid && fieldState.error ? (
                     <FieldError
                       className="text-start"
                       errors={[fieldState.error]}
                     />
-                  )}
+                  ) : null}
                 </FieldContent>
               </Field>
             )}
@@ -130,12 +130,12 @@ export function ChangePasswordStep1() {
                     id="new-password"
                     placeholder={t`Enter new password`}
                   />
-                  {fieldState.invalid && (
+                  {fieldState.invalid && fieldState.error ? (
                     <FieldError
                       className="text-start"
                       errors={[fieldState.error]}
                     />
-                  )}
+                  ) : null}
                 </FieldContent>
               </Field>
             )}
@@ -158,12 +158,12 @@ export function ChangePasswordStep1() {
                     id="confirm-password"
                     placeholder={t`Re-enter new password`}
                   />
-                  {fieldState.invalid && (
+                  {fieldState.invalid && fieldState.error ? (
                     <FieldError
                       className="text-start"
                       errors={[fieldState.error]}
                     />
-                  )}
+                  ) : null}
                 </FieldContent>
               </Field>
             )}

@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:132
+#: src/features/editor/menu/menu/profile/views/profile.tsx:121
 msgid "{0}"
 msgstr "{0}"
 
@@ -21,15 +21,15 @@ msgstr "{0}"
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {секунды} many {секунд} one {секунда} other {секунд}}"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:96
+#: src/features/editor/menu/menu/profile/views/profile.tsx:85
 msgid "Account is protected by password"
 msgstr "Аккаунт защищен паролем"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:97
+#: src/features/editor/menu/menu/profile/views/profile.tsx:86
 msgid "Account isn't protected by password"
 msgstr "Аккаунт не защищен паролем"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:117
+#: src/features/editor/menu/menu/profile/views/profile.tsx:106
 msgid "Actions"
 msgstr "Действия"
 
@@ -49,7 +49,7 @@ msgstr "Добавить аватар"
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Добавьте биографию... Введите \"/\" для команд."
 
-#: src/features/editor/menu/menu/profile/controller.tsx:48
+#: src/features/editor/menu/menu/profile/controller.tsx:43
 msgid "Add Password"
 msgstr "Добавить пароль"
 
@@ -119,7 +119,7 @@ msgstr "Продолжая, вы соглашаетесь с нашими <0>У�
 msgid "Can be changed only once in 7 days."
 msgstr "Можно изменить только один раз в 7 дней."
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:46
+#: src/features/editor/menu/menu/profile/views/profile.tsx:38
 msgid "Change email"
 msgstr "Изменить email"
 
@@ -131,11 +131,11 @@ msgstr "Изменить email"
 msgid "Change language"
 msgstr "Изменить язык"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:57
+#: src/features/editor/menu/menu/profile/views/profile.tsx:46
 msgid "Change password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:40
+#: src/features/editor/menu/menu/profile/controller.tsx:35
 msgid "Change Password"
 msgstr "Изменить пароль"
 
@@ -147,7 +147,7 @@ msgstr "Код"
 msgid "Code Block"
 msgstr "Блок кода"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:36
+#: src/features/editor/menu/menu/profile/controller.tsx:31
 msgid "Confirm email change"
 msgstr "Подтвердить изменение email"
 
@@ -163,11 +163,11 @@ msgstr "Подтвердите новый пароль"
 msgid "Confirm Password"
 msgstr "Подтвердите пароль"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:52
+#: src/features/editor/menu/menu/profile/controller.tsx:47
 msgid "Confirm password addition"
 msgstr "Подтвердить добавление пароля"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:44
+#: src/features/editor/menu/menu/profile/controller.tsx:39
 msgid "Confirm password change"
 msgstr "Подтвердить изменение пароля"
 
@@ -232,7 +232,6 @@ msgid "Didn't receive the code?"
 msgstr "Не получили код?"
 
 #: src/features/auth/views/enter-email/enter-email-form.tsx:77
-#: src/features/editor/menu/menu/profile/views/profile.tsx:77
 msgid "Email"
 msgstr "Email"
 
@@ -252,7 +251,6 @@ msgstr "Введите текущий пароль"
 msgid "Enter map title"
 msgstr "Введите заголовок карты"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:32
 #: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:87
 msgid "Enter new email"
 msgstr "Введите новый email"
@@ -351,7 +349,7 @@ msgstr "Неверный URL"
 msgid "Italic"
 msgstr "Курсив"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:81
+#: src/features/editor/menu/menu/profile/views/profile.tsx:70
 msgid "Joined on"
 msgstr "Присоединился"
 
@@ -371,7 +369,7 @@ msgstr "Привязано"
 msgid "Log out"
 msgstr "Выйти"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:63
+#: src/features/editor/menu/menu/profile/views/profile.tsx:52
 msgid "Logout"
 msgstr "Выйти"
 
@@ -461,7 +459,6 @@ msgid "Page not found"
 msgstr "Страница не найдена"
 
 #: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:85
-#: src/features/editor/menu/menu/profile/views/profile.tsx:88
 msgid "Password"
 msgstr "Пароль"
 
@@ -486,8 +483,7 @@ msgstr "Пароль должен содержать хотя бы одну за
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
-#: src/features/editor/menu/menu/index.tsx:121
-#: src/features/editor/menu/menu/profile/controller.tsx:24
+#: src/features/editor/menu/menu/profile/controller.tsx:23
 msgid "Profile"
 msgstr "Профиль"
 
@@ -495,7 +491,7 @@ msgstr "Профиль"
 msgid "Project settings"
 msgstr "Настройки проекта"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:109
+#: src/features/editor/menu/menu/profile/views/profile.tsx:98
 msgid "Protect profile with password"
 msgstr "Защитить профиль паролем"
 
@@ -664,7 +660,6 @@ msgstr "Код подтверждения должен состоять из 6 �
 #: src/features/auth/views/login/verify-otp-screen.tsx:107
 #: src/features/auth/views/signup/verify-otp-screen.tsx:110
 #: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:143
-#: src/features/editor/menu/menu/profile/views/change-email/step-1.tsx:119
 #: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:141
 #: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:142
 msgid "Verify code"
@@ -681,7 +676,6 @@ msgstr "Подтвердить новый email"
 #: src/features/auth/views/login/verify-otp-screen.tsx:105
 #: src/features/auth/views/signup/verify-otp-screen.tsx:108
 #: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:141
-#: src/features/editor/menu/menu/profile/views/change-email/step-1.tsx:117
 #: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:139
 #: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:140
 msgid "Verifying..."

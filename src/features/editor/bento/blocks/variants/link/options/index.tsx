@@ -15,7 +15,7 @@ export function BentoBlockLinkOptions() {
       <hr className="border-outline" />
       <BentoBlockLinkSettingEnterUrl />
 
-      {block.properties?.url_valid && <BentoBlockLinkSettingEnterTitle />}
+      {block.properties?.url_valid ? <BentoBlockLinkSettingEnterTitle /> : null}
       <hr className="border-outline" />
       <BentoBlockDeleteSetting />
     </>

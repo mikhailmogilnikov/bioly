@@ -41,7 +41,7 @@ export function AuthContent() {
             <AuthLayoutDescription>{i18n._(description)}</AuthLayoutDescription>
           </div>
 
-          {component && component}
+          {component ?? null}
         </m.div>
       </AnimatePresence>
     </AuthLayout>

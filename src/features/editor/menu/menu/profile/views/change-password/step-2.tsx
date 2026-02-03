@@ -114,9 +114,9 @@ export function ChangePasswordStep2() {
                     ))}
                   </InputOTP>
 
-                  {fieldState.invalid && (
+                  {fieldState.invalid && fieldState.error ? (
                     <FieldError errors={[fieldState.error]} />
-                  )}
+                  ) : null}
                 </FieldContent>
               </Field>
             )}

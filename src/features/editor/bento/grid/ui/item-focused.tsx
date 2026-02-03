@@ -38,7 +38,7 @@ export function BentoGridItemFocused({
           style={{ "--max-width": `${gridSize}px` } as CSSProperties}
         >
           <AnimatePresence key={`bento-item-${block.id}-wrapper`}>
-            {isFocused && (
+            {isFocused ? (
               <motion.div
                 className={clsx(
                   "relative transition-[width,height] duration-300 will-change-[width,height]",
@@ -52,7 +52,7 @@ export function BentoGridItemFocused({
               >
                 {renderBlock(block.id, { isFullscreen: true })}
               </motion.div>
-            )}
+            ) : null}
           </AnimatePresence>
           <BentoItemOptions />
         </div>

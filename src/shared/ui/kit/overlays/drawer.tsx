@@ -135,7 +135,7 @@ export function DrawerFooter(props: DrawerFooterProps) {
 
   return (
     <div className="flex shrink-0 gap-4 px-5" {...rest}>
-      {cancelButton && (
+      {cancelButton ? (
         <VaulDrawer.Close asChild>
           <button
             className="w-full cursor-pointer rounded bg-default px-5 py-3 font-medium"
@@ -144,7 +144,7 @@ export function DrawerFooter(props: DrawerFooterProps) {
             Cancel
           </button>
         </VaulDrawer.Close>
-      )}
+      ) : null}
       {children}
     </div>
   );

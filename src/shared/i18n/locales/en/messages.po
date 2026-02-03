@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:132
+#: src/features/editor/menu/menu/profile/views/profile.tsx:121
 msgid "{0}"
 msgstr "{0}"
 
@@ -21,15 +21,15 @@ msgstr "{0}"
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:96
+#: src/features/editor/menu/menu/profile/views/profile.tsx:85
 msgid "Account is protected by password"
 msgstr "Account is protected by password"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:97
+#: src/features/editor/menu/menu/profile/views/profile.tsx:86
 msgid "Account isn't protected by password"
 msgstr "Account isn't protected by password"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:117
+#: src/features/editor/menu/menu/profile/views/profile.tsx:106
 msgid "Actions"
 msgstr "Actions"
 
@@ -49,7 +49,7 @@ msgstr "Add avatar"
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Add bio... Type \"/\" for commands."
 
-#: src/features/editor/menu/menu/profile/controller.tsx:48
+#: src/features/editor/menu/menu/profile/controller.tsx:43
 msgid "Add Password"
 msgstr "Add Password"
 
@@ -119,7 +119,7 @@ msgstr "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "Can be changed only once in 7 days."
 msgstr "Can be changed only once in 7 days."
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:46
+#: src/features/editor/menu/menu/profile/views/profile.tsx:38
 msgid "Change email"
 msgstr "Change email"
 
@@ -131,11 +131,11 @@ msgstr "Change Email"
 msgid "Change language"
 msgstr "Change language"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:57
+#: src/features/editor/menu/menu/profile/views/profile.tsx:46
 msgid "Change password"
 msgstr "Change password"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:40
+#: src/features/editor/menu/menu/profile/controller.tsx:35
 msgid "Change Password"
 msgstr "Change Password"
 
@@ -147,7 +147,7 @@ msgstr "Code"
 msgid "Code Block"
 msgstr "Code Block"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:36
+#: src/features/editor/menu/menu/profile/controller.tsx:31
 msgid "Confirm email change"
 msgstr "Confirm email change"
 
@@ -163,11 +163,11 @@ msgstr "Confirm New Password"
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:52
+#: src/features/editor/menu/menu/profile/controller.tsx:47
 msgid "Confirm password addition"
 msgstr "Confirm password addition"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:44
+#: src/features/editor/menu/menu/profile/controller.tsx:39
 msgid "Confirm password change"
 msgstr "Confirm password change"
 
@@ -232,7 +232,6 @@ msgid "Didn't receive the code?"
 msgstr "Didn't receive the code?"
 
 #: src/features/auth/views/enter-email/enter-email-form.tsx:77
-#: src/features/editor/menu/menu/profile/views/profile.tsx:77
 msgid "Email"
 msgstr "Email"
 
@@ -252,7 +251,6 @@ msgstr "Enter current password"
 msgid "Enter map title"
 msgstr "Enter map title"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:32
 #: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:87
 msgid "Enter new email"
 msgstr "Enter new email"
@@ -351,7 +349,7 @@ msgstr "Invalid URL"
 msgid "Italic"
 msgstr "Italic"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:81
+#: src/features/editor/menu/menu/profile/views/profile.tsx:70
 msgid "Joined on"
 msgstr "Joined on"
 
@@ -371,7 +369,7 @@ msgstr "Linked"
 msgid "Log out"
 msgstr "Log out"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:63
+#: src/features/editor/menu/menu/profile/views/profile.tsx:52
 msgid "Logout"
 msgstr "Logout"
 
@@ -461,7 +459,6 @@ msgid "Page not found"
 msgstr "Page not found"
 
 #: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:85
-#: src/features/editor/menu/menu/profile/views/profile.tsx:88
 msgid "Password"
 msgstr "Password"
 
@@ -486,8 +483,7 @@ msgstr "Password must contain at least one uppercase letter"
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
-#: src/features/editor/menu/menu/index.tsx:121
-#: src/features/editor/menu/menu/profile/controller.tsx:24
+#: src/features/editor/menu/menu/profile/controller.tsx:23
 msgid "Profile"
 msgstr "Profile"
 
@@ -495,7 +491,7 @@ msgstr "Profile"
 msgid "Project settings"
 msgstr "Project settings"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:109
+#: src/features/editor/menu/menu/profile/views/profile.tsx:98
 msgid "Protect profile with password"
 msgstr "Protect profile with password"
 
@@ -664,7 +660,6 @@ msgstr "Verification code must be 6 digits"
 #: src/features/auth/views/login/verify-otp-screen.tsx:107
 #: src/features/auth/views/signup/verify-otp-screen.tsx:110
 #: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:143
-#: src/features/editor/menu/menu/profile/views/change-email/step-1.tsx:119
 #: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:141
 #: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:142
 msgid "Verify code"
@@ -681,7 +676,6 @@ msgstr "Verify new email"
 #: src/features/auth/views/login/verify-otp-screen.tsx:105
 #: src/features/auth/views/signup/verify-otp-screen.tsx:108
 #: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:141
-#: src/features/editor/menu/menu/profile/views/change-email/step-1.tsx:117
 #: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:139
 #: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:140
 msgid "Verifying..."

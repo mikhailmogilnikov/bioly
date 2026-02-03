@@ -49,9 +49,9 @@ export function BentoBlockMap() {
           </MarkerContent>
         </MapMarker>
       </Map>
-      {title && (
+      {title ? (
         <MapTitle align={titleAlign} mapTheme={resolvedTheme} title={title} />
-      )}
+      ) : null}
     </>
   );
 }

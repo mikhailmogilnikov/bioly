@@ -172,7 +172,7 @@ export function ModalFooter(props: ModalFooterProps) {
 
   return (
     <div className="flex shrink-0 items-center gap-4 px-6 pb-6" {...rest}>
-      {cancelButton && (
+      {cancelButton ? (
         <Dialog.Close asChild>
           <button
             className="w-full cursor-pointer rounded bg-default px-4 py-3 font-medium"
@@ -181,7 +181,7 @@ export function ModalFooter(props: ModalFooterProps) {
             Cancel
           </button>
         </Dialog.Close>
-      )}
+      ) : null}
       {children}
     </div>
   );

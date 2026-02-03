@@ -87,12 +87,12 @@ export function ChangeEmailStep2() {
                     placeholder={t`Enter new email`}
                     type="email"
                   />
-                  {fieldState.invalid && (
+                  {fieldState.invalid && fieldState.error ? (
                     <FieldError
                       className="text-start"
                       errors={[fieldState.error]}
                     />
-                  )}
+                  ) : null}
                 </FieldContent>
               </Field>
             )}

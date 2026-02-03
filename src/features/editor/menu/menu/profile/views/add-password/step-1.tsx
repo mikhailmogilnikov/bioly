@@ -92,12 +92,12 @@ export function AddPasswordStep1() {
                     id="new-password"
                     placeholder={t`Enter password`}
                   />
-                  {fieldState.invalid && (
+                  {fieldState.invalid && fieldState.error ? (
                     <FieldError
                       className="text-start"
                       errors={[fieldState.error]}
                     />
-                  )}
+                  ) : null}
                 </FieldContent>
               </Field>
             )}
@@ -120,12 +120,12 @@ export function AddPasswordStep1() {
                     id="confirm-password"
                     placeholder={t`Re-enter password`}
                   />
-                  {fieldState.invalid && (
+                  {fieldState.invalid && fieldState.error ? (
                     <FieldError
                       className="text-start"
                       errors={[fieldState.error]}
                     />
-                  )}
+                  ) : null}
                 </FieldContent>
               </Field>
             )}

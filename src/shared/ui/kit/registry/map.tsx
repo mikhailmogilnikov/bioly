@@ -276,9 +276,9 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
   return (
     <MapContext.Provider value={contextValue}>
       <div className="relative h-full w-full" ref={containerRef}>
-        {isLoading && <DefaultLoader />}
+        {isLoading ? <DefaultLoader /> : null}
         {/* SSR-safe: children render only when map is loaded on client */}
-        {mapInstance && children}
+        {mapInstance ? children : null}
       </div>
     </MapContext.Provider>
   );
@@ -514,7 +514,7 @@ function MarkerPopup({
         className
       )}
     >
-      {closeButton && (
+      {closeButton ? (
         <button
           aria-label="Close popup"
           className="absolute top-1 right-1 z-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
@@ -524,7 +524,7 @@ function MarkerPopup({
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </button>
-      )}
+      ) : null}
       {children}
     </div>,
     container
@@ -767,7 +767,7 @@ function MapControls({
         className
       )}
     >
-      {showZoom && (
+      {showZoom ? (
         <ControlGroup>
           <ControlButton label="Zoom in" onClick={handleZoomIn}>
             <Plus className="size-4" />
@@ -776,13 +776,13 @@ function MapControls({
             <Minus className="size-4" />
           </ControlButton>
         </ControlGroup>
-      )}
-      {showCompass && (
+      ) : null}
+      {showCompass ? (
         <ControlGroup>
           <CompassButton onClick={handleResetBearing} />
         </ControlGroup>
-      )}
-      {showLocate && (
+      ) : null}
+      {showLocate ? (
         <ControlGroup>
           <ControlButton
             disabled={waitingForLocation}
@@ -796,14 +796,14 @@ function MapControls({
             )}
           </ControlButton>
         </ControlGroup>
-      )}
-      {showFullscreen && (
+      ) : null}
+      {showFullscreen ? (
         <ControlGroup>
           <ControlButton label="Toggle fullscreen" onClick={handleFullscreen}>
             <Maximize className="size-4" />
           </ControlButton>
         </ControlGroup>
-      )}
+      ) : null}
     </div>
   );
 }
@@ -940,7 +940,7 @@ function MapPopup({
         className
       )}
     >
-      {closeButton && (
+      {closeButton ? (
         <button
           aria-label="Close popup"
           className="absolute top-1 right-1 z-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
@@ -950,7 +950,7 @@ function MapPopup({
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </button>
-      )}
+      ) : null}
       {children}
     </div>,
     container

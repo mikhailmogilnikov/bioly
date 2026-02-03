@@ -22,7 +22,7 @@ export function QrCard() {
         className="flex w-full max-w-70 flex-col items-center justify-center gap-3 rounded p-4"
         style={{ backgroundColor: "var(--color-white)" }}
       >
-        {avatar_url && (
+        {avatar_url ? (
           <Image
             alt="logo"
             className="size-26 rounded-[52px]"
@@ -30,20 +30,20 @@ export function QrCard() {
             src={avatar_url}
             width={104}
           />
-        )}
-        {name && (
+        ) : null}
+        {name ? (
           <p className="text-center font-bold text-2xl text-black">{name}</p>
-        )}
+        ) : null}
         <div className="w-full">
           <QrCode url={buildUrl(slug)} />
         </div>
-        {slug && (
+        {slug ? (
           <div className="flex items-center gap-2">
             <p className="break-all text-center font-semibold text-base text-black">
               {buildUrl(slug, { withoutHttps: true })}
             </p>
           </div>
-        )}
+        ) : null}
       </div>
     </div>
   );

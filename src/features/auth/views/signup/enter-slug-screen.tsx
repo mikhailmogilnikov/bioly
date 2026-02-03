@@ -63,12 +63,12 @@ export function EnterSlugScreen() {
         />
       </div>
 
-      {formState.errors.slug && (
+      {formState.errors.slug ? (
         <FieldError
           className="-mt-4 text-start"
           errors={[formState.errors.slug]}
         />
-      )}
+      ) : null}
 
       <Button
         disabled={form.formState.isSubmitting}
