@@ -87,7 +87,7 @@ export const suggestion = {
             .chain()
             .focus()
             .deleteRange(range)
-            .setNode("heading", { level: 1 })
+            .setNode("heading", { level: 2 })
             .run();
         },
       },

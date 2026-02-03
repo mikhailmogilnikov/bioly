@@ -14,7 +14,7 @@ export function UserContent() {
       {
         type: "heading",
         attrs: {
-          level: 1,
+          level: 2,
         },
         content: [
           {
@@ -172,7 +172,7 @@ export function UserContent() {
               {
                 type: "heading",
                 attrs: {
-                  level: 1,
+                  level: 2,
                 },
                 content: [
                   {

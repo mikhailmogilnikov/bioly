@@ -5,7 +5,7 @@ import type { Editor, Range } from "@tiptap/core";
 import {
   ChevronDown,
   Code2,
-  Heading1,
+  Heading2,
   List,
   ListOrdered,
   Quote,
@@ -95,7 +95,7 @@ export const CommandsList = ({ items, command, ref }: CommandsListProps) => {
 
   const getIcon = (id: string) => {
     const iconMap: Record<string, React.ReactNode> = {
-      heading: <Heading1 size={16} />,
+      heading: <Heading2 size={16} />,
       "bullet-list": <List size={16} />,
       "numbered-list": <ListOrdered size={16} />,
       blockquote: <Quote size={16} />,
