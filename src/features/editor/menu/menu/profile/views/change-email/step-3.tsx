@@ -78,7 +78,7 @@ export function ChangeEmailStep3() {
     <AdaptiveModalContent>
       <form
         className="mt-4 flex w-full flex-col items-center justify-center gap-4"
-        id="change-email-step-3-form"
+        id="change-email-step-2-form"
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FieldGroup>

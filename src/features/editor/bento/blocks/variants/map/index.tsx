@@ -27,7 +27,7 @@ export function BentoBlockMap() {
   const resolvedTheme = resolveMapTheme(theme, profileTheme);
   const mapTheme = getMapTheme(resolvedTheme, labels);
 
-  if (!(latitude && longitude && titleAlign && zoom))
+  if (!(latitude && longitude && titleAlign && !Number.isNaN(zoom)))
     return (
       <div className="flex size-full items-center justify-center">
         <MapIcon className="size-10 text-foreground opacity-50" />

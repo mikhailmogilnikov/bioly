@@ -55,7 +55,7 @@ export function ChangeEmailStep2() {
 
       startTimer({ key: "otp", id: data.new_email, duration: 60 });
 
-      push("change-email-step-3");
+      push("change-email-step-2");
     } catch {
       // Error handling
     }
@@ -65,7 +65,7 @@ export function ChangeEmailStep2() {
     <AdaptiveModalContent>
       <form
         className="flex w-full flex-col gap-4 px-1"
-        id="change-email-step-2-form"
+        id="change-email-step-1-form"
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FieldGroup>

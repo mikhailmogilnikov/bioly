@@ -2,10 +2,6 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import { ChevronRight, KeyRound, Lock, LogOut, Mail } from "lucide-react";
 import { Fragment } from "react";
 import { useProfile } from "@/features/editor/profile/use-profile";
-import {
-  useHandleTimers,
-  useTimers,
-} from "@/shared/lib/hooks/use-handle-timers";
 import { useLocalizedRouter } from "@/shared/lib/hooks/use-localized-router";
 import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
 import { cn } from "@/shared/lib/utils";
@@ -36,19 +32,12 @@ export function ProfileView() {
     }),
     "shallow"
   );
-  const { startTimer } = useHandleTimers();
-  const emailTimerDuration = useTimers(
-    (state) => state.timers.otp?.[email || ""]
-  );
 
   const actions: Action[] = [
     {
       label: t`Change email`,
       icon: Mail,
       onClick: () => {
-        if (emailTimerDuration === undefined) {
-          startTimer({ key: "otp", id: email, duration: 60 });
-        }
         push("change-email-step-1");
       },
       disabled: false,
@@ -73,7 +62,7 @@ export function ProfileView() {
 
   return (
     <AdaptiveModalContent>
-      <div className="squircle flex flex-col gap-6 p-4">
+      <div className="squircle flex flex-col gap-6 p-5">
         <SectionTitle className="gap-1" title={t`Email`}>
           <p className="font-medium">{email || "-"}</p>
         </SectionTitle>
@@ -120,7 +109,7 @@ export function ProfileView() {
           <Fragment key={action.label}>
             <Button
               className={cn(
-                "h-16 w-full justify-between rounded-none",
+                "h-16 w-full justify-between rounded-none has-[>svg]:px-5",
                 action?.className
               )}
               disabled={action.disabled}
@@ -128,7 +117,7 @@ export function ProfileView() {
               variant="ghost"
             >
               <div className="flex items-center gap-3">
-                <action.icon className="size-5 opacity-50" />
+                <action.icon className="size-5" />
                 <Trans>{action.label}</Trans>
               </div>
 

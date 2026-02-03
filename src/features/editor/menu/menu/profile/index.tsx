@@ -11,7 +11,6 @@ export type ProfileNewViews =
   | "profile"
   | "change-email-step-1"
   | "change-email-step-2"
-  | "change-email-step-3"
   | "change-password-step-1"
   | "change-password-step-2"
   | "add-password-step-1"

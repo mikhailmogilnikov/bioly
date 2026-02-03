@@ -40,7 +40,7 @@ function SelectMenu<T extends string>({
         </p>
         <ChevronDownIcon className="size-4 opacity-50 transition-transform group-data-[state=open]:rotate-180" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent sideOffset={8}>
+      <DropdownMenuContent className="min-w-52" sideOffset={8}>
         {options.map((option) => (
           <DropdownMenuItem
             className="justify-between"
