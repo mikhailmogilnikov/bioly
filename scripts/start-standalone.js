@@ -40,8 +40,8 @@ if (!existsSync(serverPath)) {
 const standaloneDir = join(projectRoot, ".next/standalone");
 process.chdir(standaloneDir);
 
-// Запускаем сервер через spawn для правильной работы с путями
-const serverProcess = spawn("node", ["server.js"], {
+// Запускаем сервер через bun
+const serverProcess = spawn("bun", ["run", "--bun", "server.js"], {
   cwd: standaloneDir,
   stdio: "inherit",
   env: process.env,
