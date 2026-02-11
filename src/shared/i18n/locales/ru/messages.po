@@ -21,15 +21,19 @@ msgstr "{0}"
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {секунды} many {секунд} one {секунда} other {секунд}}"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:85
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:10
+msgid "Accessibility"
+msgstr "Доступность"
+
+#: src/features/editor/menu/menu/profile/views/profile.tsx:77
 msgid "Account is protected by password"
 msgstr "Аккаунт защищен паролем"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:86
+#: src/features/editor/menu/menu/profile/views/profile.tsx:78
 msgid "Account isn't protected by password"
 msgstr "Аккаунт не защищен паролем"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:106
+#: src/features/editor/menu/menu/profile/views/profile.tsx:95
 msgid "Actions"
 msgstr "Действия"
 
@@ -91,7 +95,7 @@ msgstr "Цитата"
 msgid "Bold"
 msgstr "Жирный"
 
-#: src/features/editor/menu/menu/project-settings/border-slider.tsx:18
+#: src/features/editor/menu/menu/project-settings/views/theme/border-slider.tsx:18
 msgid "Border width"
 msgstr "Ширина границы"
 
@@ -119,7 +123,7 @@ msgstr "Продолжая, вы соглашаетесь с нашими <0>У�
 msgid "Can be changed only once in 7 days."
 msgstr "Можно изменить только один раз в 7 дней."
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:38
+#: src/features/editor/menu/menu/profile/views/profile.tsx:30
 msgid "Change email"
 msgstr "Изменить email"
 
@@ -131,13 +135,20 @@ msgstr "Изменить email"
 msgid "Change language"
 msgstr "Изменить язык"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:46
+#: src/features/editor/menu/menu/profile/views/profile.tsx:37
 msgid "Change password"
 msgstr "Изменить пароль"
 
 #: src/features/editor/menu/menu/profile/controller.tsx:35
 msgid "Change Password"
 msgstr "Изменить пароль"
+
+#: src/features/editor/menu/menu/project-settings/controller.tsx:28
+#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:10
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:57
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:62
+msgid "Change slug"
+msgstr "Изменить имя пользователя"
 
 #: src/features/editor/text-editor/formatting-menu.tsx:108
 msgid "Code"
@@ -187,7 +198,7 @@ msgstr "Продолжить"
 msgid "Continue with Google"
 msgstr "Продолжить с Google"
 
-#: src/features/editor/menu/share/copy-button.tsx:38
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:53
 msgid "Copied!"
 msgstr "Скопировано!"
 
@@ -195,11 +206,15 @@ msgstr "Скопировано!"
 msgid "Copy"
 msgstr "Копировать"
 
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:36
+msgid "Copy personal link"
+msgstr "Копировать личную ссылку"
+
 #: src/features/editor/menu/share/modal.tsx:60
 msgid "Copy profile URL"
 msgstr "Копировать URL профиля"
 
-#: src/features/editor/menu/menu/project-settings/round-slider.tsx:19
+#: src/features/editor/menu/menu/project-settings/views/theme/round-slider.tsx:19
 msgid "Corner radius"
 msgstr "Радиус углов"
 
@@ -231,7 +246,7 @@ msgstr "Детали"
 msgid "Didn't receive the code?"
 msgstr "Не получили код?"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:77
+#: src/features/editor/menu/menu/profile/views/profile.tsx:58
 msgid "Email"
 msgstr "Email"
 
@@ -311,7 +326,8 @@ msgstr "Введите ваш email"
 msgid "Enter your unique url link to get started. You can change it later."
 msgstr "Введите вашу уникальную ссылку для начала работы. Вы сможете изменить её позже."
 
-#: src/features/editor/menu/menu/project-settings/views/settings.tsx:20
+#: src/features/editor/menu/menu/project-settings/views/theme/font-selector.tsx:40
+#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:20
 msgid "Font"
 msgstr "Шрифт"
 
@@ -348,7 +364,7 @@ msgstr "Неверный URL"
 msgid "Italic"
 msgstr "Курсив"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:70
+#: src/features/editor/menu/menu/profile/views/profile.tsx:62
 msgid "Joined on"
 msgstr "Присоединился"
 
@@ -368,7 +384,7 @@ msgstr "Привязано"
 msgid "Log out"
 msgstr "Выйти"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:52
+#: src/features/editor/menu/menu/profile/views/profile.tsx:44
 msgid "Logout"
 msgstr "Выйти"
 
@@ -457,7 +473,12 @@ msgstr "Упс! Что-то пошло не так."
 msgid "Page not found"
 msgstr "Страница не найдена"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:85
+#: src/features/editor/menu/menu/project-settings/controller.tsx:32
+#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:25
+msgid "Page search accessibility"
+msgstr "Доступность поиска страницы"
+
+#: src/features/editor/menu/menu/profile/views/profile.tsx:69
 msgid "Password"
 msgstr "Пароль"
 
@@ -486,11 +507,11 @@ msgstr "Пароли не совпадают"
 msgid "Profile"
 msgstr "Профиль"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:17
+#: src/features/editor/menu/menu/project-settings/controller.tsx:20
 msgid "Project settings"
 msgstr "Настройки проекта"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:98
+#: src/features/editor/menu/menu/profile/views/profile.tsx:90
 msgid "Protect profile with password"
 msgstr "Защитить профиль паролем"
 
@@ -535,6 +556,10 @@ msgstr "Отправка..."
 msgid "Separator"
 msgstr "Разделитель"
 
+#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:41
+msgid "Settings"
+msgstr "Настройки"
+
 #: src/features/editor/menu/share/index.tsx:29
 msgid "Share"
 msgstr "Поделиться"
@@ -571,9 +596,15 @@ msgstr "Статус синхронизации"
 msgid "Text"
 msgstr "Текст"
 
-#: src/features/editor/menu/menu/project-settings/views/settings.tsx:14
+#: src/features/editor/menu/menu/project-settings/controller.tsx:24
+#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:14
+#: src/features/editor/menu/menu/project-settings/views/theme/theme-selector.tsx:45
 msgid "Theme"
 msgstr "Тема"
+
+#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:16
+msgid "Theme & styling"
+msgstr "Тема и оформление"
 
 #: src/features/editor/text-editor/commands-list.tsx:154
 msgid "Tip: you can select fragment of text and apply additional styling to it."
@@ -711,6 +742,10 @@ msgstr "Ваша ссылка"
 #: src/features/editor/header/name.tsx:25
 msgid "Your name"
 msgstr "Ваше имя"
+
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:33
+msgid "Your personal link"
+msgstr "Ваша личная ссылка"
 
 #: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Показать пароль"

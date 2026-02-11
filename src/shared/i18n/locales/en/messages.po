@@ -21,15 +21,19 @@ msgstr "{0}"
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:85
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:10
+msgid "Accessibility"
+msgstr "Accessibility"
+
+#: src/features/editor/menu/menu/profile/views/profile.tsx:77
 msgid "Account is protected by password"
 msgstr "Account is protected by password"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:86
+#: src/features/editor/menu/menu/profile/views/profile.tsx:78
 msgid "Account isn't protected by password"
 msgstr "Account isn't protected by password"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:106
+#: src/features/editor/menu/menu/profile/views/profile.tsx:95
 msgid "Actions"
 msgstr "Actions"
 
@@ -91,7 +95,7 @@ msgstr "Blockquote"
 msgid "Bold"
 msgstr "Bold"
 
-#: src/features/editor/menu/menu/project-settings/border-slider.tsx:18
+#: src/features/editor/menu/menu/project-settings/views/theme/border-slider.tsx:18
 msgid "Border width"
 msgstr "Border width"
 
@@ -119,7 +123,7 @@ msgstr "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "Can be changed only once in 7 days."
 msgstr "Can be changed only once in 7 days."
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:38
+#: src/features/editor/menu/menu/profile/views/profile.tsx:30
 msgid "Change email"
 msgstr "Change email"
 
@@ -131,13 +135,20 @@ msgstr "Change Email"
 msgid "Change language"
 msgstr "Change language"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:46
+#: src/features/editor/menu/menu/profile/views/profile.tsx:37
 msgid "Change password"
 msgstr "Change password"
 
 #: src/features/editor/menu/menu/profile/controller.tsx:35
 msgid "Change Password"
 msgstr "Change Password"
+
+#: src/features/editor/menu/menu/project-settings/controller.tsx:28
+#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:10
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:57
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:62
+msgid "Change slug"
+msgstr "Change slug"
 
 #: src/features/editor/text-editor/formatting-menu.tsx:108
 msgid "Code"
@@ -187,7 +198,7 @@ msgstr "Continue"
 msgid "Continue with Google"
 msgstr "Continue with Google"
 
-#: src/features/editor/menu/share/copy-button.tsx:38
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:53
 msgid "Copied!"
 msgstr "Copied!"
 
@@ -195,11 +206,15 @@ msgstr "Copied!"
 msgid "Copy"
 msgstr "Copy"
 
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:36
+msgid "Copy personal link"
+msgstr "Copy personal link"
+
 #: src/features/editor/menu/share/modal.tsx:60
 msgid "Copy profile URL"
 msgstr "Copy profile URL"
 
-#: src/features/editor/menu/menu/project-settings/round-slider.tsx:19
+#: src/features/editor/menu/menu/project-settings/views/theme/round-slider.tsx:19
 msgid "Corner radius"
 msgstr "Corner radius"
 
@@ -231,7 +246,7 @@ msgstr "Details"
 msgid "Didn't receive the code?"
 msgstr "Didn't receive the code?"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:77
+#: src/features/editor/menu/menu/profile/views/profile.tsx:58
 msgid "Email"
 msgstr "Email"
 
@@ -311,7 +326,8 @@ msgstr "Enter your email"
 msgid "Enter your unique url link to get started. You can change it later."
 msgstr "Enter your unique url link to get started. You can change it later."
 
-#: src/features/editor/menu/menu/project-settings/views/settings.tsx:20
+#: src/features/editor/menu/menu/project-settings/views/theme/font-selector.tsx:40
+#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:20
 msgid "Font"
 msgstr "Font"
 
@@ -348,7 +364,7 @@ msgstr "Invalid URL"
 msgid "Italic"
 msgstr "Italic"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:70
+#: src/features/editor/menu/menu/profile/views/profile.tsx:62
 msgid "Joined on"
 msgstr "Joined on"
 
@@ -368,7 +384,7 @@ msgstr "Linked"
 msgid "Log out"
 msgstr "Log out"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:52
+#: src/features/editor/menu/menu/profile/views/profile.tsx:44
 msgid "Logout"
 msgstr "Logout"
 
@@ -457,7 +473,12 @@ msgstr "Oops! Something went wrong."
 msgid "Page not found"
 msgstr "Page not found"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:85
+#: src/features/editor/menu/menu/project-settings/controller.tsx:32
+#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:25
+msgid "Page search accessibility"
+msgstr "Page search accessibility"
+
+#: src/features/editor/menu/menu/profile/views/profile.tsx:69
 msgid "Password"
 msgstr "Password"
 
@@ -486,11 +507,11 @@ msgstr "Passwords do not match"
 msgid "Profile"
 msgstr "Profile"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:17
+#: src/features/editor/menu/menu/project-settings/controller.tsx:20
 msgid "Project settings"
 msgstr "Project settings"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:98
+#: src/features/editor/menu/menu/profile/views/profile.tsx:90
 msgid "Protect profile with password"
 msgstr "Protect profile with password"
 
@@ -535,6 +556,10 @@ msgstr "Sending..."
 msgid "Separator"
 msgstr "Separator"
 
+#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:41
+msgid "Settings"
+msgstr "Settings"
+
 #: src/features/editor/menu/share/index.tsx:29
 msgid "Share"
 msgstr "Share"
@@ -571,9 +596,15 @@ msgstr "Synchronization status"
 msgid "Text"
 msgstr "Text"
 
-#: src/features/editor/menu/menu/project-settings/views/settings.tsx:14
+#: src/features/editor/menu/menu/project-settings/controller.tsx:24
+#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:14
+#: src/features/editor/menu/menu/project-settings/views/theme/theme-selector.tsx:45
 msgid "Theme"
 msgstr "Theme"
+
+#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:16
+msgid "Theme & styling"
+msgstr "Theme & styling"
 
 #: src/features/editor/text-editor/commands-list.tsx:154
 msgid "Tip: you can select fragment of text and apply additional styling to it."
@@ -711,6 +742,10 @@ msgstr "Your link"
 #: src/features/editor/header/name.tsx:25
 msgid "Your name"
 msgstr "Your name"
+
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:33
+msgid "Your personal link"
+msgstr "Your personal link"
 
 #: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Показать пароль"
