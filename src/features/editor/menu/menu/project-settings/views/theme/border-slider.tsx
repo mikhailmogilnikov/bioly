@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/react/macro";
+import { useProfile } from "@/features/editor/profile/use-profile";
 import { Slider } from "@/shared/ui/kit/primitives/slider";
-import { useProfile } from "../../../profile/use-profile";
 
 export function BorderSlider() {
   const updateThemeField = useProfile((state) => state.updateThemeField);

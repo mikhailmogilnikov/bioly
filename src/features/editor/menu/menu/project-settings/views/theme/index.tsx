@@ -1,11 +1,11 @@
 import { Trans } from "@lingui/react/macro";
 import { AdaptiveModalContent } from "@/shared/ui/kit/overlays/adaptive-modal";
-import { BorderSlider } from "../border-slider";
-import { FontSelector } from "../font-selector";
-import { RoundSlider } from "../round-slider";
-import { ThemeSelector } from "../theme-selector";
+import { BorderSlider } from "./border-slider";
+import { FontSelector } from "./font-selector";
+import { RoundSlider } from "./round-slider";
+import { ThemeSelector } from "./theme-selector";
 
-export function SettingsView() {
+export function SettingsThemeView() {
   return (
     <AdaptiveModalContent>
       <div className="flex flex-col gap-6 py-1">

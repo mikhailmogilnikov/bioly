@@ -1,5 +1,6 @@
 import { Trans } from "@lingui/react/macro";
 import { ChevronDownIcon } from "lucide-react";
+import { useProfile } from "@/features/editor/profile/use-profile";
 import { changeBodyFont } from "@/features/editor/use-init-editor";
 import { FONT_CLASSNAMES, FONTS, type Font } from "@/shared/domain/theme";
 import { cn } from "@/shared/lib/utils";
@@ -10,7 +11,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/shared/ui/kit/overlays/dropdown-menu";
-import { useProfile } from "../../../profile/use-profile";
 
 export function FontSelector() {
   const updateThemeField = useProfile((state) => state.updateThemeField);

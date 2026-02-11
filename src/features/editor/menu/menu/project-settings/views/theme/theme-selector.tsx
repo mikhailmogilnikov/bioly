@@ -1,5 +1,6 @@
 import { Trans } from "@lingui/react/macro";
 import { ChevronDownIcon } from "lucide-react";
+import { useProfile } from "@/features/editor/profile/use-profile";
 import { changeBodyTheme } from "@/features/editor/use-init-editor";
 import {
   THEME_CLASSNAMES,
@@ -15,7 +16,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/shared/ui/kit/overlays/dropdown-menu";
-import { useProfile } from "../../../profile/use-profile";
 
 export function ThemeSelector() {
   const updateThemeField = useProfile((state) => state.updateThemeField);

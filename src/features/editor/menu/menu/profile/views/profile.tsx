@@ -1,23 +1,14 @@
 import { Trans, useLingui } from "@lingui/react/macro";
 import { ChevronRight, KeyRound, Lock, LogOut, Mail } from "lucide-react";
-import { Fragment } from "react";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { useLocalizedRouter } from "@/shared/lib/hooks/use-localized-router";
 import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
 import { cn } from "@/shared/lib/utils";
+import { ActionList, type ActionListItem } from "@/shared/ui/kit/action-list";
 import { AdaptiveModalContent } from "@/shared/ui/kit/overlays/adaptive-modal";
 import { Button } from "@/shared/ui/kit/primitives/button";
-import { Separator } from "@/shared/ui/kit/primitives/separator";
 import { SectionTitle } from "@/shared/ui/kit/section-title";
 import type { ProfileNewViews } from "..";
-
-interface Action {
-  label: string;
-  icon: React.ElementType;
-  onClick: () => void;
-  disabled: boolean;
-  className?: string;
-}
 
 export function ProfileView() {
   const { t } = useLingui();
@@ -33,23 +24,24 @@ export function ProfileView() {
     "shallow"
   );
 
-  const actions: Action[] = [
+  const actions: ActionListItem[] = [
     {
-      label: t`Change email`,
+      id: "change-email",
+      label: <Trans>Change email</Trans>,
       icon: Mail,
-      onClick: () => {
-        push("change-email-step-1");
-      },
+      onClick: () => push("change-email-step-1"),
       disabled: false,
     },
     {
-      label: t`Change password`,
+      id: "change-password",
+      label: <Trans>Change password</Trans>,
       icon: KeyRound,
       onClick: () => push("change-password-step-1"),
       disabled: !protected_by_password,
     },
     {
-      label: t`Logout`,
+      id: "logout",
+      label: <Trans>Logout</Trans>,
       icon: LogOut,
       onClick: () => {
         // TODO: Implement logout
@@ -58,7 +50,7 @@ export function ProfileView() {
       disabled: false,
       className: "text-danger",
     },
-  ] as const;
+  ];
 
   return (
     <AdaptiveModalContent>
@@ -100,33 +92,7 @@ export function ProfileView() {
         </Button>
       )}
 
-      <SectionTitle
-        className="mt-8"
-        contentClassName="squircle flex gap-0 flex-col"
-        title={t`Actions`}
-      >
-        {actions.map((action, index) => (
-          <Fragment key={action.label}>
-            <Button
-              className={cn(
-                "h-16 w-full justify-between rounded-none has-[>svg]:px-5",
-                action?.className
-              )}
-              disabled={action.disabled}
-              onClick={action.onClick}
-              variant="ghost"
-            >
-              <div className="flex items-center gap-3">
-                <action.icon className="size-5" />
-                <Trans>{action.label}</Trans>
-              </div>
-
-              <ChevronRight className="size-6 opacity-50" />
-            </Button>
-            {index !== actions.length - 1 && <Separator />}
-          </Fragment>
-        ))}
-      </SectionTitle>
+      <ActionList actions={actions} className="mt-8" title={t`Actions`} />
     </AdaptiveModalContent>
   );
 }

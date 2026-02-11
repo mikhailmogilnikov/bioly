@@ -7,7 +7,11 @@ interface ProjectSettingsProps {
   onOpenChange: () => void;
 }
 
-export type ProjectSettingsViews = "settings";
+export type ProjectSettingsViews =
+  | "settings"
+  | "theme"
+  | "change-slug"
+  | "accessibility";
 
 export function ProjectSettingsModal({
   open,
