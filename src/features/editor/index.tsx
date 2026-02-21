@@ -5,6 +5,7 @@ import { UserPageLayout } from "../page/ui/layout";
 import { EditorBento } from "./bento";
 import { EditorHeader } from "./header";
 import { EditorMenu } from "./menu";
+import { EditorSettingsModalProvider } from "./menu/menu/project-settings/settings-modal-context";
 import { useInitEditor } from "./use-init-editor";
 
 export function Editor() {
@@ -15,12 +16,14 @@ export function Editor() {
   }
 
   return (
-    <UserPageLayout id="editor">
-      <StrictMode>
-        <EditorHeader />
-      </StrictMode>
-      <EditorBento />
-      <StrictMode>{createPortal(<EditorMenu />, document.body)}</StrictMode>
-    </UserPageLayout>
+    <EditorSettingsModalProvider>
+      <UserPageLayout id="editor">
+        <StrictMode>
+          <EditorHeader />
+        </StrictMode>
+        <EditorBento />
+        <StrictMode>{createPortal(<EditorMenu />, document.body)}</StrictMode>
+      </UserPageLayout>
+    </EditorSettingsModalProvider>
   );
 }

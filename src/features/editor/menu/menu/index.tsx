@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { Route } from "next";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { useEditorSettingsModal } from "@/features/editor/menu/menu/project-settings/settings-modal-context";
 import { buildUrl } from "@/shared/lib/utils/build-url";
 import type { ActivityIcon } from "@/shared/ui/animated-icons/activity";
 import type { ChartSplineIcon } from "@/shared/ui/animated-icons/chart-spline";
@@ -53,8 +54,10 @@ export const EditBarMenu = () => {
   const { t } = useLingui();
   const slug = useProfile((state) => state.profile.slug);
 
+  const { closeSettingsModal, openSettingsModal, settingsModalState } =
+    useEditorSettingsModal();
+
   const [openModals, setOpenModals] = useState<Record<string, boolean>>({
-    settings: false,
     activity: false,
     profile: false,
     analytics: false,
@@ -126,7 +129,11 @@ export const EditBarMenu = () => {
             return (
               <DropdownMenuItem
                 key={itemId}
-                onClick={() => handleToggleModal(itemId, true)}
+                onClick={() =>
+                  itemId === "settings"
+                    ? openSettingsModal("settings")
+                    : handleToggleModal(itemId, true)
+                }
                 onMouseEnter={() =>
                   itemIconRefs.current[itemId]?.startAnimation()
                 }
@@ -167,8 +174,9 @@ export const EditBarMenu = () => {
       </DropdownMenu>
 
       <ProjectSettingsModal
-        onOpenChange={() => handleToggleModal("settings", false)}
-        open={openModals.settings ?? false}
+        initialView={settingsModalState.initialView}
+        onOpenChange={closeSettingsModal}
+        open={settingsModalState.open}
       />
       <ProfileModalNew
         onOpenChange={() => handleToggleModal("profile", false)}

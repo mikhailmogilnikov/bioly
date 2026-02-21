@@ -1,15 +1,13 @@
-import { Trans } from "@lingui/react/macro";
+import { Trans, useLingui } from "@lingui/react/macro";
 import { clsx } from "clsx";
+import { Brush } from "lucide-react";
 import Image from "next/image";
-import { type ChangeEvent, useEffect, useEffectEvent, useRef } from "react";
+import { type ChangeEvent, useRef } from "react";
+import { useEditorSettingsModal } from "@/features/editor/menu/menu/project-settings/settings-modal-context";
 import {
   DeleteIcon,
   type DeleteIconHandle,
 } from "@/shared/ui/animated-icons/delete";
-import {
-  SparklesIcon,
-  type SparklesIconHandle,
-} from "@/shared/ui/animated-icons/sparkles";
 import {
   Tooltip,
   TooltipContent,
@@ -26,13 +24,7 @@ export const EditAvatar = ({
 
   blurClassName: string;
 }) => {
-  const {
-    name,
-    avatar_url,
-    show_avatar_blur,
-    updateThemeField,
-    updateMainField,
-  } = useProfile(
+  const { name, avatar_url, show_avatar_blur, updateMainField } = useProfile(
     (state) => ({
       name: state.profile.name,
       avatar_url: state.profile.avatar_url,
@@ -43,8 +35,10 @@ export const EditAvatar = ({
     "shallow"
   );
 
+  const { t } = useLingui();
+  const { openSettingsModal } = useEditorSettingsModal();
+
   const deleteIconRef = useRef<DeleteIconHandle>(null);
-  const sparklesIconRef = useRef<SparklesIconHandle>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -58,26 +52,6 @@ export const EditAvatar = ({
     if (file) {
       updateMainField("avatar_url", URL.createObjectURL(file));
     }
-  };
-
-  const startSparklesAnimation = useEffectEvent(() => {
-    if (show_avatar_blur) {
-      sparklesIconRef.current?.startAnimation();
-    }
-  });
-
-  useEffect(() => {
-    startSparklesAnimation();
-  }, []);
-
-  const handleToggleBlur = () => {
-    if (show_avatar_blur) {
-      sparklesIconRef.current?.stopAnimation();
-    } else {
-      sparklesIconRef.current?.startAnimation();
-    }
-
-    updateThemeField("show_avatar_blur", !show_avatar_blur);
   };
 
   return (
@@ -163,35 +137,27 @@ export const EditAvatar = ({
         </Tooltip>
       </AnimatePresence>
 
-      <AnimatePresence
-        className="motion-ease-in-out-cubic motion-duration-200 absolute top-0 right-0"
-        inClass="motion-opacity-in-0 motion-scale-in-0"
-        outClass="motion-opacity-out-0 motion-scale-out-0"
-        show={!!avatar_url}
-      >
+      <div className="motion-ease-in-out-cubic motion-duration-200 absolute top-0 right-0">
         <Tooltip>
           <TooltipTrigger asChild>
             <button
+              aria-label={t`Theme settings`}
               className={clsx(
-                "pressable flex size-11 items-center justify-center rounded-full transition-colors",
-                {
-                  "bg-foreground text-background": show_avatar_blur,
-                  "bg-default text-foreground": !show_avatar_blur,
-                }
+                "pressable flex size-11 items-center justify-center rounded-full bg-default text-foreground transition-colors"
               )}
-              onClick={handleToggleBlur}
+              onClick={() => openSettingsModal("theme")}
               type="button"
             >
-              <SparklesIcon ref={sparklesIconRef} size={20} />
+              <Brush className="size-5.5" />
             </button>
           </TooltipTrigger>
           <TooltipContent>
             <p>
-              <Trans>Toggle avatar blur</Trans>
+              <Trans>Theme settings</Trans>
             </p>
           </TooltipContent>
         </Tooltip>
-      </AnimatePresence>
+      </div>
     </div>
   );
 };
