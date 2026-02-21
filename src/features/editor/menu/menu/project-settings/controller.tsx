@@ -29,7 +29,7 @@ export function ProjectSettingsController() {
         component: <SettingsChangeSlugView />,
       },
       accessibility: {
-        title: t`Page search accessibility`,
+        title: t`Search accessibility`,
         component: <SettingsAccessibilityView />,
       },
     }),

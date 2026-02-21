@@ -22,7 +22,7 @@ export function SettingsView() {
     },
     {
       id: "accessibility",
-      label: <Trans>Page search accessibility</Trans>,
+      label: <Trans>Search accessibility</Trans>,
       icon: Globe,
       onClick: () => {
         push("accessibility");
