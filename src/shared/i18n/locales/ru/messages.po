@@ -45,7 +45,7 @@ msgstr "Активен"
 msgid "Add a new block"
 msgstr "Добавить новый блок"
 
-#: src/features/editor/header/avatar.tsx:110
+#: src/features/editor/header/avatar.tsx:84
 msgid "Add avatar"
 msgstr "Добавить аватар"
 
@@ -95,7 +95,7 @@ msgstr "Цитата"
 msgid "Bold"
 msgstr "Жирный"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/border-slider.tsx:18
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:133
 msgid "Border width"
 msgstr "Ширина границы"
 
@@ -211,7 +211,7 @@ msgstr "Копировать личную ссылку"
 msgid "Copy profile URL"
 msgstr "Копировать URL профиля"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/round-slider.tsx:19
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:123
 msgid "Corner radius"
 msgstr "Радиус углов"
 
@@ -231,7 +231,7 @@ msgstr "Текущий пароль"
 msgid "Delete"
 msgstr "Удалить"
 
-#: src/features/editor/header/avatar.tsx:160
+#: src/features/editor/header/avatar.tsx:134
 msgid "Delete avatar"
 msgstr "Удалить аватар"
 
@@ -323,8 +323,8 @@ msgstr "Введите ваш email"
 msgid "Enter your unique url link to get started. You can change it later."
 msgstr "Введите вашу уникальную ссылку для начала работы. Вы сможете изменить её позже."
 
-#: src/features/editor/menu/menu/project-settings/views/theme/font-selector.tsx:40
-#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:20
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:93
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:95
 msgid "Font"
 msgstr "Шрифт"
 
@@ -332,11 +332,11 @@ msgstr "Шрифт"
 msgid "Getting started"
 msgstr "Начало работы"
 
-#: src/features/editor/menu/menu/index.tsx:162
+#: src/features/editor/menu/menu/index.tsx:169
 msgid "Go to live"
 msgstr "Перейти на страницу"
 
-#: src/features/editor/menu/menu/index.tsx:155
+#: src/features/editor/menu/menu/index.tsx:162
 msgid "Go to live page"
 msgstr "Перейти на живую страницу"
 
@@ -409,8 +409,8 @@ msgstr "Масштаб карты"
 msgid "Media gallery"
 msgstr "Медиа галерея"
 
-#: src/features/editor/menu/menu/index.tsx:104
-#: src/features/editor/menu/menu/index.tsx:112
+#: src/features/editor/menu/menu/index.tsx:107
+#: src/features/editor/menu/menu/index.tsx:115
 msgid "Menu"
 msgstr "Меню"
 
@@ -500,11 +500,11 @@ msgstr "Пароль должен содержать хотя бы одну за
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
-#: src/features/editor/menu/menu/index.tsx:121
+#: src/features/editor/menu/menu/index.tsx:124
 msgid "Profile"
 msgstr "Профиль"
 
-#: src/features/editor/menu/menu/index.tsx:118
+#: src/features/editor/menu/menu/index.tsx:121
 msgid "Project settings"
 msgstr "Настройки проекта"
 
@@ -598,13 +598,19 @@ msgstr "Статус синхронизации"
 msgid "Text"
 msgstr "Текст"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:24
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:62
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:64
 msgid "Theme"
 msgstr "Тема"
 
 #: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:16
 msgid "Theme & styling"
 msgstr "Тема и оформление"
+
+#: src/features/editor/header/avatar.tsx:144
+#: src/features/editor/header/avatar.tsx:156
+msgid "Theme settings"
+msgstr ""
 
 #: src/features/editor/text-editor/commands-list.tsx:154
 msgid "Tip: you can select fragment of text and apply additional styling to it."
@@ -746,6 +752,10 @@ msgstr "Ваше имя"
 #: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:33
 msgid "Your personal link"
 msgstr "Ваша личная ссылка"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header-settings.tsx:21
+msgid "Подложка с размытием у аватара"
+msgstr ""
 
 #: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Показать пароль"

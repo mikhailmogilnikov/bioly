@@ -45,7 +45,7 @@ msgstr "Active"
 msgid "Add a new block"
 msgstr "Add a new block"
 
-#: src/features/editor/header/avatar.tsx:110
+#: src/features/editor/header/avatar.tsx:84
 msgid "Add avatar"
 msgstr "Add avatar"
 
@@ -95,7 +95,7 @@ msgstr "Blockquote"
 msgid "Bold"
 msgstr "Bold"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/border-slider.tsx:18
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:133
 msgid "Border width"
 msgstr "Border width"
 
@@ -211,7 +211,7 @@ msgstr "Copy personal link"
 msgid "Copy profile URL"
 msgstr "Copy profile URL"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/round-slider.tsx:19
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:123
 msgid "Corner radius"
 msgstr "Corner radius"
 
@@ -231,7 +231,7 @@ msgstr "Current Password"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/features/editor/header/avatar.tsx:160
+#: src/features/editor/header/avatar.tsx:134
 msgid "Delete avatar"
 msgstr "Delete avatar"
 
@@ -323,8 +323,8 @@ msgstr "Enter your email"
 msgid "Enter your unique url link to get started. You can change it later."
 msgstr "Enter your unique url link to get started. You can change it later."
 
-#: src/features/editor/menu/menu/project-settings/views/theme/font-selector.tsx:40
-#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:20
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:93
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:95
 msgid "Font"
 msgstr "Font"
 
@@ -332,11 +332,11 @@ msgstr "Font"
 msgid "Getting started"
 msgstr "Getting started"
 
-#: src/features/editor/menu/menu/index.tsx:162
+#: src/features/editor/menu/menu/index.tsx:169
 msgid "Go to live"
 msgstr "Go to live"
 
-#: src/features/editor/menu/menu/index.tsx:155
+#: src/features/editor/menu/menu/index.tsx:162
 msgid "Go to live page"
 msgstr "Go to live page"
 
@@ -409,8 +409,8 @@ msgstr "Map zoom"
 msgid "Media gallery"
 msgstr "Media gallery"
 
-#: src/features/editor/menu/menu/index.tsx:104
-#: src/features/editor/menu/menu/index.tsx:112
+#: src/features/editor/menu/menu/index.tsx:107
+#: src/features/editor/menu/menu/index.tsx:115
 msgid "Menu"
 msgstr "Menu"
 
@@ -500,11 +500,11 @@ msgstr "Password must contain at least one uppercase letter"
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
-#: src/features/editor/menu/menu/index.tsx:121
+#: src/features/editor/menu/menu/index.tsx:124
 msgid "Profile"
 msgstr "Profile"
 
-#: src/features/editor/menu/menu/index.tsx:118
+#: src/features/editor/menu/menu/index.tsx:121
 msgid "Project settings"
 msgstr "Project settings"
 
@@ -598,13 +598,19 @@ msgstr "Synchronization status"
 msgid "Text"
 msgstr "Text"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:24
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:62
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:64
 msgid "Theme"
 msgstr "Theme"
 
 #: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:16
 msgid "Theme & styling"
 msgstr "Theme & styling"
+
+#: src/features/editor/header/avatar.tsx:144
+#: src/features/editor/header/avatar.tsx:156
+msgid "Theme settings"
+msgstr "Theme settings"
 
 #: src/features/editor/text-editor/commands-list.tsx:154
 msgid "Tip: you can select fragment of text and apply additional styling to it."
@@ -746,6 +752,10 @@ msgstr "Your name"
 #: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:33
 msgid "Your personal link"
 msgstr "Your personal link"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header-settings.tsx:21
+msgid "Подложка с размытием у аватара"
+msgstr "Подложка с размытием у аватара"
 
 #: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Показать пароль"
