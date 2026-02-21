@@ -10,6 +10,7 @@ import { SettingsAccessibilityView } from "./views/accessibility";
 import { SettingsChangeSlugView } from "./views/change-slug";
 import { SettingsView } from "./views/settings";
 import { SettingsThemeView } from "./views/theme";
+import { ThemeHeaderView } from "./views/theme/header";
 
 export function ProjectSettingsController() {
   const { t } = useLingui();
@@ -23,6 +24,10 @@ export function ProjectSettingsController() {
       theme: {
         title: t`Theme`,
         component: <SettingsThemeView />,
+      },
+      "theme-header": {
+        title: t`Header settings`,
+        component: <ThemeHeaderView />,
       },
       "change-slug": {
         title: t`Change slug`,

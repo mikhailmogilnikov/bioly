@@ -683,6 +683,9 @@ components:
         - show_avatar_blur
         - border_radius
         - border_width
+        - avatar_size
+        - avatar_blur_size
+        - name_size
       properties:
         font:
           $ref: "#/components/schemas/Font"
@@ -703,6 +706,18 @@ components:
           maximum: 6
           description: Ширина границы в пикселях
           example: 1
+        avatar_size:
+          type: number
+          minimum: 0
+          description: Размер аватара в пикселях
+        avatar_blur_size:
+          type: number
+          minimum: 0
+          description: Размер размытия аватара в пикселях
+        name_size:
+          type: number
+          minimum: 0
+          description: Размер шрифта имени в пикселях
 
     Font:
       type: string

@@ -5,6 +5,7 @@ import { ProjectSettingsController } from "./controller";
 export type ProjectSettingsViews =
   | "settings"
   | "theme"
+  | "theme-header"
   | "change-slug"
   | "accessibility";
 

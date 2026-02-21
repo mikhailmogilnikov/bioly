@@ -20,17 +20,25 @@ export const EditAvatar = ({
   className,
   blurClassName,
 }: {
-  className: string;
-
-  blurClassName: string;
+  className?: string;
+  blurClassName?: string;
 }) => {
-  const { name, avatar_url, show_avatar_blur, updateMainField } = useProfile(
+  const {
+    name,
+    avatar_url,
+    show_avatar_blur,
+    updateMainField,
+    avatar_size,
+    avatar_blur_size,
+  } = useProfile(
     (state) => ({
       name: state.profile.name,
       avatar_url: state.profile.avatar_url,
       show_avatar_blur: state.profile.theme.show_avatar_blur,
       updateThemeField: state.updateThemeField,
       updateMainField: state.updateMainField,
+      avatar_size: state.profile.theme.avatar_size,
+      avatar_blur_size: state.profile.theme.avatar_blur_size,
     }),
     "shallow"
   );
@@ -55,7 +63,10 @@ export const EditAvatar = ({
   };
 
   return (
-    <div className={clsx("relative rounded-full", className)}>
+    <div
+      className={clsx("relative rounded-full", className)}
+      style={{ width: `${avatar_size}rem`, height: `${avatar_size}rem` }}
+    >
       <input
         accept="image/*"
         className="hidden"
@@ -90,6 +101,10 @@ export const EditAvatar = ({
         inClass="motion-opacity-in-0 motion-scale-in-0"
         outClass="motion-opacity-out-0 motion-scale-out-0"
         show={!!avatar_url && show_avatar_blur}
+        style={{
+          width: `${avatar_blur_size}%`,
+          height: `${avatar_blur_size}%`,
+        }}
       >
         {avatar_url ? (
           <Image

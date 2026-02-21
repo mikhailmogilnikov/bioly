@@ -1,7 +1,8 @@
 "use client";
 
-import { Trans } from "@lingui/react/macro";
+import { Trans, useLingui } from "@lingui/react/macro";
 import type { ChangeEvent } from "react";
+import AnimateHeight from "react-animate-height";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { AdaptiveModalContent } from "@/shared/ui/kit/overlays/adaptive-modal";
 import {
@@ -39,6 +40,7 @@ const LANG_VALUES = new Set(LANG_OPTIONS.map((o) => o.value));
 const META_DESCRIPTION_MAX_LENGTH = 200;
 
 export function SettingsAccessibilityView() {
+  const { t } = useLingui();
   const metaDescription = useProfile(
     (state) => state.profile.meta_description ?? ""
   );
@@ -71,42 +73,49 @@ export function SettingsAccessibilityView() {
             labelClassName="font-medium text-base"
             onCheckedChange={handleAllowIndexingChange}
           />
-          <Separator />
-          <div className="flex flex-col gap-2">
-            <label className="font-medium text-base" htmlFor="meta-description">
-              <Trans>SEO description</Trans>
-            </label>
-            <textarea
-              className="min-h-24 w-full resize-y rounded-2xl bg-default/50 px-4 py-3 font-medium text-base outline-none placeholder:text-foreground/50"
-              id="meta-description"
-              maxLength={META_DESCRIPTION_MAX_LENGTH}
-              onChange={handleDescriptionChange}
-              placeholder="Description for search engines..."
-              rows={4}
-              value={metaDescription}
-            />
-            <p
-              className={
-                metaDescription.length >= META_DESCRIPTION_MAX_LENGTH
-                  ? "text-danger text-sm"
-                  : "text-foreground/50 text-sm"
-              }
-            >
-              {metaDescription.length}/{META_DESCRIPTION_MAX_LENGTH}
-            </p>
-          </div>
+          <AnimateHeight duration={200} height={allowIndexing ? "auto" : 0}>
+            <div className="flex flex-col gap-6">
+              <Separator />
+              <div className="flex flex-col gap-2">
+                <label
+                  className="font-medium text-base"
+                  htmlFor="meta-description"
+                >
+                  <Trans>SEO description</Trans>
+                </label>
+                <textarea
+                  className="min-h-24 w-full resize-y rounded-2xl bg-default/50 px-4 py-3 font-medium text-base outline-none placeholder:text-foreground/50"
+                  id="meta-description"
+                  maxLength={META_DESCRIPTION_MAX_LENGTH}
+                  onChange={handleDescriptionChange}
+                  placeholder={t`Description for search engines...`}
+                  rows={4}
+                  value={metaDescription}
+                />
+                <p
+                  className={
+                    metaDescription.length >= META_DESCRIPTION_MAX_LENGTH
+                      ? "text-danger text-sm"
+                      : "text-foreground/50 text-sm"
+                  }
+                >
+                  {metaDescription.length}/{META_DESCRIPTION_MAX_LENGTH}
+                </p>
+              </div>
 
-          <ModalControlRow label={<Trans>Site language (SEO)</Trans>}>
-            <ModalDropdown
-              label={<Trans>Site language</Trans>}
-              onValueChange={handleLangChange}
-              options={LANG_OPTIONS}
-              renderTrigger={(_, label) => (
-                <p className="font-medium text-base">{label}</p>
-              )}
-              value={lang}
-            />
-          </ModalControlRow>
+              <ModalControlRow label={<Trans>Site language (SEO)</Trans>}>
+                <ModalDropdown
+                  label={<Trans>Site language</Trans>}
+                  onValueChange={handleLangChange}
+                  options={LANG_OPTIONS}
+                  renderTrigger={(_, label) => (
+                    <p className="font-medium text-base">{label}</p>
+                  )}
+                  value={lang}
+                />
+              </ModalControlRow>
+            </div>
+          </AnimateHeight>
         </div>
       </div>
     </AdaptiveModalContent>

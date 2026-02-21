@@ -846,6 +846,12 @@ export interface components {
              * @example 1
              */
             border_width: number;
+            /** @description Размер аватара в пикселях */
+            avatar_size: number;
+            /** @description Размер размытия аватара в пикселях */
+            avatar_blur_size: number;
+            /** @description Размер шрифта имени в пикселях */
+            name_size: number;
         };
         /**
          * @description Доступные шрифты

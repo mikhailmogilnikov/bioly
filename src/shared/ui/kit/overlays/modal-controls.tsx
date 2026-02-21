@@ -1,7 +1,7 @@
+import { Trans } from "@lingui/react/macro";
 import { ChevronDownIcon } from "lucide-react";
 import type * as React from "react";
 import type { ReactNode } from "react";
-
 import { cn } from "@/shared/lib/utils";
 import { Slider } from "@/shared/ui/kit/primitives/slider";
 import {
@@ -41,8 +41,8 @@ export function ModalDropdown<T extends string>({
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-2 rounded-full bg-default px-4 py-2">
-        <ChevronDownIcon className="size-4 opacity-50" />
+      <DropdownMenuTrigger className="group flex items-center gap-2 rounded-full bg-default px-4 py-2">
+        <ChevronDownIcon className="size-4 opacity-50 transition-transform group-data-[state=open]:rotate-180" />
         {renderTrigger ? (
           renderTrigger(value, currentLabel)
         ) : (
@@ -84,6 +84,7 @@ interface ModalSliderProps
     React.ComponentProps<typeof Slider>,
     "value" | "onValueChange" | "defaultValue"
   > {
+  defaultValue?: number;
   label: ReactNode;
   onValueChange: (value: number) => void;
   value: number;
@@ -96,6 +97,7 @@ export function ModalSlider({
   onValueChange,
   valueSuffix = "",
   className,
+  defaultValue,
   ...sliderProps
 }: ModalSliderProps) {
   return (
@@ -104,7 +106,12 @@ export function ModalSlider({
         <p className="font-medium text-base">{label}</p>
         <p className="font-medium text-base opacity-50">
           {value}
-          {valueSuffix}
+          {valueSuffix}{" "}
+          {defaultValue && value === defaultValue ? (
+            <Trans>(Default)</Trans>
+          ) : (
+            ""
+          )}
         </p>
       </div>
       <Slider

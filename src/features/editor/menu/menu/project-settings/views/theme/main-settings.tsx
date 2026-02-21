@@ -120,6 +120,7 @@ export function MainSettings() {
       </ModalControlRow>
 
       <ModalSlider
+        defaultValue={24}
         label={<Trans>Corner radius</Trans>}
         max={42}
         min={0}
@@ -130,6 +131,7 @@ export function MainSettings() {
       />
 
       <ModalSlider
+        defaultValue={1}
         label={<Trans>Border width</Trans>}
         max={6}
         min={1}
