@@ -1,4 +1,3 @@
-import { Trans } from "@lingui/react/macro";
 import { ChevronDownIcon } from "lucide-react";
 import type * as React from "react";
 import type { ReactNode } from "react";
@@ -107,11 +106,7 @@ export function ModalSlider({
         <p className="font-medium text-base opacity-50">
           {value}
           {valueSuffix}{" "}
-          {defaultValue && value === defaultValue ? (
-            <Trans>(Default)</Trans>
-          ) : (
-            ""
-          )}
+          {defaultValue && value === defaultValue ? "(Default)" : ""}
         </p>
       </div>
       <Slider
