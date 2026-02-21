@@ -144,9 +144,6 @@ msgid "Change Password"
 msgstr "Change Password"
 
 #: src/features/editor/menu/menu/project-settings/controller.tsx:28
-#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:10
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:57
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:62
 msgid "Change slug"
 msgstr "Change slug"
 
@@ -539,6 +536,11 @@ msgstr "Resend in {duration}"
 msgid "Save QR image"
 msgstr "Save QR image"
 
+#: src/features/editor/menu/menu/project-settings/controller.tsx:32
+#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:25
+msgid "Search accessibility"
+msgstr "Search accessibility"
+
 #: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:52
 msgid "Searching..."
 msgstr "Searching..."
@@ -597,8 +599,6 @@ msgid "Text"
 msgstr "Text"
 
 #: src/features/editor/menu/menu/project-settings/controller.tsx:24
-#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:14
-#: src/features/editor/menu/menu/project-settings/views/theme/theme-selector.tsx:45
 msgid "Theme"
 msgstr "Theme"
 
