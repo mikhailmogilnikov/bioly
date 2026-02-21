@@ -3,8 +3,8 @@ import { AdaptiveModal } from "@/shared/ui/kit/overlays/adaptive-modal";
 import { ProfileNewController } from "./controller";
 
 interface ProfileModalNewProps {
-  open: boolean;
   onOpenChange: () => void;
+  open: boolean;
 }
 
 export type ProfileNewViews =

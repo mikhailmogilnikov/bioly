@@ -33,13 +33,13 @@ interface IconHandle {
 }
 
 interface MenuItemConfig {
-  id: string;
-  label: string;
   Icon:
     | typeof CogIcon
     | typeof ActivityIcon
     | typeof UserIcon
     | typeof ChartSplineIcon;
+  id: string;
+  label: string;
 }
 
 const menuItems: MenuItemConfig[] = [

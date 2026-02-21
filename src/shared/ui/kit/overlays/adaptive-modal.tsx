@@ -26,10 +26,10 @@ import {
 
 export interface AdaptiveModalProps {
   children?: ReactNode;
-  open: boolean;
-  onOpenChange: () => void;
-  modalProps?: ModalProps;
   drawerProps?: DrawerProps;
+  modalProps?: ModalProps;
+  onOpenChange: () => void;
+  open: boolean;
 }
 
 const BREAKPOINT_MOBILE = CONFIG.BREAKPOINT_MOBILE;
@@ -103,10 +103,10 @@ export const AdaptiveModalContent = ({
 };
 
 interface AdaptiveModalFooterProps {
+  cancelButton?: boolean;
   children?: ReactNode;
   drawerProps?: DrawerFooterProps;
   modalProps?: ModalFooterProps;
-  cancelButton?: boolean;
 }
 
 export const AdaptiveModalFooter = ({

@@ -29,8 +29,8 @@ export const SocialMediaPlatforms: Record<
 } as const;
 
 interface SocialMediaItemInner {
-  name: string;
   icon: string;
+  name: string;
   url: string;
 }
 

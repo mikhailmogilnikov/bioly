@@ -65,9 +65,9 @@ export const Drawer = (props: DrawerProps) => {
 };
 
 export interface DrawerHeaderProps extends DialogTitleProps {
-  wrapperProps?: HTMLAttributes<HTMLDivElement>;
-  restContent?: ReactNode;
   onBack?: () => void;
+  restContent?: ReactNode;
+  wrapperProps?: HTMLAttributes<HTMLDivElement>;
 }
 
 export function DrawerHeader(props: DrawerHeaderProps) {

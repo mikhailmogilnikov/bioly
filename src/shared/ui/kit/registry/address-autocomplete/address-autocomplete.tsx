@@ -23,30 +23,30 @@ export interface AddressAutocompleteProps {
   adapter: GeocodingAdapter;
   /** Configuration for the geocoding adapter */
   adapterConfig?: GeocodingAdapterConfig;
-  /** Callback when an address is selected */
-  onSelect?: (address: AddressSuggestion) => void;
-  /** Callback when the input value changes */
-  onInputChange?: (value: string) => void;
-  /** Placeholder text for the input */
-  placeholder?: string;
+  /** Additional CSS classes for the input */
+  className?: string;
   /** Debounce delay in milliseconds (default: 300) */
   debounceMs?: number;
-  /** Minimum characters before searching (default: 3) */
-  minChars?: number;
-  /** Show clear button */
-  showClear?: boolean;
+  /** Initial value */
+  defaultValue?: string;
+  /** Disabled state */
+  disabled?: boolean;
   /** Empty state message */
   emptyMessage?: string;
   /** Loading state message */
   loadingMessage?: string;
-  /** Additional CSS classes for the input */
-  className?: string;
-  /** Initial value */
-  defaultValue?: string;
+  /** Minimum characters before searching (default: 3) */
+  minChars?: number;
+  /** Callback when the input value changes */
+  onInputChange?: (value: string) => void;
+  /** Callback when an address is selected */
+  onSelect?: (address: AddressSuggestion) => void;
+  /** Placeholder text for the input */
+  placeholder?: string;
+  /** Show clear button */
+  showClear?: boolean;
   /** Controlled value */
   value?: string;
-  /** Disabled state */
-  disabled?: boolean;
 }
 
 export function AddressAutocomplete({

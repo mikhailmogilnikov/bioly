@@ -3,14 +3,14 @@ import { createContext, useCallback, useContext, useState } from "react";
 import type { BentoBlock, BentoBlockTypeKey } from "../../blocks/model/types";
 
 interface BentoGridBlockContextValue<T extends BentoBlockTypeKey> {
-  id: string | null;
   block: BentoBlock<T> | null;
-  isFocused: boolean;
+  closeBlockOverlay: () => void;
+  closeBlockPanel: () => void;
+  closeBlockWrapper: () => void;
   handleBlockFocus: () => void;
   handleBlockUnfocus: () => void;
-  closeBlockWrapper: () => void;
-  closeBlockPanel: () => void;
-  closeBlockOverlay: () => void;
+  id: string | null;
+  isFocused: boolean;
 }
 
 export const BentoGridBlockContext = createContext<
@@ -27,9 +27,9 @@ export const BentoGridBlockContext = createContext<
 });
 
 interface BentoGridBlockProviderProps {
+  block: BentoBlock<BentoBlockTypeKey>;
   children: React.ReactNode;
   id: string;
-  block: BentoBlock<BentoBlockTypeKey>;
 }
 
 export const BentoGridBlockProvider = ({

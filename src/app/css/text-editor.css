@@ -15,9 +15,9 @@
 }
 
 .ProseMirror p.is-editor-empty:first-child::before {
-  @apply text-foreground/40 pointer-events-none h-0 float-left;
   position: relative;
   content: attr(data-placeholder);
+  @apply text-foreground/40 pointer-events-none h-0 float-left;
 }
 
 .ProseMirror h1 {
@@ -102,9 +102,9 @@
 }
 
 .ProseMirror span[data-type="emoji"] {
-  @apply inline-block;
   font-style: normal;
-  font-variant: normal;
   font-weight: normal;
+  font-variant: normal;
   line-height: 1;
+  @apply inline-block;
 }

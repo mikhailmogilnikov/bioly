@@ -2,8 +2,8 @@ import { createContext, useCallback, useContext, useState } from "react";
 import { AUTH_SCREENS, type AuthScreen } from "./screens";
 
 interface AuthContextType {
-  email: string | null;
   activeScreen: AuthScreen;
+  email: string | null;
   isInitialScreen: boolean;
   navigateToScreen: (screen: AuthScreen) => void;
   setEmail: (email: string) => void;

@@ -3,10 +3,10 @@ import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
 interface CopyButtonProps {
-  text: string;
+  children?: React.ReactNode;
   className?: string;
   iconClassName?: string;
-  children?: React.ReactNode;
+  text: string;
 }
 
 export function CopyButton({

@@ -6,8 +6,8 @@
 }
 
 .f-carousel__toolbar__column.is-right {
-  border-radius: 9999px;
   overflow: hidden;
+  border-radius: 9999px;
 }
 
 .fancybox__container .fancybox__backdrop {

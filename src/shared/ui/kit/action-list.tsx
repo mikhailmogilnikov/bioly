@@ -6,21 +6,21 @@ import { Separator } from "@/shared/ui/kit/primitives/separator";
 import { SectionTitle } from "@/shared/ui/kit/section-title";
 
 export interface ActionListItem {
+  className?: string;
+  disabled: boolean;
+  icon: React.ElementType;
   /** Unique key for list item. Fallback: string label or index. */
   id?: string;
   /** Label or i18n node (e.g. <Trans>...</Trans>). */
   label: React.ReactNode;
-  icon: React.ElementType;
   onClick: () => void;
-  disabled: boolean;
-  className?: string;
 }
 
 interface ActionListProps {
-  title: string;
   actions: ActionListItem[];
   className?: string;
   contentClassName?: string;
+  title: string;
 }
 
 export function ActionList({

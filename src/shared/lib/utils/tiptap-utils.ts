@@ -391,19 +391,18 @@ export const handleImageUpload = async (
 
 interface ProtocolOptions {
   /**
+   * If enabled, it allows optional slashes after the protocol.
+   * @default false
+   * @example true
+   */
+  optionalSlashes?: boolean;
+  /**
    * The protocol scheme to be registered.
    * @default '''
    * @example 'ftp'
    * @example 'git'
    */
   scheme: string;
-
-  /**
-   * If enabled, it allows optional slashes after the protocol.
-   * @default false
-   * @example true
-   */
-  optionalSlashes?: boolean;
 }
 
 type ProtocolConfig = Array<ProtocolOptions | string>;

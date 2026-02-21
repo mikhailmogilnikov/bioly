@@ -3,13 +3,13 @@
 import { createContext, useContext, useState } from "react";
 
 interface ModalViewsContextType<Views extends string> {
-  views: Views[];
-  push: (view: Views) => void;
-  pop: (steps?: number) => void;
-  replace: (view: Views) => void;
   clear: () => void;
   clearAndPush: (view: Views) => void;
   isFirstView: boolean;
+  pop: (steps?: number) => void;
+  push: (view: Views) => void;
+  replace: (view: Views) => void;
+  views: Views[];
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: any is used to avoid type errors

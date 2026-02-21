@@ -30,15 +30,15 @@
     }
 
     ::selection {
-      background: var(--foreground);
       color: var(--background);
       text-shadow: none;
+      background: var(--foreground);
     }
 
     ::-moz-selection {
-      background: var(--foreground);
       color: var(--background);
       text-shadow: none;
+      background: var(--foreground);
     }
   }
 

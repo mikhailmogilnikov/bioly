@@ -7,32 +7,32 @@
     font-weight: 400;
   }
   .font-montserrat {
-    font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif, "Inter";
     --text-lg: 1rem;
     --text-xl: 1.2rem;
     --text-2xl: 1.4rem;
     --text-3xl: 1.6rem;
     --text-4xl: 2rem;
+    font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif, "Inter";
   }
   .font-oswald {
     font-family: "Oswald", ui-sans-serif, system-ui, sans-serif, "Inter";
   }
   .font-caveat {
-    font-family: "Caveat", ui-sans-serif, system-ui, sans-serif, "Inter";
     --text-lg: 1.4rem;
     --text-xl: 1.6rem;
     --text-2xl: 1.8rem;
     --text-3xl: 2.6rem;
     --text-4xl: 3rem;
+    font-family: "Caveat", ui-sans-serif, system-ui, sans-serif, "Inter";
   }
   .font-jetbrains-mono {
-    font-family:
-      "JetBrains Mono", ui-sans-serif, system-ui, sans-serif, "Inter";
     --text-lg: 1rem;
     --text-xl: 1.2rem;
     --text-2xl: 1.4rem;
     --text-3xl: 1.6rem;
     --text-4xl: 1.8rem;
+    font-family:
+      "JetBrains Mono", ui-sans-serif, system-ui, sans-serif, "Inter";
   }
   .font-vollkorn {
     font-family: "Vollkorn", ui-sans-serif, system-ui, sans-serif, "Inter";

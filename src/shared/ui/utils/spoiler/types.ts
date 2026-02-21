@@ -1,13 +1,13 @@
 import type { ReactElement, ReactNode } from "react";
 
 export interface SpoilerPainterOptions {
-  readonly fps?: number;
-  readonly gap?: number | boolean;
-  readonly density?: number;
-  readonly mimicWords?: boolean;
   readonly accentColor?: string;
+  readonly density?: number;
   readonly fallback?: string | false;
   readonly forceFallback?: boolean;
+  readonly fps?: number;
+  readonly gap?: number | boolean;
+  readonly mimicWords?: boolean;
 }
 
 export type SpoilerProps = {

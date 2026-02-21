@@ -45,8 +45,6 @@ const modalTV = tv({
 export type ModalVariants = VariantProps<typeof modalTV>;
 
 export interface ModalProps extends Dialog.DialogProps, ModalVariants {
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
   /**
    * ClassNames for modal
    */
@@ -57,17 +55,19 @@ export interface ModalProps extends Dialog.DialogProps, ModalVariants {
     closeIcon?: string;
   };
   /**
+   * Modal height
+   */
+  height?: ModalVariants["height"];
+  /**
    * Hide close button
    */
   hideClose?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  open?: boolean;
   /**
    * Modal width
    */
   width?: ModalVariants["width"];
-  /**
-   * Modal height
-   */
-  height?: ModalVariants["height"];
 }
 
 export function Modal(props: ModalProps) {
@@ -105,9 +105,9 @@ export function Modal(props: ModalProps) {
 }
 
 export interface ModalHeaderProps extends Dialog.DialogTitleProps {
-  wrapperProps?: HTMLAttributes<HTMLDivElement>;
-  restContent?: ReactNode;
   onBack?: () => void;
+  restContent?: ReactNode;
+  wrapperProps?: HTMLAttributes<HTMLDivElement>;
 }
 
 export function ModalHeader(props: ModalHeaderProps) {

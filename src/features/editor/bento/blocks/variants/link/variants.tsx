@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import { cn } from "@/shared/lib/utils";
 
 interface BentoItemLinkFaviconProps {
+  arrowUpRightClassName?: string;
   faviconImg: ReactNode;
   faviconLightClassName?: string;
-  arrowUpRightClassName?: string;
 }
 
 const BentoItemDefaultAbsoluteItems = ({

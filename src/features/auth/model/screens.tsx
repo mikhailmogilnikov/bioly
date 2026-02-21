@@ -15,9 +15,9 @@ export const AUTH_SCREENS = {
 export type AuthScreen = (typeof AUTH_SCREENS)[keyof typeof AUTH_SCREENS];
 
 interface AuthScreenData {
-  title: MessageDescriptor;
-  description: MessageDescriptor;
   component: React.ReactNode;
+  description: MessageDescriptor;
+  title: MessageDescriptor;
 }
 
 export const AUTH_SCREENS_DATA: Record<AuthScreen, AuthScreenData> = {

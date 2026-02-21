@@ -19,18 +19,18 @@ export interface CommandsListRef {
 }
 
 interface CommandsListProps {
-  items: Array<{
-    title: string;
-    id: string;
-    command: (props: { editor: Editor; range: Range }) => void;
-    disabled?: boolean;
-  }>;
   command: (item: {
     title: string;
     id: string;
     command: (props: { editor: Editor; range: Range }) => void;
     disabled?: boolean;
   }) => void;
+  items: Array<{
+    title: string;
+    id: string;
+    command: (props: { editor: Editor; range: Range }) => void;
+    disabled?: boolean;
+  }>;
   ref?: React.RefObject<CommandsListRef>;
 }
 

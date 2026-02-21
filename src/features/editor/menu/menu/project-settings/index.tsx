@@ -3,8 +3,8 @@ import { AdaptiveModal } from "@/shared/ui/kit/overlays/adaptive-modal";
 import { ProjectSettingsController } from "./controller";
 
 interface ProjectSettingsProps {
-  open: boolean;
   onOpenChange: () => void;
+  open: boolean;
 }
 
 export type ProjectSettingsViews =

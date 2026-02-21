@@ -7,11 +7,11 @@ import { RemoveScroll } from "react-remove-scroll";
 
 interface PortalOverlayProps {
   children: ReactNode;
-  isOpen: boolean;
-  overlayId?: string;
-  onClose: () => void;
-  onAnimationEnd?: () => void;
   className?: string;
+  isOpen: boolean;
+  onAnimationEnd?: () => void;
+  onClose: () => void;
+  overlayId?: string;
 }
 
 export const PortalOverlay = ({

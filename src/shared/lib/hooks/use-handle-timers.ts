@@ -13,9 +13,9 @@ type Timer = Record<TimerId, number>;
 type TimerVault = Record<TimerVaultKeyType, Timer>;
 
 interface StartTimerPayload {
-  key: TimerVaultKeyType;
-  id: TimerId;
   duration: number;
+  id: TimerId;
+  key: TimerVaultKeyType;
 }
 
 export const useTimers = createGStore(() => {

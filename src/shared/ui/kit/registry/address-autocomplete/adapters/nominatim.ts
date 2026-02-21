@@ -5,19 +5,6 @@ import type {
 } from "../types";
 
 interface NominatimResponse {
-  place_id: number;
-  licence: string;
-  osm_type: string;
-  osm_id: number;
-  lat: string;
-  lon: string;
-  class: string;
-  type: string;
-  place_rank: number;
-  importance: number;
-  addresstype: string;
-  name: string;
-  display_name: string;
   address: {
     road?: string;
     house_number?: string;
@@ -29,20 +16,33 @@ interface NominatimResponse {
     country_code?: string;
     postcode?: string;
   };
+  addresstype: string;
   boundingbox: [string, string, string, string];
+  class: string;
+  display_name: string;
+  importance: number;
+  lat: string;
+  licence: string;
+  lon: string;
+  name: string;
+  osm_id: number;
+  osm_type: string;
+  place_id: number;
+  place_rank: number;
+  type: string;
 }
 
 interface NominatimAdapterOptions {
-  /** Custom Nominatim server URL (default: https://nominatim.openstreetmap.org) */
-  baseUrl?: string;
-  /** User-Agent header (required by Nominatim ToS) */
-  userAgent?: string;
-  /** Email for Nominatim API (recommended by ToS) */
-  email?: string;
   /** Auto-detect language from input (default: true) */
   autoDetectLanguage?: boolean;
+  /** Custom Nominatim server URL (default: https://nominatim.openstreetmap.org) */
+  baseUrl?: string;
+  /** Email for Nominatim API (recommended by ToS) */
+  email?: string;
   /** Prioritize results with house numbers (default: true) */
   prioritizeHouseLevel?: boolean;
+  /** User-Agent header (required by Nominatim ToS) */
+  userAgent?: string;
 }
 
 /** Script detection ranges: [min, max, language] */

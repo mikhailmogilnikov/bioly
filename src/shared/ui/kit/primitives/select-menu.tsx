@@ -11,11 +11,11 @@ import {
 } from "@/shared/ui/kit/overlays/dropdown-menu";
 
 interface SelectMenuProps<T extends string> {
-  value: T;
-  options: readonly T[];
-  onSelect: (value: T) => void;
-  labels?: Partial<Record<T, string>>;
   className?: string;
+  labels?: Partial<Record<T, string>>;
+  onSelect: (value: T) => void;
+  options: readonly T[];
+  value: T;
 }
 
 function SelectMenu<T extends string>({
