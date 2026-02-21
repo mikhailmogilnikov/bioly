@@ -1,8 +1,16 @@
 import { Trans, useLingui } from "@lingui/react/macro";
-import { ChevronRight, KeyRound, Lock, LogOut, Mail } from "lucide-react";
+import {
+  ChevronRight,
+  KeyRound,
+  Lock,
+  LogOut,
+  Mail,
+  Trash2,
+} from "lucide-react";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { useLocalizedRouter } from "@/shared/lib/hooks/use-localized-router";
 import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
+import { LocalStorageService } from "@/shared/lib/services/storage/local-storage";
 import { cn } from "@/shared/lib/utils";
 import { ActionList, type ActionListItem } from "@/shared/ui/kit/action-list";
 import { AdaptiveModalContent } from "@/shared/ui/kit/overlays/adaptive-modal";
@@ -46,6 +54,18 @@ export function ProfileView() {
       onClick: () => {
         // TODO: Implement logout
         router.push("/");
+      },
+      disabled: false,
+      className: "text-danger",
+    },
+    // TODO: TEMPORAL
+    {
+      id: "project-settings",
+      label: <Trans>Reset profile</Trans>,
+      icon: Trash2,
+      onClick: () => {
+        LocalStorageService.removeItem("localProfile");
+        window.location.reload();
       },
       disabled: false,
       className: "text-danger",

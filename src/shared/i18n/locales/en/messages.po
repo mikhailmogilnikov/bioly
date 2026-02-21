@@ -13,19 +13,23 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/shared/ui/kit/overlays/modal-controls.tsx:111
+msgid "(Default)"
+msgstr "(Default)"
+
 #: src/features/auth/views/login/resend.tsx:31
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:77
+#: src/features/editor/menu/menu/profile/views/profile.tsx:97
 msgid "Account is protected by password"
 msgstr "Account is protected by password"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:78
+#: src/features/editor/menu/menu/profile/views/profile.tsx:98
 msgid "Account isn't protected by password"
 msgstr "Account isn't protected by password"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:95
+#: src/features/editor/menu/menu/profile/views/profile.tsx:115
 msgid "Actions"
 msgstr "Actions"
 
@@ -37,7 +41,7 @@ msgstr "Active"
 msgid "Add a new block"
 msgstr "Add a new block"
 
-#: src/features/editor/header/avatar.tsx:84
+#: src/features/editor/header/avatar.tsx:95
 msgid "Add avatar"
 msgstr "Add avatar"
 
@@ -66,9 +70,21 @@ msgstr "Address picker"
 msgid "Allow map interaction"
 msgstr "Allow map interaction"
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:70
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:72
 msgid "Allow search engines to index this page"
 msgstr "Allow search engines to index this page"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:60
+msgid "Avatar background with blur"
+msgstr "Avatar background with blur"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:69
+msgid "Avatar bg blur radius"
+msgstr "Avatar bg blur radius"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:46
+msgid "Avatar size"
+msgstr "Avatar size"
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:116
 #: src/features/auth/views/signup/enter-slug-screen.tsx:89
@@ -87,7 +103,7 @@ msgstr "Blockquote"
 msgid "Bold"
 msgstr "Bold"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:133
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:135
 msgid "Border width"
 msgstr "Border width"
 
@@ -111,7 +127,7 @@ msgstr "Bullet List"
 msgid "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
 msgstr "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:30
+#: src/features/editor/menu/menu/profile/views/profile.tsx:38
 msgid "Change email"
 msgstr "Change email"
 
@@ -119,7 +135,7 @@ msgstr "Change email"
 msgid "Change language"
 msgstr "Change language"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:37
+#: src/features/editor/menu/menu/profile/views/profile.tsx:45
 msgid "Change password"
 msgstr "Change password"
 
@@ -127,8 +143,7 @@ msgstr "Change password"
 msgid "Change Password"
 msgstr "Change Password"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:57
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:62
+#: src/features/editor/menu/menu/project-settings/controller.tsx:33
 msgid "Change slug"
 msgstr "Change slug"
 
@@ -196,7 +211,7 @@ msgstr "Copy personal link"
 msgid "Copy profile URL"
 msgstr "Copy profile URL"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:123
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:124
 msgid "Corner radius"
 msgstr "Corner radius"
 
@@ -216,9 +231,13 @@ msgstr "Current Password"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/features/editor/header/avatar.tsx:134
+#: src/features/editor/header/avatar.tsx:149
 msgid "Delete avatar"
 msgstr "Delete avatar"
+
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:91
+msgid "Description for search engines..."
+msgstr "Description for search engines..."
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:20
 msgid "Details"
@@ -228,8 +247,7 @@ msgstr "Details"
 msgid "Didn't receive the code?"
 msgstr "Didn't receive the code?"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:77
-#: src/features/editor/menu/menu/profile/views/profile.tsx:58
+#: src/features/editor/menu/menu/profile/views/profile.tsx:78
 msgid "Email"
 msgstr "Email"
 
@@ -310,6 +328,11 @@ msgstr "Go to live"
 msgid "Go to live page"
 msgstr "Go to live page"
 
+#: src/features/editor/menu/menu/project-settings/controller.tsx:29
+#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:16
+msgid "Header settings"
+msgstr "Header settings"
+
 #: src/features/editor/text-editor/extensions/suggestion.tsx:14
 msgid "Heading"
 msgstr "Heading"
@@ -331,7 +354,7 @@ msgstr "Invalid URL"
 msgid "Italic"
 msgstr "Italic"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:62
+#: src/features/editor/menu/menu/profile/views/profile.tsx:82
 msgid "Joined on"
 msgstr "Joined on"
 
@@ -348,7 +371,7 @@ msgstr "Link"
 msgid "Linked"
 msgstr "Linked"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:44
+#: src/features/editor/menu/menu/profile/views/profile.tsx:52
 msgid "Logout"
 msgstr "Logout"
 
@@ -384,6 +407,10 @@ msgstr "Menu"
 #: src/features/editor/text-editor/formatting-menu.tsx:114
 msgid "Muted"
 msgstr "Muted"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:33
+msgid "Name font size"
+msgstr "Name font size"
 
 #: src/features/editor/menu/new-item/index.tsx:105
 msgid "New block"
@@ -438,12 +465,15 @@ msgstr "Only digits are allowed"
 msgid "Oops! Something went wrong."
 msgstr "Oops! Something went wrong."
 
+#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:28
+msgid "Options"
+msgstr "Options"
+
 #: src/app/[lang]/(brand)/404/page.tsx:10
 msgid "Page not found"
 msgstr "Page not found"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:85
-#: src/features/editor/menu/menu/profile/views/profile.tsx:69
+#: src/features/editor/menu/menu/profile/views/profile.tsx:89
 msgid "Password"
 msgstr "Password"
 
@@ -474,12 +504,11 @@ msgstr "Passwords do not match"
 msgid "Profile"
 msgstr "Profile"
 
-#: src/features/editor/menu/menu/index.tsx:121
-#: src/features/editor/menu/menu/project-settings/controller.tsx:20
+#: src/features/editor/menu/menu/project-settings/controller.tsx:21
 msgid "Project settings"
 msgstr "Project settings"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:90
+#: src/features/editor/menu/menu/profile/views/profile.tsx:110
 msgid "Protect profile with password"
 msgstr "Protect profile with password"
 
@@ -503,6 +532,10 @@ msgstr "Resend"
 msgid "Resend in {duration}"
 msgstr "Resend in {duration}"
 
+#: src/features/editor/menu/menu/profile/views/profile.tsx:64
+msgid "Reset profile"
+msgstr "Reset profile"
+
 #: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:88
 msgid "Save"
 msgstr "Save"
@@ -515,8 +548,7 @@ msgstr "Save QR image"
 msgid "Saving..."
 msgstr "Saving..."
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:32
-#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:25
+#: src/features/editor/menu/menu/project-settings/controller.tsx:37
 msgid "Search accessibility"
 msgstr "Search accessibility"
 
@@ -533,7 +565,7 @@ msgstr "Sending code..."
 msgid "Sending..."
 msgstr "Sending..."
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:77
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:84
 msgid "SEO description"
 msgstr "SEO description"
 
@@ -561,11 +593,11 @@ msgstr "Share my profile"
 msgid "Signing in..."
 msgstr "Signing in..."
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:101
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:108
 msgid "Site language"
 msgstr "Site language"
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:99
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:106
 msgid "Site language (SEO)"
 msgstr "Site language (SEO)"
 
@@ -593,7 +625,7 @@ msgstr "Text"
 msgid "The slug is the part of the URL that appears after the domain name. Can be changed only once in 7 days."
 msgstr "The slug is the part of the URL that appears after the domain name. Can be changed only once in 7 days."
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:24
+#: src/features/editor/menu/menu/project-settings/controller.tsx:25
 #: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:62
 #: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:64
 msgid "Theme"
@@ -603,8 +635,8 @@ msgstr "Theme"
 msgid "Theme & styling"
 msgstr "Theme & styling"
 
-#: src/features/editor/header/avatar.tsx:144
-#: src/features/editor/header/avatar.tsx:156
+#: src/features/editor/header/avatar.tsx:159
+#: src/features/editor/header/avatar.tsx:171
 msgid "Theme settings"
 msgstr "Theme settings"
 
@@ -719,7 +751,7 @@ msgstr "We're sorry, but an error occurred while loading this page. If the probl
 msgid "Welcome!"
 msgstr "Welcome!"
 
-#: src/features/editor/header/name.tsx:25
+#: src/features/editor/header/name.tsx:26
 msgid "Your name"
 msgstr "Your name"
 

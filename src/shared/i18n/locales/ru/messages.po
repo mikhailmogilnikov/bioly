@@ -13,19 +13,23 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/shared/ui/kit/overlays/modal-controls.tsx:111
+msgid "(Default)"
+msgstr "(По умолчанию)"
+
 #: src/features/auth/views/login/resend.tsx:31
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {секунды} many {секунд} one {секунда} other {секунд}}"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:77
+#: src/features/editor/menu/menu/profile/views/profile.tsx:97
 msgid "Account is protected by password"
 msgstr "Аккаунт защищен паролем"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:78
+#: src/features/editor/menu/menu/profile/views/profile.tsx:98
 msgid "Account isn't protected by password"
 msgstr "Аккаунт не защищен паролем"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:95
+#: src/features/editor/menu/menu/profile/views/profile.tsx:115
 msgid "Actions"
 msgstr "Действия"
 
@@ -37,7 +41,7 @@ msgstr "Активен"
 msgid "Add a new block"
 msgstr "Добавить новый блок"
 
-#: src/features/editor/header/avatar.tsx:84
+#: src/features/editor/header/avatar.tsx:95
 msgid "Add avatar"
 msgstr "Добавить аватар"
 
@@ -66,9 +70,21 @@ msgstr "Выбор адреса"
 msgid "Allow map interaction"
 msgstr "Разрешить взаимодействие с картой"
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:70
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:72
 msgid "Allow search engines to index this page"
 msgstr "Разрешить поисковым системам индексировать эту страницу"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:60
+msgid "Avatar background with blur"
+msgstr "Фон аватара с размытием"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:69
+msgid "Avatar bg blur radius"
+msgstr "Радиус размытия фона аватара"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:46
+msgid "Avatar size"
+msgstr "Размер аватара"
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:116
 #: src/features/auth/views/signup/enter-slug-screen.tsx:89
@@ -87,7 +103,7 @@ msgstr "Цитата"
 msgid "Bold"
 msgstr "Жирный"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:133
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:135
 msgid "Border width"
 msgstr "Ширина границы"
 
@@ -111,7 +127,7 @@ msgstr "Маркированный список"
 msgid "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
 msgstr "Продолжая, вы соглашаетесь с нашими <0>Условиями использования</0> и <1>Политикой конфиденциальности</1>."
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:30
+#: src/features/editor/menu/menu/profile/views/profile.tsx:38
 msgid "Change email"
 msgstr "Изменить email"
 
@@ -119,7 +135,7 @@ msgstr "Изменить email"
 msgid "Change language"
 msgstr "Изменить язык"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:37
+#: src/features/editor/menu/menu/profile/views/profile.tsx:45
 msgid "Change password"
 msgstr "Изменить пароль"
 
@@ -127,8 +143,7 @@ msgstr "Изменить пароль"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:57
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:62
+#: src/features/editor/menu/menu/project-settings/controller.tsx:33
 msgid "Change slug"
 msgstr "Изменить имя пользователя"
 
@@ -196,7 +211,7 @@ msgstr "Копировать личную ссылку"
 msgid "Copy profile URL"
 msgstr "Копировать URL профиля"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:123
+#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:124
 msgid "Corner radius"
 msgstr "Радиус углов"
 
@@ -216,9 +231,13 @@ msgstr "Текущий пароль"
 msgid "Delete"
 msgstr "Удалить"
 
-#: src/features/editor/header/avatar.tsx:134
+#: src/features/editor/header/avatar.tsx:149
 msgid "Delete avatar"
 msgstr "Удалить аватар"
+
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:91
+msgid "Description for search engines..."
+msgstr "Описание для поисковых систем..."
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:20
 msgid "Details"
@@ -228,8 +247,7 @@ msgstr "Детали"
 msgid "Didn't receive the code?"
 msgstr "Не получили код?"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:77
-#: src/features/editor/menu/menu/profile/views/profile.tsx:58
+#: src/features/editor/menu/menu/profile/views/profile.tsx:78
 msgid "Email"
 msgstr "Email"
 
@@ -310,6 +328,11 @@ msgstr "Перейти на страницу"
 msgid "Go to live page"
 msgstr "Перейти на живую страницу"
 
+#: src/features/editor/menu/menu/project-settings/controller.tsx:29
+#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:16
+msgid "Header settings"
+msgstr "Настройки заголовка"
+
 #: src/features/editor/text-editor/extensions/suggestion.tsx:14
 msgid "Heading"
 msgstr "Заголовок"
@@ -331,7 +354,7 @@ msgstr "Неверный URL"
 msgid "Italic"
 msgstr "Курсив"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:62
+#: src/features/editor/menu/menu/profile/views/profile.tsx:82
 msgid "Joined on"
 msgstr "Присоединился"
 
@@ -348,7 +371,7 @@ msgstr "Ссылка"
 msgid "Linked"
 msgstr "Привязано"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:44
+#: src/features/editor/menu/menu/profile/views/profile.tsx:52
 msgid "Logout"
 msgstr "Выйти"
 
@@ -384,6 +407,10 @@ msgstr "Меню"
 #: src/features/editor/text-editor/formatting-menu.tsx:114
 msgid "Muted"
 msgstr "Приглушенный"
+
+#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:33
+msgid "Name font size"
+msgstr "Размер шрифта имени"
 
 #: src/features/editor/menu/new-item/index.tsx:105
 msgid "New block"
@@ -438,12 +465,15 @@ msgstr "Разрешены только цифры"
 msgid "Oops! Something went wrong."
 msgstr "Упс! Что-то пошло не так."
 
+#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:28
+msgid "Options"
+msgstr "Параметры"
+
 #: src/app/[lang]/(brand)/404/page.tsx:10
 msgid "Page not found"
 msgstr "Страница не найдена"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:85
-#: src/features/editor/menu/menu/profile/views/profile.tsx:69
+#: src/features/editor/menu/menu/profile/views/profile.tsx:89
 msgid "Password"
 msgstr "Пароль"
 
@@ -474,12 +504,11 @@ msgstr "Пароли не совпадают"
 msgid "Profile"
 msgstr "Профиль"
 
-#: src/features/editor/menu/menu/index.tsx:121
-#: src/features/editor/menu/menu/project-settings/controller.tsx:20
+#: src/features/editor/menu/menu/project-settings/controller.tsx:21
 msgid "Project settings"
 msgstr "Настройки проекта"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:90
+#: src/features/editor/menu/menu/profile/views/profile.tsx:110
 msgid "Protect profile with password"
 msgstr "Защитить профиль паролем"
 
@@ -503,6 +532,10 @@ msgstr "Отправить повторно"
 msgid "Resend in {duration}"
 msgstr "Отправить повторно через {duration}"
 
+#: src/features/editor/menu/menu/profile/views/profile.tsx:64
+msgid "Reset profile"
+msgstr ""
+
 #: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:88
 msgid "Save"
 msgstr "Сохранить"
@@ -515,8 +548,7 @@ msgstr "Сохранить QR изображение"
 msgid "Saving..."
 msgstr "Сохранение..."
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:32
-#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:25
+#: src/features/editor/menu/menu/project-settings/controller.tsx:37
 msgid "Search accessibility"
 msgstr "Доступность для поиска"
 
@@ -533,7 +565,7 @@ msgstr "Отправка кода..."
 msgid "Sending..."
 msgstr "Отправка..."
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:77
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:84
 msgid "SEO description"
 msgstr "SEO описание"
 
@@ -561,11 +593,11 @@ msgstr "Поделиться моим профилем"
 msgid "Signing in..."
 msgstr "Вход..."
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:101
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:108
 msgid "Site language"
 msgstr "Язык сайта"
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:99
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:106
 msgid "Site language (SEO)"
 msgstr "Язык сайта (SEO)"
 
@@ -593,7 +625,7 @@ msgstr "Текст"
 msgid "The slug is the part of the URL that appears after the domain name. Can be changed only once in 7 days."
 msgstr "Slug — это часть URL после имени домена. Может быть изменён только один раз в 7 дней."
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:24
+#: src/features/editor/menu/menu/project-settings/controller.tsx:25
 #: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:62
 #: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:64
 msgid "Theme"
@@ -603,8 +635,8 @@ msgstr "Тема"
 msgid "Theme & styling"
 msgstr "Тема и оформление"
 
-#: src/features/editor/header/avatar.tsx:144
-#: src/features/editor/header/avatar.tsx:156
+#: src/features/editor/header/avatar.tsx:159
+#: src/features/editor/header/avatar.tsx:171
 msgid "Theme settings"
 msgstr "Настройки темы"
 
@@ -719,7 +751,7 @@ msgstr "Извините, но при загрузке страницы прои
 msgid "Welcome!"
 msgstr "Добро пожаловать!"
 
-#: src/features/editor/header/name.tsx:25
+#: src/features/editor/header/name.tsx:26
 msgid "Your name"
 msgstr "Ваше имя"
 
