@@ -55,7 +55,7 @@ export function SettingsMyLink() {
       <Separator className="" />
       <button
         aria-label={t`Change slug`}
-        className="flex items-center justify-center gap-1 p-3 font-medium text-base transition-colors hover:bg-foreground/5 active:bg-foreground/10"
+        className="flex items-center justify-center gap-1 p-3 font-medium text-base text-foreground/70 transition-colors hover:bg-foreground/5 active:bg-foreground/10"
         onClick={() => push("change-slug")}
         type="button"
       >

@@ -13,17 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:121
-msgid "{0}"
-msgstr "{0}"
-
 #: src/features/auth/views/login/resend.tsx:31
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {секунды} many {секунд} one {секунда} other {секунд}}"
-
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:10
-msgid "Accessibility"
-msgstr "Доступность"
 
 #: src/features/editor/menu/menu/profile/views/profile.tsx:77
 msgid "Account is protected by password"
@@ -74,6 +66,10 @@ msgstr "Выбор адреса"
 msgid "Allow map interaction"
 msgstr "Разрешить взаимодействие с картой"
 
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:70
+msgid "Allow search engines to index this page"
+msgstr "Разрешить поисковым системам индексировать эту страницу"
+
 #: src/features/auth/views/login/verify-otp-screen.tsx:116
 #: src/features/auth/views/signup/enter-slug-screen.tsx:89
 msgid "Back to enter email"
@@ -82,10 +78,6 @@ msgstr "Назад к вводу email"
 #: src/features/auth/views/signup/verify-otp-screen.tsx:119
 msgid "Back to enter slug"
 msgstr "Назад к вводу имени пользователя"
-
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:64
-msgid "Back to passwords"
-msgstr "Назад к паролям"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:17
 msgid "Blockquote"
@@ -119,16 +111,8 @@ msgstr "Маркированный список"
 msgid "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
 msgstr "Продолжая, вы соглашаетесь с нашими <0>Условиями использования</0> и <1>Политикой конфиденциальности</1>."
 
-#: src/features/editor/menu/menu/profile/change-slug.tsx:48
-msgid "Can be changed only once in 7 days."
-msgstr "Можно изменить только один раз в 7 дней."
-
 #: src/features/editor/menu/menu/profile/views/profile.tsx:30
 msgid "Change email"
-msgstr "Изменить email"
-
-#: src/features/editor/menu/menu/profile/controller.tsx:28
-msgid "Change Email"
 msgstr "Изменить email"
 
 #: src/shared/ui/utils/lang-picker.tsx:28
@@ -143,7 +127,8 @@ msgstr "Изменить пароль"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:28
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:57
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:62
 msgid "Change slug"
 msgstr "Изменить имя пользователя"
 
@@ -195,7 +180,7 @@ msgstr "Продолжить"
 msgid "Continue with Google"
 msgstr "Продолжить с Google"
 
-#: src/features/editor/menu/share/copy-button.tsx:38
+#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:53
 msgid "Copied!"
 msgstr "Скопировано!"
 
@@ -243,19 +228,17 @@ msgstr "Детали"
 msgid "Didn't receive the code?"
 msgstr "Не получили код?"
 
+#: src/features/auth/views/enter-email/enter-email-form.tsx:77
 #: src/features/editor/menu/menu/profile/views/profile.tsx:58
 msgid "Email"
 msgstr "Email"
-
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:66
-msgid "Email:"
-msgstr "Email:"
 
 #: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:54
 msgid "Enter address..."
 msgstr "Введите адрес..."
 
 #: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:103
+#: src/shared/lib/hooks/use-validation.ts:62
 msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
@@ -263,7 +246,9 @@ msgstr "Введите текущий пароль"
 msgid "Enter map title"
 msgstr "Введите заголовок карты"
 
+#: src/features/editor/menu/menu/profile/controller.tsx:27
 #: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:87
+#: src/shared/lib/hooks/use-validation.ts:42
 msgid "Enter new email"
 msgstr "Введите новый email"
 
@@ -275,18 +260,6 @@ msgstr "Введите новый пароль"
 msgid "Enter password"
 msgstr "Введите пароль"
 
-#: src/features/editor/menu/menu/profile/change-password/progress.tsx:12
-msgid "Enter passwords"
-msgstr "Введите пароли"
-
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:132
-msgid "Enter the 6-digit code we sent to the new email address."
-msgstr "Введите 6-значный код, который мы отправили на новый email адрес."
-
-#: src/features/editor/menu/menu/profile/views/change-email/step-1.tsx:104
-msgid "Enter the 6-digit code we sent to your current email address ({email}) to confirm your identity."
-msgstr "Введите 6-значный код, который мы отправили на ваш текущий email адрес ({email}) для подтверждения вашей личности."
-
 #: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:128
 msgid "Enter the 6-digit code we sent to your email address ({email}) to complete adding a password."
 msgstr "Введите 6-значный код, который мы отправили на ваш email адрес ({email}) для завершения добавления пароля."
@@ -294,10 +267,6 @@ msgstr "Введите 6-значный код, который мы отправ
 #: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:127
 msgid "Enter the 6-digit code we sent to your email address ({email}) to complete changing your password."
 msgstr "Введите 6-значный код, который мы отправили на ваш email адрес ({email}) для завершения изменения пароля."
-
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:129
-msgid "Enter the 6-digit code we sent to your email address."
-msgstr "Введите 6-значный код, который мы отправили на ваш email адрес."
 
 #: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:126
 msgid "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
@@ -316,6 +285,7 @@ msgid "Enter username"
 msgstr "Введите имя пользователя"
 
 #: src/features/auth/views/enter-email/enter-email-form.tsx:85
+#: src/shared/lib/hooks/use-validation.ts:38
 msgid "Enter your email"
 msgstr "Введите ваш email"
 
@@ -370,16 +340,13 @@ msgid "Last update:"
 msgstr "Последнее обновление:"
 
 #: src/features/editor/menu/new-item/index.tsx:142
+#: src/features/editor/text-editor/formatting-menu.tsx:120
 msgid "Link"
 msgstr "Ссылка"
 
 #: src/features/editor/header/social-media/linked-social-media.tsx:158
 msgid "Linked"
 msgstr "Привязано"
-
-#: src/features/editor/menu/menu/profile/logout.tsx:19
-msgid "Log out"
-msgstr "Выйти"
 
 #: src/features/editor/menu/menu/profile/views/profile.tsx:44
 msgid "Logout"
@@ -431,8 +398,13 @@ msgid "New Password"
 msgstr "Новый пароль"
 
 #: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:47
+#: src/shared/lib/hooks/use-validation.ts:77
 msgid "New password must be different from old password"
 msgstr "Новый пароль должен отличаться от старого пароля"
+
+#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:39
+msgid "New slug must be different from current slug"
+msgstr "Новое имя пользователя должно отличаться от текущего"
 
 #: src/features/editor/bento/grid/ui/root.tsx:41
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
@@ -470,11 +442,7 @@ msgstr "Упс! Что-то пошло не так."
 msgid "Page not found"
 msgstr "Страница не найдена"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:32
-#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:25
-msgid "Page search accessibility"
-msgstr "Доступность поиска страницы"
-
+#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:85
 #: src/features/editor/menu/menu/profile/views/profile.tsx:69
 msgid "Password"
 msgstr "Пароль"
@@ -497,14 +465,17 @@ msgstr "Пароль должен содержать хотя бы одну за
 
 #: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:42
 #: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:43
+#: src/shared/lib/hooks/use-validation.ts:73
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
 #: src/features/editor/menu/menu/index.tsx:124
+#: src/features/editor/menu/menu/profile/controller.tsx:23
 msgid "Profile"
 msgstr "Профиль"
 
 #: src/features/editor/menu/menu/index.tsx:121
+#: src/features/editor/menu/menu/project-settings/controller.tsx:20
 msgid "Project settings"
 msgstr "Настройки проекта"
 
@@ -532,14 +503,22 @@ msgstr "Отправить повторно"
 msgid "Resend in {duration}"
 msgstr "Отправить повторно через {duration}"
 
+#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:88
+msgid "Save"
+msgstr "Сохранить"
+
 #: src/features/editor/menu/share/modal.tsx:53
 msgid "Save QR image"
 msgstr "Сохранить QR изображение"
 
+#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:86
+msgid "Saving..."
+msgstr "Сохранение..."
+
 #: src/features/editor/menu/menu/project-settings/controller.tsx:32
 #: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:25
 msgid "Search accessibility"
-msgstr ""
+msgstr "Доступность для поиска"
 
 #: src/features/editor/bento/blocks/variants/map/options/address-picker.tsx:52
 msgid "Searching..."
@@ -553,6 +532,10 @@ msgstr "Отправка кода..."
 #: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:116
 msgid "Sending..."
 msgstr "Отправка..."
+
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:77
+msgid "SEO description"
+msgstr "SEO описание"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:19
 msgid "Separator"
@@ -578,6 +561,14 @@ msgstr "Поделиться моим профилем"
 msgid "Signing in..."
 msgstr "Вход..."
 
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:101
+msgid "Site language"
+msgstr "Язык сайта"
+
+#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:99
+msgid "Site language (SEO)"
+msgstr "Язык сайта (SEO)"
+
 #: src/features/editor/header/social-media/modal.tsx:39
 msgid "Social media"
 msgstr "Социальные сети"
@@ -598,6 +589,11 @@ msgstr "Статус синхронизации"
 msgid "Text"
 msgstr "Текст"
 
+#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:74
+msgid "The slug is the part of the URL that appears after the domain name. Can be changed only once in 7 days."
+msgstr "Slug — это часть URL после имени домена. Может быть изменён только один раз в 7 дней."
+
+#: src/features/editor/menu/menu/project-settings/controller.tsx:24
 #: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:62
 #: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:64
 msgid "Theme"
@@ -610,7 +606,7 @@ msgstr "Тема и оформление"
 #: src/features/editor/header/avatar.tsx:144
 #: src/features/editor/header/avatar.tsx:156
 msgid "Theme settings"
-msgstr ""
+msgstr "Настройки темы"
 
 #: src/features/editor/text-editor/commands-list.tsx:154
 msgid "Tip: you can select fragment of text and apply additional styling to it."
@@ -623,10 +619,6 @@ msgstr "Заголовок"
 #: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:46
 msgid "Title position"
 msgstr "Позиция заголовка"
-
-#: src/features/editor/header/avatar.tsx:190
-msgid "Toggle avatar blur"
-msgstr "Переключить размытие аватара"
 
 #: src/features/editor/bento/blocks/variants/map/options/title-align.tsx:28
 msgid "Top center"
@@ -682,12 +674,6 @@ msgstr "Имя пользователя должно содержать не б�
 msgid "Verification"
 msgstr "Подтверждение"
 
-#: src/features/editor/menu/menu/profile/change-email/step-0.tsx:89
-#: src/features/editor/menu/menu/profile/change-email/step-2.tsx:84
-#: src/features/editor/menu/menu/profile/change-password/step-2.tsx:81
-msgid "Verification code"
-msgstr "Код подтверждения"
-
 #: src/shared/lib/hooks/use-validation.ts:17
 msgid "Verification code must be 6 digits"
 msgstr "Код подтверждения должен состоять из 6 цифр"
@@ -699,14 +685,6 @@ msgstr "Код подтверждения должен состоять из 6 �
 #: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:142
 msgid "Verify code"
 msgstr "Подтвердить код"
-
-#: src/features/editor/menu/menu/profile/change-email/progress.tsx:12
-msgid "Verify current email"
-msgstr "Подтвердить текущий email"
-
-#: src/features/editor/menu/menu/profile/change-email/progress.tsx:20
-msgid "Verify new email"
-msgstr "Подтвердить новый email"
 
 #: src/features/auth/views/login/verify-otp-screen.tsx:105
 #: src/features/auth/views/signup/verify-otp-screen.tsx:108
@@ -741,10 +719,6 @@ msgstr "Извините, но при загрузке страницы прои
 msgid "Welcome!"
 msgstr "Добро пожаловать!"
 
-#: src/features/editor/menu/menu/profile/change-slug.tsx:26
-msgid "Your link"
-msgstr "Ваша ссылка"
-
 #: src/features/editor/header/name.tsx:25
 msgid "Your name"
 msgstr "Ваше имя"
@@ -755,7 +729,7 @@ msgstr "Ваша личная ссылка"
 
 #: src/features/editor/menu/menu/project-settings/views/theme/header-settings.tsx:21
 msgid "Подложка с размытием у аватара"
-msgstr ""
+msgstr "Подложка с размытием у аватара"
 
 #: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Показать пароль"

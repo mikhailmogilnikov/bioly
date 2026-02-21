@@ -23,4 +23,7 @@ export const DEFAULT_MOCK_PROFILE: Profile = {
   },
   social_media: [],
   bento: [],
+  meta_description: "",
+  lang: "en",
+  allow_indexing: true,
 };

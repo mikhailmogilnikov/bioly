@@ -795,6 +795,21 @@ export interface components {
              *     ID и порядок (order) должны быть уникальными для каждого блока.
              */
             bento: components["schemas"]["BentoBlock"][];
+            /**
+             * @description SEO meta description для поисковых систем
+             * @default
+             */
+            meta_description: string;
+            /**
+             * @description Язык сайта (атрибут lang в HTML, BCP 47, например en, ru, de, fr, ja)
+             * @default en
+             */
+            lang: string;
+            /**
+             * @description Разрешить индексацию страницы поисковыми системами
+             * @default true
+             */
+            allow_indexing: boolean;
         };
         ProfileMainEditableFields: {
             name: string;
@@ -812,6 +827,9 @@ export interface components {
             theme: components["schemas"]["ProfileTheme"];
             social_media: components["schemas"]["SocialMediaItem"][];
             bento: components["schemas"]["BentoBlock"][];
+            meta_description?: string;
+            lang?: string;
+            allow_indexing?: boolean;
         };
         ProfileTheme: {
             font: components["schemas"]["Font"];

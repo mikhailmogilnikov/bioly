@@ -587,6 +587,22 @@ components:
           description: |
             Массив блоков Bento. Максимум 50 элементов.
             ID и порядок (order) должны быть уникальными для каждого блока.
+        meta_description:
+          type: string
+          description: SEO meta description для поисковых систем
+          minLength: 0
+          maxLength: 200
+          default: ""
+        lang:
+          type: string
+          description: Язык сайта (атрибут lang в HTML, BCP 47, например en, ru, de, fr, ja)
+          minLength: 2
+          maxLength: 10
+          default: "en"
+        allow_indexing:
+          type: boolean
+          description: Разрешить индексацию страницы поисковыми системами
+          default: true
 
     ProfileMainEditableFields:
       type: object
@@ -648,6 +664,16 @@ components:
             $ref: "#/components/schemas/BentoBlock"
           maxItems: 50
           uniqueItems: true
+        meta_description:
+          type: string
+          minLength: 0
+          maxLength: 200
+        lang:
+          type: string
+          minLength: 2
+          maxLength: 10
+        allow_indexing:
+          type: boolean
 
     ProfileTheme:
       type: object
