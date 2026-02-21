@@ -195,7 +195,7 @@ msgstr "Continue"
 msgid "Continue with Google"
 msgstr "Continue with Google"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:53
+#: src/features/editor/menu/share/copy-button.tsx:38
 msgid "Copied!"
 msgstr "Copied!"
 
@@ -500,11 +500,11 @@ msgstr "Password must contain at least one uppercase letter"
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:23
+#: src/features/editor/menu/menu/index.tsx:121
 msgid "Profile"
 msgstr "Profile"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:20
+#: src/features/editor/menu/menu/index.tsx:118
 msgid "Project settings"
 msgstr "Project settings"
 

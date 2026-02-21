@@ -195,7 +195,7 @@ msgstr "Продолжить"
 msgid "Continue with Google"
 msgstr "Продолжить с Google"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:53
+#: src/features/editor/menu/share/copy-button.tsx:38
 msgid "Copied!"
 msgstr "Скопировано!"
 
@@ -500,11 +500,11 @@ msgstr "Пароль должен содержать хотя бы одну за
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:23
+#: src/features/editor/menu/menu/index.tsx:121
 msgid "Profile"
 msgstr "Профиль"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:20
+#: src/features/editor/menu/menu/index.tsx:118
 msgid "Project settings"
 msgstr "Настройки проекта"
 
