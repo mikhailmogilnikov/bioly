@@ -331,7 +331,7 @@ msgstr "Перейти на живую страницу"
 #: src/features/editor/menu/menu/project-settings/controller.tsx:29
 #: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:16
 msgid "Header settings"
-msgstr "Настройки заголовка"
+msgstr "Настройки шапки"
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:14
 msgid "Heading"
