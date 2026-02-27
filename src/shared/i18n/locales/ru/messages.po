@@ -13,10 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/shared/ui/kit/overlays/modal-controls.tsx:111
-msgid "(Default)"
-msgstr "(По умолчанию)"
-
 #: src/features/auth/views/login/resend.tsx:31
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {секунды} many {секунд} one {секунда} other {секунд}}"
@@ -185,6 +181,8 @@ msgstr "Подтвердить изменение пароля"
 msgid "Confirmation"
 msgstr "Подтверждение"
 
+#: src/features/auth/views/enter-email/enter-email-form.tsx:108
+#: src/features/auth/views/signup/enter-slug-screen.tsx:81
 #: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:151
 #: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:118
 #: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:189
@@ -196,6 +194,7 @@ msgid "Continue with Google"
 msgstr "Продолжить с Google"
 
 #: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:53
+#: src/features/editor/menu/share/copy-button.tsx:38
 msgid "Copied!"
 msgstr "Скопировано!"
 
@@ -247,6 +246,7 @@ msgstr "Детали"
 msgid "Didn't receive the code?"
 msgstr "Не получили код?"
 
+#: src/features/auth/views/enter-email/enter-email-form.tsx:77
 #: src/features/editor/menu/options/profile/views/profile.tsx:78
 msgid "Email"
 msgstr "Email"
@@ -256,6 +256,7 @@ msgid "Enter address..."
 msgstr "Введите адрес..."
 
 #: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:103
+#: src/shared/lib/hooks/use-validation.ts:62
 msgid "Enter current password"
 msgstr "Введите текущий пароль"
 
@@ -265,6 +266,7 @@ msgstr "Введите заголовок карты"
 
 #: src/features/editor/menu/options/profile/controller.tsx:27
 #: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:87
+#: src/shared/lib/hooks/use-validation.ts:42
 msgid "Enter new email"
 msgstr "Введите новый email"
 
@@ -318,10 +320,6 @@ msgstr "Шрифт"
 msgid "Getting started"
 msgstr "Начало работы"
 
-#: src/features/editor/menu/menu/index.tsx:169
-msgid "Go to live"
-msgstr "Перейти на страницу"
-
 #: src/features/editor/menu/status-bar/index.tsx:45
 msgid "Go to live page"
 msgstr "Перейти на живую страницу"
@@ -341,7 +339,7 @@ msgstr "Главная"
 
 #: src/features/editor/menu/options/project-settings/views/settings/index.tsx:44
 msgid "Interface language"
-msgstr ""
+msgstr "Язык интерфейса"
 
 #: src/shared/lib/hooks/use-validation.ts:38
 #: src/shared/lib/hooks/use-validation.ts:41
@@ -362,11 +360,7 @@ msgstr "Присоединился"
 
 #: src/features/editor/menu/status-bar/index.tsx:37
 msgid "Last synchronization:"
-msgstr ""
-
-#: src/features/editor/menu/status-bar/index.tsx:28
-msgid "Last update:"
-msgstr "Последнее обновление:"
+msgstr "Последняя синхронизация:"
 
 #: src/features/editor/menu/new-item/index.tsx:142
 #: src/features/editor/text-editor/formatting-menu.tsx:120
@@ -431,6 +425,7 @@ msgid "New Password"
 msgstr "Новый пароль"
 
 #: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:47
+#: src/shared/lib/hooks/use-validation.ts:77
 msgid "New password must be different from old password"
 msgstr "Новый пароль должен отличаться от старого пароля"
 
@@ -470,10 +465,6 @@ msgstr "Разрешены только цифры"
 msgid "Oops! Something went wrong."
 msgstr "Упс! Что-то пошло не так."
 
-#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:28
-msgid "Options"
-msgstr "Параметры"
-
 #: src/app/[lang]/(brand)/404/page.tsx:10
 msgid "Page not found"
 msgstr "Страница не найдена"
@@ -501,6 +492,7 @@ msgstr "Пароль должен содержать хотя бы одну за
 
 #: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:42
 #: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:43
+#: src/shared/lib/hooks/use-validation.ts:73
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
@@ -540,7 +532,7 @@ msgstr "Отправить повторно через {duration}"
 
 #: src/features/editor/menu/options/profile/views/profile.tsx:64
 msgid "Reset profile"
-msgstr ""
+msgstr "Сбросить профиль"
 
 #: src/features/editor/menu/options/project-settings/views/change-slug/index.tsx:88
 msgid "Save"
@@ -717,12 +709,16 @@ msgstr "Подтверждение"
 msgid "Verification code must be 6 digits"
 msgstr "Код подтверждения должен состоять из 6 цифр"
 
+#: src/features/auth/views/login/verify-otp-screen.tsx:107
+#: src/features/auth/views/signup/verify-otp-screen.tsx:110
 #: src/features/editor/menu/options/profile/views/add-password/step-2.tsx:143
 #: src/features/editor/menu/options/profile/views/change-email/step-3.tsx:141
 #: src/features/editor/menu/options/profile/views/change-password/step-2.tsx:142
 msgid "Verify code"
 msgstr "Подтвердить код"
 
+#: src/features/auth/views/login/verify-otp-screen.tsx:105
+#: src/features/auth/views/signup/verify-otp-screen.tsx:108
 #: src/features/editor/menu/options/profile/views/add-password/step-2.tsx:141
 #: src/features/editor/menu/options/profile/views/change-email/step-3.tsx:139
 #: src/features/editor/menu/options/profile/views/change-password/step-2.tsx:140
@@ -731,7 +727,7 @@ msgstr "Проверка..."
 
 #: src/features/editor/menu/status-bar/index.tsx:50
 msgid "View my page"
-msgstr ""
+msgstr "Открыть мою страницу"
 
 #: src/features/auth/model/screens.tsx:31
 #: src/features/auth/model/screens.tsx:41
@@ -765,10 +761,6 @@ msgstr "Ваше имя"
 #: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:33
 msgid "Your personal link"
 msgstr "Ваша личная ссылка"
-
-#: src/features/editor/menu/menu/project-settings/views/theme/header-settings.tsx:21
-msgid "Подложка с размытием у аватара"
-msgstr "Подложка с размытием у аватара"
 
 #: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Показать пароль"

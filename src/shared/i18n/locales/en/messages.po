@@ -13,10 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/shared/ui/kit/overlays/modal-controls.tsx:111
-msgid "(Default)"
-msgstr "(Default)"
-
 #: src/features/auth/views/login/resend.tsx:31
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
@@ -185,6 +181,8 @@ msgstr "Confirm password change"
 msgid "Confirmation"
 msgstr "Confirmation"
 
+#: src/features/auth/views/enter-email/enter-email-form.tsx:108
+#: src/features/auth/views/signup/enter-slug-screen.tsx:81
 #: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:151
 #: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:118
 #: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:189
@@ -196,6 +194,7 @@ msgid "Continue with Google"
 msgstr "Continue with Google"
 
 #: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:53
+#: src/features/editor/menu/share/copy-button.tsx:38
 msgid "Copied!"
 msgstr "Copied!"
 
@@ -247,6 +246,7 @@ msgstr "Details"
 msgid "Didn't receive the code?"
 msgstr "Didn't receive the code?"
 
+#: src/features/auth/views/enter-email/enter-email-form.tsx:77
 #: src/features/editor/menu/options/profile/views/profile.tsx:78
 msgid "Email"
 msgstr "Email"
@@ -256,6 +256,7 @@ msgid "Enter address..."
 msgstr "Enter address..."
 
 #: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:103
+#: src/shared/lib/hooks/use-validation.ts:62
 msgid "Enter current password"
 msgstr "Enter current password"
 
@@ -265,6 +266,7 @@ msgstr "Enter map title"
 
 #: src/features/editor/menu/options/profile/controller.tsx:27
 #: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:87
+#: src/shared/lib/hooks/use-validation.ts:42
 msgid "Enter new email"
 msgstr "Enter new email"
 
@@ -318,10 +320,6 @@ msgstr "Font"
 msgid "Getting started"
 msgstr "Getting started"
 
-#: src/features/editor/menu/menu/index.tsx:169
-msgid "Go to live"
-msgstr "Go to live"
-
 #: src/features/editor/menu/status-bar/index.tsx:45
 msgid "Go to live page"
 msgstr "Go to live page"
@@ -363,10 +361,6 @@ msgstr "Joined on"
 #: src/features/editor/menu/status-bar/index.tsx:37
 msgid "Last synchronization:"
 msgstr "Last synchronization:"
-
-#: src/features/editor/menu/status-bar/index.tsx:28
-msgid "Last update:"
-msgstr "Last update:"
 
 #: src/features/editor/menu/new-item/index.tsx:142
 #: src/features/editor/text-editor/formatting-menu.tsx:120
@@ -431,6 +425,7 @@ msgid "New Password"
 msgstr "New Password"
 
 #: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:47
+#: src/shared/lib/hooks/use-validation.ts:77
 msgid "New password must be different from old password"
 msgstr "New password must be different from old password"
 
@@ -470,10 +465,6 @@ msgstr "Only digits are allowed"
 msgid "Oops! Something went wrong."
 msgstr "Oops! Something went wrong."
 
-#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:28
-msgid "Options"
-msgstr "Options"
-
 #: src/app/[lang]/(brand)/404/page.tsx:10
 msgid "Page not found"
 msgstr "Page not found"
@@ -501,6 +492,7 @@ msgstr "Password must contain at least one uppercase letter"
 
 #: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:42
 #: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:43
+#: src/shared/lib/hooks/use-validation.ts:73
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
@@ -717,12 +709,16 @@ msgstr "Verification"
 msgid "Verification code must be 6 digits"
 msgstr "Verification code must be 6 digits"
 
+#: src/features/auth/views/login/verify-otp-screen.tsx:107
+#: src/features/auth/views/signup/verify-otp-screen.tsx:110
 #: src/features/editor/menu/options/profile/views/add-password/step-2.tsx:143
 #: src/features/editor/menu/options/profile/views/change-email/step-3.tsx:141
 #: src/features/editor/menu/options/profile/views/change-password/step-2.tsx:142
 msgid "Verify code"
 msgstr "Verify code"
 
+#: src/features/auth/views/login/verify-otp-screen.tsx:105
+#: src/features/auth/views/signup/verify-otp-screen.tsx:108
 #: src/features/editor/menu/options/profile/views/add-password/step-2.tsx:141
 #: src/features/editor/menu/options/profile/views/change-email/step-3.tsx:139
 #: src/features/editor/menu/options/profile/views/change-password/step-2.tsx:140
@@ -765,10 +761,6 @@ msgstr "Your name"
 #: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:33
 msgid "Your personal link"
 msgstr "Your personal link"
-
-#: src/features/editor/menu/menu/project-settings/views/theme/header-settings.tsx:21
-msgid "Подложка с размытием у аватара"
-msgstr "Подложка с размытием у аватара"
 
 #: src/shared/ui/kit/primitives/password-input.tsx:28
 msgid "Показать пароль"
