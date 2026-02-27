@@ -1,10 +1,6 @@
-import { Trans, useLingui } from "@lingui/react/macro";
-import { ArrowUpRight } from "lucide-react";
-import type { Route } from "next";
-import Link from "next/link";
+import { Trans } from "@lingui/react/macro";
 import { useRef, useState } from "react";
-import { useEditorSettingsModal } from "@/features/editor/menu/menu/project-settings/settings-modal-context";
-import { buildUrl } from "@/shared/lib/utils/build-url";
+import { useEditorSettingsModal } from "@/features/editor/menu/options/project-settings/settings-modal-context";
 import type { ActivityIcon } from "@/shared/ui/animated-icons/activity";
 import type { ChartSplineIcon } from "@/shared/ui/animated-icons/chart-spline";
 import { MenuIcon, type MenuIconHandle } from "@/shared/ui/animated-icons/menu";
@@ -15,7 +11,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/shared/ui/kit/overlays/dropdown-menu";
 import {
@@ -23,8 +18,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/shared/ui/kit/overlays/react-tooltip";
-import { Pulse } from "@/shared/ui/kit/primitives/pulse";
-import { useProfile } from "../../profile/use-profile";
 import { ProfileModalNew } from "./profile";
 import { ProjectSettingsModal } from "./project-settings";
 
@@ -51,9 +44,6 @@ const menuItems: MenuItemConfig[] = [
 ];
 
 export const EditBarMenu = () => {
-  const { t } = useLingui();
-  const slug = useProfile((state) => state.profile.slug);
-
   const { closeSettingsModal, openSettingsModal, settingsModalState } =
     useEditorSettingsModal();
 
@@ -154,22 +144,6 @@ export const EditBarMenu = () => {
               </DropdownMenuItem>
             );
           })}
-
-          <DropdownMenuSeparator />
-
-          <DropdownMenuItem asChild className="relative">
-            <Link
-              aria-label={t`Go to live page`}
-              className="group pr-9"
-              href={buildUrl(slug) as Route}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <Pulse className="mx-1.5" />
-              <Trans>Go to live</Trans>
-              <ArrowUpRight className="absolute right-3 size-4 opacity-50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
 

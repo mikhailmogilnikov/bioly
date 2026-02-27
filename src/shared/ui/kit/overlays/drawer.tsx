@@ -50,7 +50,7 @@ export const Drawer = (props: DrawerProps) => {
               </div>
             )}
             {!hideClose && (
-              <VaulDrawer.Close className="absolute top-8 right-4 z-1 rounded-full bg-default p-1">
+              <VaulDrawer.Close className="absolute top-8 right-4 z-0 rounded-full bg-default p-1">
                 <X className="size-6 opacity-30" />
               </VaulDrawer.Close>
             )}

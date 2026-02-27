@@ -1,4 +1,4 @@
-import { Trans, useLingui } from "@lingui/react/macro";
+import { Trans } from "@lingui/react/macro";
 import { UserRoundCog } from "lucide-react";
 import { useModalViews } from "@/shared/lib/providers/modal-views/modal-views-provider";
 import { ActionList, type ActionListItem } from "@/shared/ui/kit/action-list";
@@ -7,7 +7,6 @@ import type { ProjectSettingsViews } from "../..";
 import { MainSettings } from "./main-settings";
 
 export function SettingsThemeView() {
-  const { t } = useLingui();
   const { push } = useModalViews<ProjectSettingsViews>();
 
   const optionsActions: ActionListItem[] = [
@@ -24,8 +23,8 @@ export function SettingsThemeView() {
   return (
     <AdaptiveModalContent>
       <div className="flex flex-col gap-6 py-1">
+        <ActionList actions={optionsActions} />
         <MainSettings />
-        <ActionList actions={optionsActions} title={t`Options`} />
       </div>
     </AdaptiveModalContent>
   );

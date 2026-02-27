@@ -1,5 +1,5 @@
-import { EditBarMenu } from "./menu";
 import { EditBarNewItem } from "./new-item";
+import { EditBarMenu } from "./options";
 import { EditBarShare } from "./share";
 import { EditorMenuStatusBar } from "./status-bar";
 

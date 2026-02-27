@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { Brush } from "lucide-react";
 import Image from "next/image";
 import { type ChangeEvent, useRef } from "react";
-import { useEditorSettingsModal } from "@/features/editor/menu/menu/project-settings/settings-modal-context";
+import { useEditorSettingsModal } from "@/features/editor/menu/options/project-settings/settings-modal-context";
 import {
   DeleteIcon,
   type DeleteIconHandle,

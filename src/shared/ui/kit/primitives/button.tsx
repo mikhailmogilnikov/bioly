@@ -21,7 +21,7 @@ const buttonVariants = cva(
           "pressable bg-foreground text-background hover:bg-foreground/90",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        default: "h-9 rounded-full px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 gap-1.5 rounded-full px-3 has-[>svg]:px-2.5",
         lg: "h-13 rounded-full px-6 text-base has-[>svg]:px-4",
         icon: "size-9 rounded-full",

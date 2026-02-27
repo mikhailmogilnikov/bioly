@@ -21,19 +21,19 @@ msgstr "(Default)"
 msgid "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 msgstr "{duration, plural, few {seconds} many {seconds} one {second} other {seconds}}"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:97
+#: src/features/editor/menu/options/profile/views/profile.tsx:97
 msgid "Account is protected by password"
 msgstr "Account is protected by password"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:98
+#: src/features/editor/menu/options/profile/views/profile.tsx:98
 msgid "Account isn't protected by password"
 msgstr "Account isn't protected by password"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:115
+#: src/features/editor/menu/options/profile/views/profile.tsx:115
 msgid "Actions"
 msgstr "Actions"
 
-#: src/features/editor/menu/status-bar/index.tsx:24
+#: src/features/editor/menu/status-bar/index.tsx:33
 msgid "Active"
 msgstr "Active"
 
@@ -49,7 +49,7 @@ msgstr "Add avatar"
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Add bio... Type \"/\" for commands."
 
-#: src/features/editor/menu/menu/profile/controller.tsx:43
+#: src/features/editor/menu/options/profile/controller.tsx:43
 msgid "Add Password"
 msgstr "Add Password"
 
@@ -70,19 +70,19 @@ msgstr "Address picker"
 msgid "Allow map interaction"
 msgstr "Allow map interaction"
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:72
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:73
 msgid "Allow search engines to index this page"
 msgstr "Allow search engines to index this page"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:60
+#: src/features/editor/menu/options/project-settings/views/theme/header/header-settings.tsx:60
 msgid "Avatar background with blur"
 msgstr "Avatar background with blur"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:69
+#: src/features/editor/menu/options/project-settings/views/theme/header/header-settings.tsx:69
 msgid "Avatar bg blur radius"
 msgstr "Avatar bg blur radius"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:46
+#: src/features/editor/menu/options/project-settings/views/theme/header/header-settings.tsx:46
 msgid "Avatar size"
 msgstr "Avatar size"
 
@@ -103,7 +103,7 @@ msgstr "Blockquote"
 msgid "Bold"
 msgstr "Bold"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:135
+#: src/features/editor/menu/options/project-settings/views/theme/main-settings.tsx:135
 msgid "Border width"
 msgstr "Border width"
 
@@ -127,7 +127,7 @@ msgstr "Bullet List"
 msgid "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
 msgstr "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:38
+#: src/features/editor/menu/options/profile/views/profile.tsx:38
 msgid "Change email"
 msgstr "Change email"
 
@@ -135,15 +135,17 @@ msgstr "Change email"
 msgid "Change language"
 msgstr "Change language"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:45
+#: src/features/editor/menu/options/profile/views/profile.tsx:45
 msgid "Change password"
 msgstr "Change password"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:35
+#: src/features/editor/menu/options/profile/controller.tsx:35
 msgid "Change Password"
 msgstr "Change Password"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:33
+#: src/features/editor/menu/options/project-settings/controller.tsx:33
+#: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:57
+#: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:62
 msgid "Change slug"
 msgstr "Change slug"
 
@@ -155,7 +157,7 @@ msgstr "Code"
 msgid "Code Block"
 msgstr "Code Block"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:31
+#: src/features/editor/menu/options/profile/controller.tsx:31
 msgid "Confirm email change"
 msgstr "Confirm email change"
 
@@ -163,19 +165,19 @@ msgstr "Confirm email change"
 msgid "Confirm new password"
 msgstr "Confirm new password"
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:151
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:151
 msgid "Confirm New Password"
 msgstr "Confirm New Password"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:113
+#: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:113
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:47
+#: src/features/editor/menu/options/profile/controller.tsx:47
 msgid "Confirm password addition"
 msgstr "Confirm password addition"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:39
+#: src/features/editor/menu/options/profile/controller.tsx:39
 msgid "Confirm password change"
 msgstr "Confirm password change"
 
@@ -183,11 +185,9 @@ msgstr "Confirm password change"
 msgid "Confirmation"
 msgstr "Confirmation"
 
-#: src/features/auth/views/enter-email/enter-email-form.tsx:108
-#: src/features/auth/views/signup/enter-slug-screen.tsx:81
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:151
-#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:118
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:189
+#: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:151
+#: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:118
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:189
 msgid "Continue"
 msgstr "Continue"
 
@@ -195,7 +195,7 @@ msgstr "Continue"
 msgid "Continue with Google"
 msgstr "Continue with Google"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:53
+#: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:53
 msgid "Copied!"
 msgstr "Copied!"
 
@@ -203,7 +203,7 @@ msgstr "Copied!"
 msgid "Copy"
 msgstr "Copy"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:36
+#: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:36
 msgid "Copy personal link"
 msgstr "Copy personal link"
 
@@ -211,7 +211,7 @@ msgstr "Copy personal link"
 msgid "Copy profile URL"
 msgstr "Copy profile URL"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:124
+#: src/features/editor/menu/options/project-settings/views/theme/main-settings.tsx:124
 msgid "Corner radius"
 msgstr "Corner radius"
 
@@ -223,7 +223,7 @@ msgstr "Create an account or sign in to your existing. No credit card required."
 msgid "Creating account..."
 msgstr "Creating account..."
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:95
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:95
 msgid "Current Password"
 msgstr "Current Password"
 
@@ -235,7 +235,7 @@ msgstr "Delete"
 msgid "Delete avatar"
 msgstr "Delete avatar"
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:91
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:91
 msgid "Description for search engines..."
 msgstr "Description for search engines..."
 
@@ -247,7 +247,7 @@ msgstr "Details"
 msgid "Didn't receive the code?"
 msgstr "Didn't receive the code?"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:78
+#: src/features/editor/menu/options/profile/views/profile.tsx:78
 msgid "Email"
 msgstr "Email"
 
@@ -255,8 +255,7 @@ msgstr "Email"
 msgid "Enter address..."
 msgstr "Enter address..."
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:103
-#: src/shared/lib/hooks/use-validation.ts:62
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:103
 msgid "Enter current password"
 msgstr "Enter current password"
 
@@ -264,29 +263,28 @@ msgstr "Enter current password"
 msgid "Enter map title"
 msgstr "Enter map title"
 
-#: src/features/editor/menu/menu/profile/controller.tsx:27
-#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:87
-#: src/shared/lib/hooks/use-validation.ts:42
+#: src/features/editor/menu/options/profile/controller.tsx:27
+#: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:87
 msgid "Enter new email"
 msgstr "Enter new email"
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:131
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:131
 msgid "Enter new password"
 msgstr "Enter new password"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:93
+#: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:93
 msgid "Enter password"
 msgstr "Enter password"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:128
+#: src/features/editor/menu/options/profile/views/add-password/step-2.tsx:128
 msgid "Enter the 6-digit code we sent to your email address ({email}) to complete adding a password."
 msgstr "Enter the 6-digit code we sent to your email address ({email}) to complete adding a password."
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:127
+#: src/features/editor/menu/options/profile/views/change-password/step-2.tsx:127
 msgid "Enter the 6-digit code we sent to your email address ({email}) to complete changing your password."
 msgstr "Enter the 6-digit code we sent to your email address ({email}) to complete changing your password."
 
-#: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:126
+#: src/features/editor/menu/options/profile/views/change-email/step-3.tsx:126
 msgid "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
 msgstr "Enter the 6-digit code we sent to your new email address ({newEmail}) to complete the email change."
 
@@ -311,8 +309,8 @@ msgstr "Enter your email"
 msgid "Enter your unique url link to get started. You can change it later."
 msgstr "Enter your unique url link to get started. You can change it later."
 
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:93
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:95
+#: src/features/editor/menu/options/project-settings/views/theme/main-settings.tsx:93
+#: src/features/editor/menu/options/project-settings/views/theme/main-settings.tsx:95
 msgid "Font"
 msgstr "Font"
 
@@ -324,12 +322,12 @@ msgstr "Getting started"
 msgid "Go to live"
 msgstr "Go to live"
 
-#: src/features/editor/menu/menu/index.tsx:162
+#: src/features/editor/menu/status-bar/index.tsx:45
 msgid "Go to live page"
 msgstr "Go to live page"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:29
-#: src/features/editor/menu/menu/project-settings/views/theme/index.tsx:16
+#: src/features/editor/menu/options/project-settings/controller.tsx:29
+#: src/features/editor/menu/options/project-settings/views/theme/index.tsx:15
 msgid "Header settings"
 msgstr "Header settings"
 
@@ -340,6 +338,10 @@ msgstr "Heading"
 #: src/features/auth/content.tsx:24
 msgid "Home"
 msgstr "Home"
+
+#: src/features/editor/menu/options/project-settings/views/settings/index.tsx:44
+msgid "Interface language"
+msgstr "Interface language"
 
 #: src/shared/lib/hooks/use-validation.ts:38
 #: src/shared/lib/hooks/use-validation.ts:41
@@ -354,9 +356,13 @@ msgstr "Invalid URL"
 msgid "Italic"
 msgstr "Italic"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:82
+#: src/features/editor/menu/options/profile/views/profile.tsx:82
 msgid "Joined on"
 msgstr "Joined on"
+
+#: src/features/editor/menu/status-bar/index.tsx:37
+msgid "Last synchronization:"
+msgstr "Last synchronization:"
 
 #: src/features/editor/menu/status-bar/index.tsx:28
 msgid "Last update:"
@@ -371,7 +377,7 @@ msgstr "Link"
 msgid "Linked"
 msgstr "Linked"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:52
+#: src/features/editor/menu/options/profile/views/profile.tsx:52
 msgid "Logout"
 msgstr "Logout"
 
@@ -399,8 +405,8 @@ msgstr "Map zoom"
 msgid "Media gallery"
 msgstr "Media gallery"
 
-#: src/features/editor/menu/menu/index.tsx:107
-#: src/features/editor/menu/menu/index.tsx:115
+#: src/features/editor/menu/options/index.tsx:97
+#: src/features/editor/menu/options/index.tsx:105
 msgid "Menu"
 msgstr "Menu"
 
@@ -408,7 +414,7 @@ msgstr "Menu"
 msgid "Muted"
 msgstr "Muted"
 
-#: src/features/editor/menu/menu/project-settings/views/theme/header/header-settings.tsx:33
+#: src/features/editor/menu/options/project-settings/views/theme/header/header-settings.tsx:33
 msgid "Name font size"
 msgstr "Name font size"
 
@@ -416,20 +422,19 @@ msgstr "Name font size"
 msgid "New block"
 msgstr "New block"
 
-#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:79
+#: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:79
 msgid "New Email"
 msgstr "New Email"
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:123
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:123
 msgid "New Password"
 msgstr "New Password"
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:47
-#: src/shared/lib/hooks/use-validation.ts:77
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:47
 msgid "New password must be different from old password"
 msgstr "New password must be different from old password"
 
-#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:39
+#: src/features/editor/menu/options/project-settings/views/change-slug/index.tsx:39
 msgid "New slug must be different from current slug"
 msgstr "New slug must be different from current slug"
 
@@ -437,15 +442,15 @@ msgstr "New slug must be different from current slug"
 msgid "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 msgstr "No blocks added yet. Press <0>+</0> in the bottom menu to add a first one."
 
-#: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:69
+#: src/features/editor/menu/options/profile/views/change-email/step-3.tsx:69
 msgid "No email provided. Please go back and enter a new email."
 msgstr "No email provided. Please go back and enter a new email."
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:70
+#: src/features/editor/menu/options/profile/views/change-password/step-2.tsx:70
 msgid "No password provided. Please go back and enter a new password."
 msgstr "No password provided. Please go back and enter a new password."
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:71
+#: src/features/editor/menu/options/profile/views/add-password/step-2.tsx:71
 msgid "No password provided. Please go back and enter a password."
 msgstr "No password provided. Please go back and enter a password."
 
@@ -473,7 +478,8 @@ msgstr "Options"
 msgid "Page not found"
 msgstr "Page not found"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:89
+#: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:85
+#: src/features/editor/menu/options/profile/views/profile.tsx:89
 msgid "Password"
 msgstr "Password"
 
@@ -493,30 +499,30 @@ msgstr "Password must contain at least one number"
 msgid "Password must contain at least one uppercase letter"
 msgstr "Password must contain at least one uppercase letter"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:42
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:43
-#: src/shared/lib/hooks/use-validation.ts:73
+#: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:42
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:43
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
-#: src/features/editor/menu/menu/index.tsx:124
-#: src/features/editor/menu/menu/profile/controller.tsx:23
+#: src/features/editor/menu/options/index.tsx:114
+#: src/features/editor/menu/options/profile/controller.tsx:23
 msgid "Profile"
 msgstr "Profile"
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:21
+#: src/features/editor/menu/options/index.tsx:111
+#: src/features/editor/menu/options/project-settings/controller.tsx:21
 msgid "Project settings"
 msgstr "Project settings"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:110
+#: src/features/editor/menu/options/profile/views/profile.tsx:110
 msgid "Protect profile with password"
 msgstr "Protect profile with password"
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:159
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:159
 msgid "Re-enter new password"
 msgstr "Re-enter new password"
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:121
+#: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:121
 msgid "Re-enter password"
 msgstr "Re-enter password"
 
@@ -532,11 +538,11 @@ msgstr "Resend"
 msgid "Resend in {duration}"
 msgstr "Resend in {duration}"
 
-#: src/features/editor/menu/menu/profile/views/profile.tsx:64
+#: src/features/editor/menu/options/profile/views/profile.tsx:64
 msgid "Reset profile"
 msgstr "Reset profile"
 
-#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:88
+#: src/features/editor/menu/options/project-settings/views/change-slug/index.tsx:88
 msgid "Save"
 msgstr "Save"
 
@@ -544,11 +550,12 @@ msgstr "Save"
 msgid "Save QR image"
 msgstr "Save QR image"
 
-#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:86
+#: src/features/editor/menu/options/project-settings/views/change-slug/index.tsx:86
 msgid "Saving..."
 msgstr "Saving..."
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:37
+#: src/features/editor/menu/options/project-settings/controller.tsx:37
+#: src/features/editor/menu/options/project-settings/views/settings/index.tsx:28
 msgid "Search accessibility"
 msgstr "Search accessibility"
 
@@ -556,16 +563,16 @@ msgstr "Search accessibility"
 msgid "Searching..."
 msgstr "Searching..."
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:149
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:187
+#: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:149
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:187
 msgid "Sending code..."
 msgstr "Sending code..."
 
-#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:116
+#: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:116
 msgid "Sending..."
 msgstr "Sending..."
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:84
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:84
 msgid "SEO description"
 msgstr "SEO description"
 
@@ -573,7 +580,7 @@ msgstr "SEO description"
 msgid "Separator"
 msgstr "Separator"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:41
+#: src/features/editor/menu/options/project-settings/views/settings/index.tsx:52
 msgid "Settings"
 msgstr "Settings"
 
@@ -593,11 +600,11 @@ msgstr "Share my profile"
 msgid "Signing in..."
 msgstr "Signing in..."
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:108
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:108
 msgid "Site language"
 msgstr "Site language"
 
-#: src/features/editor/menu/menu/project-settings/views/accessibility/index.tsx:106
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:106
 msgid "Site language (SEO)"
 msgstr "Site language (SEO)"
 
@@ -613,7 +620,7 @@ msgstr "Spoiler"
 msgid "Strikethrough"
 msgstr "Strikethrough"
 
-#: src/features/editor/menu/status-bar/index.tsx:18
+#: src/features/editor/menu/status-bar/index.tsx:27
 msgid "Synchronization status"
 msgstr "Synchronization status"
 
@@ -621,17 +628,17 @@ msgstr "Synchronization status"
 msgid "Text"
 msgstr "Text"
 
-#: src/features/editor/menu/menu/project-settings/views/change-slug/index.tsx:74
+#: src/features/editor/menu/options/project-settings/views/change-slug/index.tsx:74
 msgid "The slug is the part of the URL that appears after the domain name. Can be changed only once in 7 days."
 msgstr "The slug is the part of the URL that appears after the domain name. Can be changed only once in 7 days."
 
-#: src/features/editor/menu/menu/project-settings/controller.tsx:25
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:62
-#: src/features/editor/menu/menu/project-settings/views/theme/main-settings.tsx:64
+#: src/features/editor/menu/options/project-settings/controller.tsx:25
+#: src/features/editor/menu/options/project-settings/views/theme/main-settings.tsx:62
+#: src/features/editor/menu/options/project-settings/views/theme/main-settings.tsx:64
 msgid "Theme"
 msgstr "Theme"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/index.tsx:16
+#: src/features/editor/menu/options/project-settings/views/settings/index.tsx:19
 msgid "Theme & styling"
 msgstr "Theme & styling"
 
@@ -710,36 +717,36 @@ msgstr "Verification"
 msgid "Verification code must be 6 digits"
 msgstr "Verification code must be 6 digits"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:107
-#: src/features/auth/views/signup/verify-otp-screen.tsx:110
-#: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:143
-#: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:141
-#: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:142
+#: src/features/editor/menu/options/profile/views/add-password/step-2.tsx:143
+#: src/features/editor/menu/options/profile/views/change-email/step-3.tsx:141
+#: src/features/editor/menu/options/profile/views/change-password/step-2.tsx:142
 msgid "Verify code"
 msgstr "Verify code"
 
-#: src/features/auth/views/login/verify-otp-screen.tsx:105
-#: src/features/auth/views/signup/verify-otp-screen.tsx:108
-#: src/features/editor/menu/menu/profile/views/add-password/step-2.tsx:141
-#: src/features/editor/menu/menu/profile/views/change-email/step-3.tsx:139
-#: src/features/editor/menu/menu/profile/views/change-password/step-2.tsx:140
+#: src/features/editor/menu/options/profile/views/add-password/step-2.tsx:141
+#: src/features/editor/menu/options/profile/views/change-email/step-3.tsx:139
+#: src/features/editor/menu/options/profile/views/change-password/step-2.tsx:140
 msgid "Verifying..."
 msgstr "Verifying..."
+
+#: src/features/editor/menu/status-bar/index.tsx:50
+msgid "View my page"
+msgstr "View my page"
 
 #: src/features/auth/model/screens.tsx:31
 #: src/features/auth/model/screens.tsx:41
 msgid "We sent a one-time code to your email. Enter it below to continue."
 msgstr "We sent a one-time code to your email. Enter it below to continue."
 
-#: src/features/editor/menu/menu/profile/views/change-email/step-2.tsx:103
+#: src/features/editor/menu/options/profile/views/change-email/step-2.tsx:103
 msgid "We'll send a verification code to the new email address to change your email."
 msgstr "We'll send a verification code to the new email address to change your email."
 
-#: src/features/editor/menu/menu/profile/views/add-password/step-1.tsx:136
+#: src/features/editor/menu/options/profile/views/add-password/step-1.tsx:136
 msgid "We'll send a verification code to your email address to add a password."
 msgstr "We'll send a verification code to your email address to add a password."
 
-#: src/features/editor/menu/menu/profile/views/change-password/step-1.tsx:174
+#: src/features/editor/menu/options/profile/views/change-password/step-1.tsx:174
 msgid "We'll send a verification code to your email address to change your password."
 msgstr "We'll send a verification code to your email address to change your password."
 
@@ -755,7 +762,7 @@ msgstr "Welcome!"
 msgid "Your name"
 msgstr "Your name"
 
-#: src/features/editor/menu/menu/project-settings/views/settings/my-link.tsx:33
+#: src/features/editor/menu/options/project-settings/views/settings/my-link.tsx:33
 msgid "Your personal link"
 msgstr "Your personal link"
 

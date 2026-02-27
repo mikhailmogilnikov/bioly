@@ -5,7 +5,7 @@ import { UserPageLayout } from "../page/ui/layout";
 import { EditorBento } from "./bento";
 import { EditorHeader } from "./header";
 import { EditorMenu } from "./menu";
-import { EditorSettingsModalProvider } from "./menu/menu/project-settings/settings-modal-context";
+import { EditorSettingsModalProvider } from "./menu/options/project-settings/settings-modal-context";
 import { useInitEditor } from "./use-init-editor";
 
 export function Editor() {

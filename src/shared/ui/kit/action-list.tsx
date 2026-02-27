@@ -20,7 +20,7 @@ interface ActionListProps {
   actions: ActionListItem[];
   className?: string;
   contentClassName?: string;
-  title: string;
+  title?: string;
 }
 
 export function ActionList({

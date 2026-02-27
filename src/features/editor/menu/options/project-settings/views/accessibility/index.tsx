@@ -3,13 +3,13 @@
 import { Trans, useLingui } from "@lingui/react/macro";
 import type { ChangeEvent } from "react";
 import AnimateHeight from "react-animate-height";
+import TextareaAutosize from "react-textarea-autosize";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { AdaptiveModalContent } from "@/shared/ui/kit/overlays/adaptive-modal";
 import {
   ModalControlRow,
   ModalDropdown,
 } from "@/shared/ui/kit/overlays/modal-controls";
-import { Separator } from "@/shared/ui/kit/primitives/separator";
 import { SwitchField } from "@/shared/ui/kit/primitives/switch-field";
 
 const LANG_OPTIONS: { label: string; value: string }[] = [
@@ -66,16 +66,16 @@ export function SettingsAccessibilityView() {
   return (
     <AdaptiveModalContent>
       <div className="flex flex-col gap-6 py-1">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col">
           <SwitchField
             checked={allowIndexing}
+            className="squircle p-4"
             label={<Trans>Allow search engines to index this page</Trans>}
             labelClassName="font-medium text-base"
             onCheckedChange={handleAllowIndexingChange}
           />
           <AnimateHeight duration={200} height={allowIndexing ? "auto" : 0}>
-            <div className="flex flex-col gap-6">
-              <Separator />
+            <div className="mt-6 flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <label
                   className="font-medium text-base"
@@ -83,8 +83,8 @@ export function SettingsAccessibilityView() {
                 >
                   <Trans>SEO description</Trans>
                 </label>
-                <textarea
-                  className="min-h-24 w-full resize-y rounded-2xl bg-default/50 px-4 py-3 font-medium text-base outline-none placeholder:text-foreground/50"
+                <TextareaAutosize
+                  className="min-h-24 w-full resize-none rounded-2xl bg-default/50 px-4 py-3 font-medium text-base outline-none placeholder:text-foreground/50"
                   id="meta-description"
                   maxLength={META_DESCRIPTION_MAX_LENGTH}
                   onChange={handleDescriptionChange}
