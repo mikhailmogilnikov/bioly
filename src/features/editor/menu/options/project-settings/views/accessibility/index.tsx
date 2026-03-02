@@ -42,26 +42,42 @@ const META_DESCRIPTION_MAX_LENGTH = 200;
 export function SettingsAccessibilityView() {
   const { t } = useLingui();
   const metaDescription = useProfile(
-    (state) => state.profile.meta_description ?? ""
+    (state) => state.profile.meta.meta_description ?? ""
   );
-  const langRaw = useProfile((state) => state.profile.lang ?? "en");
+  const langRaw = useProfile((state) => state.profile.meta.meta_lang ?? "en");
   const lang = LANG_VALUES.has(langRaw) ? langRaw : "en";
   const allowIndexing = useProfile(
-    (state) => state.profile.allow_indexing ?? true
+    (state) => state.profile.meta.allow_indexing ?? true
   );
-  const updateMainField = useProfile((state) => state.updateMainField);
+  const updateMetaField = useProfile((state) => state.updateMetaField);
 
   const handleDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    updateMainField("meta_description", e.target.value);
+    updateMetaField("meta_description", e.target.value);
   };
 
   const handleLangChange = (value: string) => {
-    updateMainField("lang", value);
+    updateMetaField("meta_lang", value);
   };
 
   const handleAllowIndexingChange = (checked: boolean) => {
-    updateMainField("allow_indexing", checked);
+    updateMetaField("allow_indexing", checked);
   };
+
+  // const handleAutodetectLanguage = () => {
+  //   const descriptionText = extractTextFromJsonContent(description);
+  //   const combinedText = [name, descriptionText, metaDescription]
+  //     .filter(Boolean)
+  //     .join(" ");
+  //   const detected = detectLanguageFromText(combinedText);
+  //   if (detected) {
+  //     updateMetaField("meta_lang", detected);
+  //   }
+  // };
+
+  // const canAutodetect =
+  //   name.trim().length >= 10 ||
+  //   extractTextFromJsonContent(description).trim().length >= 10 ||
+  //   metaDescription.trim().length >= 10;
 
   return (
     <AdaptiveModalContent>
@@ -104,15 +120,27 @@ export function SettingsAccessibilityView() {
               </div>
 
               <ModalControlRow label={<Trans>Site language (SEO)</Trans>}>
-                <ModalDropdown
-                  label={<Trans>Site language</Trans>}
-                  onValueChange={handleLangChange}
-                  options={LANG_OPTIONS}
-                  renderTrigger={(_, label) => (
-                    <p className="font-medium text-base">{label}</p>
-                  )}
-                  value={lang}
-                />
+                <div className="flex items-center gap-2">
+                  <ModalDropdown
+                    label={<Trans>Site language</Trans>}
+                    onValueChange={handleLangChange}
+                    options={LANG_OPTIONS}
+                    renderTrigger={(_, label) => (
+                      <p className="font-medium text-base">{label}</p>
+                    )}
+                    value={lang}
+                  />
+                  {/* <Button
+                    disabled={!canAutodetect}
+                    onClick={handleAutodetectLanguage}
+                    size="sm"
+                    title={t`Detect language from name and description`}
+                    variant="ghost"
+                  >
+                    <Wand2 className="size-4" />
+                    <Trans>Autodetect</Trans>
+                  </Button> */}
+                </div>
               </ModalControlRow>
             </div>
           </AnimateHeight>

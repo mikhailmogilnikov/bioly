@@ -41,7 +41,7 @@ msgstr "Add a new block"
 msgid "Add avatar"
 msgstr "Add avatar"
 
-#: src/features/editor/header/description.tsx:29
+#: src/features/editor/header/description.tsx:30
 msgid "Add bio... Type \"/\" for commands."
 msgstr "Add bio... Type \"/\" for commands."
 
@@ -66,9 +66,13 @@ msgstr "Address picker"
 msgid "Allow map interaction"
 msgstr "Allow map interaction"
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:73
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:89
 msgid "Allow search engines to index this page"
 msgstr "Allow search engines to index this page"
+
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:149
+msgid "Autodetect"
+msgstr "Autodetect"
 
 #: src/features/editor/menu/options/project-settings/views/theme/header/header-settings.tsx:60
 msgid "Avatar background with blur"
@@ -127,7 +131,7 @@ msgstr "By continuing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "Change email"
 msgstr "Change email"
 
-#: src/shared/ui/utils/lang-picker.tsx:28
+#: src/shared/ui/utils/lang-picker.tsx:36
 msgid "Change language"
 msgstr "Change language"
 
@@ -234,13 +238,17 @@ msgstr "Delete"
 msgid "Delete avatar"
 msgstr "Delete avatar"
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:91
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:107
 msgid "Description for search engines..."
 msgstr "Description for search engines..."
 
 #: src/features/editor/text-editor/extensions/suggestion.tsx:20
 msgid "Details"
 msgstr "Details"
+
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:145
+msgid "Detect language from name and description"
+msgstr "Detect language from name and description"
 
 #: src/features/auth/views/login/resend.tsx:27
 msgid "Didn't receive the code?"
@@ -564,7 +572,7 @@ msgstr "Sending code..."
 msgid "Sending..."
 msgstr "Sending..."
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:84
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:100
 msgid "SEO description"
 msgstr "SEO description"
 
@@ -592,11 +600,11 @@ msgstr "Share my profile"
 msgid "Signing in..."
 msgstr "Signing in..."
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:108
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:125
 msgid "Site language"
 msgstr "Site language"
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:106
+#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:122
 msgid "Site language (SEO)"
 msgstr "Site language (SEO)"
 

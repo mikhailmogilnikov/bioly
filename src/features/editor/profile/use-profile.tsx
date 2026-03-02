@@ -10,6 +10,7 @@ import {
   DEFAULT_MOCK_PROFILE,
   type Profile,
   type ProfileMainEditableFields,
+  type ProfileMeta,
 } from "./profile.type";
 import type { ProfileTheme } from "./theme.type";
 
@@ -76,6 +77,25 @@ export const useProfile = createGStore(() => {
         const newProfile: Profile = {
           ...prev,
           theme: { ...prev.theme, [field]: value },
+        };
+        LocalStorageService.setItem("localProfile", newProfile);
+        return newProfile;
+      });
+    },
+    []
+  );
+
+  /**
+   * Updates the meta field of the profile
+   * @param field - Field of the meta to update
+   * @param value - New value of the field
+   */
+  const updateMetaField = useCallback(
+    <K extends keyof ProfileMeta>(field: K, value: ProfileMeta[K]) => {
+      setProfile((prev) => {
+        const newProfile: Profile = {
+          ...prev,
+          meta: { ...prev.meta, [field]: value },
         };
         LocalStorageService.setItem("localProfile", newProfile);
         return newProfile;
@@ -159,6 +179,7 @@ export const useProfile = createGStore(() => {
     updateProfile,
     updateMainField,
     updateThemeField,
+    updateMetaField,
     addBentoBlock,
     removeBentoBlock,
     updateBentoBlockField,

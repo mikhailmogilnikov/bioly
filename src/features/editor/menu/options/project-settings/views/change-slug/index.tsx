@@ -52,7 +52,7 @@ export function SettingsChangeSlugView() {
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <div className="squircle flex p-4 font-medium text-lg">
-          <p className="text-foreground/70">{CONFIG.domain}/</p>
+          <p className="text-nowrap text-foreground/70">{CONFIG.domain}/</p>
           <input
             {...register("slug")}
             aria-invalid={formState.errors.slug ? "true" : "false"}

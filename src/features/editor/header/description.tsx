@@ -5,7 +5,7 @@ import { BasicTextEditor } from "../text-editor";
 import { getEditorJsonPayload } from "../text-editor/lib/get-editor-json-payload";
 
 export const EditDescription = () => {
-  const { t } = useLingui();
+  const { t, i18n } = useLingui();
 
   const { description, updateMainField } = useProfile(
     (state) => ({
@@ -21,6 +21,7 @@ export const EditDescription = () => {
         "max-sm:min-h-14": !description,
       })}
       content={description}
+      key={i18n.locale}
       onUpdate={(props) => {
         const payload = getEditorJsonPayload(props.editor.getJSON());
 

@@ -2,6 +2,7 @@
 
 import { useLingui } from "@lingui/react/macro";
 import { ChevronDownIcon } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { LOCALES_DATA, type Locale } from "@/shared/i18n/locales-data";
 import { cn } from "@/shared/lib/utils";
 import {
@@ -17,9 +18,16 @@ interface LangPickerProps {
 
 export function LangPicker({ className }: LangPickerProps) {
   const { i18n, t } = useLingui();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleLocaleChange = (locale: Locale) => {
     i18n.activate(locale);
+    const segments = pathname.split("/").filter(Boolean);
+    if (segments.length > 0) {
+      segments[0] = locale;
+      router.replace(`/${segments.join("/")}`);
+    }
   };
 
   return (

@@ -498,6 +498,30 @@ paths:
 components:
   schemas:
     # Profile schemas
+    ProfileMeta:
+      type: object
+      required:
+        - allow_indexing
+        - meta_lang
+        - meta_description
+      properties:
+        allow_indexing:
+          type: boolean
+          description: Разрешить индексацию страницы поисковыми системами
+          default: true
+        meta_lang:
+          type: string
+          description: Язык сайта (атрибут lang в HTML, BCP 47, например en, ru, de, fr, ja)
+          minLength: 2
+          maxLength: 10
+          example: "ru"
+        meta_description:
+          type: string
+          nullable: true
+          description: SEO meta description для поисковых систем
+          minLength: 0
+          maxLength: 200
+
     Profile:
       type: object
       required:
@@ -507,10 +531,10 @@ components:
         - email
         - created_at
         - protected_by_password
-        - short_description
         - theme
         - social_media
         - bento
+        - meta
       properties:
         id:
           type: string
@@ -556,12 +580,6 @@ components:
         protected_by_password:
           type: boolean
           description: Защищен ли профиль паролем
-        short_description:
-          type: string
-          description: Краткое описание профиля
-          minLength: 0
-          maxLength: 200
-          example: "Software developer and designer"
         description:
           nullable: true
           allOf:
@@ -587,22 +605,8 @@ components:
           description: |
             Массив блоков Bento. Максимум 50 элементов.
             ID и порядок (order) должны быть уникальными для каждого блока.
-        meta_description:
-          type: string
-          description: SEO meta description для поисковых систем
-          minLength: 0
-          maxLength: 200
-          default: ""
-        lang:
-          type: string
-          description: Язык сайта (атрибут lang в HTML, BCP 47, например en, ru, de, fr, ja)
-          minLength: 2
-          maxLength: 10
-          default: "en"
-        allow_indexing:
-          type: boolean
-          description: Разрешить индексацию страницы поисковыми системами
-          default: true
+        meta:
+          $ref: "#/components/schemas/ProfileMeta"
 
     ProfileMainEditableFields:
       type: object
@@ -612,10 +616,10 @@ components:
         - email
         - created_at
         - protected_by_password
-        - short_description
         - theme
         - social_media
         - bento
+        - meta
       properties:
         name:
           type: string
@@ -641,10 +645,6 @@ components:
           maxLength: 2048
         protected_by_password:
           type: boolean
-        short_description:
-          type: string
-          minLength: 0
-          maxLength: 200
         description:
           nullable: true
           allOf:
@@ -664,16 +664,8 @@ components:
             $ref: "#/components/schemas/BentoBlock"
           maxItems: 50
           uniqueItems: true
-        meta_description:
-          type: string
-          minLength: 0
-          maxLength: 200
-        lang:
-          type: string
-          minLength: 2
-          maxLength: 10
-        allow_indexing:
-          type: boolean
+        meta:
+          $ref: "#/components/schemas/ProfileMeta"
 
     ProfileTheme:
       type: object
@@ -1502,11 +1494,11 @@ components:
         - name
         - slug
         - avatar_url
-        - short_description
         - description
         - theme
         - social_media
         - bento
+        - meta
       properties:
         id:
           type: string
@@ -1531,11 +1523,6 @@ components:
           nullable: true
           description: URL аватара профиля
           maxLength: 2048
-        short_description:
-          type: string
-          description: Краткое описание профиля
-          minLength: 0
-          maxLength: 200
         description:
           nullable: true
           allOf:
@@ -1561,6 +1548,8 @@ components:
           description: |
             Массив блоков Bento. Максимум 50 элементов.
             ID и порядок (order) должны быть уникальными для каждого блока.
+        meta:
+          $ref: "#/components/schemas/ProfileMeta"
 
     GetProfileBySlugRequest:
       type: object

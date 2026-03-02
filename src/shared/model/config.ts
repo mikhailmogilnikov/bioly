@@ -4,7 +4,7 @@ export const CONFIG = {
   title: "Bioly",
   description: msg`Share everything important on one beautiful page.`,
 
-  domain: "bioly.me",
+  domain: process.env.NEXT_PUBLIC_DOMAIN || "",
 
   locales: ["en", "ru"],
   defaultLocale: "en",

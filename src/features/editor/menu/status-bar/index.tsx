@@ -38,7 +38,7 @@ export function EditorMenuStatusBar() {
           </p>
           <Button
             asChild
-            className="bg-link/15 text-link hover:bg-link/20"
+            className="mt-1 bg-link/15 text-link hover:bg-link/20"
             size="default"
           >
             <Link

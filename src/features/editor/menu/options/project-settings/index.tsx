@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { ModalViewsProvider } from "@/shared/lib/providers/modal-views/modal-views-provider";
 import { AdaptiveModal } from "@/shared/ui/kit/overlays/adaptive-modal";
 import { ProjectSettingsController } from "./controller";
@@ -20,11 +21,19 @@ export function ProjectSettingsModal({
   onOpenChange,
   initialView = "settings",
 }: ProjectSettingsProps) {
+  const openIdRef = useRef(0);
+  const lastKeyRef = useRef(`${initialView}-0`);
+
+  if (open) {
+    openIdRef.current += 1;
+    lastKeyRef.current = `${initialView}-${openIdRef.current}`;
+  }
+
   return (
     <AdaptiveModal onOpenChange={onOpenChange} open={open}>
       <ModalViewsProvider<ProjectSettingsViews>
         initialView={initialView}
-        key={open ? initialView : "closed"}
+        key={lastKeyRef.current}
       >
         <ProjectSettingsController />
       </ModalViewsProvider>

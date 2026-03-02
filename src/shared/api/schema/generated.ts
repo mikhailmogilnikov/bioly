@@ -740,6 +740,20 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        ProfileMeta: {
+            /**
+             * @description Разрешить индексацию страницы поисковыми системами
+             * @default true
+             */
+            allow_indexing: boolean;
+            /**
+             * @description Язык сайта (атрибут lang в HTML, BCP 47, например en, ru, de, fr, ja)
+             * @example ru
+             */
+            meta_lang: string;
+            /** @description SEO meta description для поисковых систем */
+            meta_description: string | null;
+        };
         Profile: {
             /**
              * @description Уникальный идентификатор профиля (UUID или другой уникальный идентификатор)
@@ -777,11 +791,6 @@ export interface components {
             avatar_url?: string | null;
             /** @description Защищен ли профиль паролем */
             protected_by_password: boolean;
-            /**
-             * @description Краткое описание профиля
-             * @example Software developer and designer
-             */
-            short_description: string;
             /** @description Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent. */
             description?: components["schemas"]["JSONContent"] | null;
             theme: components["schemas"]["ProfileTheme"];
@@ -795,21 +804,7 @@ export interface components {
              *     ID и порядок (order) должны быть уникальными для каждого блока.
              */
             bento: components["schemas"]["BentoBlock"][];
-            /**
-             * @description SEO meta description для поисковых систем
-             * @default
-             */
-            meta_description: string;
-            /**
-             * @description Язык сайта (атрибут lang в HTML, BCP 47, например en, ru, de, fr, ja)
-             * @default en
-             */
-            lang: string;
-            /**
-             * @description Разрешить индексацию страницы поисковыми системами
-             * @default true
-             */
-            allow_indexing: boolean;
+            meta: components["schemas"]["ProfileMeta"];
         };
         ProfileMainEditableFields: {
             name: string;
@@ -821,15 +816,12 @@ export interface components {
             /** Format: uri */
             avatar_url?: string | null;
             protected_by_password: boolean;
-            short_description: string;
             /** @description Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent. */
             description?: components["schemas"]["JSONContent"] | null;
             theme: components["schemas"]["ProfileTheme"];
             social_media: components["schemas"]["SocialMediaItem"][];
             bento: components["schemas"]["BentoBlock"][];
-            meta_description?: string;
-            lang?: string;
-            allow_indexing?: boolean;
+            meta: components["schemas"]["ProfileMeta"];
         };
         ProfileTheme: {
             font: components["schemas"]["Font"];
@@ -1331,8 +1323,6 @@ export interface components {
              * @description URL аватара профиля
              */
             avatar_url: string | null;
-            /** @description Краткое описание профиля */
-            short_description: string;
             /** @description Полное описание профиля в формате TipTap JSON. Может быть null или JSONContent. */
             description: components["schemas"]["JSONContent"] | null;
             theme: components["schemas"]["ProfileTheme"];
@@ -1346,6 +1336,7 @@ export interface components {
              *     ID и порядок (order) должны быть уникальными для каждого блока.
              */
             bento: components["schemas"]["BentoBlock"][];
+            meta: components["schemas"]["ProfileMeta"];
         };
         GetProfileBySlugRequest: {
             /**
