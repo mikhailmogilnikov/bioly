@@ -70,10 +70,6 @@ msgstr "Allow map interaction"
 msgid "Allow search engines to index this page"
 msgstr "Allow search engines to index this page"
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:149
-msgid "Autodetect"
-msgstr "Autodetect"
-
 #: src/features/editor/menu/options/project-settings/views/theme/header/header-settings.tsx:60
 msgid "Avatar background with blur"
 msgstr "Avatar background with blur"
@@ -246,10 +242,6 @@ msgstr "Description for search engines..."
 msgid "Details"
 msgstr "Details"
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:145
-msgid "Detect language from name and description"
-msgstr "Detect language from name and description"
-
 #: src/features/auth/views/login/resend.tsx:27
 msgid "Didn't receive the code?"
 msgstr "Didn't receive the code?"
@@ -382,6 +374,11 @@ msgstr "Linked"
 #: src/features/editor/menu/options/profile/views/profile.tsx:52
 msgid "Logout"
 msgstr "Logout"
+
+#: src/features/editor/bento/blocks/variants/gallery/options/file-manager/index.tsx:16
+#: src/features/editor/bento/blocks/variants/gallery/options/file-manager/modal.tsx:22
+msgid "Manage media"
+msgstr "Manage media"
 
 #: src/features/editor/menu/new-item/index.tsx:150
 msgid "Map"
@@ -542,7 +539,7 @@ msgstr "Resend in {duration}"
 msgid "Reset profile"
 msgstr "Reset profile"
 
-#: src/features/editor/menu/options/project-settings/views/change-slug/index.tsx:88
+#: src/features/editor/bento/blocks/variants/gallery/options/file-manager/modal.tsx:27
 msgid "Save"
 msgstr "Save"
 

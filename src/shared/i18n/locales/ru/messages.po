@@ -70,10 +70,6 @@ msgstr "Разрешить взаимодействие с картой"
 msgid "Allow search engines to index this page"
 msgstr "Разрешить поисковым системам индексировать эту страницу"
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:149
-msgid "Autodetect"
-msgstr ""
-
 #: src/features/editor/menu/options/project-settings/views/theme/header/header-settings.tsx:60
 msgid "Avatar background with blur"
 msgstr "Фон аватара с размытием"
@@ -246,10 +242,6 @@ msgstr "Описание для поисковых систем..."
 msgid "Details"
 msgstr "Детали"
 
-#: src/features/editor/menu/options/project-settings/views/accessibility/index.tsx:145
-msgid "Detect language from name and description"
-msgstr ""
-
 #: src/features/auth/views/login/resend.tsx:27
 msgid "Didn't receive the code?"
 msgstr "Не получили код?"
@@ -382,6 +374,11 @@ msgstr "Привязано"
 #: src/features/editor/menu/options/profile/views/profile.tsx:52
 msgid "Logout"
 msgstr "Выйти"
+
+#: src/features/editor/bento/blocks/variants/gallery/options/file-manager/index.tsx:16
+#: src/features/editor/bento/blocks/variants/gallery/options/file-manager/modal.tsx:22
+msgid "Manage media"
+msgstr "Управление медиа"
 
 #: src/features/editor/menu/new-item/index.tsx:150
 msgid "Map"
@@ -542,7 +539,7 @@ msgstr "Отправить повторно через {duration}"
 msgid "Reset profile"
 msgstr "Сбросить профиль"
 
-#: src/features/editor/menu/options/project-settings/views/change-slug/index.tsx:88
+#: src/features/editor/bento/blocks/variants/gallery/options/file-manager/modal.tsx:27
 msgid "Save"
 msgstr "Сохранить"
 

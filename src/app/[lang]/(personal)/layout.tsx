@@ -74,7 +74,7 @@ export default async function PersonalLayout({
           initialMessages={allMessages[lang] ?? {}}
         >
           {children}
-          <div className="relative z-10" id="portal-root" />
+          <div className="relative z-60" id="portal-root" />
         </LinguiClientProvider>
       </body>
     </html>
