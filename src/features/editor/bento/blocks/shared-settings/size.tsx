@@ -1,4 +1,5 @@
 import { RectangleHorizontal, RectangleVertical, Square } from "lucide-react";
+import { useWebHaptics } from "web-haptics/react";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import { cn } from "@/shared/lib/utils";
 import { useBlockContext } from "../../grid/ui/block-context";
@@ -9,6 +10,7 @@ interface BentoBlockSizeProps {
 }
 
 export const BentoBlockSizeSetting = ({ sizes }: BentoBlockSizeProps) => {
+  const haptic = useWebHaptics();
   const updateBentoBlockField = useProfile(
     (state) => state.updateBentoBlockField
   );
@@ -38,7 +40,7 @@ export const BentoBlockSizeSetting = ({ sizes }: BentoBlockSizeProps) => {
 
   const handleSelectSize = (size: BentoBlockSize) => {
     if (!block.id) return;
-
+    haptic.trigger("selection");
     updateBentoBlockField(block.id, "size", size);
   };
 

@@ -120,7 +120,7 @@ src/
 Добавление нового типа блока:
 
 1. Расширить schema в `shared/api/schema/rest-api.yaml`
-2. Запустить `pnpm gen-api`
+2. Запустить `bun gen-api`
 3. Добавить вариант в `blocks/variants/`
 4. Обновить `use-render-block.tsx` и `use-render-block-settings.tsx`
 5. Обновить `gen-new-bento-defaults.ts`
@@ -152,6 +152,7 @@ npx shadcn@latest add <component>
 
 ## Чеклист перед завершением задачи
 
+- [ ] Все используемые функции/компоненты импортированы (не забывать добавлять импорты при использовании новых зависимостей)
 - [ ] `bun run fix` выполнен
 - [ ] `bun run ts` без ошибок
 - [ ] Импорты только вниз по слоям (features не импортируют features)

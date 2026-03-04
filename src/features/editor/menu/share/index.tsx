@@ -1,6 +1,7 @@
 import { Trans } from "@lingui/react/macro";
 import { ScanQrCode } from "lucide-react";
 import { useState } from "react";
+import { useWebHaptics } from "web-haptics/react";
 import {
   Tooltip,
   TooltipContent,
@@ -9,6 +10,7 @@ import {
 import { ShareModal } from "./modal";
 
 export function EditBarShare() {
+  const haptic = useWebHaptics();
   const [open, setOpen] = useState(false);
 
   const handleOpenChange = () => {
@@ -20,7 +22,10 @@ export function EditBarShare() {
       <Tooltip>
         <TooltipTrigger
           className="pressable flex size-12 cursor-pointer items-center justify-center rounded-full border border-foreground/8 bg-default/50 backdrop-blur-md"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            haptic.trigger("medium");
+            setOpen(true);
+          }}
         >
           <ScanQrCode className="size-6" />
         </TooltipTrigger>

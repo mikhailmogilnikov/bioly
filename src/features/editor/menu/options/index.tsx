@@ -1,5 +1,6 @@
 import { Trans } from "@lingui/react/macro";
 import { useRef, useState } from "react";
+import { useWebHaptics } from "web-haptics/react";
 import { useEditorSettingsModal } from "@/features/editor/menu/options/project-settings/settings-modal-context";
 import type { ActivityIcon } from "@/shared/ui/animated-icons/activity";
 import type { ChartSplineIcon } from "@/shared/ui/animated-icons/chart-spline";
@@ -44,6 +45,7 @@ const menuItems: MenuItemConfig[] = [
 ];
 
 export const EditBarMenu = () => {
+  const haptic = useWebHaptics();
   const { closeSettingsModal, openSettingsModal, settingsModalState } =
     useEditorSettingsModal();
 
@@ -65,6 +67,7 @@ export const EditBarMenu = () => {
       <DropdownMenu
         onOpenChange={(isOpen) => {
           if (isOpen) {
+            haptic.trigger("medium");
             menuIconRef.current?.startAnimation();
 
             queueMicrotask(() => {
@@ -81,7 +84,10 @@ export const EditBarMenu = () => {
           }
         }}
       >
-        <DropdownMenuTrigger className="pressable size-12 cursor-pointer rounded-full border border-foreground/8 bg-default/50 backdrop-blur-md">
+        <DropdownMenuTrigger
+          className="pressable size-12 cursor-pointer rounded-full border border-foreground/8 bg-default/50 backdrop-blur-md"
+          onClick={() => haptic.trigger("selection")}
+        >
           <Tooltip>
             <TooltipTrigger asChild>
               <div className="flex size-full items-center justify-center">
@@ -119,11 +125,12 @@ export const EditBarMenu = () => {
             return (
               <DropdownMenuItem
                 key={itemId}
-                onClick={() =>
+                onClick={() => {
+                  haptic.trigger("selection");
                   itemId === "settings"
                     ? openSettingsModal("settings")
-                    : handleToggleModal(itemId, true)
-                }
+                    : handleToggleModal(itemId, true);
+                }}
                 onMouseEnter={() =>
                   itemIconRefs.current[itemId]?.startAnimation()
                 }

@@ -1,5 +1,6 @@
 import { Trans } from "@lingui/react/macro";
 import { useRef } from "react";
+import { useWebHaptics } from "web-haptics/react";
 import type {
   BentoBlock,
   BentoBlockTypeKey,
@@ -34,6 +35,7 @@ import { generateNewBentoItemDefaults } from "../../bento/blocks/model/gen-new-b
 import { useProfile } from "../../profile/use-profile";
 
 export const EditBarNewItem = () => {
+  const haptic = useWebHaptics();
   const { addBentoBlock } = useProfile(
     (state) => ({
       addBentoBlock: state.addBentoBlock,
@@ -50,6 +52,7 @@ export const EditBarNewItem = () => {
   const mapPinIconRef = useRef<MapPinIconHandle>(null);
 
   const handleAddItem = (type: BentoBlockTypeKey) => {
+    haptic.trigger("medium");
     // TODO: TEMPORAL
     const newItem: BentoBlock<BentoBlockTypeKey> = generateNewBentoItemDefaults(
       useProfile.getState().profile.bento.length + 1,
@@ -68,6 +71,7 @@ export const EditBarNewItem = () => {
     <DropdownMenu
       onOpenChange={(isOpen) => {
         if (isOpen) {
+          haptic.trigger("medium");
           plusIconRef.current?.startAnimation();
 
           queueMicrotask(() => {

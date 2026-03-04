@@ -29,11 +29,11 @@ msgstr "Аккаунт не защищен паролем"
 msgid "Actions"
 msgstr "Действия"
 
-#: src/features/editor/menu/status-bar/index.tsx:33
+#: src/features/editor/menu/status-bar/index.tsx:39
 msgid "Active"
 msgstr "Активен"
 
-#: src/features/editor/menu/new-item/index.tsx:98
+#: src/features/editor/menu/new-item/index.tsx:102
 msgid "Add a new block"
 msgstr "Добавить новый блок"
 
@@ -95,7 +95,7 @@ msgstr "Назад к вводу имени пользователя"
 msgid "Blockquote"
 msgstr "Цитата"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:84
+#: src/features/editor/text-editor/formatting-menu.tsx:86
 msgid "Bold"
 msgstr "Жирный"
 
@@ -145,7 +145,7 @@ msgstr "Изменить пароль"
 msgid "Change slug"
 msgstr "Изменить имя пользователя"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:108
+#: src/features/editor/text-editor/formatting-menu.tsx:110
 msgid "Code"
 msgstr "Код"
 
@@ -226,7 +226,7 @@ msgstr "Создание аккаунта..."
 msgid "Current Password"
 msgstr "Текущий пароль"
 
-#: src/features/editor/bento/blocks/shared-settings/delete.tsx:39
+#: src/features/editor/bento/blocks/shared-settings/delete.tsx:42
 msgid "Delete"
 msgstr "Удалить"
 
@@ -320,7 +320,7 @@ msgstr "Шрифт"
 msgid "Getting started"
 msgstr "Начало работы"
 
-#: src/features/editor/menu/status-bar/index.tsx:45
+#: src/features/editor/menu/status-bar/index.tsx:52
 msgid "Go to live page"
 msgstr "Перейти на живую страницу"
 
@@ -350,7 +350,7 @@ msgstr "Неверный email адрес"
 msgid "Invalid URL"
 msgstr "Неверный URL"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:90
+#: src/features/editor/text-editor/formatting-menu.tsx:92
 msgid "Italic"
 msgstr "Курсив"
 
@@ -358,12 +358,12 @@ msgstr "Курсив"
 msgid "Joined on"
 msgstr "Присоединился"
 
-#: src/features/editor/menu/status-bar/index.tsx:37
+#: src/features/editor/menu/status-bar/index.tsx:43
 msgid "Last synchronization:"
 msgstr "Последняя синхронизация:"
 
-#: src/features/editor/menu/new-item/index.tsx:142
-#: src/features/editor/text-editor/formatting-menu.tsx:120
+#: src/features/editor/menu/new-item/index.tsx:146
+#: src/features/editor/text-editor/formatting-menu.tsx:122
 msgid "Link"
 msgstr "Ссылка"
 
@@ -380,7 +380,7 @@ msgstr "Выйти"
 msgid "Manage media"
 msgstr "Управление медиа"
 
-#: src/features/editor/menu/new-item/index.tsx:150
+#: src/features/editor/menu/new-item/index.tsx:154
 msgid "Map"
 msgstr "Карта"
 
@@ -400,16 +400,16 @@ msgstr "Заголовок карты"
 msgid "Map zoom"
 msgstr "Масштаб карты"
 
-#: src/features/editor/menu/new-item/index.tsx:122
+#: src/features/editor/menu/new-item/index.tsx:126
 msgid "Media gallery"
 msgstr "Медиа галерея"
 
-#: src/features/editor/menu/options/index.tsx:97
-#: src/features/editor/menu/options/index.tsx:105
+#: src/features/editor/menu/options/index.tsx:103
+#: src/features/editor/menu/options/index.tsx:111
 msgid "Menu"
 msgstr "Меню"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:114
+#: src/features/editor/text-editor/formatting-menu.tsx:116
 msgid "Muted"
 msgstr "Приглушенный"
 
@@ -417,7 +417,7 @@ msgstr "Приглушенный"
 msgid "Name font size"
 msgstr "Размер шрифта имени"
 
-#: src/features/editor/menu/new-item/index.tsx:105
+#: src/features/editor/menu/new-item/index.tsx:109
 msgid "New block"
 msgstr "Новый блок"
 
@@ -454,7 +454,7 @@ msgstr "Пароль не указан. Пожалуйста, вернитесь
 msgid "No password provided. Please go back and enter a password."
 msgstr "Пароль не указан. Пожалуйста, вернитесь и введите пароль."
 
-#: src/features/editor/text-editor/commands-list.tsx:113
+#: src/features/editor/text-editor/commands-list.tsx:116
 msgid "No result"
 msgstr "Нет результатов"
 
@@ -501,13 +501,11 @@ msgstr "Пароль должен содержать хотя бы одну за
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
-#: src/features/editor/menu/options/index.tsx:114
-#: src/features/editor/menu/options/profile/controller.tsx:23
+#: src/features/editor/menu/options/index.tsx:120
 msgid "Profile"
 msgstr "Профиль"
 
-#: src/features/editor/menu/options/index.tsx:111
-#: src/features/editor/menu/options/project-settings/controller.tsx:21
+#: src/features/editor/menu/options/index.tsx:117
 msgid "Project settings"
 msgstr "Настройки проекта"
 
@@ -581,7 +579,7 @@ msgstr "Разделитель"
 msgid "Settings"
 msgstr "Настройки"
 
-#: src/features/editor/menu/share/index.tsx:29
+#: src/features/editor/menu/share/index.tsx:34
 msgid "Share"
 msgstr "Поделиться"
 
@@ -609,19 +607,19 @@ msgstr "Язык сайта (SEO)"
 msgid "Social media"
 msgstr "Социальные сети"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:126
+#: src/features/editor/text-editor/formatting-menu.tsx:128
 msgid "Spoiler"
 msgstr "Спойлер"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:96
+#: src/features/editor/text-editor/formatting-menu.tsx:98
 msgid "Strikethrough"
 msgstr "Зачеркнутый"
 
-#: src/features/editor/menu/status-bar/index.tsx:27
+#: src/features/editor/menu/status-bar/index.tsx:33
 msgid "Synchronization status"
 msgstr "Статус синхронизации"
 
-#: src/features/editor/menu/new-item/index.tsx:134
+#: src/features/editor/menu/new-item/index.tsx:138
 msgid "Text"
 msgstr "Текст"
 
@@ -644,7 +642,7 @@ msgstr "Тема и оформление"
 msgid "Theme settings"
 msgstr "Настройки темы"
 
-#: src/features/editor/text-editor/commands-list.tsx:154
+#: src/features/editor/text-editor/commands-list.tsx:157
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Совет: вы можете выделить фрагмент текста и применить к нему дополнительное форматирование."
 
@@ -674,7 +672,7 @@ msgstr "Сверху справа"
 msgid "Type your text here"
 msgstr "Введите ваш текст здесь"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:102
+#: src/features/editor/text-editor/formatting-menu.tsx:104
 msgid "Underline"
 msgstr "Подчеркнутый"
 
@@ -730,7 +728,7 @@ msgstr "Подтвердить код"
 msgid "Verifying..."
 msgstr "Проверка..."
 
-#: src/features/editor/menu/status-bar/index.tsx:50
+#: src/features/editor/menu/status-bar/index.tsx:57
 msgid "View my page"
 msgstr "Открыть мою страницу"
 

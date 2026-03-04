@@ -12,6 +12,7 @@ import {
   SeparatorHorizontal,
 } from "lucide-react";
 import { useEffect, useImperativeHandle, useState } from "react";
+import { useWebHaptics } from "web-haptics/react";
 import { COMMAND_TITLES } from "./extensions/suggestion";
 
 export interface CommandsListRef {
@@ -35,6 +36,7 @@ interface CommandsListProps {
 }
 
 export const CommandsList = ({ items, command, ref }: CommandsListProps) => {
+  const haptic = useWebHaptics();
   const { i18n } = useLingui();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -48,6 +50,7 @@ export const CommandsList = ({ items, command, ref }: CommandsListProps) => {
   const selectItem = (index: number) => {
     const item = items[index];
     if (item && !item.disabled) {
+      haptic.trigger("selection");
       command(item);
     }
   };

@@ -1,5 +1,6 @@
 import { Trans } from "@lingui/react/macro";
 import { useRef } from "react";
+import { useWebHaptics } from "web-haptics/react";
 import { useProfile } from "@/features/editor/profile/use-profile";
 import {
   DeleteIcon,
@@ -8,6 +9,7 @@ import {
 import { useBlockContext } from "../../grid/ui/block-context";
 
 export const BentoBlockDeleteSetting = () => {
+  const haptic = useWebHaptics();
   const { id, closeBlockOverlay, closeBlockPanel, closeBlockWrapper } =
     useBlockContext();
 
@@ -18,6 +20,7 @@ export const BentoBlockDeleteSetting = () => {
   if (!id) return null;
 
   const handleDelete = () => {
+    haptic.trigger("warning");
     closeBlockOverlay();
     closeBlockPanel();
     closeBlockWrapper();

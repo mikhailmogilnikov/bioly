@@ -11,6 +11,7 @@ import {
   StrikethroughIcon,
   UnderlineIcon,
 } from "lucide-react";
+import { useWebHaptics } from "web-haptics/react";
 import { cn } from "@/shared/lib/utils";
 
 interface FormattingMenuProps {
@@ -18,6 +19,7 @@ interface FormattingMenuProps {
 }
 
 export function FormattingMenu({ editor }: FormattingMenuProps) {
+  const haptic = useWebHaptics();
   const { t } = useLingui();
 
   const {
@@ -152,6 +154,7 @@ export function FormattingMenu({ editor }: FormattingMenuProps) {
           key={label}
           onClick={() => {
             if (isDisabled) return;
+            haptic.trigger("light");
             onClick();
           }}
           type="button"

@@ -29,11 +29,11 @@ msgstr "Account isn't protected by password"
 msgid "Actions"
 msgstr "Actions"
 
-#: src/features/editor/menu/status-bar/index.tsx:33
+#: src/features/editor/menu/status-bar/index.tsx:39
 msgid "Active"
 msgstr "Active"
 
-#: src/features/editor/menu/new-item/index.tsx:98
+#: src/features/editor/menu/new-item/index.tsx:102
 msgid "Add a new block"
 msgstr "Add a new block"
 
@@ -95,7 +95,7 @@ msgstr "Back to enter slug"
 msgid "Blockquote"
 msgstr "Blockquote"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:84
+#: src/features/editor/text-editor/formatting-menu.tsx:86
 msgid "Bold"
 msgstr "Bold"
 
@@ -145,7 +145,7 @@ msgstr "Change Password"
 msgid "Change slug"
 msgstr "Change slug"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:108
+#: src/features/editor/text-editor/formatting-menu.tsx:110
 msgid "Code"
 msgstr "Code"
 
@@ -226,7 +226,7 @@ msgstr "Creating account..."
 msgid "Current Password"
 msgstr "Current Password"
 
-#: src/features/editor/bento/blocks/shared-settings/delete.tsx:39
+#: src/features/editor/bento/blocks/shared-settings/delete.tsx:42
 msgid "Delete"
 msgstr "Delete"
 
@@ -320,7 +320,7 @@ msgstr "Font"
 msgid "Getting started"
 msgstr "Getting started"
 
-#: src/features/editor/menu/status-bar/index.tsx:45
+#: src/features/editor/menu/status-bar/index.tsx:52
 msgid "Go to live page"
 msgstr "Go to live page"
 
@@ -350,7 +350,7 @@ msgstr "Invalid email address"
 msgid "Invalid URL"
 msgstr "Invalid URL"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:90
+#: src/features/editor/text-editor/formatting-menu.tsx:92
 msgid "Italic"
 msgstr "Italic"
 
@@ -358,12 +358,12 @@ msgstr "Italic"
 msgid "Joined on"
 msgstr "Joined on"
 
-#: src/features/editor/menu/status-bar/index.tsx:37
+#: src/features/editor/menu/status-bar/index.tsx:43
 msgid "Last synchronization:"
 msgstr "Last synchronization:"
 
-#: src/features/editor/menu/new-item/index.tsx:142
-#: src/features/editor/text-editor/formatting-menu.tsx:120
+#: src/features/editor/menu/new-item/index.tsx:146
+#: src/features/editor/text-editor/formatting-menu.tsx:122
 msgid "Link"
 msgstr "Link"
 
@@ -380,7 +380,7 @@ msgstr "Logout"
 msgid "Manage media"
 msgstr "Manage media"
 
-#: src/features/editor/menu/new-item/index.tsx:150
+#: src/features/editor/menu/new-item/index.tsx:154
 msgid "Map"
 msgstr "Map"
 
@@ -400,16 +400,16 @@ msgstr "Map title"
 msgid "Map zoom"
 msgstr "Map zoom"
 
-#: src/features/editor/menu/new-item/index.tsx:122
+#: src/features/editor/menu/new-item/index.tsx:126
 msgid "Media gallery"
 msgstr "Media gallery"
 
-#: src/features/editor/menu/options/index.tsx:97
-#: src/features/editor/menu/options/index.tsx:105
+#: src/features/editor/menu/options/index.tsx:103
+#: src/features/editor/menu/options/index.tsx:111
 msgid "Menu"
 msgstr "Menu"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:114
+#: src/features/editor/text-editor/formatting-menu.tsx:116
 msgid "Muted"
 msgstr "Muted"
 
@@ -417,7 +417,7 @@ msgstr "Muted"
 msgid "Name font size"
 msgstr "Name font size"
 
-#: src/features/editor/menu/new-item/index.tsx:105
+#: src/features/editor/menu/new-item/index.tsx:109
 msgid "New block"
 msgstr "New block"
 
@@ -454,7 +454,7 @@ msgstr "No password provided. Please go back and enter a new password."
 msgid "No password provided. Please go back and enter a password."
 msgstr "No password provided. Please go back and enter a password."
 
-#: src/features/editor/text-editor/commands-list.tsx:113
+#: src/features/editor/text-editor/commands-list.tsx:116
 msgid "No result"
 msgstr "No result"
 
@@ -501,13 +501,11 @@ msgstr "Password must contain at least one uppercase letter"
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
-#: src/features/editor/menu/options/index.tsx:114
-#: src/features/editor/menu/options/profile/controller.tsx:23
+#: src/features/editor/menu/options/index.tsx:120
 msgid "Profile"
 msgstr "Profile"
 
-#: src/features/editor/menu/options/index.tsx:111
-#: src/features/editor/menu/options/project-settings/controller.tsx:21
+#: src/features/editor/menu/options/index.tsx:117
 msgid "Project settings"
 msgstr "Project settings"
 
@@ -581,7 +579,7 @@ msgstr "Separator"
 msgid "Settings"
 msgstr "Settings"
 
-#: src/features/editor/menu/share/index.tsx:29
+#: src/features/editor/menu/share/index.tsx:34
 msgid "Share"
 msgstr "Share"
 
@@ -609,19 +607,19 @@ msgstr "Site language (SEO)"
 msgid "Social media"
 msgstr "Social media"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:126
+#: src/features/editor/text-editor/formatting-menu.tsx:128
 msgid "Spoiler"
 msgstr "Spoiler"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:96
+#: src/features/editor/text-editor/formatting-menu.tsx:98
 msgid "Strikethrough"
 msgstr "Strikethrough"
 
-#: src/features/editor/menu/status-bar/index.tsx:27
+#: src/features/editor/menu/status-bar/index.tsx:33
 msgid "Synchronization status"
 msgstr "Synchronization status"
 
-#: src/features/editor/menu/new-item/index.tsx:134
+#: src/features/editor/menu/new-item/index.tsx:138
 msgid "Text"
 msgstr "Text"
 
@@ -644,7 +642,7 @@ msgstr "Theme & styling"
 msgid "Theme settings"
 msgstr "Theme settings"
 
-#: src/features/editor/text-editor/commands-list.tsx:154
+#: src/features/editor/text-editor/commands-list.tsx:157
 msgid "Tip: you can select fragment of text and apply additional styling to it."
 msgstr "Tip: you can select fragment of text and apply additional styling to it."
 
@@ -674,7 +672,7 @@ msgstr "Top right"
 msgid "Type your text here"
 msgstr "Type your text here"
 
-#: src/features/editor/text-editor/formatting-menu.tsx:102
+#: src/features/editor/text-editor/formatting-menu.tsx:104
 msgid "Underline"
 msgstr "Underline"
 
@@ -730,7 +728,7 @@ msgstr "Verify code"
 msgid "Verifying..."
 msgstr "Verifying..."
 
-#: src/features/editor/menu/status-bar/index.tsx:50
+#: src/features/editor/menu/status-bar/index.tsx:57
 msgid "View my page"
 msgstr "View my page"
 

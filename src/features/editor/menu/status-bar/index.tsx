@@ -2,6 +2,7 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import { ArrowUpRight } from "lucide-react";
 import type { Route } from "next";
 import Link from "next/link";
+import { useWebHaptics } from "web-haptics/react";
 import { buildUrl } from "@/shared/lib/utils/build-url";
 import {
   DropdownMenu,
@@ -14,11 +15,16 @@ import { Pulse } from "@/shared/ui/kit/primitives/pulse";
 import { useProfile } from "../../profile/use-profile";
 
 export function EditorMenuStatusBar() {
+  const haptic = useWebHaptics();
   const { t } = useLingui();
   const slug = useProfile((state) => state.profile.slug);
 
   return (
-    <DropdownMenu>
+    <DropdownMenu
+      onOpenChange={() => {
+        haptic.trigger("medium");
+      }}
+    >
       <DropdownMenuTrigger className="pressable flex size-12 cursor-pointer items-center justify-center rounded-full border border-foreground/8 bg-default/50 backdrop-blur-md">
         <Pulse color="success" />
       </DropdownMenuTrigger>
@@ -39,6 +45,7 @@ export function EditorMenuStatusBar() {
           <Button
             asChild
             className="mt-1 bg-link/15 text-link hover:bg-link/20"
+            onClick={() => haptic.trigger("light")}
             size="default"
           >
             <Link

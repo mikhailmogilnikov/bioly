@@ -3,13 +3,17 @@
 // biome-ignore lint/performance/noNamespaceImport: 1
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 import type * as React from "react";
+import { useWebHaptics } from "web-haptics/react";
 
 import { cn } from "@/shared/lib/utils";
 
 function Switch({
   className,
+  onCheckedChange,
   ...props
 }: React.ComponentProps<typeof SwitchPrimitive.Root>) {
+  const haptic = useWebHaptics();
+
   return (
     <SwitchPrimitive.Root
       className={cn(
@@ -18,6 +22,10 @@ function Switch({
       )}
       data-slot="switch"
       {...props}
+      onCheckedChange={(checked) => {
+        haptic.trigger("light");
+        onCheckedChange?.(checked);
+      }}
     >
       <SwitchPrimitive.Thumb
         className={cn(
